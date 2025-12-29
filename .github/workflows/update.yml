@@ -10,7 +10,7 @@ on:
       task:
         description: "Task to run"
         required: false
-        default: "update"
+        default: "update-sources"
         type: choice
         options:
           - update-sources
@@ -19,7 +19,7 @@ on:
 jobs:
   # Ensure sources are up-to-date
   update-sources:
-    if: (github.event_name == 'schedule' && github.event.schedule == '0 5 * * *') || (github.event_name == 'workflow_dispatch' && inputs.task == 'update')
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 5 * * *') || (github.event_name == 'workflow_dispatch' && inputs.task == 'update-sources')
     runs-on: ubuntu-latest
     outputs:
       any_changed: ${{ steps.check.outputs.any_changed }}
