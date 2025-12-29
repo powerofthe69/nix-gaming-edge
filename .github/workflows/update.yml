@@ -155,14 +155,14 @@ jobs:
           git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
           git push
 
-  # Merge nightly to main weekly on Wednesdays at 6AM UTC
-  promote-to-main:
+  # Merge nightly to master weekly on Wednesdays at 6AM UTC
+  promote-to-master:
     if: github.event.schedule == '0 6 * * 3'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: master
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -171,12 +171,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Merge nightly → main
+      - name: Merge nightly → master
         run: |
           git fetch origin nightly
           if git merge-base --is-ancestor origin/nightly HEAD; then
-            echo "Main is already up to date with nightly"
+            echo "Master is already up to date with nightly"
             exit 0
           fi
           git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"
-          git push origin main
+          git push origin master

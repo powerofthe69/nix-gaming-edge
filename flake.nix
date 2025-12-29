@@ -6,9 +6,9 @@
   };
 
   nixConfig = {
-    extra-substituters = [ "https://nix-cache.tokidoki.dev/mesa-git" ];
+    extra-substituters = [ "https://nix-cache.tokidoki.dev/tokidoki" ];
     extra-trusted-public-keys = [
-      "mesa-git:QdQcgcLR80ALQIG0hR0YZaPbbdrBvHy7R+zwMjYWUyw="
+      "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
     ];
   };
 

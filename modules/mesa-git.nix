@@ -29,8 +29,8 @@ in
   config = lib.mkMerge [
     (lib.mkIf cfg.enableCache {
       nix.settings = {
-        substituters = [ "https://nix-cache.tokidoki.dev/mesa-git" ];
-        trusted-public-keys = [ "mesa-git:QdQcgcLR80ALQIG0hR0YZaPbbdrBvHy7R+zwMjYWUyw=" ];
+        substituters = [ "https://nix-cache.tokidoki.dev/tokidoki" ];
+        trusted-public-keys = [ "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk=" ];
       };
     })
 
