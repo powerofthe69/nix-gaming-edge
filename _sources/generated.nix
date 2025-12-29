@@ -80,12 +80,9 @@
   pseudoregalia-rando = {
     pname = "pseudoregalia-rando";
     version = "1.8.6";
-    src = fetchFromGitHub {
-      owner = "pseudoregalia-modding";
-      repo = "rando";
-      rev = "1.8.6";
-      fetchSubmodules = false;
-      sha256 = "sha256-3htHIr8GAlvoBZeijU3KUSbIJf5iNWajTKIz+qRmK60=";
+    src = fetchurl {
+      url = "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz";
+      sha256 = "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=";
     };
   };
   vintagestory = {

@@ -137,16 +137,10 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
             "name": null,
-            "owner": "pseudoregalia-modding",
-            "repo": "rando",
-            "rev": "1.8.6",
-            "sha256": "sha256-3htHIr8GAlvoBZeijU3KUSbIJf5iNWajTKIz+qRmK60=",
-            "sparseCheckout": [],
-            "type": "github"
+            "sha256": "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=",
+            "type": "url",
+            "url": "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz"
         },
         "version": "1.8.6"
     },
