@@ -49,6 +49,22 @@ jobs:
             echo "any_changed=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Update Cargo.lock for pseudoregalia
+        run: |
+          VER=$(jq -r '.["pseudoregalia-rando"].version' _sources/generated.json)
+          CURRENT=""
+          [ -f pkgs/pseudoregalia-rando/.version ] && CURRENT=$(cat pkgs/pseudoregalia-rando/.version)
+
+          if [ "$CURRENT" != "$VER" ]; then
+            WORK_DIR=$(mktemp -d)
+            curl -sL "https://github.com/pseudoregalia-modding/rando/archive/$VER.tar.gz" | tar xz -C "$WORK_DIR"
+            SRC_DIR=$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+            (cd "$SRC_DIR" && cargo generate-lockfile)
+            cp "$SRC_DIR/Cargo.lock" pkgs/pseudoregalia-rando/Cargo.lock
+            echo "$VER" > pkgs/pseudoregalia-rando/.version
+            rm -rf "$WORK_DIR"
+          fi
+
       - name: Update flake.lock
         if: steps.check.outputs.any_changed == 'true'
         run: nix flake update

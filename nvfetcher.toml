@@ -58,38 +58,8 @@ src.manual = "latest"
 fetch.url = "https://pokemmo.com/download_file/1/"
 
 # Pseudoregalia Randomizer
-# src.cmd validates latest github release version and regenerates Cargo.lock if version changes
-
 [pseudoregalia-rando]
-src.cmd = '''
-OWNER="pseudoregalia-modding"
-REPO="rando"
-CARGO_LOCK="pkgs/pseudoregalia-rando/Cargo.lock"
-
-# Get latest version
-VER=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/releases/latest" | jq -r .tag_name)
-
-# Check if Cargo.lock needs updating (different version or missing)
-CURRENT=""
-if [ -f "$CARGO_LOCK" ]; then
-  # Try to extract version from existing lock or use a marker file
-  MARKER="pkgs/pseudoregalia-rando/.version"
-  [ -f "$MARKER" ] && CURRENT=$(cat "$MARKER")
-fi
-
-if [ "$CURRENT" != "$VER" ]; then
-  # Download and generate new Cargo.lock
-  WORK_DIR=$(mktemp -d)
-  trap "rm -rf $WORK_DIR" EXIT
-  curl -sL "https://github.com/$OWNER/$REPO/archive/$VER.tar.gz" | tar xz -C "$WORK_DIR"
-  SRC_DIR=$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)
-  (cd "$SRC_DIR" && cargo generate-lockfile 2>/dev/null)
-  cp "$SRC_DIR/Cargo.lock" "$CARGO_LOCK"
-  echo "$VER" > "pkgs/pseudoregalia-rando/.version"
-fi
-
-echo "$VER"
-'''
+src.github = "pseudoregalia-modding/rando"
 fetch.url = "https://github.com/pseudoregalia-modding/rando/archive/$ver.tar.gz"
 
 [oodle-lib]
