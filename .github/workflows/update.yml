@@ -6,11 +6,20 @@ on:
     - cron: "0 5 * * *" # Daily at 5 AM UTC (update + build)
     - cron: "0 6 * * 3" # Wednesdays at 6 AM UTC (promote)
   workflow_dispatch:
+    inputs:
+      task:
+        description: "Task to run"
+        required: false
+        default: "update"
+        type: choice
+        options:
+          - update
+          - promote
 
 jobs:
   # Ensure sources are up-to-date
   update-sources:
-    if: github.event.schedule != '0 6 * * 3'
+    if: github.event.schedule != '0 6 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.task == 'update')
     runs-on: ubuntu-latest
     outputs:
       any_changed: ${{ steps.check.outputs.any_changed }}
@@ -173,7 +182,7 @@ jobs:
 
   # Merge nightly to master weekly on Wednesdays at 6AM UTC
   promote-to-master:
-    if: github.event.schedule == '0 6 * * 3'
+    if: github.event.schedule == '0 6 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
