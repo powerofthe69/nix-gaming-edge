@@ -90,7 +90,7 @@ fi
 
 echo "$VER"
 '''
-fetch.github = "pseudoregalia-modding/rando"
+fetch.url = "https://github.com/pseudoregalia-modding/rando/archive/$ver.tar.gz"
 
 [oodle-lib]
 src.manual = "0.2.3"
