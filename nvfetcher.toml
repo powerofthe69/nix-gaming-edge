@@ -1,0 +1,97 @@
+# nvfetcher.toml - all sources managed declaratively
+# Run: nvfetcher -o _sources
+
+# mesa-git and dependencies (tracking git HEAD)
+
+[mesa]
+src.git = "https://gitlab.freedesktop.org/mesa/mesa.git"
+fetch.git = "https://gitlab.freedesktop.org/mesa/mesa.git"
+
+[libdrm]
+src.git = "https://gitlab.freedesktop.org/mesa/drm.git"
+fetch.git = "https://gitlab.freedesktop.org/mesa/drm.git"
+
+[wayland-protocols]
+src.git = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
+fetch.git = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
+
+# proton-cachyos (tracking github releases)
+# $ver = "cachyos-10.0-20251222-slr", filename = "proton-$ver-x86_64.tar.xz"
+
+[proton-cachyos]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64.tar.xz"
+
+[proton-cachyos-x86_64_v2]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v2.tar.xz"
+
+[proton-cachyos-x86_64_v3]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
+
+[proton-cachyos-x86_64_v4]
+src.github = "CachyOS/proton-cachyos"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
+
+# Vintage Story
+# tracks official modding api and using src.cmd to fetch the latest and stable versions
+
+# Latest - version includes channel and URL prefix
+# Looks like: "stable/vs_client_linux-x64_x.xx.x" or "unstable/vs_client_linux-x64_x.xx.x-rc.x"
+[vintagestory]
+src.cmd = '''
+VER=$(curl -s https://mods.vintagestory.at/api/gameversions | jq -r '.gameversions[-1].name')
+if echo "$VER" | grep -q '-'; then echo "unstable/vs_client_linux-x64_$VER"; else echo "stable/vs_client_linux-x64_$VER"; fi
+'''
+fetch.url = "https://cdn.vintagestory.at/gamefiles/$ver.tar.gz"
+
+# Stable - last version without hyphen denoting a release candidate
+[vintagestory-stable]
+src.cmd = "curl -s https://mods.vintagestory.at/api/gameversions | jq -r '[.gameversions[].name | select(test(\"^[0-9]+[.][0-9]+[.][0-9]+$\"))] | last'"
+fetch.url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_$ver.tar.gz"
+
+# PokeMMO (this URL never changes, but the hash will)
+
+[pokemmo]
+src.manual = "latest"
+fetch.url = "https://pokemmo.com/download_file/1/"
+
+# Pseudoregalia Randomizer
+# src.cmd validates latest github release version and regenerates Cargo.lock if version changes
+
+[pseudoregalia-rando]
+src.cmd = '''
+OWNER="pseudoregalia-modding"
+REPO="rando"
+CARGO_LOCK="pkgs/pseudoregalia-rando/Cargo.lock"
+
+# Get latest version
+VER=$(curl -s "https://api.github.com/repos/$OWNER/$REPO/releases/latest" | jq -r .tag_name)
+
+# Check if Cargo.lock needs updating (different version or missing)
+CURRENT=""
+if [ -f "$CARGO_LOCK" ]; then
+  # Try to extract version from existing lock or use a marker file
+  MARKER="pkgs/pseudoregalia-rando/.version"
+  [ -f "$MARKER" ] && CURRENT=$(cat "$MARKER")
+fi
+
+if [ "$CURRENT" != "$VER" ]; then
+  # Download and generate new Cargo.lock
+  WORK_DIR=$(mktemp -d)
+  trap "rm -rf $WORK_DIR" EXIT
+  curl -sL "https://github.com/$OWNER/$REPO/archive/$VER.tar.gz" | tar xz -C "$WORK_DIR"
+  SRC_DIR=$(find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+  (cd "$SRC_DIR" && cargo generate-lockfile 2>/dev/null)
+  cp "$SRC_DIR/Cargo.lock" "$CARGO_LOCK"
+  echo "$VER" > "pkgs/pseudoregalia-rando/.version"
+fi
+
+echo "$VER"
+'''
+fetch.github = "pseudoregalia-modding/rando"
+
+[oodle-lib]
+src.manual = "0.2.3"
+fetch.url = "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"

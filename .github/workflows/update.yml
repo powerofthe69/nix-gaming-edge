@@ -1,0 +1,182 @@
+# .github/workflows/update.yml
+name: Update and Build
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # Daily at 5 AM UTC (update + build)
+    - cron: "0 6 * * 3" # Wednesdays at 6 AM UTC (promote)
+  workflow_dispatch:
+
+jobs:
+  # Ensure sources are up-to-date
+  update-sources:
+    if: github.event.schedule != '0 6 * * 3'
+    runs-on: ubuntu-latest
+    outputs:
+      any_changed: ${{ steps.check.outputs.any_changed }}
+      mesa_rev: ${{ steps.check.outputs.mesa_rev }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nightly
+
+      - uses: cachix/install-nix-action@master
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
+
+      - name: Install dependencies
+        run: nix profile add nixpkgs#nvfetcher nixpkgs#jq nixpkgs#cargo
+
+      - name: Save old versions
+        run: |
+          cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
+
+      - name: Run nvfetcher
+        run: nvfetcher -o _sources
+
+      - name: Check what changed
+        id: check
+        run: |
+          OLD_MESA=$(jq -r '.mesa.version // "none"' /tmp/old-generated.json)
+          NEW_MESA=$(jq -r '.mesa.version // "none"' _sources/generated.json)
+          echo "mesa_rev=${NEW_MESA:0:7}" >> $GITHUB_OUTPUT
+
+          if ! diff -q /tmp/old-generated.json _sources/generated.json > /dev/null 2>&1; then
+            echo "any_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "any_changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update flake.lock
+        if: steps.check.outputs.any_changed == 'true'
+        run: nix flake update
+
+      - name: Upload updated sources
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-sources
+          retention-days: 1
+          path: |
+            _sources/
+            pkgs/pseudoregalia-rando/Cargo.lock
+            pkgs/pseudoregalia-rando/.version
+            flake.lock
+
+  # Build packages from a matrix
+  build:
+    needs: update-sources
+    if: needs.update-sources.outputs.any_changed == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Run heavier (caching) builds on local runners
+          - name: mesa
+            packages: mesa-git mesa32-git
+            runner: [self-hosted, heavy-tasks]
+
+          - name: pseudoregalia
+            packages: pseudoregalia-rando
+            runner: [self-hosted, light-tasks]
+
+          # Run light builds (tarballs) on GitHub runners
+          - name: proton
+            packages: proton-cachyos proton-cachyos-x86_64_v2 proton-cachyos-x86_64_v3 proton-cachyos-x86_64_v4
+            runner: ubuntu-latest
+
+          - name: vintagestory
+            packages: vintagestory vintagestory-stable
+            runner: ubuntu-latest
+
+          - name: pokemmo
+            packages: pokemmo
+            runner: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nightly
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: updated-sources
+
+      - uses: cachix/install-nix-action@master
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
+
+      - name: Build ${{ matrix.name }}
+        run: |
+          for pkg in ${{ matrix.packages }}; do
+            echo "::group::Building $pkg"
+            nix build .#$pkg -L
+            echo "::endgroup::"
+          done
+
+      - name: Push to Attic
+        if: contains(matrix.runner, 'self-hosted')
+        env:
+          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
+        run: |
+          nix profile add nixpkgs#attic-client
+          attic login local http://attic:8080 $ATTIC_TOKEN
+          attic push tokidoki ./result*
+
+  # Commit to nightly only when all builds succeed
+  commit-changes:
+    needs: [update-sources, build]
+    if: |
+      always() &&
+      needs.update-sources.outputs.any_changed == 'true' &&
+      needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nightly
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: updated-sources
+
+      - name: Commit changes
+        env:
+          MESA_REV: ${{ needs.update-sources.outputs.mesa_rev }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
+          git push
+
+  # Merge nightly to main weekly on Wednesdays at 6AM UTC
+  promote-to-main:
+    if: github.event.schedule == '0 6 * * 3'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge nightly → main
+        run: |
+          git fetch origin nightly
+          if git merge-base --is-ancestor origin/nightly HEAD; then
+            echo "Main is already up to date with nightly"
+            exit 0
+          fi
+          git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"
+          git push origin main

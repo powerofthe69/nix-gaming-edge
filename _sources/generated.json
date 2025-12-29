@@ -1,0 +1,203 @@
+{
+    "libdrm": {
+        "cargoLocks": null,
+        "date": "2025-12-19",
+        "extract": null,
+        "name": "libdrm",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "369990d9660a387f618d0eedc341eb285016243b",
+            "sha256": "sha256-kOaTjBeo4IsfWEk/JBTNId5ikrnpoc9DEjIl7DUd2yE=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/mesa/drm.git"
+        },
+        "version": "369990d9660a387f618d0eedc341eb285016243b"
+    },
+    "mesa": {
+        "cargoLocks": null,
+        "date": "2025-12-28",
+        "extract": null,
+        "name": "mesa",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ea4dedde8fe7757a593501eb6fcbaf0a78d1b36b",
+            "sha256": "sha256-NGtUPubQDXVfs5wIf/TvSRaI7tjizYYlodwUo9b/PKI=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
+        },
+        "version": "ea4dedde8fe7757a593501eb6fcbaf0a78d1b36b"
+    },
+    "oodle-lib": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "oodle-lib",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=",
+            "type": "url",
+            "url": "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
+        },
+        "version": "0.2.3"
+    },
+    "pokemmo": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pokemmo",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
+            "type": "url",
+            "url": "https://pokemmo.com/download_file/1/"
+        },
+        "version": "latest"
+    },
+    "proton-cachyos": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-W7cC4pi8WED4rOEXYVXIio1tiUNvArzqsTl6xKwy/mY=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251222-slr/proton-cachyos-10.0-20251222-slr-x86_64.tar.xz"
+        },
+        "version": "cachyos-10.0-20251222-slr"
+    },
+    "proton-cachyos-x86_64_v2": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x86_64_v2",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-S5i8RBbrPAlsYYavzzhTFanLU3uyLT3OQRpX9S6pPE0=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251222-slr/proton-cachyos-10.0-20251222-slr-x86_64_v2.tar.xz"
+        },
+        "version": "cachyos-10.0-20251222-slr"
+    },
+    "proton-cachyos-x86_64_v3": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x86_64_v3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-tw1/uX4qZX3cQKyzsss8l+wHKLoJF2/8B+6RUIQt4oQ=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251222-slr/proton-cachyos-10.0-20251222-slr-x86_64_v3.tar.xz"
+        },
+        "version": "cachyos-10.0-20251222-slr"
+    },
+    "proton-cachyos-x86_64_v4": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "proton-cachyos-x86_64_v4",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-1+6nCUc93vVZg3j4oSwuM7DYOZ2bNbLIjbH+8OUOSAQ=",
+            "type": "url",
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20251222-slr/proton-cachyos-10.0-20251222-slr-x86_64_v4.tar.xz"
+        },
+        "version": "cachyos-10.0-20251222-slr"
+    },
+    "pseudoregalia-rando": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pseudoregalia-rando",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "pseudoregalia-modding",
+            "repo": "rando",
+            "rev": "1.8.6",
+            "sha256": "sha256-3htHIr8GAlvoBZeijU3KUSbIJf5iNWajTKIz+qRmK60=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.8.6"
+    },
+    "vintagestory": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vintagestory",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+            "type": "url",
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
+        },
+        "version": "stable/vs_client_linux-x64_1.21.6"
+    },
+    "vintagestory-stable": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vintagestory-stable",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+            "type": "url",
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
+        },
+        "version": "1.21.6"
+    },
+    "wayland-protocols": {
+        "cargoLocks": null,
+        "date": "2025-12-27",
+        "extract": null,
+        "name": "wayland-protocols",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "969ef1a36d48e3e69af116adb6ede11d13729411",
+            "sha256": "sha256-AWSRy087Z8mAmJfb29Dl4bnNtRSAKCWSUAANlF2zMBw=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
+        },
+        "version": "969ef1a36d48e3e69af116adb6ede11d13729411"
+    }
+}
