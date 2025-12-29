@@ -33,8 +33,8 @@ let
       "mkdir $out; ln -s ${oodleSrc} $out/liboo2corelinux64.so";
 
   patchedSrc = pkgs.runCommand "source-with-local-lock" { } ''
-    cp -r ${src} $out
-    chmod -R u+w $out
+    mkdir $out
+    tar xzf ${src} -C $out --strip-components=1
     cp ${./Cargo.lock} $out/Cargo.lock
   '';
 
