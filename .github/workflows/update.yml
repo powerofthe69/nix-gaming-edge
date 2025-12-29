@@ -13,13 +13,13 @@ on:
         default: "update"
         type: choice
         options:
-          - update
-          - promote
+          - update-sources
+          - promote-to-master
 
 jobs:
   # Ensure sources are up-to-date
   update-sources:
-    if: github.event.schedule != '0 6 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.task == 'update')
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 5 * * *') || (github.event_name == 'workflow_dispatch' && inputs.task == 'update')
     runs-on: ubuntu-latest
     outputs:
       any_changed: ${{ steps.check.outputs.any_changed }}
@@ -182,7 +182,7 @@ jobs:
 
   # Merge nightly to master weekly on Wednesdays at 6AM UTC
   promote-to-master:
-    if: github.event.schedule == '0 6 * * 3' || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote')
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 6 * * 3') || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote-to-master')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
