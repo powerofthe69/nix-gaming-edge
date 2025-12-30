@@ -10,15 +10,11 @@
   xorg,
   libglvnd,
   openal,
-  fontconfig,
-  freetype,
+  pipewire,
+  wayland,
+  libxkbcommon,
   cairo,
-  pango,
   gtk3,
-  gdk-pixbuf,
-  zlib,
-  libpulseaudio,
-  alsa-lib,
   sourceData, # { src, version }
 }:
 
@@ -36,22 +32,16 @@ stdenv.mkDerivation rec {
   buildInputs = [
     dotnet-runtime_8
     stdenv.cc.cc.lib
-    zlib
     xorg.libX11
     xorg.libXi
     xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXxf86vm
     libglvnd
     openal
-    fontconfig
-    freetype
+    wayland
+    libxkbcommon
+    pipewire
     cairo
-    pango
     gtk3
-    gdk-pixbuf
-    libpulseaudio
-    alsa-lib
   ];
 
   # Ignore internal C# dlls, patch native libs
@@ -76,7 +66,7 @@ stdenv.mkDerivation rec {
       --add-flags "$out/share/vintagestory/Vintagestory.dll" \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath buildInputs}" \
       --set DOTNET_ROOT "${dotnet-runtime_8}" \
-      --set LD_PRELOAD "${xorg.libXcursor}/lib/libXcursor.so.1"
+      --run 'if [ -n "$WAYLAND_DISPLAY" ]; then export OPENTK_4_USE_WAYLAND=1; fi'
 
     runHook postInstall
   '';
