@@ -1,4 +1,4 @@
-# nix-gaming-edge
+# A Nix user repository providing the 'essential' bleeding-edge packages like mesa-git and proton-cachyos alongside a collection of random, 'niche' gaming packages such as pokemmo, vintagestory (latest), and more to come.
 
 After Chaotic-Nyx archived themselves in the middle of December 2025, I decided to step up and host my own flake for installing proton-cachyos into Steam, mostly for personal reasons. Since getting an itch for it, I've created a few flakes (one of my most important being the mesa-git module) and it's been getting a little unwieldy managing all the flakes in separate repositories. This repository is meant to rein it all in and allow me a single point of management. The existing repositories will be archived sometime soon, but their contents have already been migrated here.
 
@@ -20,6 +20,19 @@ Others that were mostly for me:
 
 **NixOS Installation:**
 
+proton-cachyos is **only** intended to be installed using the `extraCompatPackages` option for the Steam program, similar to the proton-ge-bin package from the official Nixpkgs repository. I have not tested this otherwise. If anyone tries it and manages to get it working, please let me know or submit a PR with instructions or changes to facilitate it.
+
+Each provided package or package set (if multiple variations) has its own overlay if someone prefers, for example, the Nixpkgs maintained versions of PokeMMO or Vintage Story and does not wish to replace them. These overlays follow a common declaration scheme:
+
+- nix-gaming-edge.overlays.mesa-git
+- nix-gaming-edge.overlays.proton-cachyos
+- etc.
+
+mesa-git can be activated using either the mesa-git module or the default module (they are the same for now). These are declared as either:
+
+- nix-gaming-edge.nixosModules.default
+- nix-gaming-edge.nixosModules.mesa-git
+
 Here is a minimal representation of what your configuration might look like:
 
 ```nix
@@ -39,11 +52,19 @@ Here is a minimal representation of what your configuration might look like:
       modules = [
         ./configuration.nix
         nix-gaming-edge.nixosModules.default
+        # nix-gaming-edge.nixosModules.mesa-git
         {
-          nixpkgs.overlays = [ nix-gaming-edge.overlays.default ];
+          nixpkgs.overlays = [
+            nix-gaming-edge.overlays.default
+            #nix-gaming-edge.overlays.mesa-git
+            #nix-gaming-edge.overlays.proton-cachyos
+            #nix-gaming-edge.overlays.vintagestory
+            #etc.  
+          ];
           drivers.mesa-git.enable = true;
           
-          environment.systemPackages = with pkgs; [
+          environment.systemPackages = with pkgs; [ # or per-user equivalent
+            pokemmo
             vintagestory
             pseudoregalia-rando
           ];
@@ -51,7 +72,10 @@ Here is a minimal representation of what your configuration might look like:
           programs.steam = {
             enable = true;
             extraCompatPackages = with pkgs; [
-              proton-cachyos # proton-cachyos-x86_64-v2 proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4
+              proton-cachyos
+              # proton-cachyos-x86_64-v2
+              # proton-cachyos-x86_64-v3
+              # proton-cachyos-x86_64-v4
             ];
           }
         }
