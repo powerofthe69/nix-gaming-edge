@@ -24,15 +24,15 @@ fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/pr
 
 [proton-cachyos-x86_64-v2]
 src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64-v2.tar.xz"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v2.tar.xz"
 
 [proton-cachyos-x86_64-v3]
 src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64-v3.tar.xz"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
 [proton-cachyos-x86_64-v4]
 src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64-v4.tar.xz"
+fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
 
 # Vintage Story
 # tracks official modding api and using src.cmd to fetch the latest and stable versions
