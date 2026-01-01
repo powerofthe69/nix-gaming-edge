@@ -13,13 +13,23 @@ let
   libdrmVersion = builtins.substring 0 7 (libdrm-src.rev or "unknown");
   waylandProtocolsVersion = builtins.substring 0 7 (wayland-protocols-src.rev or "unknown");
 
-  # Build libdrm-git
+  # Build libdrm-git AND libdrm32-git
   # Use clang for allegedly faster compilation and tighter integration with LLVM
-  libdrm-git = (pkgs.libdrm.override { stdenv = pkgs.clangStdenv; }).overrideAttrs (old: {
-    pname = "libdrm-git";
-    version = "${libdrmVersion}";
-    src = libdrm-src;
-  });
+  gitLibdrm =
+    {
+      is32bit ? false,
+    }:
+    let
+      basePkgs = if is32bit then pkgs.pkgsi686Linux else pkgs;
+    in
+    (basePkgs.libdrm.override { stdenv = basePkgs.clangStdenv; }).overrideAttrs (old: {
+      pname = "libdrm-git";
+      version = "${libdrmVersion}";
+      src = libdrm-src;
+    });
+
+  libdrm-git = gitLibdrm { is32bit = false; };
+  libdrm32-git = gitLibdrm { is32bit = true; };
 
   # Build wayland-protocols-git
   # Mostly XML but use clang for uniformity
@@ -37,6 +47,7 @@ let
     }:
     let
       basePkgs = if is32bit then pkgs.pkgsi686Linux else pkgs;
+      gitLibdrm = if is32bit then libdrm32-git else libdrm-git;
     in
     # Use clang for allegedly faster compilation and tighter integration with LLVM
     (basePkgs.mesa.override { stdenv = basePkgs.clangStdenv; }).overrideAttrs (old: {
@@ -48,22 +59,35 @@ let
       outputs = lib.remove "spirv2dxil" (old.outputs or [ "out" ]);
 
       buildInputs =
-        old.buildInputs
+        (lib.filter (
+          x:
+          let
+            name = x.name or x.pname or "";
+          in
+          name != "libdrm" && name != "mesa-libgbm"
+        ) old.buildInputs)
         ++ [
           pkgs.libdisplay-info
-        ]
-        ++ (
-          if is32bit then
-            [ ]
-          else
-            [
-              libdrm-git
-            ]
-        );
+          gitLibdrm
+        ];
 
-      nativeBuildInputs = old.nativeBuildInputs ++ [
-        wayland-protocols-git
-      ];
+      nativeBuildInputs =
+        (
+          if is32bit then
+            (lib.filter (
+              x:
+              let
+                name = x.name or x.pname or "";
+              in
+              name != "mesa"
+            ) old.nativeBuildInputs)
+            ++ [ mesa-git ]
+          else
+            old.nativeBuildInputs
+        )
+        ++ [
+          wayland-protocols-git
+        ];
 
       # Remove spirv2dxil from postInstall too
       postInstall =
@@ -95,6 +119,7 @@ let
           "-Dgallium-mediafoundation=disabled"
           "-Dandroid-libbacktrace=disabled"
           "-Dmicrosoft-clc=disabled"
+          "-Dlibgbm-external=false"
           "-Dspirv-to-dxil=false"
         ]
         ++ (
@@ -136,6 +161,7 @@ in
     mesa-git
     mesa32-git
     libdrm-git
+    libdrm32-git
     wayland-protocols-git
     mesaVersion
     ;

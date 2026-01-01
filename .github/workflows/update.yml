@@ -109,7 +109,7 @@ jobs:
 
           # Run light builds (tarballs) on GitHub runners
           - name: proton
-            packages: proton-cachyos proton-cachyos-x86_64_v2 proton-cachyos-x86_64_v3 proton-cachyos-x86_64_v4
+            packages: proton-cachyos proton-cachyos-x86_64-v2 proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4
             runner: ubuntu-latest
 
           - name: vintagestory
@@ -150,7 +150,7 @@ jobs:
         run: |
           nix profile add nixpkgs#attic-client
           attic login local http://attic:8080 $ATTIC_TOKEN
-          attic push tokidoki ./result*
+          attic push tokidoki $(nix-store - qR ./result*) --ignore-upstream-cache-filter
 
   # Commit to nightly only when all builds succeed
   commit-changes:

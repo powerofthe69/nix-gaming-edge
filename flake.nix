@@ -77,13 +77,14 @@
         mesa-git = mesaPkgs.mesa-git;
         mesa32-git = mesaPkgs.mesa32-git;
         libdrm-git = mesaPkgs.libdrm-git;
+        libdrm32-git = mesaPkgs.libdrm32-git;
         wayland-protocols-git = mesaPkgs.wayland-protocols-git;
 
         # Proton CachyOS
         proton-cachyos = mkProton "proton-cachyos" "base";
-        proton-cachyos-x86_64_v2 = mkProton "proton-cachyos-x86_64_v2" "x86_64_v2";
-        proton-cachyos-x86_64_v3 = mkProton "proton-cachyos-x86_64_v3" "x86_64_v3";
-        proton-cachyos-x86_64_v4 = mkProton "proton-cachyos-x86_64_v4" "x86_64_v4";
+        proton-cachyos-x86_64-v2 = mkProton "proton-cachyos-x86_64-v2" "x86_64-v2";
+        proton-cachyos-x86_64-v3 = mkProton "proton-cachyos-x86_64-v3" "x86_64-v3";
+        proton-cachyos-x86_64-v4 = mkProton "proton-cachyos-x86_64-v4" "x86_64-v4";
 
         # Vintage Story
         vintagestory = mkVintageStory "vintagestory";
@@ -102,60 +103,52 @@
       };
 
       overlays = {
-        default =
-          final: prev:
-          let
-            mp = makeMesaPkgs final;
-          in
-          {
-            inherit (mp)
-              mesa-git
-              mesa32-git
-              libdrm-git
-              wayland-protocols-git
-              ;
-            proton-cachyos = self.packages.${system}.proton-cachyos;
-            proton-cachyos-x86_64_v2 = self.packages.${system}.proton-cachyos-x86_64_v2;
-            proton-cachyos-x86_64_v3 = self.packages.${system}.proton-cachyos-x86_64_v3;
-            proton-cachyos-x86_64_v4 = self.packages.${system}.proton-cachyos-x86_64_v4;
-            vintagestory = self.packages.${system}.vintagestory;
-            vintagestory-stable = self.packages.${system}.vintagestory-stable;
-            pokemmo = self.packages.${system}.pokemmo;
-            pseudoregalia-rando = self.packages.${system}.pseudoregalia-rando;
-          };
+        default = final: prev: {
+          mesa-git = self.packages.${final.system}.mesa-git;
+          mesa32-git = self.packages.${final.system}.mesa32-git;
+          libdrm-git = self.packages.${final.system}.libdrm-git;
+          libdrm32-git = self.packages.${final.system}.libdrm32-git;
+          wayland-protocols-git = self.packages.${final.system}.wayland-protocols-git;
 
-        mesa-git =
-          final: prev:
-          let
-            mp = makeMesaPkgs final;
-          in
-          {
-            inherit (mp)
-              mesa-git
-              mesa32-git
-              libdrm-git
-              wayland-protocols-git
-              ;
-          };
+          proton-cachyos = self.packages.${final.system}.proton-cachyos;
+          proton-cachyos-x86_64-v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+
+          vintagestory = self.packages.${final.system}.vintagestory;
+          vintagestory-stable = self.packages.${final.system}.vintagestory-stable;
+
+          pokemmo = self.packages.${final.system}.pokemmo;
+
+          pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
+        };
+
+        mesa-git = final: prev: {
+          mesa-git = self.packages.${final.system}.mesa-git;
+          mesa32-git = self.packages.${final.system}.mesa32-git;
+          libdrm-git = self.packages.${final.system}.libdrm-git;
+          libdrm32-git = self.packages.${final.system}.libdrm32-git;
+          wayland-protocols-git = self.packages.${final.system}.wayland-protocols-git;
+        };
 
         proton-cachyos = final: prev: {
-          proton-cachyos = self.packages.${system}.proton-cachyos;
-          proton-cachyos-x86_64_v2 = self.packages.${system}.proton-cachyos-x86_64_v2;
-          proton-cachyos-x86_64_v3 = self.packages.${system}.proton-cachyos-x86_64_v3;
-          proton-cachyos-x86_64_v4 = self.packages.${system}.proton-cachyos-x86_64_v4;
+          proton-cachyos = self.packages.${final.system}.proton-cachyos;
+          proton-cachyos-x86_64-v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
         };
 
         vintagestory = final: prev: {
-          vintagestory = self.packages.${system}.vintagestory;
-          vintagestory-stable = self.packages.${system}.vintagestory-stable;
+          vintagestory = self.packages.${final.system}.vintagestory;
+          vintagestory-stable = self.packages.${final.system}.vintagestory-stable;
         };
 
         pokemmo = final: prev: {
-          pokemmo = self.packages.${system}.pokemmo;
+          pokemmo = self.packages.${final.system}.pokemmo;
         };
 
         pseudoregalia-rando = final: prev: {
-          pseudoregalia-rando = self.packages.${system}.pseudoregalia-rando;
+          pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
         };
       };
 
