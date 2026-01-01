@@ -2,6 +2,7 @@
   pkgs,
   source,
   variant,
+  renameInternalName ? true,
 }:
 
 let
@@ -33,6 +34,10 @@ pkgs.stdenv.mkDerivation {
     # Modify the display name
     sed -i -r "s|\"display_name\".*|\"display_name\" \"${steamName}\"|" \
       $steamcompattool/compatibilitytool.vdf
+
+    ${pkgs.lib.optionalString renameInternalName ''
+      sed -i -r 's|"proton-cachyos-[^"]*"(\s*// Internal name)|"${steamName}"\1|' $steamcompattool/compatibilitytool.vdf
+    ''}
 
     # Create a real folder so that Steam doesn't require reselecting compatibility tool on update
     mkdir -p $out/share/
