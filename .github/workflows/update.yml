@@ -43,6 +43,9 @@ jobs:
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
 
       - name: Run nvfetcher
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: nvfetcher -o _sources
 
       - name: Check what changed
@@ -92,6 +95,9 @@ jobs:
   # Build packages from a matrix
   build:
     needs: update-sources
+    env:
+      NIX_CONFIG: |
+        access-tokens = github.com=${{ secrets.GITHUB_TOKEN }} gitlab.freedesktop.org=${{ secrets.GITLAB_TOKEN }}
     if: needs.update-sources.outputs.any_changed == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.runner }}
     strategy:
@@ -150,7 +156,7 @@ jobs:
         run: |
           nix profile add nixpkgs#attic-client
           attic login local http://attic:8080 $ATTIC_TOKEN
-          attic push tokidoki $(nix-store - qR ./result*) --ignore-upstream-cache-filter
+          attic push tokidoki $(nix-store -qR ./result*) --ignore-upstream-cache-filter
 
   # Commit to nightly only when all builds succeed
   commit-changes:
