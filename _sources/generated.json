@@ -21,7 +21,7 @@
     },
     "mesa": {
         "cargoLocks": null,
-        "date": "2026-01-01",
+        "date": "2026-01-02",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "caf9c0ee3c1ca51ee382f23a3b686012ba4a5d09",
-            "sha256": "sha256-4bBc0mQ5ptuMhBHPEi6A5NP2OnMpz2yhCxOJPYoTEmw=",
+            "rev": "cafec8a0c4af10c019793f217a22665fca29ac94",
+            "sha256": "sha256-VUD+vzODKk4HEFi2YLGRZF+fiX64UxDYIW/MS75z4MM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "caf9c0ee3c1ca51ee382f23a3b686012ba4a5d09"
+        "version": "cafec8a0c4af10c019793f217a22665fca29ac94"
     },
     "oodle-lib": {
         "cargoLocks": null,
