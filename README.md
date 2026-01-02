@@ -8,9 +8,31 @@ The largest ones that most will probably want to use are:
 
 - `proton-cachyos` (or its "optimized" variants): to install proton-cachyos into Steam and keep updated automatically
 
-- `mesa-git`: a module to install the latest Mesa drivers compiled straight from the official Gitlab
+- `mesa-git`: a module to install the latest Mesa drivers compiled straight from the official Gitlab. Optional flags include:
 
-Others that were mostly for me:
+  - `cacheCleanup` : for automatically purging previous Mesa shader cache on version updates - defaults to `false`
+  
+    - `protonPackage` : for specifying a Proton package to track for cacheCleanup to clear old proton caches on updates - defaults to `null`
+    
+    - `mesaCacheDirs` : for specifying a list of Mesa shader cache directories ( under `~/.cache` ) to purge on version updates
+    
+      - Default List: `[ "mesa_shader_cache*" "radv_builtin_shaders*" "vulkan" "*GPUCache" ]`
+    
+    - `protonCacheDirs` : for specifying a list of shader cache directories that might be found within Proton's prefixes ( under `steamapps/compatdata` )
+    
+      - Default List: `[ "UnityShaderCache" "DerivedDataCache" "D3DSCache" "ShaderCache" "GLCache" ]`
+    
+    - `protonCacheFiles` : for specifying a list of Proton cache files found within the games' installation directories ( under `steamapps/common` )
+    
+      - Default List: `[ "*.dxvk-cache" "*.vkd3d-proton.cache*" "vulkan_pso_cache*" "shader*.cache" ]`
+    
+  - `steamOrphanCleanup` : for purging folders that were left behind by Steam when uninstalling games ( checks against `libraryfolders.vdf` ) - defaults to `false`
+  
+    - `protectedFolders` : for declaring folders that should not be purged - this has sane defaults, but if you wish to keep specific game folders that may have mods within from being purged, then all should be declared
+    
+      - Default List: `[ "Steam Controller Configs" "Proton*" "SteamLinuxRuntime*" "Steamworks Shared" ]`
+
+Other packages that were mostly for me:
 
 - `pokemmo`: this installs PokeMMO differently than the nixpkgs version, which piggybacked off of `pokemmo-installer`. This grabs the client directly from the official website, which I believe is more "nix"-esque since it's straight from the source.
 
@@ -53,7 +75,7 @@ Here is a minimal representation of what your configuration might look like:
         ./configuration.nix
         nix-gaming-edge.nixosModules.default
         # nix-gaming-edge.nixosModules.mesa-git
-        {
+        ({ pkgs, ... }: { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
           nixpkgs.overlays = [
             nix-gaming-edge.overlays.default
             #nix-gaming-edge.overlays.mesa-git
@@ -61,7 +83,40 @@ Here is a minimal representation of what your configuration might look like:
             #nix-gaming-edge.overlays.vintagestory
             #etc.  
           ];
-          drivers.mesa-git.enable = true;
+          
+          drivers.mesa-git = {
+            enable = true;
+            cacheCleanup = { # protonPackage is null by default - thus Proton caches are not cleaned by default. Must define a protonPackage to clear Proton / engine caches
+              enable = true;
+              protonPackage = pkgs.proton-cachyos; # or variation
+            
+              mesaCacheDirs = [ # optional - default lists pre-configured
+                "mesa_shader_cache*"
+                "radv_builtin_shaders*"
+                #etc.
+              ];
+              
+              protonCacheFiles = [ # optional - default lists pre-configured
+                "vkd3d-proton.cache*"
+                "shader*.cache"
+                #etc.
+              ];
+            
+              protonCacheDirs = [ # optional - default lists pre-configured
+                "*ShaderCache*"
+                "D3DSCache*"
+                #etc.
+              ];
+            };
+            steamOrphanCleanup = {
+              enable = true;
+              protectedFolders = [ # folders to not treat as orphans for deletion ( optional, pre-configured with smart defaults )
+                "Proton*"
+                "Steam Controller Configs"
+                #etc.
+              ];
+            };
+          };
           
           environment.systemPackages = with pkgs; [ # or per-user equivalent
             pokemmo
@@ -77,8 +132,8 @@ Here is a minimal representation of what your configuration might look like:
               # proton-cachyos-x86_64-v3
               # proton-cachyos-x86_64-v4
             ];
-          }
-        }
+          };
+        })
       ];
     };
   };
