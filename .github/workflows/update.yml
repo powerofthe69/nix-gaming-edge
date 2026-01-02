@@ -135,6 +135,14 @@ jobs:
         with:
           name: updated-sources
 
+      - name: Purge Nix (sometimes Nix persists in a way that prevents Cachix installation)
+        if: contains(matrix.runner, 'self-hosted')
+        run: |
+          sudo rm -rf /nix
+          sudo rm -rf ~/.nix-* /root/.nix-*
+          sudo rm -rf /etc/nix
+        continue-on-error: true
+
       - uses: cachix/install-nix-action@master
         with:
           extra_nix_config: |
