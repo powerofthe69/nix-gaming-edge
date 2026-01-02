@@ -20,7 +20,7 @@ The largest ones that most will probably want to use are:
     
     - `protonCacheDirs` : for specifying a list of shader cache directories that might be found within Proton's prefixes ( under `steamapps/compatdata` )
     
-      - Default List: `[ "UnityShaderCache" "DerivedDataCache" "D3DSCache" "ShaderCache" "GLCache" ]`
+      - Default List: `[ "DerivedDataCache" "D3DSCache" "*ShaderCache" "GLCache" ]`
     
     - `protonCacheFiles` : for specifying a list of Proton cache files found within the games' installation directories ( under `steamapps/common` )
     

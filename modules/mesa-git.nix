@@ -284,10 +284,9 @@ in
       protonCacheDirs = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         default = [
-          "UnityShaderCache"
           "DerivedDataCache"
           "D3DSCache"
-          "ShaderCache"
+          "*ShaderCache"
           "GLCache"
         ];
         description = "Glob patterns for engine cache directories in Wine prefixes.";
