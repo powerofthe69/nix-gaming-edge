@@ -6,7 +6,7 @@
   openjdk25,
   mesa,
   libGL,
-  libpulseaudio,
+  pipewire,
   openssl,
   wget,
   which,
@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     openjdk25
     mesa
     libGL
-    libpulseaudio
+    pipewire
     openssl
     wget
     which
@@ -58,7 +58,6 @@ stdenv.mkDerivation rec {
       if [ -d "$item" ]; then
         echo "Removing nesting from directory: $item"
         mv "$item"/* .
-        # Attempt to move hidden files too, ignoring error if none exist
         mv "$item"/.[!.]* . 2>/dev/null || true
         rmdir "$item"
       fi
@@ -73,7 +72,7 @@ stdenv.mkDerivation rec {
         mkdir -p $out/share/pokemmo $out/bin $out/share/applications
         cp -r * $out/share/pokemmo
 
-        rm $out/share/pokemmo/PokeMMO.sh
+        rm -f $out/share/pokemmo/PokeMMO.sh
 
         mkdir -p $out/share/icons/hicolor/128x128/apps
         ln -s $out/share/pokemmo/data/icons/128x128.png $out/share/icons/hicolor/128x128/apps/pokemmo.png
@@ -92,77 +91,63 @@ stdenv.mkDerivation rec {
           } \
           --prefix LD_LIBRARY_PATH : "$runtime_libs" \
           --run "
-            STORE_SRC='$out/share/pokemmo'
-            USER_DIR='.local/share/pokemmo'
+            STORE_SRC=\"$out/share/pokemmo\"
+            USER_DIR=\"\''${XDG_DATA_HOME:-\$HOME/.local/share}/pokemmo\"
 
             mkdir -p \"\$USER_DIR\"
 
-            rm -f \"\$USER_DIR/PokeMMO.exe\"
+            # Remove stale symlinks (but not in config - those are real files)
+            find \"\$USER_DIR\" -path \"\$USER_DIR/config\" -prune -o -type l -print | xargs -r rm -f 2>/dev/null || true
 
-            if [ -f \"\$STORE_SRC/PokeMMO.exe\" ]; then
-                cp \"\$STORE_SRC/PokeMMO.exe\" \"\$USER_DIR/PokeMMO.exe\"
-                chmod u+w \"\$USER_DIR/PokeMMO.exe\"
+            # Copy PokeMMO.exe if it doesn't exist (allows self-updating)
+            if [ ! -f \"\$USER_DIR/PokeMMO.exe\" ]; then
+              cp \"\$STORE_SRC/PokeMMO.exe\" \"\$USER_DIR/PokeMMO.exe\"
+              chmod u+w \"\$USER_DIR/PokeMMO.exe\"
             fi
 
-            for file in \"\$STORE_SRC\"/*; do
+            # Mirror directory structure: real dirs, symlinked files
+            cd \"\$STORE_SRC\"
+            find . -type d | while read -r dir; do
+              mkdir -p \"\$USER_DIR/\$dir\"
+            done
+            find . -type f | while read -r file; do
               name=\$(basename \"\$file\")
-              # Skip Exe (copied) and folders we handle manually
-              if [[ \"\$name\" == \"PokeMMO.exe\" || \"\$name\" == \"config\" || \"\$name\" == \"roms\" || \"\$name\" == \"log\" || \"\$name\" == \"cache\" || \"\$name\" == \"data\" ]]; then
+              # Skip PokeMMO.exe, PokeMMO.sh, and config files (config files are copied, not symlinked)
+              if [ \"\$name\" = \"PokeMMO.exe\" ] || [ \"\$name\" = \"PokeMMO.sh\" ]; then
                 continue
               fi
-              ln -sfn \"\$file\" \"\$USER_DIR/\$name\"
+              case \"\$file\" in
+                ./config/*) continue ;;
+              esac
+              ln -sfn \"\$STORE_SRC/\$file\" \"\$USER_DIR/\$file\"
             done
+            cd - >/dev/null
 
-            mkdir -p \"\$USER_DIR/data\"
+            # Ensure user-writable directories exist
+            mkdir -p \"\$USER_DIR\"/{roms,log,cache,config}
 
-            # Link standard data files
-            for file in \"\$STORE_SRC/data\"/*; do
-              name=\$(basename \"\$file\")
-              if [[ \"\$name\" == \"mods\" || \"\$name\" == \"themes\" ]]; then
-                continue
-              fi
-              ln -sfn \"\$file\" \"\$USER_DIR/data/\$name\"
-            done
-
-            mkdir -p \"\$USER_DIR/data/themes\"
-            if [ -d \"\$STORE_SRC/data/themes\" ]; then
-                 for theme in \"\$STORE_SRC/data/themes\"/*; do
-                     theme_name=\$(basename \"\$theme\")
-                     ln -sfn \"\$theme\" \"\$USER_DIR/data/themes/\$theme_name\"
-                 done
-            fi
-
-            mkdir -p \"\$USER_DIR/data/mods\"
-            if [ -d \"\$STORE_SRC/data/mods\" ]; then
-                 for mod in \"\$STORE_SRC/data/mods\"/*; do
-                     mod_name=\$(basename \"\$mod\")
-                     ln -sfn \"\$mod\" \"\$USER_DIR/data/mods/\$mod_name\"
-                 done
-            fi
-
-            mkdir -p \"\$USER_DIR/roms\"
-            mkdir -p \"\$USER_DIR/log\"
-            mkdir -p \"\$USER_DIR/cache\"
-            mkdir -p \"\$USER_DIR/config\"
-
+            # Copy default configs if they dont exist yet (these are real files, not symlinks)
+            # First, remove any symlinks in config (from old versions)
+            find \"\$USER_DIR/config\" -type l -delete 2>/dev/null || true
             if [ -d \"\$STORE_SRC/config\" ]; then
-                for cfg in \"\$STORE_SRC/config\"/*; do
-                    base_cfg=\$(basename \"\$cfg\")
-                    target=\"\$USER_DIR/config/\$base_cfg\"
-                    if [ ! -f \"\$target\" ]; then
-                        cp \"\$cfg\" \"\$target\"
-                        chmod u+w \"\$target\"
-                    fi
-                done
+              for cfg in \"\$STORE_SRC/config\"/*; do
+                [ -f \"\$cfg\" ] || continue
+                base_cfg=\$(basename \"\$cfg\")
+                target=\"\$USER_DIR/config/\$base_cfg\"
+                if [ ! -f \"\$target\" ]; then
+                  cp \"\$cfg\" \"\$target\"
+                  chmod u+w \"\$target\"
+                fi
+              done
             fi
 
             cd \"\$USER_DIR\"
             echo \"Launching PokeMMO from \$USER_DIR...\"
-            exec ${openjdk25}/bin/java \
-              -Xmx384M \
-              -Dfile.encoding=\"UTF-8\" \
-              -Djava.library.path=\"\$USER_DIR\" \
-              -cp \"PokeMMO.exe:.\" \
+            exec ${openjdk25}/bin/java \\
+              -Xmx384M \\
+              -Dfile.encoding=\"UTF-8\" \\
+              -Djava.library.path=\"\$USER_DIR\" \\
+              -cp \"PokeMMO.exe:.\" \\
               com.pokeemu.client.Client
           "
 
