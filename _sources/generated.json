@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "cafec8a0c4af10c019793f217a22665fca29ac94",
-            "sha256": "sha256-VUD+vzODKk4HEFi2YLGRZF+fiX64UxDYIW/MS75z4MM=",
+            "rev": "c05d276473ac28907758f28e159c4b5d02c2f172",
+            "sha256": "sha256-NyFBKqKbzPk6Ut/xTQIZhI+1Swhk9oD3eTvh5Og2NGI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "cafec8a0c4af10c019793f217a22665fca29ac94"
+        "version": "c05d276473ac28907758f28e159c4b5d02c2f172"
     },
     "oodle-lib": {
         "cargoLocks": null,
