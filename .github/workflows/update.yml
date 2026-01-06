@@ -4,7 +4,7 @@ name: Update and Build
 on:
   schedule:
     - cron: "0 5 * * *" # Daily at 5 AM UTC (update + build)
-    - cron: "0 6 * * 3" # Wednesdays at 6 AM UTC (promote)
+    - cron: "0 8 * * 3" # Wednesdays at 8 AM UTC (promote)
   workflow_dispatch:
     inputs:
       task:
@@ -46,7 +46,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-        run: nvfetcher -o _sources
+        run: |
+          nvfetcher -o _sources
+          nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
 
       - name: Check what changed
         id: check
@@ -88,6 +90,7 @@ jobs:
           retention-days: 1
           path: |
             _sources/
+            pkgs/eden-emulator/_dependencies/
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             flake.lock
@@ -111,6 +114,10 @@ jobs:
 
           - name: pseudoregalia
             packages: pseudoregalia-rando
+            runner: [self-hosted, light-tasks]
+
+          - name: eden-emulator
+            packages: eden-emulator
             runner: [self-hosted, light-tasks]
 
           # Run light builds (tarballs) on GitHub runners
