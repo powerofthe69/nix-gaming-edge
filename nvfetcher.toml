@@ -67,6 +67,6 @@ src.manual = "0.2.3"
 fetch.url = "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
 
 # Eden Emulator - nightly
-[eden]
+[eden-emulator]
 src.git = "https://git.eden-emu.dev/eden-emu/eden.git"
 fetch.git = "https://git.eden-emu.dev/eden-emu/eden.git"
