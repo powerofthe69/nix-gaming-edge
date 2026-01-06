@@ -34,6 +34,8 @@ The largest ones that most will probably want to use are:
 
 Other packages that were mostly for me:
 
+- `eden` or `eden-emulator`: this installs the Eden emulator, an emulator forked from the popular Yuzu. This grabs the latest commits nightly and compiles them on my local server before backing up on my cache server, similar to mesa-git. Builds are not guaranteed to be stable, but should usually be functional and receive the latest performance improvements. This is not associated with the official project. Do not report issues to them.
+
 - `pokemmo`: this installs PokeMMO differently than the nixpkgs version, which piggybacked off of `pokemmo-installer`. This grabs the client directly from the official website, which I believe is more "nix"-esque since it's straight from the source.
 
 - `pseudoregalia-rando`: this installs the latest release of the pseudoregalia randomizer mod. Niche.
