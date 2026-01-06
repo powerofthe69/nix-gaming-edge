@@ -112,7 +112,7 @@
 
         # Eden Emulator
         eden-emulator = pkgs.callPackage ./pkgs/eden-emulator {
-          inherit (nvSources.eden) version src;
+          inherit (nvSources.eden-emulator) version src;
         };
         eden = self.packages.${system}.eden-emulator;
       };
