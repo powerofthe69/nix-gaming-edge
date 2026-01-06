@@ -1,8 +1,7 @@
-# pkgs/eden/nvfetcher.toml
-# CPM dependencies for Eden emulator
-# Run: nvfetcher -o _sources (from pkgs/eden directory)
+# pkgs/eden-emulator/nvfetcher.toml
+# Run: nvfetcher -o _dependencies (from pkgs/eden-emulator directory)
 
-# === Header-only / Utils (Standardized to git commits) ===
+# CPM dependencies for Eden emulator
 
 [xbyak]
 src.git = "https://github.com/herumi/xbyak.git"
@@ -23,9 +22,6 @@ fetch.github = "brofield/simpleini"
 [frozen]
 src.git = "https://github.com/serge-sans-paille/frozen.git"
 fetch.github = "serge-sans-paille/frozen"
-
-
-# === Eden Internal / Forked Dependencies ===
 
 [cpp-jwt]
 src.git = "https://github.com/crueter/cpp-jwt.git"
