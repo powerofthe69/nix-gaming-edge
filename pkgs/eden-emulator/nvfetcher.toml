@@ -1,0 +1,60 @@
+# pkgs/eden/nvfetcher.toml
+# CPM dependencies for Eden emulator
+# Run: nvfetcher -o _sources (from pkgs/eden directory)
+
+# === Header-only / Utils (Standardized to git commits) ===
+
+[xbyak]
+src.git = "https://github.com/herumi/xbyak.git"
+fetch.github = "herumi/xbyak"
+
+[libadrenotools]
+src.git = "https://github.com/bylaws/libadrenotools.git"
+fetch.github = "bylaws/libadrenotools"
+
+[unordered-dense]
+src.git = "https://github.com/martinus/unordered_dense.git"
+fetch.github = "martinus/unordered_dense"
+
+[simpleini]
+src.git = "https://github.com/brofield/simpleini.git"
+fetch.github = "brofield/simpleini"
+
+[frozen]
+src.git = "https://github.com/serge-sans-paille/frozen.git"
+fetch.github = "serge-sans-paille/frozen"
+
+
+# === Eden Internal / Forked Dependencies ===
+
+[cpp-jwt]
+src.git = "https://github.com/crueter/cpp-jwt.git"
+fetch.github = "crueter/cpp-jwt"
+
+[discord-rpc]
+src.git = "https://github.com/eden-emulator/discord-rpc.git"
+fetch.github = "eden-emulator/discord-rpc"
+
+[mcl]
+src.git = "https://github.com/azahar-emu/mcl.git"
+fetch.github = "azahar-emu/mcl"
+
+[quazip]
+src.git = "https://github.com/crueter/quazip-qt6.git"
+fetch.github = "crueter/quazip-qt6"
+
+[oaknut]
+src.git = "https://github.com/eden-emulator/oaknut.git"
+fetch.github = "eden-emulator/oaknut"
+
+[biscuit]
+src.git = "https://github.com/lioncash/biscuit.git"
+fetch.github = "lioncash/biscuit"
+
+[sirit]
+src.git = "https://github.com/eden-emulator/sirit.git"
+fetch.github = "eden-emulator/sirit"
+
+[nx_tzdb]
+src.manual = "221202"
+fetch.url = "https://github.com/lat9nq/tzdb_to_nx/releases/download/221202/221202.zip"

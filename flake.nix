@@ -90,7 +90,6 @@
         proton-cachyos-x86_64-v2 = protonv2;
         proton-cachyos-x86_64-v3 = protonv3;
         proton-cachyos-x86_64-v4 = protonv4;
-
         # Deprecated aliases (w/ underscores) for backwards compatibility
         proton-cachyos-x86_64_v2 = protonv2;
         proton-cachyos-x86_64_v3 = protonv3;
@@ -110,6 +109,12 @@
           inherit (nvSources.pseudoregalia-rando) src version;
           oodleSrc = nvSources.oodle-lib.src;
         };
+
+        # Eden Emulator
+        eden-emulator = pkgs.callPackage ./pkgs/eden-emulator {
+          inherit (nvSources.eden) version src;
+        };
+        eden = self.packages.${system}.eden-emulator;
       };
 
       overlays = {
@@ -124,6 +129,10 @@
           proton-cachyos-x86_64-v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
           proton-cachyos-x86_64-v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
           proton-cachyos-x86_64-v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+          # Deprecated aliases w/ underscores
+          proton-cachyos-x86_64_v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64_v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64_v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
 
           vintagestory = self.packages.${final.system}.vintagestory;
           vintagestory-stable = self.packages.${final.system}.vintagestory-stable;
@@ -131,6 +140,9 @@
           pokemmo = self.packages.${final.system}.pokemmo;
 
           pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
+
+          eden-emulator = self.packages.${final.system}.eden-emulator;
+          eden = self.packages.${final.system}.eden-emulator;
         };
 
         mesa-git = final: prev: {
@@ -164,6 +176,11 @@
 
         pseudoregalia-rando = final: prev: {
           pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
+        };
+
+        eden-emulator = final: prev: {
+          eden-emulator = self.packages.${final.system}.eden-emulator;
+          eden = self.packages.${final.system}.eden-emulator;
         };
       };
 

@@ -1,0 +1,269 @@
+{
+    "biscuit": {
+        "cargoLocks": null,
+        "date": "2025-12-13",
+        "extract": null,
+        "name": "biscuit",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "lioncash",
+            "repo": "biscuit",
+            "rev": "6275039677838adbed6002e82af3fb25a4d7a350",
+            "sha256": "sha256-8SZW+b+k0aHDEO+DXIcgDpQtQlILw9tvLadDsD9FHyY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "6275039677838adbed6002e82af3fb25a4d7a350"
+    },
+    "cpp-jwt": {
+        "cargoLocks": null,
+        "date": "2025-09-08",
+        "extract": null,
+        "name": "cpp-jwt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "crueter",
+            "repo": "cpp-jwt",
+            "rev": "9eaea6328fae768d1cc524a27f0db6250e0a165a",
+            "sha256": "sha256-r4Kf7k0tfDzrFSCS6f8bmEAmzctXsMBSd+t9xlqfvNs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9eaea6328fae768d1cc524a27f0db6250e0a165a"
+    },
+    "discord-rpc": {
+        "cargoLocks": null,
+        "date": "2025-10-23",
+        "extract": null,
+        "name": "discord-rpc",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "eden-emulator",
+            "repo": "discord-rpc",
+            "rev": "0d8b2d6a37c6e47d62b37caa14708bf747c883bb",
+            "sha256": "sha256-bsVW2yKgTyIPDyVLKYHxlllLhcY9H5B81+23zJLBIBY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0d8b2d6a37c6e47d62b37caa14708bf747c883bb"
+    },
+    "frozen": {
+        "cargoLocks": null,
+        "date": "2025-07-29",
+        "extract": null,
+        "name": "frozen",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "serge-sans-paille",
+            "repo": "frozen",
+            "rev": "61dce5ae18ca59931e27675c468e64118aba8744",
+            "sha256": "sha256-zIczBSRDWjX9hcmYWYkbWY3NAAQwQtKhMTeHlYp4BKk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "61dce5ae18ca59931e27675c468e64118aba8744"
+    },
+    "libadrenotools": {
+        "cargoLocks": null,
+        "date": "2024-09-10",
+        "extract": null,
+        "name": "libadrenotools",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bylaws",
+            "repo": "libadrenotools",
+            "rev": "8fae8ce254dfc1344527e05301e43f37dea2df80",
+            "sha256": "sha256-bgwqavEVpvRLLl0uETEFpiDraNmHdZywspeMV01N6lI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "8fae8ce254dfc1344527e05301e43f37dea2df80"
+    },
+    "mcl": {
+        "cargoLocks": null,
+        "date": "2026-01-04",
+        "extract": null,
+        "name": "mcl",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "azahar-emu",
+            "repo": "mcl",
+            "rev": "5fc4beaf331037649b10625736b41365defb4f50",
+            "sha256": "sha256-7lHOjlUvCQsct/pijn0M0OOG5LpExmXwB6kH+ostA2I=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "5fc4beaf331037649b10625736b41365defb4f50"
+    },
+    "nx_tzdb": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nx_tzdb",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-mRzW+iIwrU1zsxHmf+0RArU8BShAoEMvCz+McXFFK3c=",
+            "type": "url",
+            "url": "https://github.com/lat9nq/tzdb_to_nx/releases/download/221202/221202.zip"
+        },
+        "version": "221202"
+    },
+    "oaknut": {
+        "cargoLocks": null,
+        "date": "2025-10-04",
+        "extract": null,
+        "name": "oaknut",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "eden-emulator",
+            "repo": "oaknut",
+            "rev": "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69",
+            "sha256": "sha256-NWJMottKMiG6Rk2/ACNtBiYfWDsCeSGznPTqVO809P0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69"
+    },
+    "quazip": {
+        "cargoLocks": null,
+        "date": "2025-07-17",
+        "extract": null,
+        "name": "quazip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "crueter",
+            "repo": "quazip-qt6",
+            "rev": "f838774d6306eb5a500af9ab336ec85f01ebd7ec",
+            "sha256": "sha256-Jp+v7uwoPxvarzOclgSnoGcwAPXKnm23yrZKtjJCHro=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "f838774d6306eb5a500af9ab336ec85f01ebd7ec"
+    },
+    "simpleini": {
+        "cargoLocks": null,
+        "date": "2025-11-14",
+        "extract": null,
+        "name": "simpleini",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "brofield",
+            "repo": "simpleini",
+            "rev": "18fd1db7fcfee664c174719f062b2598772c8be6",
+            "sha256": "sha256-1JTVjMfEuWqlyYAm4Er6HPjrP2Tnt0ntai8oVvIEOu0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "18fd1db7fcfee664c174719f062b2598772c8be6"
+    },
+    "sirit": {
+        "cargoLocks": null,
+        "date": "2025-11-23",
+        "extract": null,
+        "name": "sirit",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "eden-emulator",
+            "repo": "sirit",
+            "rev": "4aa0fe9f2ca0b31d8345f89c8ca2757156ff2393",
+            "sha256": "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "4aa0fe9f2ca0b31d8345f89c8ca2757156ff2393"
+    },
+    "unordered-dense": {
+        "cargoLocks": null,
+        "date": "2025-11-02",
+        "extract": null,
+        "name": "unordered-dense",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "martinus",
+            "repo": "unordered_dense",
+            "rev": "3234af2c03549bc85656bfd3a86993bf1cd8aef1",
+            "sha256": "sha256-JdPlyShWnAcdgixDHRaroFg7YWdPtD4Nl1PmpcQ1SAk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3234af2c03549bc85656bfd3a86993bf1cd8aef1"
+    },
+    "xbyak": {
+        "cargoLocks": null,
+        "date": "2025-12-29",
+        "extract": null,
+        "name": "xbyak",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "herumi",
+            "repo": "xbyak",
+            "rev": "3ae3da66be324b272524d9faf2e014aca7e11c00",
+            "sha256": "sha256-DBQgwiUqPcODAXV+rZ3h74lFArY6KyCPca3bcJTHmOQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3ae3da66be324b272524d9faf2e014aca7e11c00"
+    }
+}
