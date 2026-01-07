@@ -9,6 +9,14 @@ let
   cfg = config.drivers.mesa-git;
   shouldEnable32Bit = pkgs.stdenv.hostPlatform.isx86_64 && pkgs.stdenv.hostPlatform.isLinux;
 
+  # Convert pattern lists to find -name arguments
+  mkFindPatterns =
+    patterns: lib.concatMapStringsSep " -o " (p: "-name ${lib.escapeShellArg p}") patterns;
+
+  mesaCachePatterns = mkFindPatterns cfg.cacheCleanup.mesaCacheDirs;
+  protonFilePatterns = mkFindPatterns cfg.cacheCleanup.protonCacheFiles;
+  protonDirPatterns = mkFindPatterns cfg.cacheCleanup.protonCacheDirs;
+
   findSteamLibraries = ''
     find_steam_libraries() {
       local user_home="$1"
@@ -31,23 +39,10 @@ let
     }
   '';
 
-  matchesAnyPattern = patterns: ''
-    matches_pattern() {
-      local name="$1"
-      for pattern in ${lib.escapeShellArgs patterns}; do
-        case "$name" in
-          $pattern) return 0 ;;
-        esac
-      done
-      return 1
-    }
-  '';
-
   mesaCacheCleanerScript = pkgs.writeShellScript "mesa-cache-cleaner" ''
     set -euo pipefail
 
     ${findSteamLibraries}
-    ${matchesAnyPattern cfg.cacheCleanup.mesaCacheDirs}
 
     MESA_VERSION="$1"
     TRACKER="/var/lib/shader-cache-tracker/mesa.version"
@@ -65,12 +60,12 @@ let
       [ -d "$user_home" ] || continue
       echo "Cleaning Mesa caches for $(basename "$user_home")"
 
-      for item in "$user_home/.cache/"*; do
-        [ -e "$item" ] || continue
-        name=$(basename "$item")
-        matches_pattern "$name" && rm -rf "$item"
-      done
+      # Clean ~/.cache directories matching patterns
+      if [ -d "$user_home/.cache" ]; then
+        find "$user_home/.cache" -maxdepth 1 -type d \( ${mesaCachePatterns} \) -exec rm -rf {} + 2>/dev/null || true
+      fi
 
+      # Clean Steam shader caches
       libraries=$(find_steam_libraries "$user_home")
       for steam_lib in $libraries; do
         [ -d "$steam_lib/shadercache" ] && {
@@ -89,28 +84,6 @@ let
     set -euo pipefail
 
     ${findSteamLibraries}
-    ${matchesAnyPattern cfg.cacheCleanup.protonCacheFiles}
-    ${matchesAnyPattern cfg.cacheCleanup.protonCacheDirs}
-
-    is_cache_file() {
-      local name="$1"
-      for pattern in ${lib.escapeShellArgs cfg.cacheCleanup.protonCacheFiles}; do
-        case "$name" in
-          $pattern) return 0 ;;
-        esac
-      done
-      return 1
-    }
-
-    is_cache_dir() {
-      local name="$1"
-      for pattern in ${lib.escapeShellArgs cfg.cacheCleanup.protonCacheDirs}; do
-        case "$name" in
-          $pattern) return 0 ;;
-        esac
-      done
-      return 1
-    }
 
     PROTON_VERSION="$1"
     TRACKER="/var/lib/shader-cache-tracker/proton.version"
@@ -132,18 +105,16 @@ let
       for steam_lib in $libraries; do
         [ -d "$steam_lib" ] || continue
 
+        # Delete cache files in game directories
         if [ -d "$steam_lib/common" ]; then
-          echo "  Scanning $steam_lib/common"
-          find "$steam_lib/common" -type f | while read -r file; do
-            is_cache_file "$(basename "$file")" && rm -f "$file"
-          done
+          echo "  Cleaning cache files in $steam_lib/common"
+          find "$steam_lib/common" -type f \( ${protonFilePatterns} \) -delete 2>/dev/null || true
         fi
 
+        # Delete cache directories in Wine prefixes
         if [ -d "$steam_lib/compatdata" ]; then
-          echo "  Scanning $steam_lib/compatdata"
-          find "$steam_lib/compatdata" -type d | while read -r dir; do
-            is_cache_dir "$(basename "$dir")" && rm -rf "$dir"
-          done
+          echo "  Cleaning cache dirs in $steam_lib/compatdata"
+          find "$steam_lib/compatdata" -type d \( ${protonDirPatterns} \) -exec rm -rf {} + 2>/dev/null || true
         fi
       done
     done
