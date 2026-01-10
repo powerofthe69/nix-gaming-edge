@@ -3,17 +3,17 @@
 {
   eden-emulator = {
     pname = "eden-emulator";
-    version = "1370f2367529e2311223d9ab7be201660a42d53e";
+    version = "cad77dfac6fd8fb33e02f6bd68e59957cb7d17ab";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "1370f2367529e2311223d9ab7be201660a42d53e";
+      rev = "cad77dfac6fd8fb33e02f6bd68e59957cb7d17ab";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-2uLUzEt39/wpxLiNFE4r9T51pOVaqYSs+weas+wI57Q=";
+      sha256 = "sha256-evslkpfOnWb3owvsvq2BQQgkffmHcPUS1RKjjmECVtc=";
     };
-    date = "2026-01-08";
+    date = "2026-01-09";
   };
   libdrm = {
     pname = "libdrm";
@@ -31,17 +31,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "dcefa0e6b351e8957034d7e1b2cd2ae8d55e95eb";
+    version = "78c8b8f131dc760c421dd610063e658874faa295";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "dcefa0e6b351e8957034d7e1b2cd2ae8d55e95eb";
+      rev = "78c8b8f131dc760c421dd610063e658874faa295";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-m+QxWf84bFNoIyw8gQAtbk+MWWdwUxtYDAs6s0eSKD0=";
+      sha256 = "sha256-XF1xAZNhmm1ICJX4Ff8OGJsGmSNyQ3YYKztj80EiJfg=";
     };
-    date = "2026-01-08";
+    date = "2026-01-09";
   };
   oodle-lib = {
     pname = "oodle-lib";

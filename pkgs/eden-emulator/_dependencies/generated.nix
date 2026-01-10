@@ -119,15 +119,15 @@
   };
   sirit = {
     pname = "sirit";
-    version = "4aa0fe9f2ca0b31d8345f89c8ca2757156ff2393";
+    version = "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1";
     src = fetchFromGitHub {
       owner = "eden-emulator";
       repo = "sirit";
-      rev = "4aa0fe9f2ca0b31d8345f89c8ca2757156ff2393";
+      rev = "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1";
       fetchSubmodules = false;
-      sha256 = "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=";
+      sha256 = "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=";
     };
-    date = "2025-11-23";
+    date = "2026-01-09";
   };
   unordered-dense = {
     pname = "unordered-dense";
