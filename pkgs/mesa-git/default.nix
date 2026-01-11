@@ -141,7 +141,7 @@ let
         let
           name = baseNameOf (toString p);
         in
-        !(lib.hasPrefix "gallivm-llvm-21" name)
+        !(lib.hasPrefix "gallivm-llvm-21" name) && !(lib.hasPrefix "musl" name)
       ) (old.patches or [ ]);
 
       # Inject git version to driver name
