@@ -31,17 +31,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9a6c57b5c718f73f91fe0be68872e19e767033dc";
+    version = "b4023532e3e546f8dff58f7a0464f9bb9c211bd7";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9a6c57b5c718f73f91fe0be68872e19e767033dc";
+      rev = "b4023532e3e546f8dff58f7a0464f9bb9c211bd7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/bOLctkbeW/uC2VWJ316V5Vo/darLmofPmcxYSRZAac=";
+      sha256 = "sha256-4IRHgEwRzHwTXDhvZKKOHl+OhHXv6Ty1aujfDhUxCX8=";
     };
-    date = "2026-01-10";
+    date = "2026-01-11";
   };
   oodle-lib = {
     pname = "oodle-lib";
