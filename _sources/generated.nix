@@ -3,17 +3,17 @@
 {
   eden-emulator = {
     pname = "eden-emulator";
-    version = "1cb8bcf531f6ad1b0afcc3b2179a136535760984";
+    version = "9c5203d922e4ca2b5bf7cb973dc702395201f683";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "1cb8bcf531f6ad1b0afcc3b2179a136535760984";
+      rev = "9c5203d922e4ca2b5bf7cb973dc702395201f683";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3tqfeMkBR2io4PKUqYmeD2FTeSyFYS8ynaqmjOl49ag=";
+      sha256 = "sha256-kKyOzM9icUeqifw+BGtCLW1TjLL/6oBJ0EEgEHa7+eM=";
     };
-    date = "2026-01-11";
+    date = "2026-01-13";
   };
   libdrm = {
     pname = "libdrm";
@@ -31,17 +31,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "b4023532e3e546f8dff58f7a0464f9bb9c211bd7";
+    version = "58a35647e118f1967f17c5803baa0657da98964c";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b4023532e3e546f8dff58f7a0464f9bb9c211bd7";
+      rev = "58a35647e118f1967f17c5803baa0657da98964c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-4IRHgEwRzHwTXDhvZKKOHl+OhHXv6Ty1aujfDhUxCX8=";
+      sha256 = "sha256-Aw0yS/fSm4BEzFDKjqo6O3ITjGhUA9BGAc+prdp5UtU=";
     };
-    date = "2026-01-11";
+    date = "2026-01-12";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -117,16 +117,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "969ef1a36d48e3e69af116adb6ede11d13729411";
+    version = "a610e021fb0a710d09e1a8fce45e000aeea3dbb3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "969ef1a36d48e3e69af116adb6ede11d13729411";
+      rev = "a610e021fb0a710d09e1a8fce45e000aeea3dbb3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-AWSRy087Z8mAmJfb29Dl4bnNtRSAKCWSUAANlF2zMBw=";
+      sha256 = "sha256-V4u0Gm4eT9FBSttrH0xfqqgSEmH0PrzuZPggIlo9D7Y=";
     };
-    date = "2025-12-27";
+    date = "2026-01-12";
   };
 }
