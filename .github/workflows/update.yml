@@ -212,9 +212,9 @@ jobs:
           git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
           git push
 
-  # Merge nightly to master weekly on Wednesdays at 6AM UTC
+  # Merge nightly to master weekly on Wednesdays at 8AM UTC
   promote-to-master:
-    if: (github.event_name == 'schedule' && github.event.schedule == '0 6 * * 3') || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote-to-master')
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 8 * * 3') || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote-to-master')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
