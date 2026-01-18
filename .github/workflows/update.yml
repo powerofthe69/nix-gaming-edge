@@ -144,6 +144,10 @@ jobs:
             packages: pokemmo
             runner: ubuntu-latest
 
+          - name: hytale
+            packages: hytale-launcher
+            runner: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:

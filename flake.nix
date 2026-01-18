@@ -77,7 +77,7 @@
 
     in
     {
-      packages.${system} = {
+      packages.${pkgs.stdenv.hostPlatform.system} = {
         # Mesa-git
         mesa-git = mesaPkgs.mesa-git;
         mesa32-git = mesaPkgs.mesa32-git;
@@ -114,73 +114,87 @@
         eden-emulator = pkgs.callPackage ./pkgs/eden-emulator {
           inherit (nvSources.eden-emulator) version src;
         };
-        eden = self.packages.${system}.eden-emulator;
+        eden = self.packages.${pkgs.stdenv.hostPlatform.system}.eden-emulator;
+
+        # Hytale Launcher
+        hytale-launcher = pkgs.callPackage ./pkgs/hytale-launcher {
+          source = nvSources.hytale-launcher;
+        };
+        hytale = self.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher;
       };
 
       overlays = {
         default = final: prev: {
-          mesa-git = self.packages.${final.system}.mesa-git;
-          mesa32-git = self.packages.${final.system}.mesa32-git;
-          libdrm-git = self.packages.${final.system}.libdrm-git;
-          libdrm32-git = self.packages.${final.system}.libdrm32-git;
-          wayland-protocols-git = self.packages.${final.system}.wayland-protocols-git;
+          mesa-git = self.packages.${final.stdenv.hostPlatform.system}.mesa-git;
+          mesa32-git = self.packages.${final.stdenv.hostPlatform.system}.mesa32-git;
+          libdrm-git = self.packages.${final.stdenv.hostPlatform.system}.libdrm-git;
+          libdrm32-git = self.packages.${final.stdenv.hostPlatform.system}.libdrm32-git;
+          wayland-protocols-git = self.packages.${final.stdenv.hostPlatform.system}.wayland-protocols-git;
 
-          proton-cachyos = self.packages.${final.system}.proton-cachyos;
-          proton-cachyos-x86_64-v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64-v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
+          proton-cachyos-x86_64-v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
           # Deprecated aliases w/ underscores
-          proton-cachyos-x86_64_v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64_v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64_v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64_v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64_v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
-          vintagestory = self.packages.${final.system}.vintagestory;
-          vintagestory-stable = self.packages.${final.system}.vintagestory-stable;
+          vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
+          vintagestory-stable = self.packages.${final.stdenv.hostPlatform.system}.vintagestory-stable;
 
-          pokemmo = self.packages.${final.system}.pokemmo;
+          pokemmo = self.packages.${final.stdenv.hostPlatform.system}.pokemmo;
 
-          pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
+          pseudoregalia-rando = self.packages.${final.stdenv.hostPlatform.system}.pseudoregalia-rando;
 
-          eden-emulator = self.packages.${final.system}.eden-emulator;
-          eden = self.packages.${final.system}.eden-emulator;
+          eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+          eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+
+          hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+          hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
         };
 
         mesa-git = final: prev: {
-          mesa-git = self.packages.${final.system}.mesa-git;
-          mesa32-git = self.packages.${final.system}.mesa32-git;
-          libdrm-git = self.packages.${final.system}.libdrm-git;
-          libdrm32-git = self.packages.${final.system}.libdrm32-git;
-          wayland-protocols-git = self.packages.${final.system}.wayland-protocols-git;
+          mesa-git = self.packages.${final.stdenv.hostPlatform.system}.mesa-git;
+          mesa32-git = self.packages.${final.stdenv.hostPlatform.system}.mesa32-git;
+          libdrm-git = self.packages.${final.stdenv.hostPlatform.system}.libdrm-git;
+          libdrm32-git = self.packages.${final.stdenv.hostPlatform.system}.libdrm32-git;
+          wayland-protocols-git = self.packages.${final.stdenv.hostPlatform.system}.wayland-protocols-git;
         };
 
         proton-cachyos = final: prev: {
-          proton-cachyos = self.packages.${final.system}.proton-cachyos;
-          proton-cachyos-x86_64-v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64-v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
+          proton-cachyos-x86_64-v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           # Deprecated aliases w/ underscores
-          proton-cachyos-x86_64_v2 = self.packages.${final.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64_v3 = self.packages.${final.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 = self.packages.${final.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64_v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64_v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64_v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
         };
 
         vintagestory = final: prev: {
-          vintagestory = self.packages.${final.system}.vintagestory;
-          vintagestory-stable = self.packages.${final.system}.vintagestory-stable;
+          vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
+          vintagestory-stable = self.packages.${final.stdenv.hostPlatform.system}.vintagestory-stable;
         };
 
         pokemmo = final: prev: {
-          pokemmo = self.packages.${final.system}.pokemmo;
+          pokemmo = self.packages.${final.stdenv.hostPlatform.system}.pokemmo;
         };
 
         pseudoregalia-rando = final: prev: {
-          pseudoregalia-rando = self.packages.${final.system}.pseudoregalia-rando;
+          pseudoregalia-rando = self.packages.${final.stdenv.hostPlatform.system}.pseudoregalia-rando;
         };
 
         eden-emulator = final: prev: {
-          eden-emulator = self.packages.${final.system}.eden-emulator;
-          eden = self.packages.${final.system}.eden-emulator;
+          eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+          eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+        };
+
+        hytale-launcher = final: prev: {
+          hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+          hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
         };
       };
 
