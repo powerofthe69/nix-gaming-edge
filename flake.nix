@@ -115,6 +115,12 @@
           inherit (nvSources.eden-emulator) version src;
         };
         eden = self.packages.${pkgs.stdenv.hostPlatform.system}.eden-emulator;
+
+        # Hytale Launcher
+        hytale-launcher = pkgs.callPackage ./pkgs/hytale-launcher {
+          source = nvSources.hytale-launcher;
+        };
+        hytale = self.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher;
       };
 
       overlays = {
@@ -143,6 +149,9 @@
 
           eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
           eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+
+          hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+          hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
         };
 
         mesa-git = final: prev: {
@@ -181,6 +190,11 @@
         eden-emulator = final: prev: {
           eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
           eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
+        };
+
+        hytale-launcher = final: prev: {
+          hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+          hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
         };
       };
 
