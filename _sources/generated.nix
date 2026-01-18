@@ -15,6 +15,14 @@
     };
     date = "2026-01-18";
   };
+  hytale-launcher = {
+    pname = "hytale-launcher";
+    version = "2026.01.13-b6c7e88";
+    src = fetchurl {
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.13-b6c7e88.zip";
+      sha256 = "sha256-ucE5+TaEVszGNxLqJp74eAztgc1r02BtlJ8XdnfcVvU=";
+    };
+  };
   libdrm = {
     pname = "libdrm";
     version = "369990d9660a387f618d0eedc341eb285016243b";
