@@ -17,8 +17,6 @@ let
     src = source.src;
     nativeBuildInputs = [ unzip ];
 
-    # FIX: This tells Nix the zip file is flat (no top-level directory)
-    # This replaces the need for the manual `unpackPhase` you had before.
     sourceRoot = ".";
 
     installPhase = ''
@@ -32,12 +30,10 @@ in
 buildFHSEnv {
   name = "hytale";
 
-  # Combine the package lists properly using `++`
   targetPkgs =
     pkgs:
     with pkgs;
     [
-      # UI Stack
       gtk3
       glib
       webkitgtk_4_1
@@ -52,8 +48,6 @@ buildFHSEnv {
       atk
       at-spi2-atk
       at-spi2-core
-
-      # Desktop & Utils
       hicolor-icon-theme
       xdg-utils
       cups
@@ -68,15 +62,11 @@ buildFHSEnv {
       expat
       alsa-lib
       libxcrypt
-
-      # Graphics
       mesa
       vulkan-loader
       libGL
       libva
       libdrm
-
-      # Wayland
       wayland
       libxkbcommon
     ]
@@ -119,7 +109,7 @@ buildFHSEnv {
     # IPv6 Check
     if [[ -z "''${HYTALE_SKIP_IPV6_CHECK:-}" ]]; then
       if [[ ! -d /proc/sys/net/ipv6 ]]; then
-        echo "⚠️  Hytale requires IPv6 (Netty QUIC). Enable in OS or set HYTALE_SKIP_IPV6_CHECK=1" >&2
+        echo "Hytale requires IPv6 (Netty QUIC). Enable in OS or set HYTALE_SKIP_IPV6_CHECK=1" >&2
       fi
     fi
 
