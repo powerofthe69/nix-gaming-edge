@@ -6,7 +6,7 @@
   openjdk25,
   mesa,
   libGL,
-  libpulseaudio,
+  pipewire,
   openssl,
   wget,
   which,
@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     openjdk25
     mesa
     libGL
-    libpulseaudio
+    pipewire
     openssl
     wget
     which
@@ -58,7 +58,6 @@ stdenv.mkDerivation rec {
       if [ -d "$item" ]; then
         echo "Removing nesting from directory: $item"
         mv "$item"/* .
-        # Attempt to move hidden files too, ignoring error if none exist
         mv "$item"/.[!.]* . 2>/dev/null || true
         rmdir "$item"
       fi
@@ -68,105 +67,72 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-        runHook preInstall
+    runHook preInstall
 
-        mkdir -p $out/share/pokemmo $out/bin $out/share/applications
-        cp -r * $out/share/pokemmo
+    mkdir -p $out/share/pokemmo
+    cp -r * $out/share/pokemmo
+    rm -f $out/share/pokemmo/PokeMMO.sh
 
-        rm $out/share/pokemmo/PokeMMO.sh
+    # Install Icon
+    mkdir -p $out/share/icons/hicolor/128x128/apps
+    ln -s $out/share/pokemmo/data/icons/128x128.png $out/share/icons/hicolor/128x128/apps/pokemmo.png
 
-        mkdir -p $out/share/icons/hicolor/128x128/apps
-        ln -s $out/share/pokemmo/data/icons/128x128.png $out/share/icons/hicolor/128x128/apps/pokemmo.png
+    runtime_libs="${
+      lib.makeLibraryPath [
+        mesa
+        libGL
+        pipewire
+        openssl
+        xorg.libX11
+        xorg.libXext
+        xorg.libXcursor
+        xorg.libXrandr
+        xorg.libXi
+        xorg.libXrender
+        xorg.libXtst
+        udev
+      ]
+    }"
 
-        runtime_libs="${lib.makeLibraryPath buildInputs}:${lib.getLib udev}/lib"
+    makeWrapper ${stdenv.shell} $out/bin/pokemmo \
+      --prefix PATH : ${
+        lib.makeBinPath [
+          openjdk25
+          wget
+          which
+          coreutils
+          zenity
+        ]
+      } \
+      --prefix LD_LIBRARY_PATH : "$runtime_libs" \
+      --run "
+        STORE_SRC=\"$out/share/pokemmo\"
+        USER_DIR=\"\''${XDG_DATA_HOME:-\$HOME/.local/share}/pokemmo\"
 
-        makeWrapper ${stdenv.shell} $out/bin/pokemmo \
-          --prefix PATH : ${
-            lib.makeBinPath [
-              openjdk25
-              wget
-              which
-              coreutils
-              zenity
-            ]
-          } \
-          --prefix LD_LIBRARY_PATH : "$runtime_libs" \
-          --run "
-            STORE_SRC='$out/share/pokemmo'
-            USER_DIR='.local/share/pokemmo'
+        mkdir -p \"\$USER_DIR\"
 
-            mkdir -p \"\$USER_DIR\"
+        echo \"Syncing PokeMMO assets...\"
+        cp -rn --no-preserve=mode \"\$STORE_SRC/\"* \"\$USER_DIR/\"
 
-            rm -f \"\$USER_DIR/PokeMMO.exe\"
+        chmod -R u+w \"\$USER_DIR\"
 
-            if [ -f \"\$STORE_SRC/PokeMMO.exe\" ]; then
-                cp \"\$STORE_SRC/PokeMMO.exe\" \"\$USER_DIR/PokeMMO.exe\"
-                chmod u+w \"\$USER_DIR/PokeMMO.exe\"
-            fi
+        if [ ! -f \"\$USER_DIR/PokeMMO.exe\" ]; then
+          cp \"\$STORE_SRC/PokeMMO.exe\" \"\$USER_DIR/PokeMMO.exe\"
+          chmod u+w \"\$USER_DIR/PokeMMO.exe\"
+        fi
 
-            for file in \"\$STORE_SRC\"/*; do
-              name=\$(basename \"\$file\")
-              # Skip Exe (copied) and folders we handle manually
-              if [[ \"\$name\" == \"PokeMMO.exe\" || \"\$name\" == \"config\" || \"\$name\" == \"roms\" || \"\$name\" == \"log\" || \"\$name\" == \"cache\" || \"\$name\" == \"data\" ]]; then
-                continue
-              fi
-              ln -sfn \"\$file\" \"\$USER_DIR/\$name\"
-            done
+        cd \"\$USER_DIR\"
+        exec ${openjdk25}/bin/java \\
+          -Xmx384M \\
+          -Dfile.encoding=\"UTF-8\" \\
+          -Djava.library.path=\"\$USER_DIR\" \\
+          -cp \"PokeMMO.exe:.\" \\
+          com.pokeemu.client.Client
+      "
 
-            mkdir -p \"\$USER_DIR/data\"
-
-            # Link standard data files
-            for file in \"\$STORE_SRC/data\"/*; do
-              name=\$(basename \"\$file\")
-              if [[ \"\$name\" == \"mods\" || \"\$name\" == \"themes\" ]]; then
-                continue
-              fi
-              ln -sfn \"\$file\" \"\$USER_DIR/data/\$name\"
-            done
-
-            mkdir -p \"\$USER_DIR/data/themes\"
-            if [ -d \"\$STORE_SRC/data/themes\" ]; then
-                 for theme in \"\$STORE_SRC/data/themes\"/*; do
-                     theme_name=\$(basename \"\$theme\")
-                     ln -sfn \"\$theme\" \"\$USER_DIR/data/themes/\$theme_name\"
-                 done
-            fi
-
-            mkdir -p \"\$USER_DIR/data/mods\"
-            if [ -d \"\$STORE_SRC/data/mods\" ]; then
-                 for mod in \"\$STORE_SRC/data/mods\"/*; do
-                     mod_name=\$(basename \"\$mod\")
-                     ln -sfn \"\$mod\" \"\$USER_DIR/data/mods/\$mod_name\"
-                 done
-            fi
-
-            mkdir -p \"\$USER_DIR/roms\"
-            mkdir -p \"\$USER_DIR/log\"
-            mkdir -p \"\$USER_DIR/cache\"
-            mkdir -p \"\$USER_DIR/config\"
-
-            if [ -d \"\$STORE_SRC/config\" ]; then
-                for cfg in \"\$STORE_SRC/config\"/*; do
-                    base_cfg=\$(basename \"\$cfg\")
-                    target=\"\$USER_DIR/config/\$base_cfg\"
-                    if [ ! -f \"\$target\" ]; then
-                        cp \"\$cfg\" \"\$target\"
-                        chmod u+w \"\$target\"
-                    fi
-                done
-            fi
-
-            cd \"\$USER_DIR\"
-            echo \"Launching PokeMMO from \$USER_DIR...\"
-            exec ${openjdk25}/bin/java \
-              -Xmx384M \
-              -Dfile.encoding=\"UTF-8\" \
-              -Djava.library.path=\"\$USER_DIR\" \
-              -cp \"PokeMMO.exe:.\" \
-              com.pokeemu.client.Client
-          "
-
-        cat > $out/share/applications/pokemmo.desktop <<EOF
+    # Desktop Entry
+    mkdir -p $out/share/applications
+    cat > $out/share/applications/pokemmo.desktop <<EOF
     [Desktop Entry]
     Name=PokeMMO
     Exec=pokemmo
@@ -175,7 +141,7 @@ stdenv.mkDerivation rec {
     Categories=Game;
     EOF
 
-        runHook postInstall
+    runHook postInstall
   '';
 
   meta = with lib; {
