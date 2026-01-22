@@ -1,7 +1,7 @@
 {
     "eden-emulator": {
         "cargoLocks": null,
-        "date": "2026-01-21",
+        "date": "2026-01-22",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -11,13 +11,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "368a8f9e3dea960366e7eaadeb21218dd1643bcf",
-            "sha256": "sha256-+kkp0hnVEm/Ecnb/oBbsVc7Zq+CCy/ygcU4MbG9JOtU=",
+            "rev": "6afe209b60e8d22bfb9b0492fc014fe41bbc2295",
+            "sha256": "sha256-mFYKxyXqwnLJYh9S6hhVq1EVRs1wtUAl+QGQu3E+rJA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "368a8f9e3dea960366e7eaadeb21218dd1643bcf"
+        "version": "6afe209b60e8d22bfb9b0492fc014fe41bbc2295"
     },
     "hytale-launcher": {
         "cargoLocks": null,
@@ -28,26 +28,31 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ucE5+TaEVszGNxLqJp74eAztgc1r02BtlJ8XdnfcVvU=",
+            "sha256": "sha256-+SoZ5NbYX25kGTuzVD+1U/mjARO1gqvUijNfH2MWwx4=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.13-b6c7e88.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
         },
-        "version": "2026.01.13-b6c7e88"
+        "version": "latest"
     },
-    "version": "ed0276582e85c60fb4f65a63d83cad1bdeb409e2"
-  },
-  "hytale-launcher": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "hytale-launcher",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-ucE5+TaEVszGNxLqJp74eAztgc1r02BtlJ8XdnfcVvU=",
-      "type": "url",
-      "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.13-b6c7e88.zip"
+    "libdrm": {
+        "cargoLocks": null,
+        "date": "2025-12-19",
+        "extract": null,
+        "name": "libdrm",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "369990d9660a387f618d0eedc341eb285016243b",
+            "sha256": "sha256-kOaTjBeo4IsfWEk/JBTNId5ikrnpoc9DEjIl7DUd2yE=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/mesa/drm.git"
+        },
+        "version": "369990d9660a387f618d0eedc341eb285016243b"
     },
     "mesa": {
         "cargoLocks": null,
@@ -61,48 +66,43 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4708eb85d78149863a1faa2e1ddb6d5a22c773d0",
-            "sha256": "sha256-AWvLPswrUaPWYxe8lmSKsLBhtizdygRJND9agwntdA0=",
+            "rev": "481df222095fc107311c2446effe47af03b38bcb",
+            "sha256": "sha256-/lmAu/7wk8fWbZBxzXN36aBN+xlTuGuy95QyHuLRNAE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "4708eb85d78149863a1faa2e1ddb6d5a22c773d0"
+        "version": "481df222095fc107311c2446effe47af03b38bcb"
     },
-    "version": "369990d9660a387f618d0eedc341eb285016243b"
-  },
-  "mesa": {
-    "cargoLocks": null,
-    "date": "2026-01-17",
-    "extract": null,
-    "name": "mesa",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "rev": "197cb437cdfd0f1ae28a4cf1d38611e5a216e318",
-      "sha256": "sha256-Js++B9a0SsedWxSQ6dUz9TuUvrgp9H4z7BHOuVVkUqk=",
-      "sparseCheckout": [],
-      "type": "git",
-      "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
+    "oodle-lib": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "oodle-lib",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=",
+            "type": "url",
+            "url": "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
+        },
+        "version": "0.2.3"
     },
-    "version": "197cb437cdfd0f1ae28a4cf1d38611e5a216e318"
-  },
-  "oodle-lib": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "oodle-lib",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=",
-      "type": "url",
-      "url": "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
+    "pokemmo": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pokemmo",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
+            "type": "url",
+            "url": "https://pokemmo.com/download_file/1/"
+        },
+        "version": "latest"
     },
     "proton-cachyos": {
         "cargoLocks": null,
@@ -164,54 +164,54 @@
         },
         "version": "cachyos-10.0-20260102-slr"
     },
-    "version": "cachyos-10.0-20260102-slr"
-  },
-  "proton-cachyos-x86_64-v4": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "proton-cachyos-x86_64-v4",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=",
-      "type": "url",
-      "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz"
+    "pseudoregalia-rando": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pseudoregalia-rando",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=",
+            "type": "url",
+            "url": "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz"
+        },
+        "version": "1.8.6"
     },
-    "version": "cachyos-10.0-20260102-slr"
-  },
-  "pseudoregalia-rando": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "pseudoregalia-rando",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=",
-      "type": "url",
-      "url": "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz"
+    "vintagestory": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vintagestory",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+            "type": "url",
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
+        },
+        "version": "stable/vs_client_linux-x64_1.21.6"
     },
-    "version": "1.8.6"
-  },
-  "vintagestory": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "vintagestory",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
-      "type": "url",
-      "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
+    "vintagestory-stable": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vintagestory-stable",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+            "type": "url",
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
+        },
+        "version": "1.21.6"
     },
     "wayland-protocols": {
         "cargoLocks": null,
-        "date": "2026-01-16",
+        "date": "2026-01-21",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -221,12 +221,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3dac056d83ad8947eed6eb621f346e91da736efd",
-            "sha256": "sha256-bBKlbsq0VielhjqM67RLRNKInuYrbuh3sWuBPyKjz7U=",
+            "rev": "2654a53845af5931cc19bdafa391689beba3e8a9",
+            "sha256": "sha256-9jSAEslXCsYy5Lcqn/AdwowPzUeqwn4p3HL5Vj0UEAE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "3dac056d83ad8947eed6eb621f346e91da736efd"
+        "version": "2654a53845af5931cc19bdafa391689beba3e8a9"
     }
 }
