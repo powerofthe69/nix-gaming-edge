@@ -51,10 +51,9 @@ fetch.url = "https://cdn.vintagestory.at/gamefiles/$ver.tar.gz"
 src.cmd = "curl -s https://mods.vintagestory.at/api/gameversions | jq -r '[.gameversions[].name | select(test(\"^[0-9]+[.][0-9]+[.][0-9]+$\"))] | last'"
 fetch.url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_$ver.tar.gz"
 
-# PokeMMO (this URL never changes, but the hash will)
-
+# PokeMMO
 [pokemmo]
-src.manual = "latest"
+src.cmd = "curl -sIL https://pokemmo.com/download_file/1/ | grep -i 'etag:' | tail -n1 | awk -F '\"' '{print $2}'"
 fetch.url = "https://pokemmo.com/download_file/1/"
 
 # Pseudoregalia Randomizer
@@ -73,5 +72,5 @@ fetch.git = "https://git.eden-emu.dev/eden-emu/eden.git"
 
 # Hytale Launcher
 [hytale-launcher]
-src.manual = "latest"
+src.cmd = "curl -sI https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip | grep -i 'etag:' | awk -F '\"' '{print $2}'"
 fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
