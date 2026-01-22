@@ -17,7 +17,7 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "latest";
+    version = "a0544015696c13d7defc183b8156604c-2";
     src = fetchurl {
       url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip";
       sha256 = "sha256-+SoZ5NbYX25kGTuzVD+1U/mjARO1gqvUijNfH2MWwx4=";
@@ -61,7 +61,7 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "latest";
+    version = "694ca092-5f78c01";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
       sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";

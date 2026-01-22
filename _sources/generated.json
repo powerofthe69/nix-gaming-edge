@@ -32,7 +32,7 @@
             "type": "url",
             "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
         },
-        "version": "latest"
+        "version": "a0544015696c13d7defc183b8156604c-2"
     },
     "libdrm": {
         "cargoLocks": null,
@@ -102,7 +102,7 @@
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
-        "version": "latest"
+        "version": "694ca092-5f78c01"
     },
     "proton-cachyos": {
         "cargoLocks": null,
