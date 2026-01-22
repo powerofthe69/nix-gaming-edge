@@ -73,5 +73,5 @@ fetch.git = "https://git.eden-emu.dev/eden-emu/eden.git"
 
 # Hytale Launcher
 [hytale-launcher]
-src.manual = "2026.01.13-b6c7e88"
-fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-$ver.zip"
+src.manual = "latest"
+fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
