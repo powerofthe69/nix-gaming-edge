@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    millennium = {
+      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -13,7 +17,11 @@
   };
 
   outputs =
-    { self, nixpkgs }:
+    {
+      self,
+      nixpkgs,
+      millennium,
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -121,6 +129,9 @@
           source = nvSources.hytale-launcher;
         };
         hytale = self.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher;
+
+        # Millennium for theming Steam
+        millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
 
       overlays = {
@@ -132,13 +143,19 @@
           wayland-protocols-git = self.packages.${final.stdenv.hostPlatform.system}.wayland-protocols-git;
 
           proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
-          proton-cachyos-x86_64-v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64-v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64-v2 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
           # Deprecated aliases w/ underscores
-          proton-cachyos-x86_64_v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64_v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64_v2 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64_v3 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64_v4 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
           vintagestory-stable = self.packages.${final.stdenv.hostPlatform.system}.vintagestory-stable;
@@ -152,6 +169,8 @@
 
           hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+
+          millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
         };
 
         mesa-git = final: prev: {
@@ -164,14 +183,20 @@
 
         proton-cachyos = final: prev: {
           proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
-          proton-cachyos-x86_64-v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64-v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64-v2 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64-v3 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64-v4 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           # Deprecated aliases w/ underscores
-          proton-cachyos-x86_64_v2 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
-          proton-cachyos-x86_64_v3 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
+          proton-cachyos-x86_64_v2 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v2;
+          proton-cachyos-x86_64_v3 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
+          proton-cachyos-x86_64_v4 =
+            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
         };
 
         vintagestory = final: prev: {
@@ -195,6 +220,10 @@
         hytale-launcher = final: prev: {
           hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
+        };
+
+        millennium-steam = final: prev: {
+          millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
         };
       };
 

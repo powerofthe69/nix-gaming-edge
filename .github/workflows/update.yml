@@ -15,11 +15,6 @@ on:
         options:
           - update-sources
           - promote-to-master
-      branch:
-        description: "Branch to build from"
-        required: false
-        default: "nightly"
-        type: string
 
 jobs:
   # Ensure sources are up-to-date
@@ -34,7 +29,12 @@ jobs:
     steps:
       - name: Set branch
         id: set-branch
-        run: echo "branch=${{ inputs.branch || 'nightly' }}" >> $GITHUB_OUTPUT
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "branch=nightly" >> $GITHUB_OUTPUT
+          else
+            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
 
       - uses: actions/checkout@v4
         with:
@@ -123,6 +123,10 @@ jobs:
             packages: mesa-git mesa32-git
             runner: [self-hosted, heavy-tasks]
 
+          - name: millennium-steam
+            packages: millennium-steam
+            runner: [self-hosted, heavy-tasks]
+
           - name: pseudoregalia
             packages: pseudoregalia-rando
             runner: [self-hosted, light-tasks]
@@ -188,7 +192,7 @@ jobs:
           attic login local http://attic:8080 $ATTIC_TOKEN
           attic push tokidoki $(nix-store -qR ./result-*) --ignore-upstream-cache-filter
 
-  # Commit to nightly only when all builds succeed
+  # Commit to target branch only when all builds succeed
   commit-changes:
     needs: [update-sources, build]
     if: |
@@ -214,7 +218,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
-          git push
+          git push origin ${{ needs.update-sources.outputs.branch }}
 
   # Merge nightly to master weekly on Wednesdays at 8AM UTC
   promote-to-master:
