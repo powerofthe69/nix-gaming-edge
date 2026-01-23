@@ -39,15 +39,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "455b692e4f228c14df939923c1cace5f781e5993";
+    version = "763b4f1f0a22007e9950589d83e96c518b063ac3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "455b692e4f228c14df939923c1cace5f781e5993";
+      rev = "763b4f1f0a22007e9950589d83e96c518b063ac3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/ULbZaXjB85+C05ROQYt9Mv1yyinxkbyy3loTbz7zKs=";
+      sha256 = "sha256-eBBgYfPY1u86BK0WpJyk5FSbVrHu7eONoF8gkq3safY=";
     };
     date = "2026-01-23";
   };
