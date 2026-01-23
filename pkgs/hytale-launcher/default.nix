@@ -131,17 +131,18 @@ buildFHSEnv {
     cp ${./hytale.png} $out/share/icons/hicolor/256x256/apps/hytale.png
 
     mkdir -p $out/share/applications
-    cat > $out/share/applications/hytale.desktop << EOF
+    cat > $out/share/applications/com.hypixel.HytaleLauncher.desktop << EOF
     [Desktop Entry]
     Name=Hytale
     GenericName=Voxel RPG
     Comment=Adventure awaits in Orbis
     Exec=$out/bin/hytale %U
-    Icon=hytale
+    Icon=$out/share/icons/hicolor/256x256/apps/hytale.png
     Terminal=false
     Type=Application
     Categories=Game;ActionGame;RolePlaying;
-    StartupWMClass=hytale
+    StartupWMClass=HytaleClient
+    SingleMainWindow=true
     StartupNotify=true
     PrefersNonDefaultGPU=true
     EOF
