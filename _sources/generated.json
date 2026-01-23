@@ -1,232 +1,232 @@
 {
-    "eden-emulator": {
-        "cargoLocks": null,
-        "date": "2026-01-23",
-        "extract": null,
-        "name": "eden-emulator",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "de449d2caa1925ea36da33ddc97693fe491877b7",
-            "sha256": "sha256-2K7tk8MOEkjp3QK3JpF7wqupXcWjq7MAgiNIyzC0SOE=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://git.eden-emu.dev/eden-emu/eden.git"
-        },
-        "version": "de449d2caa1925ea36da33ddc97693fe491877b7"
+  "eden-emulator": {
+    "cargoLocks": null,
+    "date": "2026-01-23",
+    "extract": null,
+    "name": "eden-emulator",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "de449d2caa1925ea36da33ddc97693fe491877b7",
+      "sha256": "sha256-2K7tk8MOEkjp3QK3JpF7wqupXcWjq7MAgiNIyzC0SOE=",
+      "sparseCheckout": [],
+      "type": "git",
+      "url": "https://git.eden-emu.dev/eden-emu/eden.git"
     },
-    "hytale-launcher": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "hytale-launcher",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-+SoZ5NbYX25kGTuzVD+1U/mjARO1gqvUijNfH2MWwx4=",
-            "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
-        },
-        "version": "a0544015696c13d7defc183b8156604c-2"
+    "version": "de449d2caa1925ea36da33ddc97693fe491877b7"
+  },
+  "hytale-launcher": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "hytale-launcher",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-+SoZ5NbYX25kGTuzVD+1U/mjARO1gqvUijNfH2MWwx4=",
+      "type": "url",
+      "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
     },
-    "libdrm": {
-        "cargoLocks": null,
-        "date": "2025-12-19",
-        "extract": null,
-        "name": "libdrm",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "369990d9660a387f618d0eedc341eb285016243b",
-            "sha256": "sha256-kOaTjBeo4IsfWEk/JBTNId5ikrnpoc9DEjIl7DUd2yE=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://gitlab.freedesktop.org/mesa/drm.git"
-        },
-        "version": "369990d9660a387f618d0eedc341eb285016243b"
+    "version": "a0544015696c13d7defc183b8156604c-2"
+  },
+  "libdrm": {
+    "cargoLocks": null,
+    "date": "2025-12-19",
+    "extract": null,
+    "name": "libdrm",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "369990d9660a387f618d0eedc341eb285016243b",
+      "sha256": "sha256-kOaTjBeo4IsfWEk/JBTNId5ikrnpoc9DEjIl7DUd2yE=",
+      "sparseCheckout": [],
+      "type": "git",
+      "url": "https://gitlab.freedesktop.org/mesa/drm.git"
     },
-    "mesa": {
-        "cargoLocks": null,
-        "date": "2026-01-23",
-        "extract": null,
-        "name": "mesa",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "455b692e4f228c14df939923c1cace5f781e5993",
-            "sha256": "sha256-/ULbZaXjB85+C05ROQYt9Mv1yyinxkbyy3loTbz7zKs=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
-        },
-        "version": "455b692e4f228c14df939923c1cace5f781e5993"
+    "version": "369990d9660a387f618d0eedc341eb285016243b"
+  },
+  "mesa": {
+    "cargoLocks": null,
+    "date": "2026-01-23",
+    "extract": null,
+    "name": "mesa",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "455b692e4f228c14df939923c1cace5f781e5993",
+      "sha256": "sha256-/ULbZaXjB85+C05ROQYt9Mv1yyinxkbyy3loTbz7zKs=",
+      "sparseCheckout": [],
+      "type": "git",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
     },
-    "oodle-lib": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "oodle-lib",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=",
-            "type": "url",
-            "url": "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
-        },
-        "version": "0.2.3"
+    "version": "455b692e4f228c14df939923c1cace5f781e5993"
+  },
+  "oodle-lib": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "oodle-lib",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=",
+      "type": "url",
+      "url": "https://github.com/new-world-tools/go-oodle/releases/download/v0.2.3-files/liboo2corelinux64.so.9"
     },
-    "pokemmo": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "pokemmo",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
-            "type": "url",
-            "url": "https://pokemmo.com/download_file/1/"
-        },
-        "version": "694ca092-5f78c01"
+    "version": "0.2.3"
+  },
+  "pokemmo": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "pokemmo",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
+      "type": "url",
+      "url": "https://pokemmo.com/download_file/1/"
     },
-    "proton-cachyos": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "proton-cachyos",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-b1rbbJAGM4G89te6UVy1nFKP12fuz11ZyF0XipSeT2I=",
-            "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64.tar.xz"
-        },
-        "version": "cachyos-10.0-20260102-slr"
+    "version": "694ca092-5f78c01"
+  },
+  "proton-cachyos": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "proton-cachyos",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-b1rbbJAGM4G89te6UVy1nFKP12fuz11ZyF0XipSeT2I=",
+      "type": "url",
+      "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64.tar.xz"
     },
-    "proton-cachyos-x86_64-v2": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "proton-cachyos-x86_64-v2",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-OIZTF2PpbrfqYEjCpwmF4Dl/I0pyanJVzT50bkSbo3o=",
-            "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v2.tar.xz"
-        },
-        "version": "cachyos-10.0-20260102-slr"
+    "version": "cachyos-10.0-20260102-slr"
+  },
+  "proton-cachyos-x86_64-v2": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "proton-cachyos-x86_64-v2",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-OIZTF2PpbrfqYEjCpwmF4Dl/I0pyanJVzT50bkSbo3o=",
+      "type": "url",
+      "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v2.tar.xz"
     },
-    "proton-cachyos-x86_64-v3": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "proton-cachyos-x86_64-v3",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-bDlgsRNxA35YW91AsXhvA7dLsSq6cZ8Umczbw+Zj+2k=",
-            "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v3.tar.xz"
-        },
-        "version": "cachyos-10.0-20260102-slr"
+    "version": "cachyos-10.0-20260102-slr"
+  },
+  "proton-cachyos-x86_64-v3": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "proton-cachyos-x86_64-v3",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-bDlgsRNxA35YW91AsXhvA7dLsSq6cZ8Umczbw+Zj+2k=",
+      "type": "url",
+      "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v3.tar.xz"
     },
-    "proton-cachyos-x86_64-v4": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "proton-cachyos-x86_64-v4",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=",
-            "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz"
-        },
-        "version": "cachyos-10.0-20260102-slr"
+    "version": "cachyos-10.0-20260102-slr"
+  },
+  "proton-cachyos-x86_64-v4": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "proton-cachyos-x86_64-v4",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-e2A9jrAGUHlD8KUuGjkLUhknclBxVZVYKJFElUEs0Us=",
+      "type": "url",
+      "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260102-slr/proton-cachyos-10.0-20260102-slr-x86_64_v4.tar.xz"
     },
-    "pseudoregalia-rando": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "pseudoregalia-rando",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=",
-            "type": "url",
-            "url": "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz"
-        },
-        "version": "1.8.6"
+    "version": "cachyos-10.0-20260102-slr"
+  },
+  "pseudoregalia-rando": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "pseudoregalia-rando",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=",
+      "type": "url",
+      "url": "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz"
     },
-    "vintagestory": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "vintagestory",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
-            "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
-        },
-        "version": "stable/vs_client_linux-x64_1.21.6"
+    "version": "1.8.6"
+  },
+  "vintagestory": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "vintagestory",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+      "type": "url",
+      "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
     },
-    "vintagestory-stable": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "vintagestory-stable",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
-            "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
-        },
-        "version": "1.21.6"
+    "version": "stable/vs_client_linux-x64_1.21.6"
+  },
+  "vintagestory-stable": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "vintagestory-stable",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=",
+      "type": "url",
+      "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz"
     },
-    "wayland-protocols": {
-        "cargoLocks": null,
-        "date": "2026-01-21",
-        "extract": null,
-        "name": "wayland-protocols",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "2654a53845af5931cc19bdafa391689beba3e8a9",
-            "sha256": "sha256-9jSAEslXCsYy5Lcqn/AdwowPzUeqwn4p3HL5Vj0UEAE=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
-        },
-        "version": "2654a53845af5931cc19bdafa391689beba3e8a9"
-    }
+    "version": "1.21.6"
+  },
+  "wayland-protocols": {
+    "cargoLocks": null,
+    "date": "2026-01-21",
+    "extract": null,
+    "name": "wayland-protocols",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "2654a53845af5931cc19bdafa391689beba3e8a9",
+      "sha256": "sha256-9jSAEslXCsYy5Lcqn/AdwowPzUeqwn4p3HL5Vj0UEAE=",
+      "sparseCheckout": [],
+      "type": "git",
+      "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
+    },
+    "version": "2654a53845af5931cc19bdafa391689beba3e8a9"
+  }
 }
