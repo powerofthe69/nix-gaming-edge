@@ -233,11 +233,36 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Merge nightly → master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git fetch origin nightly
           if git merge-base --is-ancestor origin/nightly HEAD; then
             echo "Master is already up to date with nightly"
             exit 0
           fi
-          git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"
-          git push origin master
+
+          if git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"; then
+            git push origin master
+          else
+            echo "Merge conflict. Aborting..."
+            git merge --abort
+
+            PR_EXISTS=$(gh pr list --base master --head nightly --state open --json number --jq 'length')
+
+            if [ "$PR_EXISTS" -eq 0 ]; then
+              echo "Opening a Pull Request for manual conflict resolution."
+              gh pr create \
+                --base master \
+                --head nightly \
+                --title "Weekly Promotion Conflict (Nightly → Master)" \
+                --body "The automated weekly promotion failed due to merge conflicts.
+
+                Please resolve." \
+                --label "promotion-failed"
+            else
+              echo "A promotion PR already exists. Skipping PR creation."
+            fi
+
+            exit 1
+          fi
