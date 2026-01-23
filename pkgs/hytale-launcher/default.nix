@@ -11,7 +11,6 @@ let
   pname = "hytale-launcher";
   version = source.version;
 
-  # Unwrapped launcher - just extract the binary
   unwrapped = stdenv.mkDerivation {
     inherit pname version;
     src = source.src;
@@ -61,6 +60,7 @@ buildFHSEnv {
       nss
       expat
       alsa-lib
+      libsecret
       libxcrypt
       mesa
       vulkan-loader
@@ -114,6 +114,7 @@ buildFHSEnv {
     fi
 
     # Environment Setup
+    export DBUS_SESSION_BUS_ADDRESS="''${DBUS_SESSION_BUS_ADDRESS:-unix:path=/run/user/''$UID/bus}"
     export GDK_BACKEND="''${GDK_BACKEND:-wayland,x11}"
 
     # Optimization flags
@@ -126,18 +127,22 @@ buildFHSEnv {
   '';
 
   extraInstallCommands = ''
+    mkdir -p $out/share/icons/hicolor/256x256/apps
+    cp ${./hytale.png} $out/share/icons/hicolor/256x256/apps/hytale.png
+
     mkdir -p $out/share/applications
-    cat > $out/share/applications/hytale.desktop << EOF
+    cat > $out/share/applications/com.hypixel.HytaleLauncher.desktop << EOF
     [Desktop Entry]
     Name=Hytale
     GenericName=Voxel RPG
     Comment=Adventure awaits in Orbis
     Exec=$out/bin/hytale %U
-    Icon=hytale
+    Icon=$out/share/icons/hicolor/256x256/apps/hytale.png
     Terminal=false
     Type=Application
     Categories=Game;ActionGame;RolePlaying;
-    StartupWMClass=hytale
+    StartupWMClass=HytaleClient
+    SingleMainWindow=true
     StartupNotify=true
     PrefersNonDefaultGPU=true
     EOF
