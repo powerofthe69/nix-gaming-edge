@@ -173,6 +173,7 @@ jobs:
           sudo rm -rf /nix
           sudo rm -rf ~/.nix-* /root/.nix-*
           sudo rm -rf /etc/nix
+          sudo rm -rf /homeless-shelter
         continue-on-error: true
 
       - uses: cachix/install-nix-action@master
