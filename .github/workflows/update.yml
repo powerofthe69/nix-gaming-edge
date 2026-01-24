@@ -123,15 +123,19 @@ jobs:
             packages: mesa-git mesa32-git
             runner: [self-hosted, heavy-tasks]
 
-          - name: millennium-steam
+          - name: millennium
             packages: millennium-steam
+            runner: [self-hosted, heavy-tasks]
+
+          - name: graphite
+            packages: graphite
             runner: [self-hosted, heavy-tasks]
 
           - name: pseudoregalia
             packages: pseudoregalia-rando
             runner: [self-hosted, light-tasks]
 
-          - name: eden-emulator
+          - name: eden
             packages: eden-emulator
             runner: [self-hosted, light-tasks]
 

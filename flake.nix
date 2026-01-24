@@ -7,6 +7,10 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    graphite = {
+      url = "github:GraphiteEditor/graphite?dir=.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -20,6 +24,7 @@
     {
       self,
       nixpkgs,
+      graphite,
       millennium,
     }:
     let
@@ -132,6 +137,9 @@
 
         # Millennium for theming Steam
         millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+        # Graphite Editor
+        graphite = graphite.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
 
       overlays = {
@@ -171,6 +179,8 @@
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
 
           millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+
+          graphite = self.packages.${final.stdenv.hostPlatform.system}.graphite;
         };
 
         mesa-git = final: prev: {
@@ -224,6 +234,10 @@
 
         millennium-steam = final: prev: {
           millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+        };
+
+        graphite = final: prev: {
+          graphite = self.packages.${final.stdenv.hostPlatform.system}.graphite;
         };
       };
 
