@@ -1,0 +1,27 @@
+name: Cron Scheduler
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # Daily at 5 AM UTC (Update & Build)
+    - cron: "0 8 * * 3" # Wednesdays at 8 AM UTC (Promote to Master)
+  workflow_dispatch:
+
+jobs:
+  trigger-nightly-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Daily Update
+        if: github.event.schedule == '0 5 * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run update.yml --ref nightly
+          echo "Updating sources and caching updates on nightly."
+
+      - name: Trigger Weekly Promotion
+        if: github.event.schedule == '0 8 * * 3'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run promote.yml
+          echo "Executing the promotion from nightly to master."
