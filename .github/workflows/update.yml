@@ -90,6 +90,21 @@ jobs:
             rm -rf "$WORK_DIR"
           fi
 
+      - name: Update pnpm hash for Vencord
+        run: |
+          echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > pkgs/discord/vencord-pnpm-hash.txt
+
+          nix build .#vencord.pnpmDeps --no-link 2> nix-err.log || true
+          NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
+
+          if [[ $NEW_HASH == sha256-* ]]; then
+            echo -n "$NEW_HASH" > pkgs/discord/vencord-pnpm-hash.txt
+          else
+            echo "Hash could not be scraped:"
+            cat nix-err.log
+            exit 1
+          fi
+
       - name: Update flake.lock
         if: steps.check.outputs.any_changed == 'true'
         run: nix flake update
@@ -104,6 +119,7 @@ jobs:
             pkgs/eden-emulator/_dependencies/
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
+            pkgs/discord/vencord-pnpm-hash.txt
             flake.lock
 
   # Build packages from a matrix
@@ -133,6 +149,10 @@ jobs:
 
           - name: eden-emulator
             packages: eden-emulator
+            runner: [self-hosted, light-tasks]
+
+          - name: discord
+            packages: discord vencord
             runner: [self-hosted, light-tasks]
 
           # Run light builds (tarballs) on GitHub runners

@@ -74,3 +74,13 @@ fetch.git = "https://git.eden-emu.dev/eden-emu/eden.git"
 [hytale-launcher]
 src.cmd = "curl -sI https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip | grep -i 'etag:' | awk -F '\"' '{print $2}'"
 fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
+
+# Discord Stable Client
+[discord]
+src.cmd = "curl -sI 'https://discord.com/api/download/stable?platform=linux&format=tar.gz' | grep -i location: | grep -o 'discord-[0-9.]*.tar.gz' | sed 's/discord-//;s/.tar.gz//'"
+fetch.url = "https://dl.discordapp.net/apps/linux/$ver/discord-$ver.tar.gz"
+
+# Vencord - nightly
+[vencord]
+src.git = "https://github.com/Vendicated/Vencord.git"
+fetch.git = "https://github.com/Vendicated/Vencord.git"
