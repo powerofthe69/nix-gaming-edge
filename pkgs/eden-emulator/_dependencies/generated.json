@@ -1,6 +1,6 @@
 {
     "biscuit": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-12-13",
         "extract": null,
         "name": "biscuit",
@@ -21,7 +21,7 @@
         "version": "6275039677838adbed6002e82af3fb25a4d7a350"
     },
     "cpp-jwt": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-08",
         "extract": null,
         "name": "cpp-jwt",
@@ -42,7 +42,7 @@
         "version": "9eaea6328fae768d1cc524a27f0db6250e0a165a"
     },
     "discord-rpc": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-10-23",
         "extract": null,
         "name": "discord-rpc",
@@ -63,7 +63,7 @@
         "version": "0d8b2d6a37c6e47d62b37caa14708bf747c883bb"
     },
     "frozen": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-07-29",
         "extract": null,
         "name": "frozen",
@@ -84,7 +84,7 @@
         "version": "61dce5ae18ca59931e27675c468e64118aba8744"
     },
     "libadrenotools": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2024-09-10",
         "extract": null,
         "name": "libadrenotools",
@@ -105,7 +105,7 @@
         "version": "8fae8ce254dfc1344527e05301e43f37dea2df80"
     },
     "mcl": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-04",
         "extract": null,
         "name": "mcl",
@@ -126,7 +126,7 @@
         "version": "5fc4beaf331037649b10625736b41365defb4f50"
     },
     "nx_tzdb": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "nx_tzdb",
@@ -141,7 +141,7 @@
         "version": "221202"
     },
     "oaknut": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-10-04",
         "extract": null,
         "name": "oaknut",
@@ -162,7 +162,7 @@
         "version": "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69"
     },
     "quazip": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-07-17",
         "extract": null,
         "name": "quazip",
@@ -183,7 +183,7 @@
         "version": "f838774d6306eb5a500af9ab336ec85f01ebd7ec"
     },
     "simpleini": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-11-14",
         "extract": null,
         "name": "simpleini",
@@ -204,7 +204,7 @@
         "version": "18fd1db7fcfee664c174719f062b2598772c8be6"
     },
     "sirit": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-09",
         "extract": null,
         "name": "sirit",
@@ -225,7 +225,7 @@
         "version": "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1"
     },
     "unordered-dense": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-11-02",
         "extract": null,
         "name": "unordered-dense",
@@ -246,7 +246,7 @@
         "version": "3234af2c03549bc85656bfd3a86993bf1cd8aef1"
     },
     "xbyak": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-12-29",
         "extract": null,
         "name": "xbyak",
