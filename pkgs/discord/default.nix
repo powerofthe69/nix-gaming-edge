@@ -40,9 +40,10 @@ let
   });
 
   discord-stable = pkgs.discord.override {
-    withVencord = false;
     version = discordSrc.version;
     src = extractedDiscord;
+    withVencord = false;
+    vencord = vencord-git;
   };
 
 in
