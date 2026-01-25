@@ -1,25 +1,11 @@
-# .github/workflows/update.yml
 name: Update and Build
 
 on:
-  schedule:
-    - cron: "0 5 * * *" # Daily at 5 AM UTC (update + build)
-    - cron: "0 8 * * 3" # Wednesdays at 8 AM UTC (promote)
   workflow_dispatch:
-    inputs:
-      task:
-        description: "Task to run"
-        required: false
-        default: "update-sources"
-        type: choice
-        options:
-          - update-sources
-          - promote-to-master
 
 jobs:
   # Ensure sources are up-to-date
   update-sources:
-    if: (github.event_name == 'schedule' && github.event.schedule == '0 5 * * *') || (github.event_name == 'workflow_dispatch' && inputs.task == 'update-sources')
     runs-on: ubuntu-latest
     outputs:
       any_changed: ${{ steps.check.outputs.any_changed }}
@@ -90,6 +76,21 @@ jobs:
             rm -rf "$WORK_DIR"
           fi
 
+      - name: Update pnpm hash for Vencord
+        run: |
+          echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > pkgs/discord/vencord-pnpm-hash.txt
+
+          nix build .#vencord.pnpmDeps --no-link 2> nix-err.log || true
+          NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
+
+          if [[ $NEW_HASH == sha256-* ]]; then
+            echo -n "$NEW_HASH" > pkgs/discord/vencord-pnpm-hash.txt
+          else
+            echo "Hash could not be scraped:"
+            cat nix-err.log
+            exit 1
+          fi
+
       - name: Update flake.lock
         if: steps.check.outputs.any_changed == 'true'
         run: nix flake update
@@ -104,6 +105,7 @@ jobs:
             pkgs/eden-emulator/_dependencies/
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
+            pkgs/discord/vencord-pnpm-hash.txt
             flake.lock
 
   # Build packages from a matrix
@@ -133,6 +135,10 @@ jobs:
 
           - name: eden-emulator
             packages: eden-emulator
+            runner: [self-hosted, light-tasks]
+
+          - name: discord
+            packages: discord vencord
             runner: [self-hosted, light-tasks]
 
           # Run light builds (tarballs) on GitHub runners
@@ -167,6 +173,7 @@ jobs:
           sudo rm -rf /nix
           sudo rm -rf ~/.nix-* /root/.nix-*
           sudo rm -rf /etc/nix
+          sudo rm -rf /homeless-shelter
         continue-on-error: true
 
       - uses: cachix/install-nix-action@master
@@ -219,54 +226,3 @@ jobs:
           git add -A
           git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
           git push origin ${{ needs.update-sources.outputs.branch }}
-
-  # Merge nightly to master weekly on Wednesdays at 8AM UTC
-  promote-to-master:
-    if: (github.event_name == 'schedule' && github.event.schedule == '0 8 * * 3') || (github.event_name == 'workflow_dispatch' && inputs.task == 'promote-to-master')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: master
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Merge nightly → master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git fetch origin nightly
-          if git merge-base --is-ancestor origin/nightly HEAD; then
-            echo "Master is already up to date with nightly"
-            exit 0
-          fi
-
-          if git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"; then
-            git push origin master
-          else
-            echo "Merge conflict. Aborting..."
-            git merge --abort
-
-            PR_EXISTS=$(gh pr list --base master --head nightly --state open --json number --jq 'length')
-
-            if [ "$PR_EXISTS" -eq 0 ]; then
-              echo "Opening a Pull Request for manual conflict resolution."
-              gh pr create \
-                --base master \
-                --head nightly \
-                --title "Weekly Promotion Conflict (Nightly → Master)" \
-                --body "The automated weekly promotion failed due to merge conflicts.
-
-                Please resolve." \
-                --label "promotion-failed"
-            else
-              echo "A promotion PR already exists. Skipping PR creation."
-            fi
-
-            exit 1
-          fi

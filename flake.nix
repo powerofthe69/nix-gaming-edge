@@ -83,9 +83,16 @@
       protonv3 = mkProton "proton-cachyos-x86_64-v3" "x86_64-v3";
       protonv4 = mkProton "proton-cachyos-x86_64-v4" "x86_64-v4";
 
+      # Discord (stable) and Vencord (nightly)
+      discord = pkgs.callPackage ./pkgs/discord {
+        discordSrc = nvSources.discord;
+        vencordSrc = nvSources.vencord;
+      };
+
     in
     {
       packages.${pkgs.stdenv.hostPlatform.system} = {
+
         # Mesa-git
         mesa-git = mesaPkgs.mesa-git;
         mesa32-git = mesaPkgs.mesa32-git;
@@ -132,6 +139,13 @@
 
         # Millennium for theming Steam
         millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+        # Discord (stable) and Vencord (nightly)
+        # Got annoyed at 0.121 Discord updating and breaking Vencord
+        # Vencord updated to fix it, but Nixpkgs lags behind
+        # Maintaining versions myself now with nightly builds
+        discord = discord.discord;
+        vencord = discord.vencord;
       };
 
       overlays = {
@@ -171,6 +185,9 @@
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
 
           millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+
+          discord = self.packages.${final.stdenv.hostPlatform.system}.discord;
+          vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
         };
 
         mesa-git = final: prev: {
@@ -224,6 +241,11 @@
 
         millennium-steam = final: prev: {
           millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+        };
+
+        discord = final: prev: {
+          discord = self.packages.${final.stdenv.hostPlatform.system}.discord;
+          vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
         };
       };
 

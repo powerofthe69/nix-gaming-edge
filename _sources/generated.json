@@ -1,7 +1,22 @@
 {
+    "discord": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "discord",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-WR9xyw3Zn/HAZQlfiKMAXqc2TueF6wCfQzvYtnXd1yM=",
+            "type": "url",
+            "url": "https://dl.discordapp.net/apps/linux/0.0.121/discord-0.0.121.tar.gz"
+        },
+        "version": "0.0.121"
+    },
     "eden-emulator": {
-        "cargoLocks": null,
-        "date": "2026-01-23",
+        "cargoLock": null,
+        "date": "2026-01-24",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -11,16 +26,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "29fad5a89e0cb1f7af2b872c8a305f87a8f49b2c",
-            "sha256": "sha256-tRMt00aI3bnttufmcxNW/awUR8Mq+dmbeMKVdgr2JNI=",
+            "rev": "ddbb6f221924eefb57b8a9b0c346462da56c4527",
+            "sha256": "sha256-QfYqgoPGvorm5BchAXsHmeh6ut2hFob5/U9vPE1Wktg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "29fad5a89e0cb1f7af2b872c8a305f87a8f49b2c"
+        "version": "ddbb6f221924eefb57b8a9b0c346462da56c4527"
     },
     "hytale-launcher": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "hytale-launcher",
@@ -28,14 +43,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-+SoZ5NbYX25kGTuzVD+1U/mjARO1gqvUijNfH2MWwx4=",
+            "sha256": "sha256-HBs1I2k35LEyxJ0SNw0vvcbBixX/t/RL+m81TfCpUEg=",
             "type": "url",
             "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
         },
-        "version": "042a4cd5e6886a6a6f74d0e6644e8eb1-2"
+        "version": "4762c27ea884a412d7c260ef6a341477-2"
     },
     "libdrm": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-12-19",
         "extract": null,
         "name": "libdrm",
@@ -55,7 +70,7 @@
         "version": "369990d9660a387f618d0eedc341eb285016243b"
     },
     "mesa": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-24",
         "extract": null,
         "name": "mesa",
@@ -66,16 +81,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "dc352f3d7c0e9cfe47d0528c059955ab90f1a563",
-            "sha256": "sha256-EJOdYvurO/KH5cs6pltr3LV2eEOqgoCfxL1L7zk22Aw=",
+            "rev": "e9e4bd8e62164d48cf69db2ebeeb374c566f36ae",
+            "sha256": "sha256-BsMOlR1xZo7sEgPgSzHciM8dvLuhuXOLIztYy9POwS8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "dc352f3d7c0e9cfe47d0528c059955ab90f1a563"
+        "version": "e9e4bd8e62164d48cf69db2ebeeb374c566f36ae"
     },
     "oodle-lib": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "oodle-lib",
@@ -90,7 +105,7 @@
         "version": "0.2.3"
     },
     "pokemmo": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "pokemmo",
@@ -105,7 +120,7 @@
         "version": "694ca092-5f78c01"
     },
     "proton-cachyos": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos",
@@ -120,7 +135,7 @@
         "version": "cachyos-10.0-20260102-slr"
     },
     "proton-cachyos-x86_64-v2": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos-x86_64-v2",
@@ -135,7 +150,7 @@
         "version": "cachyos-10.0-20260102-slr"
     },
     "proton-cachyos-x86_64-v3": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos-x86_64-v3",
@@ -150,7 +165,7 @@
         "version": "cachyos-10.0-20260102-slr"
     },
     "proton-cachyos-x86_64-v4": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "proton-cachyos-x86_64-v4",
@@ -165,7 +180,7 @@
         "version": "cachyos-10.0-20260102-slr"
     },
     "pseudoregalia-rando": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "pseudoregalia-rando",
@@ -179,8 +194,28 @@
         },
         "version": "1.8.6"
     },
+    "vencord": {
+        "cargoLock": null,
+        "date": "2026-01-24",
+        "extract": null,
+        "name": "vencord",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "fbfc38a1a6a89c0a841571799dd360e86f1fe20e",
+            "sha256": "sha256-g+zyq4KvLhn1aeziTwh3xSYvzzB8FwoxxR13mbivyh4=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Vendicated/Vencord.git"
+        },
+        "version": "fbfc38a1a6a89c0a841571799dd360e86f1fe20e"
+    },
     "vintagestory": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "vintagestory",
@@ -195,7 +230,7 @@
         "version": "stable/vs_client_linux-x64_1.21.6"
     },
     "vintagestory-stable": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "vintagestory-stable",
@@ -210,7 +245,7 @@
         "version": "1.21.6"
     },
     "wayland-protocols": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-21",
         "extract": null,
         "name": "wayland-protocols",
