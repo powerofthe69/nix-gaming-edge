@@ -72,8 +72,8 @@ fetch.git = "https://git.eden-emu.dev/eden-emu/eden.git"
 
 # Hytale Launcher
 [hytale-launcher]
-src.cmd = "curl -sI https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip | grep -i 'etag:' | awk -F '\"' '{print $2}'"
-fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
+src.cmd = "curl -s https://launcher.hytale.com/version/release/launcher.json | jq -r .version"
+fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-$ver.zip"
 
 # Discord Stable Client
 [discord]

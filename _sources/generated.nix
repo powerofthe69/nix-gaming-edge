@@ -30,9 +30,9 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "4762c27ea884a412d7c260ef6a341477-2";
+    version = "2026.01.24-997c2cb";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.24-997c2cb.zip";
       sha256 = "sha256-G+FFMOtLVPH2zaWQ87jymf6+JUAVFEKA4SMyuYE9MZ0=";
     };
   };
