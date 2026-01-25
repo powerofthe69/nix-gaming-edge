@@ -2,6 +2,11 @@ name: Update and Build
 
 on:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      target_branch:
+        required: true
+        type: string
 
 jobs:
   # Ensure sources are up-to-date
@@ -16,8 +21,8 @@ jobs:
       - name: Set branch
         id: set-branch
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "branch=nightly" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "workflow_call" ]; then
+            echo "branch=${{ inputs.target_branch }}" >> $GITHUB_OUTPUT
           else
             echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi

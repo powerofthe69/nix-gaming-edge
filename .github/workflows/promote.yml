@@ -2,6 +2,7 @@ name: Promote to Master
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   promote-to-master:
@@ -11,42 +12,57 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Merge nightly → master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Attempt Merge (Nightly → Master)
+        id: merge
         run: |
           git fetch origin nightly
+
           if git merge-base --is-ancestor origin/nightly HEAD; then
             echo "Master is already up to date with nightly"
+            echo "status=up_to_date" >> $GITHUB_OUTPUT
             exit 0
           fi
 
           if git merge --ff-only origin/nightly || git merge origin/nightly -m "chore: weekly promote from nightly"; then
             git push origin master
+            echo "status=success" >> $GITHUB_OUTPUT
           else
-            echo "Merge conflict. Aborting..."
+            echo "Merge conflict detected. Aborting local merge..."
             git merge --abort
-
-            PR_EXISTS=$(gh pr list --base master --head nightly --state open --json number --jq 'length')
-
-            if [ "$PR_EXISTS" -eq 0 ]; then
-              echo "Opening a Pull Request for manual conflict resolution."
-              gh pr create \
-                --base master \
-                --head nightly \
-                --title "Weekly Promotion Conflict (Nightly → Master)" \
-                --body "The automated weekly promotion failed due to merge conflicts. Please resolve." \
-                --label "promotion-failed"
-            else
-              echo "A promotion PR already exists. Skipping PR creation."
-            fi
-
-            exit 1
+            echo "status=conflict" >> $GITHUB_OUTPUT
           fi
+
+      - name: Create Conflict Resolution PR
+        if: steps.merge.outputs.status == 'conflict'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: existingPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:nightly`,
+              base: 'master',
+              state: 'open'
+            });
+
+            if (existingPRs.length === 0) {
+              console.log("Creating new Pull Request for manual resolution...");
+              await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: 'Weekly Promotion Conflict (Nightly → Master)',
+                head: 'nightly',
+                base: 'master',
+                body: 'The automated weekly promotion failed due to merge conflicts. Please resolve.',
+              });
+            } else {
+              console.log("A promotion PR already exists. Skipping creation.");
+            }
+
+            core.setFailed("Promotion failed due to merge conflicts. PR created.");
