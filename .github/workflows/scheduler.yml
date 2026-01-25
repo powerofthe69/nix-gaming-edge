@@ -7,14 +7,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger-nightly-update:
+  nightly-update:
     if: github.event.schedule == '15 5 * * *' || github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/update.yml
     with:
       target_branch: "nightly"
     secrets: inherit
 
-  trigger-weekly-promotion:
+  promote-to-master:
     if: github.event.schedule == '15 8 * * 3'
     uses: ./.github/workflows/promote.yml
     secrets: inherit
