@@ -33,7 +33,7 @@
     version = "4762c27ea884a412d7c260ef6a341477-2";
     src = fetchurl {
       url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip";
-      sha256 = "sha256-HBs1I2k35LEyxJ0SNw0vvcbBixX/t/RL+m81TfCpUEg=";
+      sha256 = "sha256-G+FFMOtLVPH2zaWQ87jymf6+JUAVFEKA4SMyuYE9MZ0=";
     };
   };
   libdrm = {
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "e9e4bd8e62164d48cf69db2ebeeb374c566f36ae";
+    version = "231747b7fadf7fdc7d886ba43257afeb07b0620f";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "e9e4bd8e62164d48cf69db2ebeeb374c566f36ae";
+      rev = "231747b7fadf7fdc7d886ba43257afeb07b0620f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-BsMOlR1xZo7sEgPgSzHciM8dvLuhuXOLIztYy9POwS8=";
+      sha256 = "sha256-n0jc1QXHKd2tGF4ErwLqzq+Daqq35e1Dz6eipi1+n7k=";
     };
-    date = "2026-01-24";
+    date = "2026-01-25";
   };
   oodle-lib = {
     pname = "oodle-lib";
