@@ -124,7 +124,7 @@ jobs:
       - name: Generate matrix from packages.json
         id: set-matrix
         run: |
-          MATRIX=$(cat packages.json)
+          MATRIX=$(jq -c . packages.json)
           echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
 
   # Build packages from a matrix
