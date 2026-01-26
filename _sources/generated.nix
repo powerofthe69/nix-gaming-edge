@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "ddbb6f221924eefb57b8a9b0c346462da56c4527";
+    version = "4a5bec1cfc7f2a4abfe2fc384acd9ccd0cf79aac";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "ddbb6f221924eefb57b8a9b0c346462da56c4527";
+      rev = "4a5bec1cfc7f2a4abfe2fc384acd9ccd0cf79aac";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QfYqgoPGvorm5BchAXsHmeh6ut2hFob5/U9vPE1Wktg=";
+      sha256 = "sha256-EpXj3kVcDH4lU8pZcKn/0pORMADCKQy0ZQvQI1UJrcU=";
     };
-    date = "2026-01-24";
+    date = "2026-01-26";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "231747b7fadf7fdc7d886ba43257afeb07b0620f";
+    version = "e59a0df302f791cce51252beb1153572b8ca972f";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "231747b7fadf7fdc7d886ba43257afeb07b0620f";
+      rev = "e59a0df302f791cce51252beb1153572b8ca972f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-n0jc1QXHKd2tGF4ErwLqzq+Daqq35e1Dz6eipi1+n7k=";
+      sha256 = "sha256-s7M4SOpcwdfKiYGlosDoUArQG8F1vhzHCCOqJS6Mp8c=";
     };
-    date = "2026-01-25";
+    date = "2026-01-26";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -122,15 +122,15 @@
   };
   vencord = {
     pname = "vencord";
-    version = "fbfc38a1a6a89c0a841571799dd360e86f1fe20e";
+    version = "8ecae352fd6a713147f17915f8dcf2c0e0b64f52";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "fbfc38a1a6a89c0a841571799dd360e86f1fe20e";
+      rev = "8ecae352fd6a713147f17915f8dcf2c0e0b64f52";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-g+zyq4KvLhn1aeziTwh3xSYvzzB8FwoxxR13mbivyh4=";
+      sha256 = "sha256-jq9anGQRRiKVzg2+frXgMIj8tlqdm2d9PNgc65ai4p8=";
     };
     date = "2026-01-24";
   };
