@@ -1,12 +1,9 @@
 name: Update and Build
 
 on:
+  schedule:
+    - cron: "15 5 * * *" # Daily nightly update
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      target_branch:
-        required: true
-        type: string
 
 jobs:
   # Ensure sources are up-to-date
@@ -21,8 +18,8 @@ jobs:
       - name: Set branch
         id: set-branch
         run: |
-          if [ "${{ github.event_name }}" = "workflow_call" ]; then
-            echo "branch=${{ inputs.target_branch }}" >> $GITHUB_OUTPUT
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "branch=nightly" >> $GITHUB_OUTPUT
           else
             echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi
@@ -113,9 +110,26 @@ jobs:
             pkgs/discord/vencord-pnpm-hash.txt
             flake.lock
 
+  # Generate build matrix from packages.json on the target branch
+  generate-matrix:
+    needs: update-sources
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.update-sources.outputs.branch }}
+
+      - name: Generate matrix from packages.json
+        id: set-matrix
+        run: |
+          MATRIX=$(cat packages.json)
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+
   # Build packages from a matrix
   build:
-    needs: update-sources
+    needs: [update-sources, generate-matrix]
     env:
       NIX_CONFIG: |
         access-tokens = github.com=${{ secrets.GITHUB_TOKEN }} gitlab.freedesktop.org=${{ secrets.GITLAB_TOKEN }}
@@ -123,45 +137,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          # Run heavier (caching) builds on local runners
-          - name: mesa
-            packages: mesa-git mesa32-git
-            runner: [self-hosted, heavy-tasks]
-
-          - name: millennium-steam
-            packages: millennium-steam
-            runner: [self-hosted, heavy-tasks]
-
-          - name: pseudoregalia
-            packages: pseudoregalia-rando
-            runner: [self-hosted, light-tasks]
-
-          - name: eden-emulator
-            packages: eden-emulator
-            runner: [self-hosted, light-tasks]
-
-          - name: discord
-            packages: discord vencord
-            runner: [self-hosted, light-tasks]
-
-          # Run light builds (tarballs) on GitHub runners
-          - name: proton
-            packages: proton-cachyos proton-cachyos-x86_64-v2 proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4
-            runner: ubuntu-latest
-
-          - name: vintagestory
-            packages: vintagestory vintagestory-stable
-            runner: ubuntu-latest
-
-          - name: pokemmo
-            packages: pokemmo
-            runner: ubuntu-latest
-
-          - name: hytale
-            packages: hytale-launcher
-            runner: ubuntu-latest
+      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@v4

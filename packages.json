@@ -1,0 +1,49 @@
+{
+  "include": [
+    {
+      "name": "mesa",
+      "packages": "mesa-git mesa32-git",
+      "runner": ["self-hosted", "heavy-tasks"]
+    },
+    {
+      "name": "millennium-steam",
+      "packages": "millennium-steam",
+      "runner": ["self-hosted", "heavy-tasks"]
+    },
+    {
+      "name": "pseudoregalia",
+      "packages": "pseudoregalia-rando",
+      "runner": ["self-hosted", "light-tasks"]
+    },
+    {
+      "name": "eden-emulator",
+      "packages": "eden-emulator",
+      "runner": ["self-hosted", "light-tasks"]
+    },
+    {
+      "name": "discord",
+      "packages": "discord vencord",
+      "runner": ["self-hosted", "light-tasks"]
+    },
+    {
+      "name": "proton",
+      "packages": "proton-cachyos proton-cachyos-x86_64-v2 proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4",
+      "runner": "ubuntu-latest"
+    },
+    {
+      "name": "vintagestory",
+      "packages": "vintagestory vintagestory-stable",
+      "runner": "ubuntu-latest"
+    },
+    {
+      "name": "pokemmo",
+      "packages": "pokemmo",
+      "runner": "ubuntu-latest"
+    },
+    {
+      "name": "hytale",
+      "packages": "hytale-launcher",
+      "runner": "ubuntu-latest"
+    }
+  ]
+}
