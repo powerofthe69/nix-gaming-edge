@@ -8,25 +8,25 @@
 {
   discord = {
     pname = "discord";
-    version = "0.0.121";
+    version = "0.0.122";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.121/discord-0.0.121.tar.gz";
-      sha256 = "sha256-WR9xyw3Zn/HAZQlfiKMAXqc2TueF6wCfQzvYtnXd1yM=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.122/discord-0.0.122.tar.gz";
+      sha256 = "sha256-aUle4aJXqvwVLbnFZq4ftPiPMu4/z/Efz2rlZkAVGzM=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "2f1f9be7a41ba742d31657a75c65f7efffbfce12";
+    version = "998460b78bc6225561d1c39511069fc193f5fc71";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "2f1f9be7a41ba742d31657a75c65f7efffbfce12";
+      rev = "998460b78bc6225561d1c39511069fc193f5fc71";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-FMNvyKvZv/KKU87AtFV0ZOMSbJfUL+WFd+1pPkfg8+Q=";
+      sha256 = "sha256-U/QKsJQHjbIfRz6r72PhZrnkzz1NWIpsFEIkLF3c8ok=";
     };
-    date = "2026-01-26";
+    date = "2026-01-27";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "d03c79d2b01b46aea85cb8d8a83832d11d48f6e6";
+    version = "72c12f62ff1fbb80f6a9ff43c3482a16b14b4e0b";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "d03c79d2b01b46aea85cb8d8a83832d11d48f6e6";
+      rev = "72c12f62ff1fbb80f6a9ff43c3482a16b14b4e0b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-wvSPi8hsCAJxtD3xS9qsYXP+ViWnoTCtCj4lvUIiKPk=";
+      sha256 = "sha256-nkOjaOfYpYyIazymZtnhOG0nvdze7Vl8lV3Ii4L3+/E=";
     };
-    date = "2026-01-26";
+    date = "2026-01-27";
   };
   oodle-lib = {
     pname = "oodle-lib";
