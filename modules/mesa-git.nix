@@ -325,24 +325,44 @@ in
       };
     })
 
+    # NEW: Use systemd services instead of activation scripts
     (lib.mkIf (cfg.enable && cfg.cacheCleanup.enable) {
-      system.activationScripts.mesaCacheCleaner = ''
-        echo "--- Checking for Mesa Driver Updates ---"
-        ${mesaCacheCleanerScript} "${pkgs.mesa-git.version}"
-      '';
+      systemd.services.mesa-cache-cleaner = {
+        description = "removing Mesa shader caches";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "local-fs.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${mesaCacheCleanerScript} ${pkgs.mesa-git.version}";
+          RemainAfterExit = true;
+        };
+      };
     })
 
     (lib.mkIf (cfg.enable && cfg.cacheCleanup.enable && cfg.cacheCleanup.protonPackage != null) {
-      system.activationScripts.protonCacheCleaner = ''
-        echo "--- Checking for Proton Updates ---"
-        ${protonCacheCleanerScript} "${cfg.cacheCleanup.protonPackage.version}"
-      '';
+      systemd.services.proton-cache-cleaner = {
+        description = "removing Proton shader caches";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "local-fs.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${protonCacheCleanerScript} ${cfg.cacheCleanup.protonPackage.version}";
+          RemainAfterExit = true;
+        };
+      };
     })
 
     (lib.mkIf (cfg.enable && cfg.steamOrphanCleanup.enable) {
-      system.activationScripts.steamOrphanCleaner = ''
-        ${steamOrphanCleanerScript}
-      '';
+      systemd.services.steam-orphan-cleaner = {
+        description = "removing orphaned Steam game folders and prefixes";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "local-fs.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStart = "${steamOrphanCleanerScript}";
+          RemainAfterExit = true;
+        };
+      };
     })
   ];
 }
