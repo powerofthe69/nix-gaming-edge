@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-01-27",
+        "date": "2026-01-29",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "770be310303dd92e596a4cf3a096e225d0f6e7f7",
-            "sha256": "sha256-9PApWK2PSJt9Ci0RRbntq2JQSVNft0mRwlqdHLnnYyg=",
+            "rev": "55ab6f14727f9a1fb1cbbe3f41b2004348f68a97",
+            "sha256": "sha256-hhhEAf4yKS5CaPih3u1bF+87UefyltUJcQFa+p5lopY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "770be310303dd92e596a4cf3a096e225d0f6e7f7"
+        "version": "55ab6f14727f9a1fb1cbbe3f41b2004348f68a97"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -43,11 +43,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-PyTXjZI0lJZRL56Esc/1MjlhA8GXZonHs111ZotvOlM=",
+            "sha256": "sha256-Pg2Q4J3P/Ln4JrlCTW1MdQU+6qxxfurMHrh7Rv+1P6E=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.27-b4eb731.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.28-6fc68ec.zip"
         },
-        "version": "2026.01.27-b4eb731"
+        "version": "2026.01.28-6fc68ec"
     },
     "libdrm": {
         "cargoLock": null,
@@ -71,7 +71,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-01-27",
+        "date": "2026-01-29",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -81,13 +81,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4959f45e99e62619cf334b972337abc526632f8a",
-            "sha256": "sha256-QH79ZIDHUuthGiVn9wUuy5EHXy/Cg411UriKOIdMies=",
+            "rev": "bfca9d32d3c2aeb7811f9e36d3397b56c4c9f694",
+            "sha256": "sha256-L2s/+CWn1FSYrrHh3RqtboK9CeUtf7HEhSpy3jUy2Yg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "4959f45e99e62619cf334b972337abc526632f8a"
+        "version": "bfca9d32d3c2aeb7811f9e36d3397b56c4c9f694"
     },
     "oodle-lib": {
         "cargoLock": null,
@@ -206,13 +206,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0126090c8f06849cde9df18030f52e31931ece49",
-            "sha256": "sha256-/DkTfi6fYlLQUSzPawHxZJK0C+vaZp5ho3ZiB/bGQAQ=",
+            "rev": "22e9730888e6f1ae861ade77daf429f944a7d036",
+            "sha256": "sha256-1SxHGyW3V3W/3QB9/889qofoN7AHk0O2OnzPAHzjOcY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "0126090c8f06849cde9df18030f52e31931ece49"
+        "version": "22e9730888e6f1ae861ade77daf429f944a7d036"
     },
     "vintagestory": {
         "cargoLock": null,
