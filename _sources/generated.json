@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "55ab6f14727f9a1fb1cbbe3f41b2004348f68a97",
-            "sha256": "sha256-hhhEAf4yKS5CaPih3u1bF+87UefyltUJcQFa+p5lopY=",
+            "rev": "979ea5563b3825083b4ed45e81d76abef49891ad",
+            "sha256": "sha256-ywpoE0rmtjudImK2hznVbq0D9Y/o+7U1kwRne08DyYM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "55ab6f14727f9a1fb1cbbe3f41b2004348f68a97"
+        "version": "979ea5563b3825083b4ed45e81d76abef49891ad"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -43,11 +43,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Pg2Q4J3P/Ln4JrlCTW1MdQU+6qxxfurMHrh7Rv+1P6E=",
+            "sha256": "sha256-WaFwIUOf4W8D8M7ZWzuwFCnHHdGtOI8Sx6BI1rXrL0k=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.28-6fc68ec.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.29-a86a538.zip"
         },
-        "version": "2026.01.28-6fc68ec"
+        "version": "2026.01.29-a86a538"
     },
     "libdrm": {
         "cargoLock": null,
@@ -71,7 +71,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-01-29",
+        "date": "2026-01-30",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -81,13 +81,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bfca9d32d3c2aeb7811f9e36d3397b56c4c9f694",
-            "sha256": "sha256-L2s/+CWn1FSYrrHh3RqtboK9CeUtf7HEhSpy3jUy2Yg=",
+            "rev": "260908cecb3b1362dea27430df9ffa6cd30198db",
+            "sha256": "sha256-Uddy340dYjMaNbuTolDfckmYVyxl42JIUDV6ptu+NyQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "bfca9d32d3c2aeb7811f9e36d3397b56c4c9f694"
+        "version": "260908cecb3b1362dea27430df9ffa6cd30198db"
     },
     "oodle-lib": {
         "cargoLock": null,

@@ -8,15 +8,15 @@
 {
   biscuit = {
     pname = "biscuit";
-    version = "6275039677838adbed6002e82af3fb25a4d7a350";
+    version = "7dc44a52c81855a75e9ecafa4e7f2af3593586f3";
     src = fetchFromGitHub {
       owner = "lioncash";
       repo = "biscuit";
-      rev = "6275039677838adbed6002e82af3fb25a4d7a350";
+      rev = "7dc44a52c81855a75e9ecafa4e7f2af3593586f3";
       fetchSubmodules = false;
-      sha256 = "sha256-8SZW+b+k0aHDEO+DXIcgDpQtQlILw9tvLadDsD9FHyY=";
+      sha256 = "sha256-qkm8+Kxg2jEAgMdyJGC+86e+vIcY4uFpTa+HHU2F/pI=";
     };
-    date = "2025-12-13";
+    date = "2026-01-29";
   };
   cpp-jwt = {
     pname = "cpp-jwt";
