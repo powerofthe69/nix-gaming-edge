@@ -8,32 +8,32 @@
 {
   discord = {
     pname = "discord";
-    version = "0.0.122";
+    version = "0.0.123";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.122/discord-0.0.122.tar.gz";
-      sha256 = "sha256-aUle4aJXqvwVLbnFZq4ftPiPMu4/z/Efz2rlZkAVGzM=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.123/discord-0.0.123.tar.gz";
+      sha256 = "sha256-2cNAfYzPbZ9O8s4b3RBLki8aM9TiFuZcGffFbY4zxJQ=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "2a3507c2b92a577cf9814b5722c2adc6a0012cb0";
+    version = "8ed0ed5828a6a7511899350bc7c2adf2a1928d37";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "2a3507c2b92a577cf9814b5722c2adc6a0012cb0";
+      rev = "8ed0ed5828a6a7511899350bc7c2adf2a1928d37";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6bCJsnG4VQ7CptP2u7GXir3v6yngBS3HnCDBtY8KImw=";
+      sha256 = "sha256-WvBaPR1p4WZDNdyujSdKMxNdZBbt8dlbWGcrt+qbEV0=";
     };
     date = "2026-02-02";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.01.29-a86a538";
+    version = "2026.02.02-abc3fcb";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.01.29-a86a538.zip";
-      sha256 = "sha256-WaFwIUOf4W8D8M7ZWzuwFCnHHdGtOI8Sx6BI1rXrL0k=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.02-abc3fcb.zip";
+      sha256 = "sha256-Cli5n1ia7Yv6v9v+PbBe4rCz/BxSG4ezkJrL+AyyObo=";
     };
   };
   libdrm = {
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "8cda43497b6d52ef4a9c9316602d983dbf818bab";
+    version = "6ea4fe9806b93ee9c4f0dd1b571e4a4a52c666ca";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "8cda43497b6d52ef4a9c9316602d983dbf818bab";
+      rev = "6ea4fe9806b93ee9c4f0dd1b571e4a4a52c666ca";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fld5+yUmSHlDam7ywk4moWhKZww+hXXVq+3Zq2LWKqE=";
+      sha256 = "sha256-hcH/4sgg7yMyEaPcmW4NLnzvPFroXY6jzdWQ8U8okf8=";
     };
-    date = "2026-02-01";
+    date = "2026-02-03";
   };
   oodle-lib = {
     pname = "oodle-lib";
