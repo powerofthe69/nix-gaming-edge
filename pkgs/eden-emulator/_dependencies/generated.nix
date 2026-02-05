@@ -136,15 +136,15 @@
   };
   unordered-dense = {
     pname = "unordered-dense";
-    version = "3234af2c03549bc85656bfd3a86993bf1cd8aef1";
+    version = "7b55cab8418da1603496462ce3ccdb4cb1dc3368";
     src = fetchFromGitHub {
       owner = "martinus";
       repo = "unordered_dense";
-      rev = "3234af2c03549bc85656bfd3a86993bf1cd8aef1";
+      rev = "7b55cab8418da1603496462ce3ccdb4cb1dc3368";
       fetchSubmodules = false;
-      sha256 = "sha256-JdPlyShWnAcdgixDHRaroFg7YWdPtD4Nl1PmpcQ1SAk=";
+      sha256 = "sha256-yCdn3/OIGLH5uW6BgvfbxPYwtiWivOHabfxaYrQromE=";
     };
-    date = "2025-11-02";
+    date = "2026-02-04";
   };
   xbyak = {
     pname = "xbyak";
