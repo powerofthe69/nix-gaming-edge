@@ -13,6 +13,7 @@ jobs:
       any_changed: ${{ steps.check.outputs.any_changed }}
       mesa_rev: ${{ steps.check.outputs.mesa_rev }}
       branch: ${{ steps.set-branch.outputs.branch }}
+      version_changes: ${{ steps.check.outputs.version_changes }}
 
     steps:
       - name: Set branch
@@ -55,6 +56,30 @@ jobs:
           OLD_MESA=$(jq -r '.mesa.version // "none"' /tmp/old-generated.json)
           NEW_MESA=$(jq -r '.mesa.version // "none"' _sources/generated.json)
           echo "mesa_rev=${NEW_MESA:0:7}" >> $GITHUB_OUTPUT
+
+          # Track all version changes
+          CHANGES=""
+          for pkg in $(jq -r 'keys[]' _sources/generated.json); do
+            OLD_VER=$(jq -r --arg pkg "$pkg" '.[$pkg].version // "none"' /tmp/old-generated.json)
+            NEW_VER=$(jq -r --arg pkg "$pkg" '.[$pkg].version // "none"' _sources/generated.json)
+
+            if [ "$OLD_VER" != "$NEW_VER" ]; then
+              if [ -n "$CHANGES" ]; then
+                CHANGES="${CHANGES}, "
+              fi
+              # Truncate version to first 7 chars if it looks like a git hash
+              if [[ ${#NEW_VER} -gt 20 ]]; then
+                CHANGES="${CHANGES}${pkg}: ${NEW_VER:0:7}"
+              else
+                CHANGES="${CHANGES}${pkg}: ${NEW_VER}"
+              fi
+            fi
+          done
+
+          # Use multiline output for GitHub Actions
+          echo "version_changes<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
           if ! diff -q /tmp/old-generated.json _sources/generated.json > /dev/null 2>&1; then
             echo "any_changed=true" >> $GITHUB_OUTPUT
@@ -200,10 +225,17 @@ jobs:
 
       - name: Commit changes
         env:
-          MESA_REV: ${{ needs.update-sources.outputs.mesa_rev }}
+          VERSION_CHANGES: ${{ needs.update-sources.outputs.version_changes }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore: update sources (mesa: $MESA_REV)" || echo "Nothing to commit"
+
+          # Create commit message
+          if [ -n "$VERSION_CHANGES" ]; then
+            git commit -m "chore: update sources" -m "$VERSION_CHANGES" || echo "Nothing to commit"
+          else
+            git commit -m "chore: update sources" || echo "Nothing to commit"
+          fi
+
           git push origin ${{ needs.update-sources.outputs.branch }}
