@@ -41,8 +41,8 @@ fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/pr
 # Looks like: "stable/vs_client_linux-x64_x.xx.x" or "unstable/vs_client_linux-x64_x.xx.x-rc.x"
 [vintagestory]
 src.cmd = '''
-VER=$(curl -s https://mods.vintagestory.at/api/gameversions | jq -r '.gameversions[-1].name')
-if echo "$VER" | grep -q '-'; then echo "unstable/vs_client_linux-x64_$VER"; else echo "stable/vs_client_linux-x64_$VER"; fi
+VER=$(curl -s https://mods.vintagestory.at/api/gameversions | jq -r '[.gameversions[].name | select(test("^[0-9]+[.][0-9]+[.][0-9]+(-rc[.][0-9]+)?$"))] | last')
+if echo "$VER" | grep -q '\-rc\.'; then echo "unstable/vs_client_linux-x64_$VER"; else echo "stable/vs_client_linux-x64_$VER"; fi
 '''
 fetch.url = "https://cdn.vintagestory.at/gamefiles/$ver.tar.gz"
 
