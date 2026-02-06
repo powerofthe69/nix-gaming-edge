@@ -16,15 +16,15 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "913a74dbd3c07717d072d975b14b952653486b2f";
+    version = "08232ce64275eaf388eba7005f4dae28fc18a0b7";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "913a74dbd3c07717d072d975b14b952653486b2f";
+      rev = "08232ce64275eaf388eba7005f4dae28fc18a0b7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rx1QQMckUglejpekp+teUuSKy8WRF53JFKjxYWI0Zfk=";
+      sha256 = "sha256-flsL6/EjuNFn8urBr/yQXDXjpQMANWQgK54/e3pI1JQ=";
     };
     date = "2026-02-05";
   };
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "124d550a9434c8d5f55bccc10a12862a18815e8d";
+    version = "da6c3ad23760f6034ace7b1da94f85544099d12f";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "124d550a9434c8d5f55bccc10a12862a18815e8d";
+      rev = "da6c3ad23760f6034ace7b1da94f85544099d12f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ywc3ddIRHbC3ZnMPowggItnfrSjSSf8WM5pIL64y19s=";
+      sha256 = "sha256-CmocDSAkeKR87hF4jmp+CBikkISOYdkJY0PTdZ5Pz2M=";
     };
-    date = "2026-02-04";
+    date = "2026-02-05";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -122,15 +122,15 @@
   };
   vencord = {
     pname = "vencord";
-    version = "577407bab9ee9913840799755ad0460dc04c9fd0";
+    version = "3d4cf25659e726ac5ab210a66686a0a0baf17060";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "577407bab9ee9913840799755ad0460dc04c9fd0";
+      rev = "3d4cf25659e726ac5ab210a66686a0a0baf17060";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-k7XTJ1Y6eeNnnsVlSFAZpD+ZPedXqnUO1wrT8TWoY3Y=";
+      sha256 = "sha256-RMudWHkfr/UE2kYcRCNuLSgUSTLq/RrtE28FFqQpEss=";
     };
     date = "2026-02-05";
   };
@@ -152,16 +152,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "ea7ff8255e07cd11d5250fb99810d9c89c2b9602";
+    version = "00dd05f34ba36f008ca766c1b58d9a0fbd840332";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "ea7ff8255e07cd11d5250fb99810d9c89c2b9602";
+      rev = "00dd05f34ba36f008ca766c1b58d9a0fbd840332";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9bzXNkmbpvi+yChFDs0ob6VGpXV9uxLXmKkWcLFruhY=";
+      sha256 = "sha256-Rf8V2B3gqD7uOnMyW7pTxIUlr5LgN91y4TqxtRjF+P4=";
     };
-    date = "2026-02-03";
+    date = "2026-02-05";
   };
 }
