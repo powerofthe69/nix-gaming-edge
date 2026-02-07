@@ -148,14 +148,14 @@
   };
   xbyak = {
     pname = "xbyak";
-    version = "3ae3da66be324b272524d9faf2e014aca7e11c00";
+    version = "7baceeeabf832258c890ec2c031ff00b4eeac8a4";
     src = fetchFromGitHub {
       owner = "herumi";
       repo = "xbyak";
-      rev = "3ae3da66be324b272524d9faf2e014aca7e11c00";
+      rev = "7baceeeabf832258c890ec2c031ff00b4eeac8a4";
       fetchSubmodules = false;
-      sha256 = "sha256-DBQgwiUqPcODAXV+rZ3h74lFArY6KyCPca3bcJTHmOQ=";
+      sha256 = "sha256-+VRyge7vDxggHKtVa6qQZCUKuhjXNixoKEu3H3wp71g=";
     };
-    date = "2025-12-29";
+    date = "2026-02-06";
   };
 }
