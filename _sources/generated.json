@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "71e035f83be0cc806ed3352452be27e3fec57aa9",
-            "sha256": "sha256-PeUOBN9VblERqIZ4tWq93OvBktUwpEy+/9aiezL85Kw=",
+            "rev": "e544cb3cf6702fdec9ce2edc9f601a9e37d91153",
+            "sha256": "sha256-urC3wO4+PvSNk/7UXh2AmSPaq6zyplaHLf9Xb5Nt3OM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "71e035f83be0cc806ed3352452be27e3fec57aa9"
+        "version": "e544cb3cf6702fdec9ce2edc9f601a9e37d91153"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -71,7 +71,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-02-06",
+        "date": "2026-02-07",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -81,13 +81,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9aa93039d913762fa82661ef28b9ca12e4b47c5a",
-            "sha256": "sha256-gttgrNx7qZ5t9+4zKO/hEng+x12S/4X2p7Tav3BV7yw=",
+            "rev": "51d4803a6fbae1d280885ed6b70683efadd12e81",
+            "sha256": "sha256-LtoAnQiTMYrqi7vtQ3dZrsObVlpYW/4cxNW6y7fXEvM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "9aa93039d913762fa82661ef28b9ca12e4b47c5a"
+        "version": "51d4803a6fbae1d280885ed6b70683efadd12e81"
     },
     "oodle-lib": {
         "cargoLock": null,

@@ -16,15 +16,15 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "71e035f83be0cc806ed3352452be27e3fec57aa9";
+    version = "e544cb3cf6702fdec9ce2edc9f601a9e37d91153";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "71e035f83be0cc806ed3352452be27e3fec57aa9";
+      rev = "e544cb3cf6702fdec9ce2edc9f601a9e37d91153";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PeUOBN9VblERqIZ4tWq93OvBktUwpEy+/9aiezL85Kw=";
+      sha256 = "sha256-urC3wO4+PvSNk/7UXh2AmSPaq6zyplaHLf9Xb5Nt3OM=";
     };
     date = "2026-02-07";
   };
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9aa93039d913762fa82661ef28b9ca12e4b47c5a";
+    version = "51d4803a6fbae1d280885ed6b70683efadd12e81";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9aa93039d913762fa82661ef28b9ca12e4b47c5a";
+      rev = "51d4803a6fbae1d280885ed6b70683efadd12e81";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-gttgrNx7qZ5t9+4zKO/hEng+x12S/4X2p7Tav3BV7yw=";
+      sha256 = "sha256-LtoAnQiTMYrqi7vtQ3dZrsObVlpYW/4cxNW6y7fXEvM=";
     };
-    date = "2026-02-06";
+    date = "2026-02-07";
   };
   oodle-lib = {
     pname = "oodle-lib";
