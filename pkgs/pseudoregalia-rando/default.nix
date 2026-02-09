@@ -14,10 +14,10 @@ let
     libGL
     fontconfig
     wayland
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXi
+    libX11
+    libXcursor
+    libXrandr
+    libXi
     atk
     gtk3
     pango

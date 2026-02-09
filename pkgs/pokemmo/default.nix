@@ -12,7 +12,13 @@
   which,
   coreutils,
   zenity,
-  xorg,
+  libX11,
+  libXext,
+  libXcursor,
+  libXrandr,
+  libXi,
+  libXrender,
+  libXtst,
   udev,
   src,
 }:
@@ -38,13 +44,13 @@ stdenv.mkDerivation rec {
     which
     coreutils
     zenity
-    xorg.libX11
-    xorg.libXext
-    xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXi
-    xorg.libXrender
-    xorg.libXtst
+    libX11
+    libXext
+    libXcursor
+    libXrandr
+    libXi
+    libXrender
+    libXtst
     udev
   ];
 
@@ -83,13 +89,13 @@ stdenv.mkDerivation rec {
         libGL
         pipewire
         openssl
-        xorg.libX11
-        xorg.libXext
-        xorg.libXcursor
-        xorg.libXrandr
-        xorg.libXi
-        xorg.libXrender
-        xorg.libXtst
+        libX11
+        libXext
+        libXcursor
+        libXrandr
+        libXi
+        libXrender
+        libXtst
         udev
       ]
     }"

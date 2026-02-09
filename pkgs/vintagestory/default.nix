@@ -7,7 +7,9 @@
   copyDesktopItems,
   imagemagick,
   dotnet-runtime_8,
-  xorg,
+  libX11,
+  libXi,
+  libXcursor,
   libglvnd,
   openal,
   pipewire,
@@ -32,9 +34,9 @@ stdenv.mkDerivation rec {
   buildInputs = [
     dotnet-runtime_8
     stdenv.cc.cc.lib
-    xorg.libX11
-    xorg.libXi
-    xorg.libXcursor
+    libX11
+    libXi
+    libXcursor
     libglvnd
     openal
     wayland
