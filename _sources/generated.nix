@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "e544cb3cf6702fdec9ce2edc9f601a9e37d91153";
+    version = "a56b8d3de8af670fb1d8c70211ca5275c1aa4c52";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "e544cb3cf6702fdec9ce2edc9f601a9e37d91153";
+      rev = "a56b8d3de8af670fb1d8c70211ca5275c1aa4c52";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-urC3wO4+PvSNk/7UXh2AmSPaq6zyplaHLf9Xb5Nt3OM=";
+      sha256 = "sha256-Zgay10B/7s2+lgfkckp5f7cDwm8fHVSopW+B5Ams8E4=";
     };
-    date = "2026-02-07";
+    date = "2026-02-09";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "51d4803a6fbae1d280885ed6b70683efadd12e81";
+    version = "ece5f671b3536d49b9c70d008f952e65c41198ff";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "51d4803a6fbae1d280885ed6b70683efadd12e81";
+      rev = "ece5f671b3536d49b9c70d008f952e65c41198ff";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LtoAnQiTMYrqi7vtQ3dZrsObVlpYW/4cxNW6y7fXEvM=";
+      sha256 = "sha256-xxRSaCrcLn8quRIcrQxeY1S5IaHbE8d3bgNgdWKr8aM=";
     };
-    date = "2026-02-07";
+    date = "2026-02-08";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -82,34 +82,34 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260203-slr";
+    version = "cachyos-10.0-20260207-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64.tar.xz";
-      sha256 = "sha256-HGWF+gjGzDKOofppZyUpq7OHucU9mJ0lKgll7TamL+c=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64.tar.xz";
+      sha256 = "sha256-hJKrcrrMbVx1gakpVWYWg9ALjq+uAfYeB/67JfFliTg=";
     };
   };
   proton-cachyos-x86_64-v2 = {
     pname = "proton-cachyos-x86_64-v2";
-    version = "cachyos-10.0-20260203-slr";
+    version = "cachyos-10.0-20260207-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64_v2.tar.xz";
-      sha256 = "sha256-X7etWwnbV0X9vCGWu+eOshdPLKsVp9yE9UpaQFKTFEA=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v2.tar.xz";
+      sha256 = "sha256-mNUB/NXwTWDuP1PBVkENgMX8u53yzkP0dhQ8HnbUScs=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260203-slr";
+    version = "cachyos-10.0-20260207-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-5Lyg5gdy2SL4L7KlDCjmmXtTy+LEhS4sQDYDzxwo8o4=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-76iQrZKa2ysCDKV4jysWqthaiKMfjGWQR7r6IwilktI=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260203-slr";
+    version = "cachyos-10.0-20260207-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260203-slr/proton-cachyos-10.0-20260203-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-Ble4VSLZQyb2cUqEp68XQx4IK0RG0gJGGxEorW2mwb8=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260207-slr/proton-cachyos-10.0-20260207-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-/GkMdSjP3DkbYjvvDEZvI2Na4WFW27zVwxkf9sLQj80=";
     };
   };
   pseudoregalia-rando = {

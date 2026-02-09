@@ -247,7 +247,7 @@
     },
     "xbyak": {
         "cargoLock": null,
-        "date": "2026-02-06",
+        "date": "2026-02-09",
         "extract": null,
         "name": "xbyak",
         "passthru": null,
@@ -259,11 +259,11 @@
             "name": null,
             "owner": "herumi",
             "repo": "xbyak",
-            "rev": "7baceeeabf832258c890ec2c031ff00b4eeac8a4",
-            "sha256": "sha256-+VRyge7vDxggHKtVa6qQZCUKuhjXNixoKEu3H3wp71g=",
+            "rev": "05aaf32f4c5d532fd7a3ebe69bfaecc5de056e4e",
+            "sha256": "sha256-eNUNrCv+1xOZFkxTIHgWkt6Ejbqp9Jb27FF7uNn2BEA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7baceeeabf832258c890ec2c031ff00b4eeac8a4"
+        "version": "05aaf32f4c5d532fd7a3ebe69bfaecc5de056e4e"
     }
 }
