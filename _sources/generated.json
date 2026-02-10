@@ -8,15 +8,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-2cNAfYzPbZ9O8s4b3RBLki8aM9TiFuZcGffFbY4zxJQ=",
+            "sha256": "sha256-21ddAZveT1EXYr5cUoiIzD7uAbtF94EXW04VKGS5izM=",
             "type": "url",
-            "url": "https://dl.discordapp.net/apps/linux/0.0.123/discord-0.0.123.tar.gz"
+            "url": "https://dl.discordapp.net/apps/linux/0.0.124/discord-0.0.124.tar.gz"
         },
-        "version": "0.0.123"
+        "version": "0.0.124"
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-02-09",
+        "date": "2026-02-10",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "866881d0e36721f52ce3d788c2a33c28ad1fcaeb",
-            "sha256": "sha256-7upoNV4j4vQW5YHsLQnRGl/L9abfILujZnn2/GbcarM=",
+            "rev": "efd26c3e4d400ab87b8d419c6a3c3d895664fdaa",
+            "sha256": "sha256-dSAjmCnW48s5fYd5lmuSbNAljeDWWIyQ/sRkZ4kuBOw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "866881d0e36721f52ce3d788c2a33c28ad1fcaeb"
+        "version": "efd26c3e4d400ab87b8d419c6a3c3d895664fdaa"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -71,7 +71,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-02-09",
+        "date": "2026-02-10",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -81,13 +81,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "fc814fa828e410b842408684066c8f8a48aefb2c",
-            "sha256": "sha256-59pKLb2YxhX/xwxyUEVt8hxCI2sT+yxCuk/vE7G2TWw=",
+            "rev": "096674394312f63b13b0276fa166e639146f4cd3",
+            "sha256": "sha256-dT7mMN3MXNkmoKOJNuCSH469R2TGH5/nJ4P+D4eApog=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "fc814fa828e410b842408684066c8f8a48aefb2c"
+        "version": "096674394312f63b13b0276fa166e639146f4cd3"
     },
     "oodle-lib": {
         "cargoLock": null,
@@ -196,7 +196,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-02-06",
+        "date": "2026-02-10",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -206,13 +206,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "50c5124e1cc95062a883c58fc2551b302bd5994f",
-            "sha256": "sha256-1459x8G0++jH6NO5n4B5LVjDFjAFkLKFAQygVdqgOAk=",
+            "rev": "f9c404c229af828b362086ae954252647c80b208",
+            "sha256": "sha256-KYOdA41BCP3gnwM/yqmgh/qV+zKaR12c04k52RG6q6g=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "50c5124e1cc95062a883c58fc2551b302bd5994f"
+        "version": "f9c404c229af828b362086ae954252647c80b208"
     },
     "vintagestory": {
         "cargoLock": null,

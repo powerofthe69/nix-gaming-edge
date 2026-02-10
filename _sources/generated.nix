@@ -8,25 +8,25 @@
 {
   discord = {
     pname = "discord";
-    version = "0.0.123";
+    version = "0.0.124";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.123/discord-0.0.123.tar.gz";
-      sha256 = "sha256-2cNAfYzPbZ9O8s4b3RBLki8aM9TiFuZcGffFbY4zxJQ=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.124/discord-0.0.124.tar.gz";
+      sha256 = "sha256-21ddAZveT1EXYr5cUoiIzD7uAbtF94EXW04VKGS5izM=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "866881d0e36721f52ce3d788c2a33c28ad1fcaeb";
+    version = "efd26c3e4d400ab87b8d419c6a3c3d895664fdaa";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "866881d0e36721f52ce3d788c2a33c28ad1fcaeb";
+      rev = "efd26c3e4d400ab87b8d419c6a3c3d895664fdaa";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7upoNV4j4vQW5YHsLQnRGl/L9abfILujZnn2/GbcarM=";
+      sha256 = "sha256-dSAjmCnW48s5fYd5lmuSbNAljeDWWIyQ/sRkZ4kuBOw=";
     };
-    date = "2026-02-09";
+    date = "2026-02-10";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -52,17 +52,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "fc814fa828e410b842408684066c8f8a48aefb2c";
+    version = "096674394312f63b13b0276fa166e639146f4cd3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "fc814fa828e410b842408684066c8f8a48aefb2c";
+      rev = "096674394312f63b13b0276fa166e639146f4cd3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-59pKLb2YxhX/xwxyUEVt8hxCI2sT+yxCuk/vE7G2TWw=";
+      sha256 = "sha256-dT7mMN3MXNkmoKOJNuCSH469R2TGH5/nJ4P+D4eApog=";
     };
-    date = "2026-02-09";
+    date = "2026-02-10";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -122,17 +122,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "50c5124e1cc95062a883c58fc2551b302bd5994f";
+    version = "f9c404c229af828b362086ae954252647c80b208";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "50c5124e1cc95062a883c58fc2551b302bd5994f";
+      rev = "f9c404c229af828b362086ae954252647c80b208";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1459x8G0++jH6NO5n4B5LVjDFjAFkLKFAQygVdqgOAk=";
+      sha256 = "sha256-KYOdA41BCP3gnwM/yqmgh/qV+zKaR12c04k52RG6q6g=";
     };
-    date = "2026-02-06";
+    date = "2026-02-10";
   };
   vintagestory = {
     pname = "vintagestory";
