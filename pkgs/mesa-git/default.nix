@@ -55,8 +55,12 @@ let
       version = "${mesaVersion}";
       src = mesa-src;
 
-      # Remove spirv2dxil output since we're not building DirectX stuff
-      outputs = lib.remove "spirv2dxil" (old.outputs or [ "out" ]);
+      # Remove spirv2dxil and opencl 32bit
+      outputs =
+        let
+          base = lib.remove "spirv2dxil" (old.outputs or [ "out" ]);
+        in
+        if is32bit then lib.remove "opencl" base else base;
 
       buildInputs =
         (lib.filter (
@@ -89,12 +93,41 @@ let
           wayland-protocols-git
         ];
 
-      # Remove spirv2dxil from postInstall too
+      # Remove spirv2dxil and opencl (32-bit) from postInstall too
       postInstall =
-        builtins.replaceStrings
-          [ "moveToOutput bin/spirv2dxil $spirv2dxil" "moveToOutput \"lib/libspirv_to_dxil*\" $spirv2dxil" ]
-          [ "" "" ]
-          (old.postInstall or "");
+        let
+          base =
+            builtins.replaceStrings
+              [
+                "moveToOutput bin/spirv2dxil $spirv2dxil"
+                "moveToOutput \"lib/libspirv_to_dxil*\" $spirv2dxil"
+              ]
+              [ "" "" ]
+              (old.postInstall or "");
+        in
+        if is32bit then
+          builtins.replaceStrings
+            [
+              ''moveToOutput "lib/lib*OpenCL*" $opencl''
+              "mkdir -p $opencl/etc/OpenCL/vendors/"
+              "echo $opencl/lib/libRusticlOpenCL.so > $opencl/etc/OpenCL/vendors/rusticl.icd"
+            ]
+            [ "" "" "" ]
+            base
+        else
+          base;
+
+      # Fix --replace deprecation and strip opencl (32-bit) from patchelf
+      postFixup =
+        let
+          base =
+            builtins.replaceStrings [ "--replace '\"libVkLayer_'" ] [ "--replace-fail '\"libVkLayer_'" ]
+              (old.postFixup or "");
+        in
+        if is32bit then
+          builtins.replaceStrings [ " $opencl/lib/libRusticlOpenCL.so" ] [ "" ] base
+        else
+          base;
 
       mesonFlags =
         # Filter out flags we want to override from the original
