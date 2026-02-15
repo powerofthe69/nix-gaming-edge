@@ -56,26 +56,10 @@
           variant = variantName;
         };
 
-      # Remove URL prefix from latest version string
       mkVintageStory =
         sourceKey:
-        let
-          src = nvSources.${sourceKey};
-
-          version =
-            let
-              v = src.version;
-            in
-            if builtins.match ".*vs_client_linux-x64_(.*)" v != null then
-              builtins.elemAt (builtins.match ".*vs_client_linux-x64_(.*)" v) 0
-            else
-              v;
-        in
         pkgs.callPackage ./pkgs/vintagestory {
-          sourceData = {
-            inherit version;
-            inherit (src) src;
-          };
+          source = nvSources.${sourceKey};
         };
 
       proton = mkProton "proton-cachyos" "base";
