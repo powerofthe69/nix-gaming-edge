@@ -103,6 +103,7 @@ llvmPackages.stdenv.mkDerivation {
     catch2
     enet
     qt6.qtbase
+    qt6.qtcharts
     qt6.qtmultimedia
     qt6.qtwayland
     qt6.qttools
