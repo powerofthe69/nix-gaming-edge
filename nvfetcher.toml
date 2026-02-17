@@ -84,3 +84,8 @@ fetch.url = "https://dl.discordapp.net/apps/linux/$ver/discord-$ver.tar.gz"
 [vencord]
 src.git = "https://github.com/Vendicated/Vencord.git"
 fetch.git = "https://github.com/Vendicated/Vencord.git"
+
+# Fluxer
+[fluxer-desktop]
+src.cmd = "curl -sI 'https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz' | grep -i location: | grep -oP 'fluxer-stable-\\K[0-9]+\\.[0-9]+\\.[0-9]+'"
+fetch.url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz"

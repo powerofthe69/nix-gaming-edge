@@ -73,6 +73,11 @@
         vencordSrc = nvSources.vencord;
       };
 
+      # Fluxer Desktop
+      fluxer-desktop = pkgs.callPackage ./pkgs/fluxer-desktop {
+        source = nvSources.fluxer-desktop;
+      };
+
     in
     {
       packages.${pkgs.stdenv.hostPlatform.system} = {
@@ -130,6 +135,9 @@
         # Maintaining versions myself now with nightly builds
         discord = discord.discord;
         vencord = discord.vencord;
+
+        # Fluxer Desktop
+        fluxer-desktop = fluxer-desktop;
       };
 
       overlays = {
@@ -172,6 +180,8 @@
 
           discord = self.packages.${final.stdenv.hostPlatform.system}.discord;
           vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
+
+          fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
         };
 
         mesa-git = final: prev: {
@@ -230,6 +240,10 @@
         discord = final: prev: {
           discord = self.packages.${final.stdenv.hostPlatform.system}.discord;
           vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
+        };
+
+        fluxer = final: prev: {
+          fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
         };
       };
 

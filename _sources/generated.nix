@@ -28,6 +28,14 @@
     };
     date = "2026-02-17";
   };
+  fluxer-desktop = {
+    pname = "fluxer-desktop";
+    version = "0.0.8";
+    src = fetchurl {
+      url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz";
+      sha256 = "sha256-rPY5j6aBByD+2FsGwBGzJOfbT+xr8vx62TwkRsNgDy0=";
+    };
+  };
   hytale-launcher = {
     pname = "hytale-launcher";
     version = "2026.02.16-4af6ef9";

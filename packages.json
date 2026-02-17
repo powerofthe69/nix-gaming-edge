@@ -26,6 +26,11 @@
       "runner": ["self-hosted", "light-tasks"]
     },
     {
+      "name": "hytale",
+      "packages": "hytale-launcher",
+      "runner": ["self-hosted", "light-tasks"]
+    },
+    {
       "name": "proton",
       "packages": "proton-cachyos proton-cachyos-x86_64-v2 proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4",
       "runner": "ubuntu-latest"
@@ -41,9 +46,9 @@
       "runner": "ubuntu-latest"
     },
     {
-      "name": "hytale",
-      "packages": "hytale-launcher",
-      "runner": ["self-hosted", "light-tasks"]
+      "name": "fluxer-desktop",
+      "packages": "fluxer-desktop",
+      "runner": "ubuntu-latest"
     }
   ]
 }
