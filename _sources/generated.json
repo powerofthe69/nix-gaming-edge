@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-21ddAZveT1EXYr5cUoiIzD7uAbtF94EXW04VKGS5izM=",
+            "sha256": "sha256-AyKUq2GJjMam2r7oQjdQBhBsTYbhVtnUaTeLP4emRIE=",
             "type": "url",
-            "url": "https://dl.discordapp.net/apps/linux/0.0.124/discord-0.0.124.tar.gz"
+            "url": "https://dl.discordapp.net/apps/linux/0.0.125/discord-0.0.125.tar.gz"
         },
-        "version": "0.0.124"
+        "version": "0.0.125"
     },
     "eden-emulator": {
         "cargoLock": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5fb3ae487cbf80d2a0c16ba2993f35eeebe9d115",
-            "sha256": "sha256-pwBqhZmRtn3nNRzwy2ynPrjLvQYJb0Fme1B3Xhwg2AY=",
+            "rev": "72b3f3a8a597feeb8fbbc1a009182b737ba40e2d",
+            "sha256": "sha256-7+zPHt4ZLNH8K84X7OrPs37zgadWohI8/KpaEj1H9j0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "5fb3ae487cbf80d2a0c16ba2993f35eeebe9d115"
+        "version": "72b3f3a8a597feeb8fbbc1a009182b737ba40e2d"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -58,11 +58,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-kA6mUFpemj+uUAX9mazDo/6PPONWjqRgmYUYJC1O3xU=",
+            "sha256": "sha256-R/eumJ1TOhHitgwYwSNxT91E+AtEyE6JfbsbdIq9Xpk=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.16-4af6ef9.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.17-48a5aed.zip"
         },
-        "version": "2026.02.16-4af6ef9"
+        "version": "2026.02.17-48a5aed"
     },
     "libdrm": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-02-16",
+        "date": "2026-02-18",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b59c3ac82a1cca599fc5e443207801f2f92d892a",
-            "sha256": "sha256-uvt9MN+SItXCJfFC+h/GHdvDZZ90Gpbbk8Pt8MCvpg0=",
+            "rev": "0bfad39f15ecfe2e957a69fc57963a7868f16522",
+            "sha256": "sha256-aVS5On8U/Nx9TxormUY2jXecgN2YBFfzBBvIIPAX+6Y=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "b59c3ac82a1cca599fc5e443207801f2f92d892a"
+        "version": "0bfad39f15ecfe2e957a69fc57963a7868f16522"
     },
     "oodle-lib": {
         "cargoLock": null,
