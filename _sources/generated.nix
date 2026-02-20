@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "72b3f3a8a597feeb8fbbc1a009182b737ba40e2d";
+    version = "d5aa10d57247827fa5bf0aea01b6a0aa4c57a164";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "72b3f3a8a597feeb8fbbc1a009182b737ba40e2d";
+      rev = "d5aa10d57247827fa5bf0aea01b6a0aa4c57a164";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7+zPHt4ZLNH8K84X7OrPs37zgadWohI8/KpaEj1H9j0=";
+      sha256 = "sha256-yZIMPng15LLb7ytNeNBExpGHJUXatzdaqHyn++OSqLM=";
     };
-    date = "2026-02-17";
+    date = "2026-02-20";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -38,10 +38,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.02.17-48a5aed";
+    version = "2026.02.19-a3ce7ff";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.17-48a5aed.zip";
-      sha256 = "sha256-R/eumJ1TOhHitgwYwSNxT91E+AtEyE6JfbsbdIq9Xpk=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.19-a3ce7ff.zip";
+      sha256 = "sha256-9rLXHIK46+UJOHNka9RCN+x0K/ncJhErxwuzxUF/mGo=";
     };
   };
   libdrm = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "0bfad39f15ecfe2e957a69fc57963a7868f16522";
+    version = "055aec542efaa9a3a86dfb4fa4f1c0360176ca5a";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "0bfad39f15ecfe2e957a69fc57963a7868f16522";
+      rev = "055aec542efaa9a3a86dfb4fa4f1c0360176ca5a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aVS5On8U/Nx9TxormUY2jXecgN2YBFfzBBvIIPAX+6Y=";
+      sha256 = "sha256-a+BWBrrMhHGKcQYOtEmDGlSmuNqoWeC5EY6rGBxZk3c=";
     };
-    date = "2026-02-18";
+    date = "2026-02-20";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -82,10 +82,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "694ca092-5f78c01";
+    version = "699654fa-6027b01";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
+      sha256 = "sha256-xOIsMZ3OFJlDZr26O/09AvjUzbZZ9UbaJZoggW4EVjg=";
     };
   };
   proton-cachyos = {
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "f9c404c229af828b362086ae954252647c80b208";
+    version = "dc25c8f0461972918b2d73a0d93a3d4b6772b99a";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "f9c404c229af828b362086ae954252647c80b208";
+      rev = "dc25c8f0461972918b2d73a0d93a3d4b6772b99a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-KYOdA41BCP3gnwM/yqmgh/qV+zKaR12c04k52RG6q6g=";
+      sha256 = "sha256-9nD8NrhW3RqMdm+8dYpn5ak6Mii3/l+rtNE1T7bOLjI=";
     };
-    date = "2026-02-10";
+    date = "2026-02-20";
   };
   vintagestory = {
     pname = "vintagestory";
@@ -160,16 +160,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "ee95f9899e22df14035557e8977c2b99a7678f3b";
+    version = "f0b6bb7b8c464a60d790d847a76fb75dd2a20748";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "ee95f9899e22df14035557e8977c2b99a7678f3b";
+      rev = "f0b6bb7b8c464a60d790d847a76fb75dd2a20748";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-2ixLGspkn8BVrUhP582kTZXdj0e+mNb2FsL6hvZsizM=";
+      sha256 = "sha256-B5lpt6zPAI3/t8PAiF3XKEiy0vZiTG48K0mZpjFteac=";
     };
-    date = "2026-02-05";
+    date = "2026-02-19";
   };
 }
