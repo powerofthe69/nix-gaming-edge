@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "b6238d6df76ecbef12f295ee0ef702e18542f109";
+    version = "2d273590747cec4716a2e3c293a5b8693abb0403";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "b6238d6df76ecbef12f295ee0ef702e18542f109";
+      rev = "2d273590747cec4716a2e3c293a5b8693abb0403";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uK6HiH/dIp9NEexuKfhOzxt1ewiAfeblzsROYxys0DE=";
+      sha256 = "sha256-LWlKYg9/fqOZHUnnqlGyjkxNedeSYYI+khdBTdddaRs=";
     };
-    date = "2026-02-21";
+    date = "2026-02-22";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";

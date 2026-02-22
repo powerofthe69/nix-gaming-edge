@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-02-21",
+        "date": "2026-02-22",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b6238d6df76ecbef12f295ee0ef702e18542f109",
-            "sha256": "sha256-uK6HiH/dIp9NEexuKfhOzxt1ewiAfeblzsROYxys0DE=",
+            "rev": "2d273590747cec4716a2e3c293a5b8693abb0403",
+            "sha256": "sha256-LWlKYg9/fqOZHUnnqlGyjkxNedeSYYI+khdBTdddaRs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "b6238d6df76ecbef12f295ee0ef702e18542f109"
+        "version": "2d273590747cec4716a2e3c293a5b8693abb0403"
     },
     "fluxer-desktop": {
         "cargoLock": null,
