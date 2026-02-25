@@ -1,7 +1,7 @@
 {
     "biscuit": {
         "cargoLock": null,
-        "date": "2026-01-29",
+        "date": "2026-02-24",
         "extract": null,
         "name": "biscuit",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "lioncash",
             "repo": "biscuit",
-            "rev": "7dc44a52c81855a75e9ecafa4e7f2af3593586f3",
-            "sha256": "sha256-qkm8+Kxg2jEAgMdyJGC+86e+vIcY4uFpTa+HHU2F/pI=",
+            "rev": "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad",
+            "sha256": "sha256-pNSRjvSYmnkyrETKdYmD8+dOfmIZpFDQO0wRBZSmNZU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7dc44a52c81855a75e9ecafa4e7f2af3593586f3"
+        "version": "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad"
     },
     "cpp-jwt": {
         "cargoLock": null,

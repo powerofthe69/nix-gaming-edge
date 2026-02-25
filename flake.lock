@@ -177,11 +177,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1771479030,
-        "narHash": "sha256-rRrepLV6/X2fJ4sQNEN4RKURILBd3MOpwr26ORp1+Ow=",
+        "lastModified": 1771985657,
+        "narHash": "sha256-wAnrrFZxuHrITZAfyUyuIItYW/2gjO+gm3TCupExdt4=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "24e66bd75de3a635a6e36257e7f39dbe79bbc04c",
+        "rev": "dbbb365d32725022041caa2d2211f7934ca8ef58",
         "type": "github"
       },
       "original": {
@@ -261,11 +261,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1771369470,
-        "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
+        "lastModified": 1771848320,
+        "narHash": "sha256-0MAd+0mun3K/Ns8JATeHT1sX28faLII5hVLq0L3BdZU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0182a361324364ae3f436a63005877674cf45efb",
+        "rev": "2fc6539b481e1d2569f25f8799236694180c0993",
         "type": "github"
       },
       "original": {

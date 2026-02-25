@@ -8,25 +8,25 @@
 {
   discord = {
     pname = "discord";
-    version = "0.0.125";
+    version = "0.0.126";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.125/discord-0.0.125.tar.gz";
-      sha256 = "sha256-AyKUq2GJjMam2r7oQjdQBhBsTYbhVtnUaTeLP4emRIE=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.126/discord-0.0.126.tar.gz";
+      sha256 = "sha256-a61yWJGDcC5l6Sz7ALmJQky+PCeCFs6wCU8ISqDfly0=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "963f9981ce9846a4ed97f6b12c49d9b61db6fab9";
+    version = "00e2128fab729e3f6ff2726ea779da65f77b5818";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "963f9981ce9846a4ed97f6b12c49d9b61db6fab9";
+      rev = "00e2128fab729e3f6ff2726ea779da65f77b5818";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-gS/aaPuoqlRPaD4L5+X3p9aOUlSu7Zkv9GbFEhK6C78=";
+      sha256 = "sha256-Me8VwAquFFfIPRtIA+rOolf3wU9kuX6HgIAYE/usMgM=";
     };
-    date = "2026-02-23";
+    date = "2026-02-25";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -38,39 +38,39 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.02.19-a3ce7ff";
+    version = "2026.02.23-17f7b59";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.19-a3ce7ff.zip";
-      sha256 = "sha256-9rLXHIK46+UJOHNka9RCN+x0K/ncJhErxwuzxUF/mGo=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.23-17f7b59.zip";
+      sha256 = "sha256-sOZUozASkAdWRRlbHyVUCh0KC6+GfV52m00Fiqm7Q8Y=";
     };
   };
   libdrm = {
     pname = "libdrm";
-    version = "369990d9660a387f618d0eedc341eb285016243b";
+    version = "bd856bed23ea431a97c6adc777cda9e7cd9ca6b2";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "369990d9660a387f618d0eedc341eb285016243b";
+      rev = "bd856bed23ea431a97c6adc777cda9e7cd9ca6b2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kOaTjBeo4IsfWEk/JBTNId5ikrnpoc9DEjIl7DUd2yE=";
+      sha256 = "sha256-RGxEegkBj6l3sVnbXj3l70j6sXF2z2KpOxqSQxUFFE4=";
     };
-    date = "2025-12-19";
+    date = "2026-02-23";
   };
   mesa = {
     pname = "mesa";
-    version = "b2050f1173db8387504d8b3e0e62596dde8719c4";
+    version = "0632161956fc69108be38d052d0d76cae94fe19c";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b2050f1173db8387504d8b3e0e62596dde8719c4";
+      rev = "0632161956fc69108be38d052d0d76cae94fe19c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-nSWNFnSHpr59O9hZQS6MI20pGWW+BJcm80aZYNgpwaY=";
+      sha256 = "sha256-cP1QQGDez+oVjpICMw+YJ3CYVLOpbkSPDY6L2fSlIUk=";
     };
-    date = "2026-02-22";
+    date = "2026-02-25";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -82,10 +82,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "69990ec2-60289aa";
+    version = "699d1080-602760a";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-itUGaT4+OlUebuusJWD6VCaaNUeEma98A98B/jfudWc=";
+      sha256 = "sha256-iMpA0sFFCjUofg8/XzW2XRiSCD5KoWIfk0pdD6lrzDY=";
     };
   };
   proton-cachyos = {
