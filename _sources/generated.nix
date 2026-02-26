@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "00e2128fab729e3f6ff2726ea779da65f77b5818";
+    version = "0d950195e9cfbd89a3fb69e784437f3cc5c3e88e";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "00e2128fab729e3f6ff2726ea779da65f77b5818";
+      rev = "0d950195e9cfbd89a3fb69e784437f3cc5c3e88e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Me8VwAquFFfIPRtIA+rOolf3wU9kuX6HgIAYE/usMgM=";
+      sha256 = "sha256-tN109vShhGcoMQG5VoLN4s06KKx9IB3tAbCeCf7RehY=";
     };
-    date = "2026-02-25";
+    date = "2026-02-26";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -46,31 +46,31 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "bd856bed23ea431a97c6adc777cda9e7cd9ca6b2";
+    version = "15cdcfe9e1c4b00f2a819bc1f4b3efa1326ac6bc";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "bd856bed23ea431a97c6adc777cda9e7cd9ca6b2";
+      rev = "15cdcfe9e1c4b00f2a819bc1f4b3efa1326ac6bc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-RGxEegkBj6l3sVnbXj3l70j6sXF2z2KpOxqSQxUFFE4=";
+      sha256 = "sha256-vH+C4kLX7n4OAEA/fiVdcQhLUC2H5+SH4AS7vUdEr/M=";
     };
-    date = "2026-02-23";
+    date = "2026-02-25";
   };
   mesa = {
     pname = "mesa";
-    version = "0632161956fc69108be38d052d0d76cae94fe19c";
+    version = "8f4de30d0581ed9bc6c289cc62eafc2253ef63a0";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "0632161956fc69108be38d052d0d76cae94fe19c";
+      rev = "8f4de30d0581ed9bc6c289cc62eafc2253ef63a0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-cP1QQGDez+oVjpICMw+YJ3CYVLOpbkSPDY6L2fSlIUk=";
+      sha256 = "sha256-Guc7hPmDzJP22Ahf0WtUqUuglXNIYiFT3Y4ioV64RHA=";
     };
-    date = "2026-02-25";
+    date = "2026-02-26";
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "dc25c8f0461972918b2d73a0d93a3d4b6772b99a";
+    version = "12da7a08fbbfe118ffdb293488745cc991c1c8a6";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "dc25c8f0461972918b2d73a0d93a3d4b6772b99a";
+      rev = "12da7a08fbbfe118ffdb293488745cc991c1c8a6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9nD8NrhW3RqMdm+8dYpn5ak6Mii3/l+rtNE1T7bOLjI=";
+      sha256 = "sha256-Dqw2VPL1E4tu4m/oe2FVdWr9O1cqdsuMsoFFcosldCc=";
     };
-    date = "2026-02-20";
+    date = "2026-02-26";
   };
   vintagestory = {
     pname = "vintagestory";
