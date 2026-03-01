@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-02-27",
+        "date": "2026-03-01",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "fc63de39dd4e1bd1bb4d0cee5808bb8f38598fa8",
-            "sha256": "sha256-LhxBTbq9CGyWLDhl52hDbmkIY1+gsCasq1x9Mzj6VLw=",
+            "rev": "2991bd18ef18d46069344e816591e34f05dff397",
+            "sha256": "sha256-CUFcUcFN9tBN0aeNmx8mcpleUrMfcPvfMory0rUbGrM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "fc63de39dd4e1bd1bb4d0cee5808bb8f38598fa8"
+        "version": "2991bd18ef18d46069344e816591e34f05dff397"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-02-27",
+        "date": "2026-02-28",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8a6c09e1f1c80de7da4110ec8319cf11e8c39812",
-            "sha256": "sha256-pWs8ozAMn8WzqoBAqbDijbrWnzpI5Lv2cGZGhbC6ksw=",
+            "rev": "6c60f423b38207b06259df0f850ac70e13198e36",
+            "sha256": "sha256-0Sq1j7j822/waWsJaOvxSYEN7NqRSgttkAN+J4cVWQ8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "8a6c09e1f1c80de7da4110ec8319cf11e8c39812"
+        "version": "6c60f423b38207b06259df0f850ac70e13198e36"
     },
     "oodle-lib": {
         "cargoLock": null,
@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-iMpA0sFFCjUofg8/XzW2XRiSCD5KoWIfk0pdD6lrzDY=",
+            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
-        "version": "699d1080-602760a"
+        "version": "69a25a87-6036128"
     },
     "proton-cachyos": {
         "cargoLock": null,
