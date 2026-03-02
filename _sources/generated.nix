@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "2991bd18ef18d46069344e816591e34f05dff397";
+    version = "464212393e296c59488171692df1d096ecfa5607";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "2991bd18ef18d46069344e816591e34f05dff397";
+      rev = "464212393e296c59488171692df1d096ecfa5607";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-CUFcUcFN9tBN0aeNmx8mcpleUrMfcPvfMory0rUbGrM=";
+      sha256 = "sha256-MK5q9kpLd9FfOgqvdQjHjEx4Awxc9E20ff0dtqtuaDI=";
     };
-    date = "2026-03-01";
+    date = "2026-03-02";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -38,10 +38,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.02.23-17f7b59";
+    version = "2026.02.26-8739a13";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.23-17f7b59.zip";
-      sha256 = "sha256-sOZUozASkAdWRRlbHyVUCh0KC6+GfV52m00Fiqm7Q8Y=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.26-8739a13.zip";
+      sha256 = "sha256-A0avAHYAXcfAvGxyKj9y96iQx75e0ge6NBKCGImrXcc=";
     };
   };
   libdrm = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "6c60f423b38207b06259df0f850ac70e13198e36";
+    version = "1e1d8931c7de6316b2c7b4c2c20e370079c23402";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "6c60f423b38207b06259df0f850ac70e13198e36";
+      rev = "1e1d8931c7de6316b2c7b4c2c20e370079c23402";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-0Sq1j7j822/waWsJaOvxSYEN7NqRSgttkAN+J4cVWQ8=";
+      sha256 = "sha256-eG3Cidkyd/YhpnK5DibhFzjSsjH4vFadJnV7lg530R0=";
     };
-    date = "2026-02-28";
+    date = "2026-03-01";
   };
   oodle-lib = {
     pname = "oodle-lib";
