@@ -16,15 +16,15 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "d720a7b4b4e3c2bc4f7e2c1b16e282ec91766aa8";
+    version = "9d2341eaeafb275d3d3e4692812fe121ae24e2e3";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "d720a7b4b4e3c2bc4f7e2c1b16e282ec91766aa8";
+      rev = "9d2341eaeafb275d3d3e4692812fe121ae24e2e3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-TvkfWAO9y4NKAyyfbrYesbfAxzAOEQ0fUPM6Z3EHZMk=";
+      sha256 = "sha256-tpLT2kPHvTzjbirQ20aPynUZYv5Mg0gI+TcTw24DtAc=";
     };
     date = "2026-03-03";
   };
@@ -38,10 +38,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.02.26-8739a13";
+    version = "2026.03.03-a4f6003";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.02.26-8739a13.zip";
-      sha256 = "sha256-A0avAHYAXcfAvGxyKj9y96iQx75e0ge6NBKCGImrXcc=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.03.03-a4f6003.zip";
+      sha256 = "sha256-YhDrFFGhgOX0bjF4GPZHyASCYwtQDnUssl89K7fz+nc=";
     };
   };
   libdrm = {
@@ -60,15 +60,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "2a3c9d5ac640fc2a49e739bc41ef4045f14ef15f";
+    version = "73bc604128b541c982fc0490e577923430d0da71";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "2a3c9d5ac640fc2a49e739bc41ef4045f14ef15f";
+      rev = "73bc604128b541c982fc0490e577923430d0da71";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-IUostb2SCvLyzK5JNYX7QGl97vFI3TXm8VONR+r9jhY=";
+      sha256 = "sha256-1q5YPWTv2+nddDfKGlQzrdzb3SAlaAzSeR2o+j3HwM8=";
     };
     date = "2026-03-03";
   };
