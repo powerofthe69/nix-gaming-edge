@@ -49,7 +49,7 @@ let
     SimpleIni = cpm.simpleini.src;
     sirit = cpm.sirit.src;
     oaknut = cpm.oaknut.src;
-    xbyak = cpm.xbyak.src;
+
     cpp-jwt = cpm.cpp-jwt.src;
     libadrenotools = cpm.libadrenotools.src;
     unordered_dense = cpm.unordered-dense.src;
@@ -134,9 +134,13 @@ llvmPackages.stdenv.mkDerivation {
     unzip -q -o ${cpm.nx_tzdb.src} -d externals/nx_tzdb_data
     cmakeFlagsArray+=("-DYUZU_TZDB_PATH=$(pwd)/externals/nx_tzdb_data")
 
-    # MCL needs a writable source directory for patching
     cp -r --no-preserve=mode ${cpm.mcl.src} externals/mcl-source
     cmakeFlagsArray+=("-DCPM_mcl_SOURCE=$(pwd)/externals/mcl-source")
+
+    cp -r --no-preserve=mode ${cpm.xbyak.src} externals/xbyak-source
+    sed -i 's/explicit XBYAK_CONSTEXPR RegExp(const void \*addr)/explicit RegExp(const void *addr)/' \
+      externals/xbyak-source/xbyak/xbyak.h
+    cmakeFlagsArray+=("-DCPM_xbyak_SOURCE=$(pwd)/externals/xbyak-source")
   '';
 
   postPatch = ''
