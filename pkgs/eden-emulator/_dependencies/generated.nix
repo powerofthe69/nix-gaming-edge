@@ -8,15 +8,14 @@
 {
   biscuit = {
     pname = "biscuit";
-    version = "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad";
+    version = "v0.19.0";
     src = fetchFromGitHub {
       owner = "lioncash";
       repo = "biscuit";
-      rev = "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad";
+      rev = "v0.19.0";
       fetchSubmodules = false;
-      sha256 = "sha256-pNSRjvSYmnkyrETKdYmD8+dOfmIZpFDQO0wRBZSmNZU=";
+      sha256 = "sha256-fexoArbU317sB4scZTRijfzpe/kiltTFesn5e0C4pyw=";
     };
-    date = "2026-02-24";
   };
   cpp-jwt = {
     pname = "cpp-jwt";
@@ -80,23 +79,22 @@
   };
   nx_tzdb = {
     pname = "nx_tzdb";
-    version = "221202";
+    version = "121125";
     src = fetchurl {
-      url = "https://github.com/lat9nq/tzdb_to_nx/releases/download/221202/221202.zip";
-      sha256 = "sha256-mRzW+iIwrU1zsxHmf+0RArU8BShAoEMvCz+McXFFK3c=";
+      url = "https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/121125/121125.tar.gz";
+      sha256 = "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=";
     };
   };
   oaknut = {
     pname = "oaknut";
-    version = "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69";
+    version = "v2.0.3";
     src = fetchFromGitHub {
       owner = "eden-emulator";
       repo = "oaknut";
-      rev = "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69";
+      rev = "v2.0.3";
       fetchSubmodules = false;
       sha256 = "sha256-NWJMottKMiG6Rk2/ACNtBiYfWDsCeSGznPTqVO809P0=";
     };
-    date = "2025-10-04";
   };
   quazip = {
     pname = "quazip";
@@ -112,27 +110,25 @@
   };
   simpleini = {
     pname = "simpleini";
-    version = "18fd1db7fcfee664c174719f062b2598772c8be6";
+    version = "v4.25";
     src = fetchFromGitHub {
       owner = "brofield";
       repo = "simpleini";
-      rev = "18fd1db7fcfee664c174719f062b2598772c8be6";
+      rev = "v4.25";
       fetchSubmodules = false;
       sha256 = "sha256-1JTVjMfEuWqlyYAm4Er6HPjrP2Tnt0ntai8oVvIEOu0=";
     };
-    date = "2025-11-14";
   };
   sirit = {
     pname = "sirit";
-    version = "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1";
+    version = "v1.0.3";
     src = fetchFromGitHub {
       owner = "eden-emulator";
       repo = "sirit";
-      rev = "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1";
+      rev = "v1.0.3";
       fetchSubmodules = false;
-      sha256 = "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=";
+      sha256 = "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=";
     };
-    date = "2026-01-09";
   };
   unordered-dense = {
     pname = "unordered-dense";
@@ -148,14 +144,13 @@
   };
   xbyak = {
     pname = "xbyak";
-    version = "1d206b892aecbd0e1cafb65d4a91217e50f1d3d6";
+    version = "v7.33.2";
     src = fetchFromGitHub {
       owner = "herumi";
       repo = "xbyak";
-      rev = "1d206b892aecbd0e1cafb65d4a91217e50f1d3d6";
+      rev = "v7.33.2";
       fetchSubmodules = false;
-      sha256 = "sha256-zqs+ZzKQDb12p+XDqVRBgygxcI7Z+mKrY8tAsCYg52c=";
+      sha256 = "sha256-7HFvZ6wr7X7K5rrw9k/LWXEazJ67Hm8IqO2edcEU1pI=";
     };
-    date = "2026-03-05";
   };
 }

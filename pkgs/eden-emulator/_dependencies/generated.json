@@ -1,7 +1,7 @@
 {
     "biscuit": {
         "cargoLock": null,
-        "date": "2026-02-24",
+        "date": null,
         "extract": null,
         "name": "biscuit",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "lioncash",
             "repo": "biscuit",
-            "rev": "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad",
-            "sha256": "sha256-pNSRjvSYmnkyrETKdYmD8+dOfmIZpFDQO0wRBZSmNZU=",
+            "rev": "v0.19.0",
+            "sha256": "sha256-fexoArbU317sB4scZTRijfzpe/kiltTFesn5e0C4pyw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0ac545d484dbad7d18e78f54bd0ea6f843e4f5ad"
+        "version": "v0.19.0"
     },
     "cpp-jwt": {
         "cargoLock": null,
@@ -134,15 +134,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-mRzW+iIwrU1zsxHmf+0RArU8BShAoEMvCz+McXFFK3c=",
+            "sha256": "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=",
             "type": "url",
-            "url": "https://github.com/lat9nq/tzdb_to_nx/releases/download/221202/221202.zip"
+            "url": "https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/121125/121125.tar.gz"
         },
-        "version": "221202"
+        "version": "121125"
     },
     "oaknut": {
         "cargoLock": null,
-        "date": "2025-10-04",
+        "date": null,
         "extract": null,
         "name": "oaknut",
         "passthru": null,
@@ -154,12 +154,12 @@
             "name": null,
             "owner": "eden-emulator",
             "repo": "oaknut",
-            "rev": "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69",
+            "rev": "v2.0.3",
             "sha256": "sha256-NWJMottKMiG6Rk2/ACNtBiYfWDsCeSGznPTqVO809P0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a89bcf601f724e4b49e4ffea96aa51db5e0fbb69"
+        "version": "v2.0.3"
     },
     "quazip": {
         "cargoLock": null,
@@ -184,7 +184,7 @@
     },
     "simpleini": {
         "cargoLock": null,
-        "date": "2025-11-14",
+        "date": null,
         "extract": null,
         "name": "simpleini",
         "passthru": null,
@@ -196,16 +196,16 @@
             "name": null,
             "owner": "brofield",
             "repo": "simpleini",
-            "rev": "18fd1db7fcfee664c174719f062b2598772c8be6",
+            "rev": "v4.25",
             "sha256": "sha256-1JTVjMfEuWqlyYAm4Er6HPjrP2Tnt0ntai8oVvIEOu0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "18fd1db7fcfee664c174719f062b2598772c8be6"
+        "version": "v4.25"
     },
     "sirit": {
         "cargoLock": null,
-        "date": "2026-01-09",
+        "date": null,
         "extract": null,
         "name": "sirit",
         "passthru": null,
@@ -217,12 +217,12 @@
             "name": null,
             "owner": "eden-emulator",
             "repo": "sirit",
-            "rev": "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1",
-            "sha256": "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=",
+            "rev": "v1.0.3",
+            "sha256": "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e3cf3924bf15875ea4ec8bf6af9d693dc2266db1"
+        "version": "v1.0.3"
     },
     "unordered-dense": {
         "cargoLock": null,
@@ -247,7 +247,7 @@
     },
     "xbyak": {
         "cargoLock": null,
-        "date": "2026-03-05",
+        "date": null,
         "extract": null,
         "name": "xbyak",
         "passthru": null,
@@ -259,11 +259,11 @@
             "name": null,
             "owner": "herumi",
             "repo": "xbyak",
-            "rev": "1d206b892aecbd0e1cafb65d4a91217e50f1d3d6",
-            "sha256": "sha256-zqs+ZzKQDb12p+XDqVRBgygxcI7Z+mKrY8tAsCYg52c=",
+            "rev": "v7.33.2",
+            "sha256": "sha256-7HFvZ6wr7X7K5rrw9k/LWXEazJ67Hm8IqO2edcEU1pI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1d206b892aecbd0e1cafb65d4a91217e50f1d3d6"
+        "version": "v7.33.2"
     }
 }

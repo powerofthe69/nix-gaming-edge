@@ -6,7 +6,6 @@
   pkg-config,
   ninja,
   git,
-  unzip,
   qt6,
   wrapGAppsHook3,
   gsettings-desktop-schemas,
@@ -19,7 +18,6 @@
   zlib,
   zstd,
   openssl,
-  mbedtls,
   httplib,
   ffmpeg-headless,
   libopus,
@@ -49,7 +47,7 @@ let
     SimpleIni = cpm.simpleini.src;
     sirit = cpm.sirit.src;
     oaknut = cpm.oaknut.src;
-
+    xbyak = cpm.xbyak.src;
     cpp-jwt = cpm.cpp-jwt.src;
     libadrenotools = cpm.libadrenotools.src;
     unordered_dense = cpm.unordered-dense.src;
@@ -69,7 +67,7 @@ llvmPackages.stdenv.mkDerivation {
     pkg-config
     ninja
     git
-    unzip
+    glslang
     qt6.wrapQtAppsHook
     wrapGAppsHook3
   ];
@@ -85,7 +83,6 @@ llvmPackages.stdenv.mkDerivation {
     zlib
     zstd
     openssl
-    mbedtls
     httplib
     ffmpeg-headless
     libopus
@@ -97,7 +94,6 @@ llvmPackages.stdenv.mkDerivation {
     vulkan-utility-libraries
     spirv-tools
     spirv-headers
-    glslang
     libusb1
     gamemode
     catch2
@@ -107,8 +103,6 @@ llvmPackages.stdenv.mkDerivation {
     qt6.qtmultimedia
     qt6.qtwayland
     qt6.qttools
-    qt6.qtwebengine
-    qt6.qt5compat
   ];
 
   cmakeFlags = [
@@ -131,16 +125,12 @@ llvmPackages.stdenv.mkDerivation {
   preConfigure = ''
     # Extract timezone database
     mkdir -p externals/nx_tzdb_data
-    unzip -q -o ${cpm.nx_tzdb.src} -d externals/nx_tzdb_data
+    tar xf ${cpm.nx_tzdb.src} -C externals/nx_tzdb_data --strip-components=1
     cmakeFlagsArray+=("-DYUZU_TZDB_PATH=$(pwd)/externals/nx_tzdb_data")
 
+    # MCL needs a writable source directory
     cp -r --no-preserve=mode ${cpm.mcl.src} externals/mcl-source
     cmakeFlagsArray+=("-DCPM_mcl_SOURCE=$(pwd)/externals/mcl-source")
-
-    cp -r --no-preserve=mode ${cpm.xbyak.src} externals/xbyak-source
-    sed -i 's/explicit XBYAK_CONSTEXPR RegExp(const void \*addr)/explicit RegExp(const void *addr)/' \
-      externals/xbyak-source/xbyak/xbyak.h
-    cmakeFlagsArray+=("-DCPM_xbyak_SOURCE=$(pwd)/externals/xbyak-source")
   '';
 
   postPatch = ''

@@ -48,6 +48,7 @@ jobs:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
           nvfetcher -o _sources
+          ./scripts/sync-eden-deps.sh
           nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
 
       - name: Check what changed
@@ -145,6 +146,7 @@ jobs:
           path: |
             _sources/
             pkgs/eden-emulator/_dependencies/
+            pkgs/eden-emulator/nvfetcher.toml
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
