@@ -55,15 +55,15 @@
   };
   libadrenotools = {
     pname = "libadrenotools";
-    version = "8fae8ce254dfc1344527e05301e43f37dea2df80";
+    version = "8ba23b42d742545b709064d6e2523cdb86de68f5";
     src = fetchFromGitHub {
-      owner = "bylaws";
+      owner = "eden-emulator";
       repo = "libadrenotools";
-      rev = "8fae8ce254dfc1344527e05301e43f37dea2df80";
+      rev = "8ba23b42d742545b709064d6e2523cdb86de68f5";
       fetchSubmodules = false;
-      sha256 = "sha256-bgwqavEVpvRLLl0uETEFpiDraNmHdZywspeMV01N6lI=";
+      sha256 = "sha256-iTTos7UET3cMavCDJxgS7Nq+B7gdtbNQtJ9j9n0+uXY=";
     };
-    date = "2024-09-10";
+    date = "2025-12-25";
   };
   mcl = {
     pname = "mcl";

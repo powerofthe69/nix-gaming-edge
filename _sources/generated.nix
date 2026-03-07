@@ -16,25 +16,31 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "529b0694995c84c51515022c52a66c67ceacdc65";
+    version = "ddac8c8eb500918bd8c89e0c330587c591206c2c";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "529b0694995c84c51515022c52a66c67ceacdc65";
+      rev = "ddac8c8eb500918bd8c89e0c330587c591206c2c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-YKdDmrhXx3Fg17KIuU5LDOHOqEOYMX9A79L3WG8x6fU=";
+      sha256 = "sha256-rpb+bw0B8FGtN0Hxvr+cITxcXKukjvZOQ2SDqtoM5Gw=";
     };
-    date = "2026-03-05";
+    date = "2026-03-06";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "0.0.8";
-    src = fetchurl {
-      url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz";
-      sha256 = "sha256-rPY5j6aBByD+2FsGwBGzJOfbT+xr8vx62TwkRsNgDy0=";
+    version = "03813bbe17db008452f0f1be3090a7d2970a5447";
+    src = fetchgit {
+      url = "https://github.com/fluxerapp/fluxer";
+      rev = "03813bbe17db008452f0f1be3090a7d2970a5447";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-B8V1O1JhoK13yJS29LhTlwltdfh7f2XyzrKjZVdLQVY=";
     };
+    date = "2026-03-06";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -60,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4933e60bc2355a098ca2b853a448fbb7ae8de6e5";
+    version = "042ee8dafccc66d06bc6bd11dcee17f782d7e5cb";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4933e60bc2355a098ca2b853a448fbb7ae8de6e5";
+      rev = "042ee8dafccc66d06bc6bd11dcee17f782d7e5cb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-XfioXdKQTSrOi1MIZUZ/QDj1ZFf0WckHYUyhp6jf080=";
+      sha256 = "sha256-Qhmz6uV04kW5LvWTAv94D/MkaubPbG8z0xEmUFQ8QMQ=";
     };
-    date = "2026-03-06";
+    date = "2026-03-07";
   };
   oodle-lib = {
     pname = "oodle-lib";

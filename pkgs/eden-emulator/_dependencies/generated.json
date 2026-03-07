@@ -85,7 +85,7 @@
     },
     "libadrenotools": {
         "cargoLock": null,
-        "date": "2024-09-10",
+        "date": "2025-12-25",
         "extract": null,
         "name": "libadrenotools",
         "passthru": null,
@@ -95,14 +95,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "bylaws",
+            "owner": "eden-emulator",
             "repo": "libadrenotools",
-            "rev": "8fae8ce254dfc1344527e05301e43f37dea2df80",
-            "sha256": "sha256-bgwqavEVpvRLLl0uETEFpiDraNmHdZywspeMV01N6lI=",
+            "rev": "8ba23b42d742545b709064d6e2523cdb86de68f5",
+            "sha256": "sha256-iTTos7UET3cMavCDJxgS7Nq+B7gdtbNQtJ9j9n0+uXY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8fae8ce254dfc1344527e05301e43f37dea2df80"
+        "version": "8ba23b42d742545b709064d6e2523cdb86de68f5"
     },
     "mcl": {
         "cargoLock": null,
