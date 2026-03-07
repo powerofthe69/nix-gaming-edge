@@ -2,106 +2,85 @@
   lib,
   stdenv,
   source,
+  fetchPnpmDeps,
+  pnpmConfigHook,
+  pnpm_10,
+  nodejs,
+  electron,
   autoPatchelfHook,
   makeWrapper,
   wrapGAppsHook3,
-  alsa-lib,
-  at-spi2-atk,
-  at-spi2-core,
-  cairo,
-  cups,
-  dbus,
-  expat,
-  glib,
-  gtk3,
   libglvnd,
-  libxkbcommon,
-  mesa,
-  nspr,
-  nss,
-  pango,
   pipewire,
   systemd,
   wayland,
-  libX11,
-  libXcomposite,
-  libXdamage,
-  libXext,
-  libXfixes,
-  libXrandr,
-  libxcb,
   libXt,
   libXtst,
 }:
 
+let
+  pnpmHash = lib.fileContents ./pnpm-hash.txt;
+
+  postUnpack = ''
+    chmod u+w ${source.src.name} ${source.src.name}/package.json
+    sed -i '/"packageManager"/d' ${source.src.name}/package.json
+  '';
+in
+
 stdenv.mkDerivation {
   pname = "fluxer-desktop";
-  inherit (source) version src;
+  inherit (source) version;
+  src = source.src;
+
+  sourceRoot = "${source.src.name}/fluxer_desktop";
+  inherit postUnpack;
+
+  pnpmDeps = fetchPnpmDeps {
+    pname = "fluxer-desktop-pnpm-deps";
+    inherit (source) version;
+    src = source.src;
+    sourceRoot = "${source.src.name}/fluxer_desktop";
+    inherit postUnpack;
+    pnpm = pnpm_10;
+    fetcherVersion = 2;
+    hash = pnpmHash;
+  };
 
   nativeBuildInputs = [
+    nodejs
+    pnpm_10
+    pnpmConfigHook
     autoPatchelfHook
     makeWrapper
     wrapGAppsHook3
   ];
 
+  # Only libstdc++ for prebuilt native node addons (@electron-webauthn/native, uiohook-napi)
   buildInputs = [
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    cairo
-    cups
-    dbus
-    expat
-    glib
-    gtk3
-    libxkbcommon
-    mesa
-    nspr
-    nss
-    pango
-    libX11
-    libXcomposite
-    libXdamage
-    libXext
-    libXfixes
-    libXrandr
-    libxcb
+    stdenv.cc.cc.lib
     libXt
     libXtst
   ];
 
-  runtimeDependencies = map lib.getLib [
-    libglvnd
-    pipewire
-    systemd
-    wayland
-  ];
-
-  unpackPhase = ''
-    runHook preUnpack
-    tar xzf "$src"
-    runHook postUnpack
-  '';
-
-  sourceRoot = ".";
-  dontBuild = true;
-  dontConfigure = true;
+  env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
   dontWrapGApps = true;
+
+  buildPhase = ''
+    runHook preBuild
+    NODE_ENV=production node scripts/build.mjs
+    runHook postBuild
+  '';
 
   installPhase = ''
     runHook preInstall
 
-    local srcdir
-    srcdir=$(find . -maxdepth 1 -type d -name 'fluxer*' | head -1)
-    [ -z "$srcdir" ] && srcdir="."
-
-    mkdir -p $out/opt/fluxer
-    cp -r "$srcdir"/* $out/opt/fluxer/
-
-    chmod +x $out/opt/fluxer/fluxer
+    mkdir -p $out/lib/fluxer-desktop
+    cp package.json $out/lib/fluxer-desktop/
+    cp -r dist $out/lib/fluxer-desktop/
+    cp -r node_modules $out/lib/fluxer-desktop/
 
     mkdir -p $out/bin
-    makeWrapper $out/opt/fluxer/fluxer $out/bin/fluxer \
+    makeWrapper ${electron}/bin/electron $out/bin/fluxer \
       "''${gappsWrapperArgs[@]}" \
       --prefix LD_LIBRARY_PATH : "${
         lib.makeLibraryPath (
@@ -113,6 +92,7 @@ stdenv.mkDerivation {
           ]
         )
       }" \
+      --add-flags "$out/lib/fluxer-desktop" \
       --add-flags "\''${NIXOS_OZONE_WL:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}"
 
     mkdir -p $out/share/applications
@@ -124,11 +104,15 @@ stdenv.mkDerivation {
     Icon=fluxer
     Type=Application
     Categories=Network;Chat;InstantMessaging;
-    StartupWMClass=fluxer_app
+    StartupWMClass=fluxer_desktop
     EOF
 
-    mkdir -p $out/share/icons/hicolor/512x512/apps
-    cp $out/opt/fluxer/resources/512x512.png $out/share/icons/hicolor/512x512/apps/fluxer.png
+    for size in 16 24 32 48 64 128 256 512 1024; do
+      icon="build_resources/icons-stable/''${size}x''${size}.png"
+      if [ -f "$icon" ]; then
+        install -Dm644 "$icon" "$out/share/icons/hicolor/''${size}x''${size}/apps/fluxer.png"
+      fi
+    done
 
     runHook postInstall
   '';
@@ -138,7 +122,10 @@ stdenv.mkDerivation {
     homepage = "https://fluxer.app";
     license = licenses.agpl3Only;
     mainProgram = "fluxer";
-    platforms = [ "x86_64-linux" ];
-    sourceProvenance = [ sourceTypes.binaryNativeCode ];
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
+    sourceProvenance = [ sourceTypes.fromSource ];
   };
 }
