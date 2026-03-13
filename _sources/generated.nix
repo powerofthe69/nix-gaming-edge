@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "45e28bd78417d53205c9881a65308d9a8d6d4f1f";
+    version = "e1b20bb883d36b1a00003b538cdbaae1a5d3440d";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "45e28bd78417d53205c9881a65308d9a8d6d4f1f";
+      rev = "e1b20bb883d36b1a00003b538cdbaae1a5d3440d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-96hmydlk7Ob6bLKyaVVUSvHWAbthAq2aNo7R97nI59A=";
+      sha256 = "sha256-JrtjZREmtEJCoy0OqmoSDRfhDU7nPWE5KSAkr3Op0ec=";
     };
-    date = "2026-03-12";
+    date = "2026-03-13";
   };
   oodle-lib = {
     pname = "oodle-lib";
