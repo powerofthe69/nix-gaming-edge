@@ -101,7 +101,6 @@
 
         # Vintage Story
         vintagestory = mkVintageStory "vintagestory";
-        vintagestory-stable = mkVintageStory "vintagestory-stable";
 
         # PokeMMO
         pokemmo = pkgs.callPackage ./pkgs/pokemmo {
@@ -164,7 +163,6 @@
             self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
-          vintagestory-stable = self.packages.${final.stdenv.hostPlatform.system}.vintagestory-stable;
 
           pokemmo = self.packages.${final.stdenv.hostPlatform.system}.pokemmo;
 
@@ -212,7 +210,6 @@
 
         vintagestory = final: prev: {
           vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
-          vintagestory-stable = self.packages.${final.stdenv.hostPlatform.system}.vintagestory-stable;
         };
 
         pokemmo = final: prev: {

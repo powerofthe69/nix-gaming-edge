@@ -42,7 +42,7 @@ Other packages that were mostly for me:
 
 - `pseudoregalia-rando`: this installs the latest release of the pseudoregalia randomizer mod. Niche.
 
-- `vintagestory` or `vintagestory-stable`: this installs the latest release of Vintage Story regardless of whether it's stable or not. The nixpkgs version does not currently automatically update, and this will swap between the stable and unstable channels as necessary depending on the release. Those that don't want to use the unstable channel at all can install `vintagestory-stable` instead.
+- `vintagestory`: this installs the latest release of Vintage Story, even unstable release candidates. Those that don't want to use the unstable channel at all can use the official nixpkgs version instead.
 
 **NixOS Installation:**
 

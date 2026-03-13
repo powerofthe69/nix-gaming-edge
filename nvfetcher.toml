@@ -35,9 +35,7 @@ src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
 
 # Vintage Story
-# tracks official modding api and using src.cmd to fetch the latest and stable versions
-
-# Latest - version includes channel and URL prefix
+# tracks official modding api and using src.cmd to fetch the latest versions
 # Looks like: "stable/vs_client_linux-x64_x.xx.x" or "unstable/vs_client_linux-x64_x.xx.x-rc.x"
 [vintagestory]
 src.cmd = '''
@@ -45,11 +43,6 @@ VER=$(curl -s https://mods.vintagestory.at/api/gameversions | jq -r '[.gameversi
 if echo "$VER" | grep -q '\-rc\.'; then echo "unstable/vs_client_linux-x64_$VER"; else echo "stable/vs_client_linux-x64_$VER"; fi
 '''
 fetch.url = "https://cdn.vintagestory.at/gamefiles/$ver.tar.gz"
-
-# Stable - last version without hyphen denoting a release candidate
-[vintagestory-stable]
-src.cmd = "curl -s https://mods.vintagestory.at/api/gameversions | jq -r '[.gameversions[].name | select(test(\"^[0-9]+[.][0-9]+[.][0-9]+$\"))] | last'"
-fetch.url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_$ver.tar.gz"
 
 # PokeMMO
 [pokemmo]

@@ -42,7 +42,7 @@
     },
     {
       "name": "vintagestory",
-      "packages": "vintagestory vintagestory-stable",
+      "packages": "vintagestory",
       "runner": "ubuntu-latest"
     },
     {
