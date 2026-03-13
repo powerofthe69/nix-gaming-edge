@@ -1,6 +1,9 @@
 {
   vintagestory, # from nixpkgs
   source,
+  dotnet-runtime_8, # to match current upstream reference
+  dotnet-runtime_10,
+  lib,
 }:
 let
   version =
@@ -14,10 +17,27 @@ in
   inherit version;
   inherit (source) src;
 
-  # Auto-detect Wayland at runtime instead of upstream's waylandSupport flag
+  # RC tarball ships gameicon.png instead of gameicon.xpm
+  nativeBuildInputs = builtins.filter (p: (p.pname or "") != "imagemagick") old.nativeBuildInputs;
+
+  installPhase =
+    builtins.replaceStrings
+      [
+        "magick $out/share/vintagestory/assets/gameicon.xpm $out/share/icons/hicolor/512x512/apps/vintagestory.png"
+      ]
+      [
+        "cp $out/share/vintagestory/assets/gameicon.png $out/share/icons/hicolor/512x512/apps/vintagestory.png"
+      ]
+      old.installPhase;
+
   preFixup =
+    let
+      dotnet8exe = lib.meta.getExe dotnet-runtime_8;
+      dotnet10exe = lib.meta.getExe dotnet-runtime_10;
+      withDotnet10 = builtins.replaceStrings [ dotnet8exe ] [ dotnet10exe ] old.preFixup;
+    in
     builtins.replaceStrings
       [ ''--set-default OPENTK_4_USE_WAYLAND 1 \'' ]
       [ ''--run 'if [ -n "$WAYLAND_DISPLAY" ]; then export OPENTK_4_USE_WAYLAND=1; fi' \'' ]
-      old.preFixup;
+      withDotnet10;
 })
