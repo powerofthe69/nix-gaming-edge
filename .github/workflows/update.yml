@@ -25,7 +25,7 @@ jobs:
             echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           ref: ${{ steps.set-branch.outputs.branch }}
 
@@ -139,7 +139,7 @@ jobs:
         run: nix flake update
 
       - name: Upload updated sources
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: updated-sources
           retention-days: 1
@@ -160,7 +160,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           ref: ${{ needs.update-sources.outputs.branch }}
 
@@ -183,11 +183,11 @@ jobs:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           ref: ${{ needs.update-sources.outputs.branch }}
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@main
         with:
           name: updated-sources
 
@@ -232,12 +232,12 @@ jobs:
       needs.build.result == 'success'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           ref: ${{ needs.update-sources.outputs.branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@main
         with:
           name: updated-sources
 

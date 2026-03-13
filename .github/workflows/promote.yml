@@ -9,7 +9,7 @@ jobs:
   promote-to-master:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@main
         with:
           ref: master
           fetch-depth: 0
@@ -41,7 +41,7 @@ jobs:
 
       - name: Create Conflict Resolution PR
         if: steps.merge.outputs.status == 'conflict'
-        uses: actions/github-script@v7
+        uses: actions/github-script@main
         with:
           script: |
             const { data: existingPRs } = await github.rest.pulls.list({
