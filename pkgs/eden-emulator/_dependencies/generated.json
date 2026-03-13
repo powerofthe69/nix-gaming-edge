@@ -217,12 +217,12 @@
             "name": null,
             "owner": "eden-emulator",
             "repo": "sirit",
-            "rev": "v1.0.3",
-            "sha256": "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=",
+            "rev": "v1.0.4",
+            "sha256": "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.0.3"
+        "version": "v1.0.4"
     },
     "unordered-dense": {
         "cargoLock": null,
@@ -259,11 +259,11 @@
             "name": null,
             "owner": "herumi",
             "repo": "xbyak",
-            "rev": "v7.33.2",
-            "sha256": "sha256-7HFvZ6wr7X7K5rrw9k/LWXEazJ67Hm8IqO2edcEU1pI=",
+            "rev": "v7.35.2",
+            "sha256": "sha256-JE3Sc+l8amoVwOfj03KKiwsOfEiNPaFRrV4aXDcb3+g=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v7.33.2"
+        "version": "v7.35.2"
     }
 }

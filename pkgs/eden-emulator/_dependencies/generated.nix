@@ -121,13 +121,13 @@
   };
   sirit = {
     pname = "sirit";
-    version = "v1.0.3";
+    version = "v1.0.4";
     src = fetchFromGitHub {
       owner = "eden-emulator";
       repo = "sirit";
-      rev = "v1.0.3";
+      rev = "v1.0.4";
       fetchSubmodules = false;
-      sha256 = "sha256-eBr+KorrAOFVzxRGZ2L3H6abfNAGrdVvO/NzOFwauTA=";
+      sha256 = "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=";
     };
   };
   unordered-dense = {
@@ -144,13 +144,13 @@
   };
   xbyak = {
     pname = "xbyak";
-    version = "v7.33.2";
+    version = "v7.35.2";
     src = fetchFromGitHub {
       owner = "herumi";
       repo = "xbyak";
-      rev = "v7.33.2";
+      rev = "v7.35.2";
       fetchSubmodules = false;
-      sha256 = "sha256-7HFvZ6wr7X7K5rrw9k/LWXEazJ67Hm8IqO2edcEU1pI=";
+      sha256 = "sha256-JE3Sc+l8amoVwOfj03KKiwsOfEiNPaFRrV4aXDcb3+g=";
     };
   };
 }

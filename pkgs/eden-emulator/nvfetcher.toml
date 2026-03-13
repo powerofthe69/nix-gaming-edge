@@ -46,7 +46,7 @@ src.manual = "v4.25"
 fetch.github = "brofield/simpleini"
 
 [sirit]
-src.manual = "v1.0.3"
+src.manual = "v1.0.4"
 fetch.github = "eden-emulator/sirit"
 
 [unordered-dense]
@@ -55,7 +55,7 @@ src.git = "https://github.com/martinus/unordered_dense.git"
 fetch.github = "martinus/unordered_dense"
 
 [xbyak]
-src.manual = "v7.33.2"
+src.manual = "v7.35.2"
 fetch.github = "herumi/xbyak"
 
 [nx_tzdb]
