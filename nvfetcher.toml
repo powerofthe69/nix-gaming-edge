@@ -46,7 +46,7 @@ fetch.url = "https://cdn.vintagestory.at/gamefiles/$ver.tar.gz"
 
 # PokeMMO
 [pokemmo]
-src.cmd = "curl -sIL https://pokemmo.com/download_file/1/ | grep -i 'etag:' | tail -n1 | awk -F '\"' '{print $2}'"
+src.cmd = "curl -sIL https://pokemmo.com/download_file/1/ | grep -i '^content-length:' | tail -1 | awk '{print $2}' | tr -d '\\r'"
 fetch.url = "https://pokemmo.com/download_file/1/"
 
 # Pseudoregalia Randomizer

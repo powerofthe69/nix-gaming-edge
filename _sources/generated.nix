@@ -96,10 +96,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "69a25a87-6036128";
+    version = "100884776";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
+      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
     };
   };
   proton-cachyos = {
