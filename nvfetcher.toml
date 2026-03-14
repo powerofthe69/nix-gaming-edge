@@ -78,7 +78,12 @@ fetch.url = "https://dl.discordapp.net/apps/linux/$ver/discord-$ver.tar.gz"
 src.git = "https://github.com/Vendicated/Vencord.git"
 fetch.git = "https://github.com/Vendicated/Vencord.git"
 
-# Fluxer - source build (monorepo; derivation uses sourceRoot for fluxer_desktop/)
+# ModEngine 3 - latest release (Linux CLI + Windows DLLs)
+[modengine3]
+src.github = "garyttierney/me3"
+fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linux-amd64.tar.gz"
+
+# Fluxer - source build (uses sourceRoot for fluxer_desktop/)
 [fluxer-desktop]
 src.git = "https://github.com/fluxerapp/fluxer"
 fetch.git = "https://github.com/fluxerapp/fluxer"

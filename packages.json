@@ -49,6 +49,11 @@
       "name": "pokemmo",
       "packages": "pokemmo",
       "runner": ["self-hosted", "light-tasks"]
+    },
+    {
+      "name": "modengine3",
+      "packages": "modengine3",
+      "runner": ["self-hosted", "light-tasks"]
     }
   ]
 }

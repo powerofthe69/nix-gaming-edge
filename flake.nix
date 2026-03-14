@@ -78,6 +78,11 @@
         source = nvSources.fluxer-desktop;
       };
 
+      # ModEngine 3
+      modengine3 = pkgs.callPackage ./pkgs/modengine3 {
+        source = nvSources.modengine3;
+      };
+
     in
     {
       packages.${pkgs.stdenv.hostPlatform.system} = {
@@ -137,6 +142,9 @@
 
         # Fluxer Desktop
         fluxer-desktop = fluxer-desktop;
+
+        # ModEngine 3
+        modengine3 = modengine3;
       };
 
       overlays = {
@@ -180,6 +188,8 @@
           vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
 
           fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
+
+          modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
         };
 
         mesa-git = final: prev: {
@@ -241,6 +251,10 @@
 
         fluxer = final: prev: {
           fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
+        };
+
+        modengine3 = final: prev: {
+          modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
         };
       };
 
