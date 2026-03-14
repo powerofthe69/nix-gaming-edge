@@ -101,13 +101,28 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "59fc5ae7c1b3d512c9fd4374aa8ee9081911c22b",
-            "sha256": "sha256-nnl0p4CVcgwFAwuSRveLiboaxm/ZrhcLw17/td6Hnb0=",
+            "rev": "867d0b33b3292ee2d8499b1f0734f5005600ddd6",
+            "sha256": "sha256-P3CGqPzgKv/BdQMgadxSBsOrC+Dg+aAOa4QLsy6dyxY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "59fc5ae7c1b3d512c9fd4374aa8ee9081911c22b"
+        "version": "867d0b33b3292ee2d8499b1f0734f5005600ddd6"
+    },
+    "modengine3": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "modengine3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-D+sJD3EN0AhUwWPmmJp7a9kVMEEQfHxoQb96OtTtjZc=",
+            "type": "url",
+            "url": "https://github.com/garyttierney/me3/releases/download/v0.11.0/me3-linux-amd64.tar.gz"
+        },
+        "version": "v0.11.0"
     },
     "oodle-lib": {
         "cargoLock": null,
@@ -133,7 +148,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
+            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },

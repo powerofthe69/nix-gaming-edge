@@ -66,17 +66,25 @@
   };
   mesa = {
     pname = "mesa";
-    version = "59fc5ae7c1b3d512c9fd4374aa8ee9081911c22b";
+    version = "867d0b33b3292ee2d8499b1f0734f5005600ddd6";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "59fc5ae7c1b3d512c9fd4374aa8ee9081911c22b";
+      rev = "867d0b33b3292ee2d8499b1f0734f5005600ddd6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-nnl0p4CVcgwFAwuSRveLiboaxm/ZrhcLw17/td6Hnb0=";
+      sha256 = "sha256-P3CGqPzgKv/BdQMgadxSBsOrC+Dg+aAOa4QLsy6dyxY=";
     };
     date = "2026-03-14";
+  };
+  modengine3 = {
+    pname = "modengine3";
+    version = "v0.11.0";
+    src = fetchurl {
+      url = "https://github.com/garyttierney/me3/releases/download/v0.11.0/me3-linux-amd64.tar.gz";
+      sha256 = "sha256-D+sJD3EN0AhUwWPmmJp7a9kVMEEQfHxoQb96OtTtjZc=";
+    };
   };
   oodle-lib = {
     pname = "oodle-lib";
@@ -91,7 +99,7 @@
     version = "69a25a87-6036128";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
+      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
     };
   };
   proton-cachyos = {
