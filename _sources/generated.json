@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-03-14",
+        "date": "2026-03-15",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4a60085a7660f042f5ed4b5fd783b26d4ef77e07",
-            "sha256": "sha256-Bx7FzTK+oJGe2DeTkb7B2jXBn+HWTNMjWl1Vc5T/jIs=",
+            "rev": "f0a4ac7359b6de6d6f1926c795831de01d4119d5",
+            "sha256": "sha256-keLkB5qeQch+tM2J6zVh9oQGhP5TuxItqrZRN24apJw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "4a60085a7660f042f5ed4b5fd783b26d4ef77e07"
+        "version": "f0a4ac7359b6de6d6f1926c795831de01d4119d5"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "867d0b33b3292ee2d8499b1f0734f5005600ddd6",
-            "sha256": "sha256-P3CGqPzgKv/BdQMgadxSBsOrC+Dg+aAOa4QLsy6dyxY=",
+            "rev": "5a84a6b775ba7cd855bd3ce019cf75b98859f527",
+            "sha256": "sha256-d4ijIUniKWiTfzZA1v3DGHUaUZB9kV5JD9FuxAAe5eM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "867d0b33b3292ee2d8499b1f0734f5005600ddd6"
+        "version": "5a84a6b775ba7cd855bd3ce019cf75b98859f527"
     },
     "modengine3": {
         "cargoLock": null,
@@ -148,7 +148,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
+            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
