@@ -30,17 +30,17 @@
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "03813bbe17db008452f0f1be3090a7d2970a5447";
+    version = "d91388b979e7709575f929218dd053e081aa684e";
     src = fetchgit {
       url = "https://github.com/fluxerapp/fluxer";
-      rev = "03813bbe17db008452f0f1be3090a7d2970a5447";
+      rev = "d91388b979e7709575f929218dd053e081aa684e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-B8V1O1JhoK13yJS29LhTlwltdfh7f2XyzrKjZVdLQVY=";
+      sha256 = "sha256-mm7/fIHKmz2k0Wkp5bQAeVJu4xqFH34k88EMkrhy+/E=";
     };
-    date = "2026-03-06";
+    date = "2026-03-16";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4112eb2b0f3a7c240fd5141ccdcc4d813b4046d3";
+    version = "de6e76f253a16d68451c4e0f72af81ed660bfd16";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4112eb2b0f3a7c240fd5141ccdcc4d813b4046d3";
+      rev = "de6e76f253a16d68451c4e0f72af81ed660bfd16";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/KSkI30cUdR22pes1TqL26xwGn7jQmwHRZA+SNlF1fg=";
+      sha256 = "sha256-GLPy4yNj3YUwnHljWH3PA/mD8uJtJURXrFWH8S8nT+E=";
     };
-    date = "2026-03-15";
+    date = "2026-03-16";
   };
   modengine3 = {
     pname = "modengine3";
