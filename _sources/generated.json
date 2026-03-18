@@ -8,15 +8,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-90XmXUbkzwiMXh1UGpeO8xqkXb589+dwUlt7iHGEwQU=",
+            "sha256": "sha256-CscycDRH5N1etiYmjm7wFzL5dFxr7xOX9MkZTHqcFOo=",
             "type": "url",
-            "url": "https://dl.discordapp.net/apps/linux/0.0.128/discord-0.0.128.tar.gz"
+            "url": "https://dl.discordapp.net/apps/linux/0.0.129/discord-0.0.129.tar.gz"
         },
-        "version": "0.0.128"
+        "version": "0.0.129"
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-03-15",
+        "date": "2026-03-17",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f0a4ac7359b6de6d6f1926c795831de01d4119d5",
-            "sha256": "sha256-keLkB5qeQch+tM2J6zVh9oQGhP5TuxItqrZRN24apJw=",
+            "rev": "c41209f137f28fc8592bffcd99a34b5696d1caaf",
+            "sha256": "sha256-UQkC8QKa5dz1y70q1zBmb3USoYoekew3PPtZQ8BBBCw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "f0a4ac7359b6de6d6f1926c795831de01d4119d5"
+        "version": "c41209f137f28fc8592bffcd99a34b5696d1caaf"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -91,7 +91,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-03-16",
+        "date": "2026-03-18",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "de6e76f253a16d68451c4e0f72af81ed660bfd16",
-            "sha256": "sha256-GLPy4yNj3YUwnHljWH3PA/mD8uJtJURXrFWH8S8nT+E=",
+            "rev": "21aac29da806ee72e16f38c391323054ba769f60",
+            "sha256": "sha256-xr9nfA5dfTsKBp/34hUWEwA6dKsPyXrxUr5zQFRmQik=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "de6e76f253a16d68451c4e0f72af81ed660bfd16"
+        "version": "21aac29da806ee72e16f38c391323054ba769f60"
     },
     "modengine3": {
         "cargoLock": null,
