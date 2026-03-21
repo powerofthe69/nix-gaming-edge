@@ -23,7 +23,7 @@ src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64.tar.xz"
 
 [proton-cachyos-x86_64-v2]
-src.github = "CachyOS/proton-cachyos"
+src.manual = "cachyos-10.0-20260312-slr"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v2.tar.xz"
 
 [proton-cachyos-x86_64-v3]

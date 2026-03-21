@@ -16,38 +16,38 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "844e0360c78ad0eb5dd2dcad5a38667df89f921f";
+    version = "96e177702e0bc7d689df52c544bb26819e704c4c";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "844e0360c78ad0eb5dd2dcad5a38667df89f921f";
+      rev = "96e177702e0bc7d689df52c544bb26819e704c4c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-emSx46eQZ5XG4ESPiVDKnF2p7X8eH0lQmy38sdCkkjg=";
+      sha256 = "sha256-TA0t0f1ckqNgrUWxVmoFBOp7K5uCJi3BgDdkmXIt6X4=";
     };
-    date = "2026-03-19";
+    date = "2026-03-20";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "d91388b979e7709575f929218dd053e081aa684e";
+    version = "5da26d4ed5ef9f3fe8bef993c0f10ea4f4ee9c1d";
     src = fetchgit {
       url = "https://github.com/fluxerapp/fluxer";
-      rev = "d91388b979e7709575f929218dd053e081aa684e";
+      rev = "5da26d4ed5ef9f3fe8bef993c0f10ea4f4ee9c1d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mm7/fIHKmz2k0Wkp5bQAeVJu4xqFH34k88EMkrhy+/E=";
+      sha256 = "sha256-L5EmJH7wlZi1hG6dhf8ohI+L6jcIcbnbxlt8b2bAEfA=";
     };
-    date = "2026-03-16";
+    date = "2026-03-19";
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.03.09-9a5ec66";
+    version = "2026.03.19-48afb7b";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.03.09-9a5ec66.zip";
-      sha256 = "sha256-WCoPeay9lBUIJUjV73eDL7INfC98S6jPq1VHCevRL64=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.03.19-48afb7b.zip";
+      sha256 = "sha256-pFwUtQqgCrtitKkUo1S4USBmhK8IoXPRT55Vp5MMzwY=";
     };
   };
   libdrm = {
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "402bd37f9d190c728ad3aafd67868c0d86550302";
+    version = "06fc27b5a4259264f01d8b6180fbf8c9611cb0cc";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "402bd37f9d190c728ad3aafd67868c0d86550302";
+      rev = "06fc27b5a4259264f01d8b6180fbf8c9611cb0cc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-eArTGqzlVapJnuJcorSxYXvl9La2AI1fra+SPEhhGu4=";
+      sha256 = "sha256-S8sbMDEEU+zDvvyklHBrmdTgQq7BsROr/KqRcV9svYY=";
     };
-    date = "2026-03-18";
+    date = "2026-03-21";
   };
   modengine3 = {
     pname = "modengine3";
@@ -104,10 +104,10 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260312-slr";
+    version = "cachyos-10.0-20260319-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64.tar.xz";
-      sha256 = "sha256-9WUbBC74RNR2c2/QDHeB3WPzCVrSIFzZ930naakS18I=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260319-slr/proton-cachyos-10.0-20260319-slr-x86_64.tar.xz";
+      sha256 = "sha256-yotC6VeBihUqty+66x6Dfp4NAKFpV9yEBNOtbTFJK+Y=";
     };
   };
   proton-cachyos-x86_64-v2 = {
@@ -120,18 +120,18 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260312-slr";
+    version = "cachyos-10.0-20260319-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-Qb7VdOu+iDIdCdEdhr4GqMqKLeKTf7O6NhDUaM1NmHA=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260319-slr/proton-cachyos-10.0-20260319-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-DQWCYshyQsQsmSPuSy2kfK2R419x7DodiAL8K+ZBYzY=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260312-slr";
+    version = "cachyos-10.0-20260319-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-j9p4Emw3LEkRvo0TfkjnPTob9PKvDQ/z4xCsBd1RD7U=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260319-slr/proton-cachyos-10.0-20260319-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-2udi7IAe82iswOiKGLqnz99a4DCHnQpl6r7UyEiK3UY=";
     };
   };
   pseudoregalia-rando = {
@@ -144,24 +144,24 @@
   };
   vencord = {
     pname = "vencord";
-    version = "05b1fe8b16f17442af3c28b844c6177aabe29dc9";
+    version = "cba0eb9897419432e68277b0b60c301a6f8323cf";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "05b1fe8b16f17442af3c28b844c6177aabe29dc9";
+      rev = "cba0eb9897419432e68277b0b60c301a6f8323cf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-h+VHliAvsE749+wowp5+tO5OytCbg9Rgy2PhZjy/uxs=";
+      sha256 = "sha256-Wl89sRv49os6uRuYQVB/LgsOD7Rz3DPoxqeeELyY/o4=";
     };
-    date = "2026-03-13";
+    date = "2026-03-19";
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "unstable/vs_client_linux-x64_1.22.0-rc.3";
+    version = "unstable/vs_client_linux-x64_1.22.0-rc.4";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.3.tar.gz";
-      sha256 = "sha256-XZCKae6M9tRhKYsUFE2FqKLpQh9/sjDkBEz+uJM2T/w=";
+      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.4.tar.gz";
+      sha256 = "sha256-HhkTne59FtMZbzpILLw1fk752gyd05IwTkVKTzRMMdo=";
     };
   };
   wayland-protocols = {
