@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Syncs pkgs/eden-emulator/nvfetcher.toml with Eden's upstream cpmfile.json.
-# Reads the Eden commit from _sources/generated.json, fetches dependency
-# manifests from Gitea, and pins versions to match. Requires: curl, jq
-#
-# Usage: nvfetcher -o _sources && ./scripts/sync-eden-deps.sh && \
-#        nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
+# Syncs pkgs/eden-emulator/nvfetcher.toml with Eden's upstream cpmfile.json
+# nvfetcher -o _sources && ./scripts/sync-eden-deps.sh
+# nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SOURCES_JSON="$REPO_ROOT/_sources/generated.json"
