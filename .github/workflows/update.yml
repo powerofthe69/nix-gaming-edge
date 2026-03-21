@@ -42,11 +42,12 @@ jobs:
         run: |
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
 
-      - name: Run nvfetcher
+      - name: Update proton variants in nvfetcher, then run nvfetcher
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
+          ./scripts/sync-proton-variants.sh
           nvfetcher -o _sources
           ./scripts/sync-eden-deps.sh
           nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
@@ -144,6 +145,7 @@ jobs:
           name: updated-sources
           retention-days: 1
           path: |
+            nvfetcher.toml
             _sources/
             pkgs/eden-emulator/_dependencies/
             pkgs/eden-emulator/nvfetcher.toml
