@@ -81,7 +81,7 @@
     pname = "nx_tzdb";
     version = "121125";
     src = fetchurl {
-      url = "https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/121125/121125.tar.gz";
+      url = "https://git.eden-emu.dev/eden-emu/tzdb_to_nx/releases/download/121125/121125.tar.gz";
       sha256 = "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=";
     };
   };

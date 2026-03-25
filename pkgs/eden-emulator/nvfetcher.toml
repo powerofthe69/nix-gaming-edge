@@ -60,5 +60,5 @@ fetch.github = "herumi/xbyak"
 
 [nx_tzdb]
 src.manual = "121125"
-fetch.url = "https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/121125/121125.tar.gz"
+fetch.url = "https://git.eden-emu.dev/eden-emu/tzdb_to_nx/releases/download/121125/121125.tar.gz"
 
