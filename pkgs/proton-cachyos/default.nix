@@ -1,6 +1,7 @@
 {
   pkgs,
   source,
+  baseSource,
   variant,
   renameInternalName ? true,
 }:
@@ -48,10 +49,8 @@ pkgs.stdenv.mkDerivation {
       cp ${dll}/*.dll $steamcompattool/fsr4-cache/
     '') fsr4Dlls}
 
-    # Patch upscalers.py to use bundled FSR4 DLLs from fsr4-cache/
-    # __dll_download_exists — treat nix-cached DLLs as "available"
-    # __download_fsr4 — copy from fsr4-cache instead of downloading
-    # prefer latest version available in __fsr4_dlls as default
+    # Extract upscalers.py from the base proton-cachyos source and patch it to replace in all versions
+    tar -xf ${baseSource.src} --wildcards '*/protonfixes/upscalers.py' -O > $steamcompattool/protonfixes/upscalers.py
 
     substituteInPlace $steamcompattool/protonfixes/upscalers.py \
       --replace-fail \

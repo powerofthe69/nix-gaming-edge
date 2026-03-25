@@ -53,6 +53,7 @@
         sourceKey: variantName:
         pkgs.callPackage ./pkgs/proton-cachyos {
           source = nvSources.${sourceKey};
+          baseSource = nvSources.proton-cachyos;
           variant = variantName;
         };
 
