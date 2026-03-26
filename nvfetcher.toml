@@ -19,7 +19,7 @@ fetch.git = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
 # $ver = "cachyos-10.0-20251222-slr", filename = "proton-$ver-x86_64.tar.xz"
 
 [proton-cachyos]
-src.github = "CachyOS/proton-cachyos"
+src.manual = "cachyos-10.0-20260320-slr"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64.tar.xz"
 
 [proton-cachyos-x86_64-v2]
@@ -27,11 +27,11 @@ src.manual = "cachyos-10.0-20260312-slr"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v2.tar.xz"
 
 [proton-cachyos-x86_64-v3]
-src.github = "CachyOS/proton-cachyos"
+src.manual = "cachyos-10.0-20260320-slr"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
 [proton-cachyos-x86_64-v4]
-src.github = "CachyOS/proton-cachyos"
+src.manual = "cachyos-10.0-20260320-slr"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
 
 # Vintage Story
