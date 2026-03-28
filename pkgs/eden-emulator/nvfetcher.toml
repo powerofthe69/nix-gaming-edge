@@ -26,11 +26,6 @@ fetch.github = "serge-sans-paille/frozen"
 src.git = "https://github.com/eden-emulator/libadrenotools.git"
 fetch.github = "eden-emulator/libadrenotools"
 
-[mcl]
-# cpmfile.json sha: 7b08d83418
-src.git = "https://github.com/azahar-emu/mcl.git"
-fetch.github = "azahar-emu/mcl"
-
 [oaknut]
 src.manual = "v2.0.3"
 fetch.github = "eden-emulator/oaknut"

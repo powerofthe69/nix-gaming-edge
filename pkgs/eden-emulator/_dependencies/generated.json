@@ -104,27 +104,6 @@
         },
         "version": "8ba23b42d742545b709064d6e2523cdb86de68f5"
     },
-    "mcl": {
-        "cargoLock": null,
-        "date": "2026-01-04",
-        "extract": null,
-        "name": "mcl",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "azahar-emu",
-            "repo": "mcl",
-            "rev": "5fc4beaf331037649b10625736b41365defb4f50",
-            "sha256": "sha256-7lHOjlUvCQsct/pijn0M0OOG5LpExmXwB6kH+ostA2I=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "5fc4beaf331037649b10625736b41365defb4f50"
-    },
     "nx_tzdb": {
         "cargoLock": null,
         "date": null,

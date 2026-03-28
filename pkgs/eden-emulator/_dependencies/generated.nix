@@ -65,18 +65,6 @@
     };
     date = "2025-12-25";
   };
-  mcl = {
-    pname = "mcl";
-    version = "5fc4beaf331037649b10625736b41365defb4f50";
-    src = fetchFromGitHub {
-      owner = "azahar-emu";
-      repo = "mcl";
-      rev = "5fc4beaf331037649b10625736b41365defb4f50";
-      fetchSubmodules = false;
-      sha256 = "sha256-7lHOjlUvCQsct/pijn0M0OOG5LpExmXwB6kH+ostA2I=";
-    };
-    date = "2026-01-04";
-  };
   nx_tzdb = {
     pname = "nx_tzdb";
     version = "121125";

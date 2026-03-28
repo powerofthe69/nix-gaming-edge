@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "9cb700165634a271437abed723a53888eeb6be9c";
+    version = "c984c387d7e337888dd094aec95c2f2477b8996d";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "9cb700165634a271437abed723a53888eeb6be9c";
+      rev = "c984c387d7e337888dd094aec95c2f2477b8996d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-doM+tN7ripRVwJn/GBW2G5TPTURqARv4oOybi8nr+5U=";
+      sha256 = "sha256-jXCTCYTnQZyLLB9NgP0Fu+gRN8P5BCaJGtbwWaSMa68=";
     };
-    date = "2026-03-26";
+    date = "2026-03-27";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "a6992c7bbeee4e5e1ddd3555a0d2a25b8113f7d5";
+    version = "8d5ba04e65bff10708a0b7b869110e17660b22b6";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "a6992c7bbeee4e5e1ddd3555a0d2a25b8113f7d5";
+      rev = "8d5ba04e65bff10708a0b7b869110e17660b22b6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hu+sjryN4drdD+3d9SIQeJ0oGXiRXmY6J+kGrrICy5U=";
+      sha256 = "sha256-6eKJCP2p+WgTczMg3nk8cTq8F8B5ShIPjafP92INgQo=";
     };
-    date = "2026-03-25";
+    date = "2026-03-28";
   };
   modengine3 = {
     pname = "modengine3";
@@ -104,10 +104,10 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260320-slr";
+    version = "cachyos-10.0-20260321-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260320-slr/proton-cachyos-10.0-20260320-slr-x86_64.tar.xz";
-      sha256 = "sha256-6Nk6NJgBD7vXcceEYx7TPCJaSnQIikuXyWzn18PF94E=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260321-slr/proton-cachyos-10.0-20260321-slr-x86_64.tar.xz";
+      sha256 = "sha256-3RJfqBTRzo7Ny+ycESr6+0MKeuCmqNuF83DhYvwBApQ=";
     };
   };
   proton-cachyos-x86_64-v2 = {
@@ -120,18 +120,18 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260320-slr";
+    version = "cachyos-10.0-20260321-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260320-slr/proton-cachyos-10.0-20260320-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-aTvaTfM6qFef95yLuzO5jgMTaQuQ+R4t0+oQ5IFut/M=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260321-slr/proton-cachyos-10.0-20260321-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-WBIaIj9P1yUYySFfbDOxZGx/CPxDCz6okoqRvYu5Epg=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260320-slr";
+    version = "cachyos-10.0-20260321-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260320-slr/proton-cachyos-10.0-20260320-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-H5dQ/EsoNr8ibCwEmyKlincROrsVAA2F0kCr3+PIdII=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260321-slr/proton-cachyos-10.0-20260321-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-eAOS+mWQa/4guK2H0yGBno3HFZ4g/gv/hxZiXq/VMHc=";
     };
   };
   pseudoregalia-rando = {
@@ -158,10 +158,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "unstable/vs_client_linux-x64_1.22.0-rc.5";
+    version = "unstable/vs_client_linux-x64_1.22.0-rc.6";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.5.tar.gz";
-      sha256 = "sha256-MvVH9hgM/mcFJ5l89rrnuIP9QfCB/ApOdaj3ja7IHn8=";
+      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.6.tar.gz";
+      sha256 = "sha256-M3KVZfBB19tXlM9nlJGXMcJXQvWDPWGAfS3COvFmib8=";
     };
   };
   wayland-protocols = {
