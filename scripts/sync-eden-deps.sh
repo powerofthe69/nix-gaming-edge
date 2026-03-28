@@ -49,7 +49,7 @@ get_repo() {
 # nvfetcher_name:cpmfile_key
 NEEDED_DEPS=(
     biscuit:biscuit cpp-jwt:cpp-jwt discord-rpc:discord-rpc frozen:frozen
-    libadrenotools:libadrenotools mcl:mcl oaknut:oaknut quazip:quazip
+    libadrenotools:libadrenotools oaknut:oaknut quazip:quazip
     simpleini:simpleini sirit:sirit unordered-dense:unordered-dense xbyak:xbyak
 )
 

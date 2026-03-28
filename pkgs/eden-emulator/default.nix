@@ -127,10 +127,6 @@ llvmPackages.stdenv.mkDerivation {
     mkdir -p externals/nx_tzdb_data
     tar xf ${cpm.nx_tzdb.src} -C externals/nx_tzdb_data --strip-components=1
     cmakeFlagsArray+=("-DYUZU_TZDB_PATH=$(pwd)/externals/nx_tzdb_data")
-
-    # MCL needs a writable source directory
-    cp -r --no-preserve=mode ${cpm.mcl.src} externals/mcl-source
-    cmakeFlagsArray+=("-DCPM_mcl_SOURCE=$(pwd)/externals/mcl-source")
   '';
 
   postPatch = ''
