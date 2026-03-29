@@ -1,7 +1,7 @@
 {
-  pkgs,
-  mesa-src,
   libdrm-src,
+  mesa-src,
+  pkgs,
   wayland-protocols-src,
 }:
 
@@ -191,11 +191,11 @@ let
 in
 {
   inherit
-    mesa-git
-    mesa32-git
     libdrm-git
     libdrm32-git
-    wayland-protocols-git
+    mesa-git
+    mesa32-git
     mesaVersion
+    wayland-protocols-git
     ;
 }

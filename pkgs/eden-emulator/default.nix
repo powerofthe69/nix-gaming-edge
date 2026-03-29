@@ -1,41 +1,41 @@
 {
-  lib,
-  llvmPackages,
-  callPackage,
-  cmake,
-  pkg-config,
-  ninja,
-  git,
-  qt6,
-  wrapGAppsHook3,
-  gsettings-desktop-schemas,
-  glib,
-  gtk3,
   boost,
-  fmt,
-  nlohmann_json,
-  lz4,
-  zlib,
-  zstd,
-  openssl,
-  httplib,
-  ffmpeg-headless,
-  libopus,
+  callPackage,
+  catch2,
+  cmake,
   cubeb,
+  enet,
+  ffmpeg-headless,
+  fmt,
+  gamemode,
+  git,
+  glib,
+  glslang,
+  gsettings-desktop-schemas,
+  gtk3,
+  httplib,
+  lib,
+  libopus,
+  libusb1,
+  llvmPackages,
+  lz4,
+  ninja,
+  nlohmann_json,
+  openssl,
+  pkg-config,
+  qt6,
   SDL2,
+  spirv-headers,
+  spirv-tools,
+  src,
+  version,
   vulkan-headers,
   vulkan-loader,
   vulkan-memory-allocator,
   vulkan-utility-libraries,
-  spirv-tools,
-  spirv-headers,
-  glslang,
-  libusb1,
-  gamemode,
-  catch2,
-  enet,
-  version,
-  src,
+  wrapGAppsHook3,
+  zlib,
+  zstd,
 }:
 
 let
@@ -64,45 +64,45 @@ llvmPackages.stdenv.mkDerivation {
 
   nativeBuildInputs = [
     cmake
-    pkg-config
-    ninja
     git
     glslang
+    ninja
+    pkg-config
     qt6.wrapQtAppsHook
     wrapGAppsHook3
   ];
 
   buildInputs = [
-    gsettings-desktop-schemas
-    glib
-    gtk3
     boost
-    fmt
-    nlohmann_json
-    lz4
-    zlib
-    zstd
-    openssl
-    httplib
-    ffmpeg-headless
-    libopus
+    catch2
     cubeb
+    enet
+    ffmpeg-headless
+    fmt
+    gamemode
+    glib
+    gsettings-desktop-schemas
+    gtk3
+    httplib
+    libopus
+    libusb1
+    lz4
+    nlohmann_json
+    openssl
+    qt6.qtbase
+    qt6.qtcharts
+    qt6.qtmultimedia
+    qt6.qttools
+    qt6.qtwayland
     SDL2
+    spirv-headers
+    spirv-tools
     vulkan-headers
     vulkan-loader
     vulkan-memory-allocator
     vulkan-utility-libraries
-    spirv-tools
-    spirv-headers
-    libusb1
-    gamemode
-    catch2
-    enet
-    qt6.qtbase
-    qt6.qtcharts
-    qt6.qtmultimedia
-    qt6.qtwayland
-    qt6.qttools
+    zlib
+    zstd
   ];
 
   cmakeFlags = [

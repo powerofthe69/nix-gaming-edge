@@ -1,21 +1,21 @@
 {
-  lib,
-  stdenv,
-  source,
-  fetchPnpmDeps,
-  pnpmConfigHook,
-  pnpm_10,
-  nodejs,
-  electron,
   autoPatchelfHook,
-  makeWrapper,
-  wrapGAppsHook3,
+  electron,
+  fetchPnpmDeps,
+  lib,
   libglvnd,
-  pipewire,
-  systemd,
-  wayland,
   libXt,
   libXtst,
+  makeWrapper,
+  nodejs,
+  pipewire,
+  pnpm_10,
+  pnpmConfigHook,
+  source,
+  stdenv,
+  systemd,
+  wayland,
+  wrapGAppsHook3,
 }:
 
 let
@@ -47,19 +47,19 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [
+    autoPatchelfHook
+    makeWrapper
     nodejs
     pnpm_10
     pnpmConfigHook
-    autoPatchelfHook
-    makeWrapper
     wrapGAppsHook3
   ];
 
   # Only libstdc++ for prebuilt native node addons (@electron-webauthn/native, uiohook-napi)
   buildInputs = [
-    stdenv.cc.cc.lib
     libXt
     libXtst
+    stdenv.cc.cc.lib
   ];
 
   env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";

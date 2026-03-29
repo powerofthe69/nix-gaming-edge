@@ -1,6 +1,6 @@
 {
-  pkgs,
   discordSrc,
+  pkgs,
   vencordSrc,
 }:
 

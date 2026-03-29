@@ -1,30 +1,30 @@
 {
-  pkgs,
   lib,
+  oodleSrc,
+  pkgs,
   rustPlatform,
   src,
   version,
-  oodleSrc,
   ...
 }:
 
 let
   runtimeDeps = with pkgs; [
-    libxkbcommon
-    libGL
+    atk
+    cairo
     fontconfig
-    wayland
+    gdk-pixbuf
+    glib
+    gtk3
+    libGL
     libX11
     libXcursor
-    libXrandr
     libXi
-    atk
-    gtk3
+    libXrandr
+    libxkbcommon
     pango
-    glib
-    gdk-pixbuf
-    cairo
     stdenv.cc.cc.lib
+    wayland
     zstd
   ];
 
@@ -66,12 +66,12 @@ rustPlatform.buildRustPackage {
   RUSTFLAGS = "-L native=${oodleDir} -l dylib=oo2corelinux64";
 
   nativeBuildInputs = with pkgs; [
-    pkg-config
-    makeWrapper
     copyDesktopItems
-    patchelf
-    wrapGAppsHook3
     imagemagick
+    makeWrapper
+    patchelf
+    pkg-config
+    wrapGAppsHook3
   ];
 
   buildInputs = runtimeDeps;

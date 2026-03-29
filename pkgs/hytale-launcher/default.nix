@@ -1,10 +1,10 @@
 {
-  lib,
-  stdenv,
   buildFHSEnv,
-  writeShellScript,
-  unzip,
+  lib,
   source, # Source from nvfetcher
+  stdenv,
+  unzip,
+  writeShellScript,
 }:
 
 let
@@ -33,60 +33,57 @@ buildFHSEnv {
     pkgs:
     with pkgs;
     [
-      gtk3
-      glib
-      webkitgtk_4_1
-      libsoup_3
-      openssl
-      gsettings-desktop-schemas
-      glib-networking
-      dbus
-      pango
-      cairo
-      gdk-pixbuf
-      atk
+      alsa-lib
       at-spi2-atk
       at-spi2-core
-      hicolor-icon-theme
-      xdg-utils
+      atk
+      cairo
       cups
-      icu
-      zlib
-      libpng
-      freetype
+      dbus
+      expat
       fontconfig
+      freetype
+      gdk-pixbuf
+      glib
+      glib-networking
+      gsettings-desktop-schemas
+      gtk3
       harfbuzz
+      hicolor-icon-theme
+      icu
+      libdrm
+      libGL
+      libpng
+      libsecret
+      libsoup_3
+      libva
+      libxcrypt
+      libxkbcommon
+      mesa
       nspr
       nss
-      expat
-      alsa-lib
-      libsecret
-      libxcrypt
-      mesa
-      vulkan-loader
-      libGL
-      libva
-      libdrm
-      wayland
-      libxkbcommon
-    ]
-    ++ (with pkgs.xorg; [
-      # X11 Libraries
+      openssl
+      pango
       libX11
       libXcomposite
+      libXcursor
       libXdamage
       libXext
       libXfixes
-      libXrandr
-      libxcb
-      libXcursor
       libXi
-      libXrender
-      libXtst
-      libXScrnSaver
       libXinerama
+      libXrandr
+      libXrender
+      libXScrnSaver
+      libxcb
       libxshmfence
-    ]);
+      libXtst
+      vulkan-loader
+      wayland
+      webkitgtk_4_1
+      xdg-utils
+      zlib
+    ];
 
   runScript = writeShellScript "hytale-run" ''
     set -euo pipefail

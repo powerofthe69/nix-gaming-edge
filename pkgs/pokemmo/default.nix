@@ -1,26 +1,26 @@
 {
-  stdenv,
-  lib,
-  unzip,
-  makeWrapper,
-  openjdk25,
-  mesa,
-  libGL,
-  pipewire,
-  openssl,
-  wget,
-  which,
   coreutils,
-  zenity,
+  lib,
+  libGL,
   libX11,
-  libXext,
   libXcursor,
-  libXrandr,
+  libXext,
   libXi,
+  libXrandr,
   libXrender,
   libXtst,
-  udev,
+  makeWrapper,
+  mesa,
+  openjdk25,
+  openssl,
+  pipewire,
   src,
+  stdenv,
+  udev,
+  unzip,
+  wget,
+  which,
+  zenity,
 }:
 
 stdenv.mkDerivation rec {
@@ -30,28 +30,28 @@ stdenv.mkDerivation rec {
   inherit src;
 
   nativeBuildInputs = [
-    unzip
     makeWrapper
+    unzip
   ];
 
   buildInputs = [
-    openjdk25
-    mesa
-    libGL
-    pipewire
-    openssl
-    wget
-    which
     coreutils
-    zenity
+    libGL
     libX11
-    libXext
     libXcursor
-    libXrandr
+    libXext
     libXi
+    libXrandr
     libXrender
     libXtst
+    mesa
+    openjdk25
+    openssl
+    pipewire
     udev
+    wget
+    which
+    zenity
   ];
 
   unpackPhase = ''
@@ -85,17 +85,17 @@ stdenv.mkDerivation rec {
 
     runtime_libs="${
       lib.makeLibraryPath [
-        mesa
         libGL
-        pipewire
-        openssl
         libX11
-        libXext
         libXcursor
-        libXrandr
+        libXext
         libXi
+        libXrandr
         libXrender
         libXtst
+        mesa
+        openssl
+        pipewire
         udev
       ]
     }"
@@ -103,10 +103,10 @@ stdenv.mkDerivation rec {
     makeWrapper ${stdenv.shell} $out/bin/pokemmo \
       --prefix PATH : ${
         lib.makeBinPath [
+          coreutils
           openjdk25
           wget
           which
-          coreutils
           zenity
         ]
       } \

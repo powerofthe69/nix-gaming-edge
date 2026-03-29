@@ -1,9 +1,9 @@
 {
-  pkgs,
-  source,
   baseSource,
-  variant,
+  pkgs,
   renameInternalName ? true,
+  source,
+  variant,
 }:
 
 let

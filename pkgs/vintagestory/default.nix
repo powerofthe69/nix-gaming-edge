@@ -1,9 +1,9 @@
 {
-  vintagestory, # from nixpkgs
-  source,
-  dotnet-runtime_8, # to match current upstream reference
   dotnet-runtime_10,
+  dotnet-runtime_8, # to match current upstream reference
   lib,
+  source,
+  vintagestory, # from nixpkgs
 }:
 let
   version =

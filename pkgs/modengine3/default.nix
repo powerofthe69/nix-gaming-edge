@@ -1,11 +1,11 @@
 {
-  lib,
-  stdenv,
   autoPatchelfHook,
+  gcc,
+  lib,
   makeWrapper,
   openssl,
-  gcc,
   source,
+  stdenv,
 }:
 
 stdenv.mkDerivation {
@@ -22,8 +22,8 @@ stdenv.mkDerivation {
   ];
 
   buildInputs = [
-    openssl
     gcc.cc.lib
+    openssl
   ];
 
   installPhase = ''
