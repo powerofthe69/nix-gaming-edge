@@ -8,25 +8,25 @@
 {
   discord = {
     pname = "discord";
-    version = "0.0.130";
+    version = "0.0.131";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.130/discord-0.0.130.tar.gz";
-      sha256 = "sha256-FMIM/CWPk3Kcqp8iIg+gxiCpjD2DNk7dSBqnCBvzn5w=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.131/discord-0.0.131.tar.gz";
+      sha256 = "sha256-R98x+yYVesrW6iYr/YWE/i/KZSELQwy8CZGiEALlz7w=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "5322bce4b86956e590ffb11faa058670f4488d70";
+    version = "e9f454106905bf535572c92993c5094450fad5a5";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "5322bce4b86956e590ffb11faa058670f4488d70";
+      rev = "e9f454106905bf535572c92993c5094450fad5a5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-a5T7qKqW1rn89RT3B46k65LoA4mgGwxrNAfSJfL/6XA=";
+      sha256 = "sha256-MIn+JWSTBDhtK+rU5HoB3a72cLCz0/mJgbjplJoP74g=";
     };
-    date = "2026-03-30";
+    date = "2026-03-31";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "34e090ae118c19f60d342ab6f4c155b2934ec5bb";
+    version = "9c9f5f69fd1da6293ade05c1f22779e55faa96cc";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "34e090ae118c19f60d342ab6f4c155b2934ec5bb";
+      rev = "9c9f5f69fd1da6293ade05c1f22779e55faa96cc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-IONShUgU2WF0lv5FIkDRylzRP4kiLbtrO2NlVe/hoUM=";
+      sha256 = "sha256-WRgCj+P8oc54H9zDv43a9OxxAp5PnIbjpjcGpcKCTpw=";
     };
-    date = "2026-03-29";
+    date = "2026-03-31";
   };
   modengine3 = {
     pname = "modengine3";
