@@ -238,13 +238,27 @@ jobs:
 
           git push origin ${{ needs.update-sources.outputs.branch }}
 
+  # Promote nightly to master if nixpkgs changed
+  check-promotion:
+    needs: [update-sources, build, commit-changes]
+    if: |
+      always() &&
+      needs.update-sources.outputs.branch == 'nightly' &&
+      (needs.build.result == 'success' || needs.build.result == 'skipped') &&
+      (needs.commit-changes.result == 'success' || needs.commit-changes.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          ref: nightly
+          fetch-depth: 0
+
       - name: Promote Master off-cycle if Nixpkgs updated
-        if: needs.update-sources.outputs.branch == 'nightly'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           MASTER_REV=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
-          NIGHTLY_REV=$(jq -r '.nodes.nixpkgs.locked.rev' flake.lock)
+          NIGHTLY_REV=$(git show origin/nightly:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
           if [ "$MASTER_REV" != "$NIGHTLY_REV" ]; then
             gh workflow run promote.yml
           fi
