@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "cae70c30fa19b65d483c882e7ad3488653b96e96";
+    version = "d1b7824443093345992026fdaeba50f76bd5d8c0";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "cae70c30fa19b65d483c882e7ad3488653b96e96";
+      rev = "d1b7824443093345992026fdaeba50f76bd5d8c0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+0l7CUT3vImc7WSKNA6TzKVBz00Ifcqy3V/Pt8RGe40=";
+      sha256 = "sha256-H32PBTNKzGZFjduqHofC+ju0SedbmjddAOg33EN3vMA=";
     };
-    date = "2026-04-01";
+    date = "2026-04-02";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "580381d9e7f5bb63cece6e582adb82e4659e4523";
+    version = "72e9f9a760a5dd81a74497f1daef054af1b6b827";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "580381d9e7f5bb63cece6e582adb82e4659e4523";
+      rev = "72e9f9a760a5dd81a74497f1daef054af1b6b827";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kXHYuH8OZ8rH5XTSBmONxRpLGaY5gyfUFpvvBX13yak=";
+      sha256 = "sha256-81V5RdLSLYeGJ/wh5H8L6vq+QdR6yMkJxDV+6Yf5FPk=";
     };
-    date = "2026-03-31";
+    date = "2026-04-02";
   };
   modengine3 = {
     pname = "modengine3";
@@ -166,16 +166,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "deddd9fe29c8309020351ab26af0c0db048f1d5f";
+    version = "02e63e74a807afed95bc25a386173110afef24e3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "deddd9fe29c8309020351ab26af0c0db048f1d5f";
+      rev = "02e63e74a807afed95bc25a386173110afef24e3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-191H4/Id5H+lE3woAkqG5eGxiNQhYA7NfRAbZDmNYJI=";
+      sha256 = "sha256-nleROoMciq1WassaZ+1ol6VxLWY5UwYlZC5+zNexFn8=";
     };
-    date = "2026-03-23";
+    date = "2026-04-01";
   };
 }
