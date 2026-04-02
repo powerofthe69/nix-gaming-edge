@@ -51,10 +51,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
+          mkdir -p ~/.config/nvchecker
+          printf '[keys]\ngithub = "%s"\ngitlab = "%s"\n' "$GITHUB_TOKEN" "$GITLAB_TOKEN" > ~/.config/nvchecker/keyfile.toml
           ./scripts/sync-proton-variants.sh
-          nvfetcher -o _sources
+          nvfetcher -o _sources -k ~/.config/nvchecker/keyfile.toml
           ./scripts/sync-eden-deps.sh
-          nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
+          nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies -k ~/.config/nvchecker/keyfile.toml
 
       - name: Check what changed
         id: check
