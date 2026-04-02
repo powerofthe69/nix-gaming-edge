@@ -235,6 +235,9 @@ jobs:
           git push origin ${{ needs.update-sources.outputs.branch }}
 
       - name: Promote Master off-cycle if Nixpkgs updated
+        if: needs.update-sources.outputs.branch == 'nightly'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           MASTER_REV=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
           NIGHTLY_REV=$(jq -r '.nodes.nixpkgs.locked.rev' flake.lock)
