@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       any_changed: ${{ steps.check.outputs.any_changed }}
-      mesa_rev: ${{ steps.check.outputs.mesa_rev }}
       branch: ${{ steps.set-branch.outputs.branch }}
       version_changes: ${{ steps.check.outputs.version_changes }}
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
 
     steps:
       - name: Set branch
@@ -38,6 +38,10 @@ jobs:
       - name: Install dependencies
         run: nix profile add nixpkgs#nvfetcher nixpkgs#jq nixpkgs#cargo
 
+      - name: Generate matrix from packages.json
+        id: set-matrix
+        run: echo "matrix=$(jq -c . packages.json)" >> $GITHUB_OUTPUT
+
       - name: Save old versions
         run: |
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
@@ -55,10 +59,6 @@ jobs:
       - name: Check what changed
         id: check
         run: |
-          OLD_MESA=$(jq -r '.mesa.version // "none"' /tmp/old-generated.json)
-          NEW_MESA=$(jq -r '.mesa.version // "none"' _sources/generated.json)
-          echo "mesa_rev=${NEW_MESA:0:7}" >> $GITHUB_OUTPUT
-
           # Track all version changes
           CHANGES=""
           for pkg in $(jq -r 'keys[]' _sources/generated.json); do
@@ -105,35 +105,26 @@ jobs:
             rm -rf "$WORK_DIR"
           fi
 
-      - name: Update pnpm hash for Vencord
+      - name: Update pnpm hashes
         run: |
-          echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > pkgs/discord/vencord-pnpm-hash.txt
+          for pkg in vencord fluxer-desktop; do
+            case $pkg in
+              vencord) HASH_FILE=pkgs/discord/vencord-pnpm-hash.txt ;;
+              fluxer-desktop) HASH_FILE=pkgs/fluxer-desktop/pnpm-hash.txt ;;
+            esac
 
-          nix build .#vencord.pnpmDeps --no-link 2> nix-err.log || true
-          NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
+            echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > "$HASH_FILE"
+            nix build .#${pkg}.pnpmDeps --no-link 2> nix-err.log || true
+            NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
 
-          if [[ $NEW_HASH == sha256-* ]]; then
-            echo -n "$NEW_HASH" > pkgs/discord/vencord-pnpm-hash.txt
-          else
-            echo "Hash could not be scraped:"
-            cat nix-err.log
-            exit 1
-          fi
-
-      - name: Update pnpm hash for Fluxer Desktop
-        run: |
-          echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > pkgs/fluxer-desktop/pnpm-hash.txt
-
-          nix build .#fluxer-desktop.pnpmDeps --no-link 2> nix-err.log || true
-          NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
-
-          if [[ $NEW_HASH == sha256-* ]]; then
-            echo -n "$NEW_HASH" > pkgs/fluxer-desktop/pnpm-hash.txt
-          else
-            echo "Hash could not be scraped:"
-            cat nix-err.log
-            exit 1
-          fi
+            if [[ $NEW_HASH == sha256-* ]]; then
+              echo -n "$NEW_HASH" > "$HASH_FILE"
+            else
+              echo "Hash could not be scraped for $pkg:"
+              cat nix-err.log
+              exit 1
+            fi
+          done
 
       - name: Update flake.lock
         if: steps.check.outputs.any_changed == 'true'
@@ -155,26 +146,9 @@ jobs:
             pkgs/fluxer-desktop/pnpm-hash.txt
             flake.lock
 
-  # Generate build matrix from packages.json on the target branch
-  generate-matrix:
-    needs: update-sources
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@main
-        with:
-          ref: ${{ needs.update-sources.outputs.branch }}
-
-      - name: Generate matrix from packages.json
-        id: set-matrix
-        run: |
-          MATRIX=$(jq -c . packages.json)
-          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
-
   # Build packages from a matrix
   build:
-    needs: [update-sources, generate-matrix]
+    needs: [update-sources]
     env:
       NIX_CONFIG: |
         access-tokens = github.com=${{ secrets.GITHUB_TOKEN }} gitlab.freedesktop.org=${{ secrets.GITLAB_TOKEN }}
@@ -182,7 +156,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.update-sources.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@main
@@ -259,3 +233,11 @@ jobs:
           fi
 
           git push origin ${{ needs.update-sources.outputs.branch }}
+
+      - name: Promote Master off-cycle if Nixpkgs updated
+        run: |
+          MASTER_REV=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
+          NIGHTLY_REV=$(jq -r '.nodes.nixpkgs.locked.rev' flake.lock)
+          if [ "$MASTER_REV" != "$NIGHTLY_REV" ]; then
+            gh workflow run promote.yml
+          fi
