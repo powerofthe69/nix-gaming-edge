@@ -181,6 +181,8 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
             accept-flake-config = true
+            extra-substituters = http://attic:8080/tokidoki
+            extra-trusted-public-keys = tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk=
 
       - name: Build ${{ matrix.name }}
         run: |
