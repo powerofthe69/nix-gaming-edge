@@ -244,8 +244,8 @@ jobs:
     if: |
       always() &&
       needs.update-sources.outputs.branch == 'nightly' &&
-      (needs.build.result == 'success' || needs.build.result == 'skipped') &&
-      (needs.commit-changes.result == 'success' || needs.commit-changes.result == 'skipped')
+      needs.build.result != 'failure' &&
+      needs.commit-changes.result != 'failure'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
