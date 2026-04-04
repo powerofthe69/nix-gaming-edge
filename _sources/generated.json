@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-04-02",
+        "date": "2026-04-03",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d1b7824443093345992026fdaeba50f76bd5d8c0",
-            "sha256": "sha256-H32PBTNKzGZFjduqHofC+ju0SedbmjddAOg33EN3vMA=",
+            "rev": "ac99ea96da608e687c3593a1110d0324f87913f3",
+            "sha256": "sha256-Odrdx4pKJhCd9QbBSuxipCEK2+siyoGNBbyMw//z1Q8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "d1b7824443093345992026fdaeba50f76bd5d8c0"
+        "version": "ac99ea96da608e687c3593a1110d0324f87913f3"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "27b56314ee4eb044d378434f6ee84bcadd049ccb",
-            "sha256": "sha256-18uaQ68bim7mneSD1iWYV+ycvvq3+wrecGLirFPumNU=",
+            "rev": "21952ffb0767fa101502f3a841355c5757408cca",
+            "sha256": "sha256-yy6xarvibU/e3Nl9mjNTa4rufVJTPJvhprUEulpCWKM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "27b56314ee4eb044d378434f6ee84bcadd049ccb"
+        "version": "21952ffb0767fa101502f3a841355c5757408cca"
     },
     "modengine3": {
         "cargoLock": null,
@@ -258,11 +258,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-M3KVZfBB19tXlM9nlJGXMcJXQvWDPWGAfS3COvFmib8=",
+            "sha256": "sha256-87if48ayHfu0NshTjCWvO3hjsJo9r2ciHnBf4DlxlJ4=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.6.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.7.tar.gz"
         },
-        "version": "unstable/vs_client_linux-x64_1.22.0-rc.6"
+        "version": "unstable/vs_client_linux-x64_1.22.0-rc.7"
     },
     "wayland-protocols": {
         "cargoLock": null,
