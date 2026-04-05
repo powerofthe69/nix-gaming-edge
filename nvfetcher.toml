@@ -17,7 +17,6 @@ fetch.git = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
 
 # proton-cachyos (tracking github releases)
 # $ver = "cachyos-10.0-20251222-slr", filename = "proton-$ver-x86_64.tar.xz"
-
 [proton-cachyos]
 src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64.tar.xz"
@@ -87,3 +86,8 @@ fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linu
 [fluxer-desktop]
 src.git = "https://github.com/fluxerapp/fluxer"
 fetch.git = "https://github.com/fluxerapp/fluxer"
+
+# OpenGoal Launcher - GUI for managing and launching OpenGoal games
+[opengoal-launcher]
+src.cmd = "curl -s https://api.github.com/repos/open-goal/launcher/releases/latest | jq -r '.tag_name | ltrimstr(\"v\")'"
+fetch.url = "https://github.com/open-goal/launcher/releases/download/v$ver/OpenGOAL-Launcher_$ver_amd64.AppImage"

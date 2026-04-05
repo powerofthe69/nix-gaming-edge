@@ -84,6 +84,11 @@
         source = nvSources.modengine3;
       };
 
+      # OpenGoal Launcher
+      opengoal-launcher = pkgs.callPackage ./pkgs/opengoal-launcher {
+        source = nvSources.opengoal-launcher;
+      };
+
     in
     {
       packages.${pkgs.stdenv.hostPlatform.system} = {
@@ -146,6 +151,9 @@
 
         # ModEngine 3
         modengine3 = modengine3;
+
+        # OpenGoal Launcher
+        opengoal-launcher = opengoal-launcher;
       };
 
       overlays = {
@@ -191,6 +199,8 @@
           fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
 
           modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
+
+          opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
         };
 
         mesa-git = final: prev: {
@@ -256,6 +266,10 @@
 
         modengine3 = final: prev: {
           modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
+        };
+
+        opengoal = final: prev: {
+          opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
         };
       };
 
