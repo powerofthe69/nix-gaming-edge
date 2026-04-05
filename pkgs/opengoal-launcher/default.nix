@@ -1,5 +1,6 @@
 {
   buildFHSEnv,
+  fetchurl,
   lib,
   source,
   stdenv,
@@ -7,6 +8,11 @@
 }:
 
 let
+  icon = fetchurl {
+    url = "https://raw.githubusercontent.com/open-goal/launcher/main/resources/icons/256.png";
+    hash = "sha256-mtC930LQdtC4thaHTB23r+ORVW8i9XWE8BK9a28HmSI=";
+  };
+
   unwrapped = stdenv.mkDerivation {
     pname = "opengoal-launcher-unwrapped";
     version = source.version;
@@ -85,6 +91,7 @@ buildFHSEnv {
     Name=OpenGOAL
     Comment=Launcher for OpenGOAL
     Exec=$out/bin/opengoal-launcher %U
+    Icon=opengoal-launcher
     Terminal=false
     Type=Application
     Categories=Game;
@@ -92,6 +99,8 @@ buildFHSEnv {
     StartupNotify=true
     PrefersNonDefaultGPU=true
     EOF
+
+    install -Dm644 ${icon} $out/share/icons/hicolor/256x256/apps/opengoal-launcher.png
   '';
 
   meta = {
