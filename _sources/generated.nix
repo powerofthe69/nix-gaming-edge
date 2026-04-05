@@ -94,6 +94,14 @@
       sha256 = "sha256-c1RlXrJbWH3DTL+YaWuR4w5tej8O7604cubBt274am4=";
     };
   };
+  opengoal-launcher = {
+    pname = "opengoal-launcher";
+    version = "2.8.18";
+    src = fetchurl {
+      url = "https://github.com/open-goal/launcher/releases/download/v2.8.18/OpenGOAL-Launcher_2.8.18_amd64.AppImage";
+      sha256 = "sha256-FLm+l9LysxnItldDV9G0WKCjzQlvePC6Tf34eumnMPc=";
+    };
+  };
   pokemmo = {
     pname = "pokemmo";
     version = "100884776";
