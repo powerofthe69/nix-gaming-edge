@@ -30,50 +30,19 @@ buildFHSEnv {
 
   targetPkgs =
     pkgs: with pkgs; [
-      alsa-lib
-      at-spi2-atk
-      at-spi2-core
-      atk
-      cairo
-      cups
-      dbus
-      expat
-      fontconfig
-      freetype
-      gdk-pixbuf
-      glib
-      glib-networking
-      gsettings-desktop-schemas
       gtk3
-      harfbuzz
-      hicolor-icon-theme
       libdrm
       libGL
       libpulseaudio
       libX11
-      libxcb
-      libXcomposite
       libXcursor
-      libXdamage
       libXext
       libXfixes
       libXi
-      libXinerama
-      libxkbcommon
       libXrandr
-      libXrender
-      libXScrnSaver
-      libxshmfence
-      libXtst
       mesa
-      nasm
-      nspr
-      nss
-      openssl
-      pango
+      stdenv.cc.cc.lib
       vulkan-loader
-      wayland
-      webkitgtk_4_1
       xdg-utils
       zlib
     ];
