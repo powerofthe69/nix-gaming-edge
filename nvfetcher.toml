@@ -2,7 +2,6 @@
 # Run: nvfetcher -o _sources
 
 # mesa-git and dependencies (tracking git HEAD)
-
 [mesa]
 src.git = "https://gitlab.freedesktop.org/mesa/mesa.git"
 fetch.git = "https://gitlab.freedesktop.org/mesa/mesa.git"
@@ -10,6 +9,11 @@ fetch.git = "https://gitlab.freedesktop.org/mesa/mesa.git"
 [libdrm]
 src.git = "https://gitlab.freedesktop.org/mesa/drm.git"
 fetch.git = "https://gitlab.freedesktop.org/mesa/drm.git"
+
+# wayland - track latest release tag for wayland and wayland-scanner
+[wayland]
+src.cmd = "git ls-remote --tags --refs https://gitlab.freedesktop.org/wayland/wayland.git | awk -F/ '{print $NF}' | grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+$' | awk -F. '$3 < 90' | sort -V | tail -1"
+fetch.git = "https://gitlab.freedesktop.org/wayland/wayland.git"
 
 [wayland-protocols]
 src.git = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"

@@ -43,6 +43,9 @@
           libdrm-src = nvSources.libdrm.src // {
             rev = nvSources.libdrm.version;
           };
+          wayland-src = nvSources.wayland.src // {
+            rev = nvSources.wayland.version;
+          };
           wayland-protocols-src = nvSources.wayland-protocols.src // {
             rev = nvSources.wayland-protocols.version;
           };

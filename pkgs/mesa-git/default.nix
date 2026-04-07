@@ -2,6 +2,7 @@
   libdrm-src,
   mesa-src,
   pkgs,
+  wayland-src,
   wayland-protocols-src,
 }:
 
@@ -9,8 +10,10 @@ let
   lib = pkgs.lib;
 
   # Get short commit hash for versioning
+  # wayland's rev is a standard release number
   mesaVersion = builtins.substring 0 7 (mesa-src.rev or "unknown");
   libdrmVersion = builtins.substring 0 7 (libdrm-src.rev or "unknown");
+  waylandVersion = wayland-src.rev or "unknown";
   waylandProtocolsVersion = builtins.substring 0 7 (wayland-protocols-src.rev or "unknown");
 
   # Build libdrm-git AND libdrm32-git
@@ -31,10 +34,40 @@ let
   libdrm-git = gitLibdrm { is32bit = false; };
   libdrm32-git = gitLibdrm { is32bit = true; };
 
+  # Bump wayland and wayland-scanner to the latest release
+  wayland-scanner-latest = pkgs.wayland-scanner.overrideAttrs (old: {
+    pname = "wayland-scanner-latest";
+    version = "${waylandVersion}";
+    src = wayland-src;
+  });
+
+  # withDocumentation = false: 1.25.0 wires docs through mdbook, which we don't need.
+  wayland-latest =
+    (pkgs.wayland.override {
+      stdenv = pkgs.clangStdenv;
+      withDocumentation = false;
+    }).overrideAttrs
+      (old: {
+        pname = "wayland-latest";
+        version = "${waylandVersion}";
+        src = wayland-src;
+        nativeBuildInputs = map (
+          x: if (x.pname or x.name or "") == "wayland-scanner" then wayland-scanner-latest else x
+        ) (old.nativeBuildInputs or [ ]);
+      });
+
+  # Overlay so downstream packages transparently see the bumped pair.
+  latestPkgs = pkgs.extend (
+    final: prev: {
+      wayland = wayland-latest;
+      wayland-scanner = wayland-scanner-latest;
+    }
+  );
+
   # Build wayland-protocols-git
-  # Mostly XML but use clang for uniformity
+  # Mostly XML but use clang for uniformity.
   wayland-protocols-git =
-    (pkgs.wayland-protocols.override { stdenv = pkgs.clangStdenv; }).overrideAttrs
+    (latestPkgs.wayland-protocols.override { stdenv = latestPkgs.clangStdenv; }).overrideAttrs
       (old: {
         pname = "wayland-protocols-git";
         version = "${waylandProtocolsVersion}";
@@ -46,7 +79,8 @@ let
       is32bit ? false,
     }:
     let
-      basePkgs = if is32bit then pkgs.pkgsi686Linux else pkgs;
+      # 64-bit picks up the bumped wayland via latestPkgs
+      basePkgs = if is32bit then pkgs.pkgsi686Linux else latestPkgs;
       gitLibdrm = if is32bit then libdrm32-git else libdrm-git;
     in
     # Use clang for allegedly faster compilation and tighter integration with LLVM
@@ -117,7 +151,7 @@ let
         else
           base;
 
-      # Fix --replace deprecation and strip opencl (32-bit) from patchelf
+      # Replace deprecation and strip opencl (32-bit) from patchelf
       postFixup =
         let
           base =
@@ -167,15 +201,6 @@ let
               "-Dintel-rt=enabled"
             ]
         );
-
-      # Remove patches that don't apply to git
-      patches = builtins.filter (
-        p:
-        let
-          name = baseNameOf (toString p);
-        in
-        !(lib.hasPrefix "gallivm-llvm-21" name) && !(lib.hasPrefix "musl" name)
-      ) (old.patches or [ ]);
 
       # Inject git version to driver name
       postPatch = (old.postPatch or "") + ''
