@@ -34,9 +34,19 @@ The largest ones that most will probably want to use are:
 
 Other packages that were mostly for me:
 
+- `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo.
+
 - `eden` or `eden-emulator`: this installs the Eden emulator, an emulator forked from the popular Yuzu. This grabs the latest commits nightly and compiles them on my local server before backing up on my cache server, similar to mesa-git. Builds are not guaranteed to be stable, but should usually be functional and receive the latest performance improvements. This is not associated with the official project. Do not report issues to them.
 
+- `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete.
+
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates
+
+- `millennium-steam`: this exposes the Millennium plugin/theming framework for Steam. It's just re-exported from the official Millennium flake so I have a single point of installation alongside everything else here.
+
+- `modengine3` or `me3`: this installs me3, a framework for modding and instrumenting FROMSOFTWARE games (Elden Ring, Dark Souls, etc.). Tracks the upstream releases.
+
+- `opengoal-launcher`: this installs the official OpenGOAL launcher (Jak and Daxter native port) inside its own FHSenv, since the launcher downloads arbitrary versions of the tooling.
 
 - `pokemmo`: this installs PokeMMO differently than the nixpkgs version, which piggybacked off of `pokemmo-installer`. This grabs the client directly from the official website, which I believe is more "nix"-esque since it's straight from the source.
 
@@ -82,10 +92,10 @@ Here is a minimal representation of what your configuration might look like:
         ({ pkgs, ... }: { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
           nixpkgs.overlays = [
             nix-gaming-edge.overlays.default
-            #nix-gaming-edge.overlays.mesa-git
-            #nix-gaming-edge.overlays.proton-cachyos
-            #nix-gaming-edge.overlays.vintagestory
-            #etc.  
+            # nix-gaming-edge.overlays.mesa-git
+            # nix-gaming-edge.overlays.proton-cachyos
+            # nix-gaming-edge.overlays.vintagestory
+            # etc.  
           ];
           
           drivers.mesa-git = {
@@ -97,19 +107,19 @@ Here is a minimal representation of what your configuration might look like:
               mesaCacheDirs = [ # optional - default lists pre-configured
                 "mesa_shader_cache*"
                 "radv_builtin_shaders*"
-                #etc.
+                # etc.
               ];
               
               protonCacheFiles = [ # optional - default lists pre-configured
                 "vkd3d-proton.cache*"
                 "shader*.cache"
-                #etc.
+                # etc.
               ];
             
               protonCacheDirs = [ # optional - default lists pre-configured
                 "*ShaderCache*"
                 "D3DSCache*"
-                #etc.
+                # etc.
               ];
             };
             steamOrphanCleanup = {
@@ -117,20 +127,27 @@ Here is a minimal representation of what your configuration might look like:
               protectedFolders = [ # folders to not treat as orphans for deletion ( optional, pre-configured with smart defaults )
                 "Proton*"
                 "Steam Controller Configs"
-                #etc.
+                # etc.
               ];
             };
           };
           
           environment.systemPackages = with pkgs; [ # or per-user equivalent
+            (discord.override {
+              withVencord = true; # latest Vencord build managed in here
+            })
             eden
+            fluxer-desktop
             hytale
+            opengoal-launcher
             pokemmo
-            vintagestory
             pseudoregalia-rando
+            vintagestory
           ];
         
+          hardware.steam-hardware.enable = true; # controller / Steam Deck input udev rules
           programs.steam = {
+            # package = pkgs.millennium-steam
             enable = true;
             extraCompatPackages = with pkgs; [
               proton-cachyos
@@ -141,6 +158,42 @@ Here is a minimal representation of what your configuration might look like:
           };
         })
       ];
+    };
+  };
+}
+```
+
+**Setting up modengine3 ( me3 ):**
+
+`modengine3` needs two things to actually be usable from Steam: the `me3` binary has to live inside Steam's FHS sandbox so games can exec it, and me3 has to be able to find a Proton install to launch the game under. The latter is done by exposing a small `linkFarm` of compat tools and adding it to `STEAM_EXTRA_COMPAT_TOOLS_PATHS`.
+
+Pull the compat-tools `linkFarm` out into a `let` binding so it stays readable, then override the Steam package to inject `me3` and point at it:
+
+```nix
+{ pkgs, lib, ... }:
+
+let
+  compatToolsDir = pkgs.linkFarm "me3-compat-tools" [
+    {
+      name = "proton-cachyos"; # me3 looks for the proton by this name
+      path = pkgs.proton-cachyos.steamcompattool; # or whichever variant
+    }
+  ];
+in
+{
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-cachyos
+    ];
+    package = pkgs.steam.override {
+      extraPkgs = fpkgs: [ pkgs.modengine3 ];
+      extraEnv = {
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS = lib.concatStringsSep ":" [
+          "${compatToolsDir}" # for ME3 / modengine3
+          (lib.makeSearchPathOutput "steamcompattool" "" [ pkgs.proton-cachyos ])
+        ];
+      };
     };
   };
 }
