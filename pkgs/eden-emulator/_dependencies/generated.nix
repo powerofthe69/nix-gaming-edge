@@ -6,17 +6,6 @@
   dockerTools,
 }:
 {
-  biscuit = {
-    pname = "biscuit";
-    version = "v0.19.0";
-    src = fetchFromGitHub {
-      owner = "lioncash";
-      repo = "biscuit";
-      rev = "v0.19.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-fexoArbU317sB4scZTRijfzpe/kiltTFesn5e0C4pyw=";
-    };
-  };
   cpp-jwt = {
     pname = "cpp-jwt";
     version = "9eaea6328fae768d1cc524a27f0db6250e0a165a";
@@ -53,17 +42,16 @@
     };
     date = "2025-07-29";
   };
-  libadrenotools = {
-    pname = "libadrenotools";
-    version = "8ba23b42d742545b709064d6e2523cdb86de68f5";
+  httplib = {
+    pname = "httplib";
+    version = "v0.37.0";
     src = fetchFromGitHub {
-      owner = "eden-emulator";
-      repo = "libadrenotools";
-      rev = "8ba23b42d742545b709064d6e2523cdb86de68f5";
+      owner = "yhirose";
+      repo = "cpp-httplib";
+      rev = "v0.37.0";
       fetchSubmodules = false;
-      sha256 = "sha256-iTTos7UET3cMavCDJxgS7Nq+B7gdtbNQtJ9j9n0+uXY=";
+      sha256 = "sha256-I7mfT4Eb5sXUURReq3nzQRUhI4sMx4wQpdJBw+vOA/s=";
     };
-    date = "2025-12-25";
   };
   nx_tzdb = {
     pname = "nx_tzdb";
@@ -71,17 +59,6 @@
     src = fetchurl {
       url = "https://git.eden-emu.dev/eden-emu/tzdb_to_nx/releases/download/121125/121125.tar.gz";
       sha256 = "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=";
-    };
-  };
-  oaknut = {
-    pname = "oaknut";
-    version = "v2.0.3";
-    src = fetchFromGitHub {
-      owner = "eden-emulator";
-      repo = "oaknut";
-      rev = "v2.0.3";
-      fetchSubmodules = false;
-      sha256 = "sha256-NWJMottKMiG6Rk2/ACNtBiYfWDsCeSGznPTqVO809P0=";
     };
   };
   quazip = {

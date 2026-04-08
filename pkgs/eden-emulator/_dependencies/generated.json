@@ -1,25 +1,4 @@
 {
-    "biscuit": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "biscuit",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "lioncash",
-            "repo": "biscuit",
-            "rev": "v0.19.0",
-            "sha256": "sha256-fexoArbU317sB4scZTRijfzpe/kiltTFesn5e0C4pyw=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v0.19.0"
-    },
     "cpp-jwt": {
         "cargoLock": null,
         "date": "2025-09-08",
@@ -83,11 +62,11 @@
         },
         "version": "61dce5ae18ca59931e27675c468e64118aba8744"
     },
-    "libadrenotools": {
+    "httplib": {
         "cargoLock": null,
-        "date": "2025-12-25",
+        "date": null,
         "extract": null,
-        "name": "libadrenotools",
+        "name": "httplib",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -95,14 +74,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "eden-emulator",
-            "repo": "libadrenotools",
-            "rev": "8ba23b42d742545b709064d6e2523cdb86de68f5",
-            "sha256": "sha256-iTTos7UET3cMavCDJxgS7Nq+B7gdtbNQtJ9j9n0+uXY=",
+            "owner": "yhirose",
+            "repo": "cpp-httplib",
+            "rev": "v0.37.0",
+            "sha256": "sha256-I7mfT4Eb5sXUURReq3nzQRUhI4sMx4wQpdJBw+vOA/s=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8ba23b42d742545b709064d6e2523cdb86de68f5"
+        "version": "v0.37.0"
     },
     "nx_tzdb": {
         "cargoLock": null,
@@ -118,27 +97,6 @@
             "url": "https://git.eden-emu.dev/eden-emu/tzdb_to_nx/releases/download/121125/121125.tar.gz"
         },
         "version": "121125"
-    },
-    "oaknut": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "oaknut",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "eden-emulator",
-            "repo": "oaknut",
-            "rev": "v2.0.3",
-            "sha256": "sha256-NWJMottKMiG6Rk2/ACNtBiYfWDsCeSGznPTqVO809P0=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v2.0.3"
     },
     "quazip": {
         "cargoLock": null,

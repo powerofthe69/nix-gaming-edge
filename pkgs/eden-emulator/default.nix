@@ -13,7 +13,6 @@
   glslang,
   gsettings-desktop-schemas,
   gtk3,
-  httplib,
   lib,
   libopus,
   libusb1,
@@ -41,19 +40,20 @@
 let
   cpm = callPackage ./_dependencies/generated.nix { };
 
-  # CPM packages that need source paths
+  # Vendored CPM sources, populated from eden's upstream cpmfile.json
+  # Everything between AUTO-CPM-SOURCES is regenerated
   cpmSources = {
+    # >>> AUTO-CPM-SOURCES
+    cpp-jwt = cpm.cpp-jwt.src;
     DiscordRPC = cpm.discord-rpc.src;
+    frozen = cpm.frozen.src;
+    httplib = cpm.httplib.src;
+    QuaZip-Qt6 = cpm.quazip.src;
     SimpleIni = cpm.simpleini.src;
     sirit = cpm.sirit.src;
-    oaknut = cpm.oaknut.src;
-    xbyak = cpm.xbyak.src;
-    cpp-jwt = cpm.cpp-jwt.src;
-    libadrenotools = cpm.libadrenotools.src;
     unordered_dense = cpm.unordered-dense.src;
-    QuaZip-Qt6 = cpm.quazip.src;
-    frozen = cpm.frozen.src;
-    biscuit = cpm.biscuit.src;
+    xbyak = cpm.xbyak.src;
+    # <<< AUTO-CPM-SOURCES
   };
 
   cpmFlags = lib.mapAttrsToList (name: src: "-DCPM_${name}_SOURCE=${src}") cpmSources;
@@ -83,7 +83,6 @@ llvmPackages.stdenv.mkDerivation {
     glib
     gsettings-desktop-schemas
     gtk3
-    httplib
     libopus
     libusb1
     lz4
@@ -107,7 +106,6 @@ llvmPackages.stdenv.mkDerivation {
 
   cmakeFlags = [
     "-DENABLE_QT=ON"
-    "-DENABLE_SDL2=ON"
     "-DUSE_DISCORD_PRESENCE=ON"
 
     "-DYUZU_USE_BUNDLED_SDL2=OFF"
@@ -115,7 +113,6 @@ llvmPackages.stdenv.mkDerivation {
     "-DYUZU_USE_BUNDLED_FFMPEG=OFF"
     "-DSIRIT_USE_SYSTEM_SPIRV_HEADERS=ON"
 
-    "-DYUZU_USE_CPM=OFF"
     "-DCPM_USE_LOCAL_PACKAGES=ON"
     "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
     "-DYUZU_USE_BUNDLED_SIRIT=ON"
