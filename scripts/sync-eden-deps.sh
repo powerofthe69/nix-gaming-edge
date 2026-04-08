@@ -1,14 +1,39 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Syncs pkgs/eden-emulator/nvfetcher.toml with Eden's upstream cpmfile.json
-# nvfetcher -o _sources && ./scripts/sync-eden-deps.sh
-# nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
+# Syncs Eden's upstream cpmfile.json into:
+#   - pkgs/eden-emulator/nvfetcher.toml      (one entry per vendored dep)
+#   - pkgs/eden-emulator/default.nix         (cpmSources, between markers)
+#
+# Usage:
+#   nvfetcher -o _sources && ./scripts/sync-eden-deps.sh
+#   nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SOURCES_JSON="$REPO_ROOT/_sources/generated.json"
 EDEN_NVFETCHER="$REPO_ROOT/pkgs/eden-emulator/nvfetcher.toml"
+EDEN_DEFAULT_NIX="$REPO_ROOT/pkgs/eden-emulator/default.nix"
 EDEN_RAW="https://git.eden-emu.dev/eden-emu/eden/raw"
+
+# Patched forks — always use these instead of upstream repos.
+declare -A REPO_OVERRIDES=(
+    ["cpp-jwt"]="crueter/cpp-jwt"
+    ["quazip"]="crueter/quazip-qt6"
+)
+
+# Deps we don't vendor. Two reasons:
+# provided by nixpkgs (we add them to buildInputs in default.nix)
+# irrelevant to x86_64-linux, or CI/build-only metadata
+SKIP_DEPS=(
+    boost boost_headers fmt lz4 zstd nlohmann openssl opus zlib
+    catch2 cubeb enet gamemode libusb
+    spirv-headers spirv-tools
+    vulkan-headers vulkan-utility-libraries vulkan-memory-allocator
+    vulkan-validation-layers
+    sdl2 sdl2_generic sdl2_steamdeck ffmpeg
+    oaknut biscuit libadrenotools moltenvk oboe llvm-mingw
+    ffmpeg-ci sirit-ci tzdb
+)
 
 REV=$(jq -r '.["eden-emulator"].version // empty' "$SOURCES_JSON")
 if [[ -z "$REV" ]]; then
@@ -17,7 +42,7 @@ if [[ -z "$REV" ]]; then
 fi
 echo "Syncing Eden CPM deps @ ${REV:0:10}..." >&2
 
-# Fetch and merge both cpmfile.json files into one object
+# Fetch and merge both cpmfile.json files into one object.
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
 echo '{}' > "$TMPDIR/externals.json"
@@ -35,23 +60,22 @@ if [[ "$(echo "$CPM" | jq 'length')" -eq 0 ]]; then
     echo "Error: no CPM deps found" >&2; exit 1
 fi
 
-# Patched forks — always use these instead of upstream repos
-declare -A REPO_OVERRIDES=(
-    ["cpp-jwt"]="crueter/cpp-jwt"
-    ["quazip"]="crueter/quazip-qt6"
-)
+# every vendored non-CI cpmfile entry with a repo that isn't in SKIP_DEPS.
+declare -A SKIP_SET=()
+for s in "${SKIP_DEPS[@]}"; do SKIP_SET[$s]=1; done
 
-get_repo() {
-    local name="$1" cpm_repo="$2"
-    echo "${REPO_OVERRIDES[$name]:-$cpm_repo}"
-}
-
-# nvfetcher_name:cpmfile_key
-NEEDED_DEPS=(
-    biscuit:biscuit cpp-jwt:cpp-jwt discord-rpc:discord-rpc frozen:frozen
-    libadrenotools:libadrenotools oaknut:oaknut quazip:quazip
-    simpleini:simpleini sirit:sirit unordered-dense:unordered-dense xbyak:xbyak
+mapfile -t ALL_KEYS < <(
+    echo "$CPM" | jq -r '
+        to_entries
+        | map(select(.value.ci != true and .value.repo != null))
+        | sort_by(.key)
+        | .[].key
+    '
 )
+NEEDED_DEPS=()
+for k in "${ALL_KEYS[@]}"; do
+    [[ -n "${SKIP_SET[$k]:-}" ]] || NEEDED_DEPS+=("$k")
+done
 
 # Generate nvfetcher.toml
 {
@@ -61,18 +85,13 @@ NEEDED_DEPS=(
 HEADER
     echo ""
 
-    for entry in "${NEEDED_DEPS[@]}"; do
-        nvf="${entry%%:*}" key="${entry##*:}"
-        echo "$CPM" | jq -e --arg k "$key" '.[$k]' >/dev/null 2>&1 || continue
-        [[ "$(echo "$CPM" | jq -r --arg k "$key" '.[$k].ci // false')" == "true" ]] && continue
+    for nvf in "${NEEDED_DEPS[@]}"; do
+        cpm_repo=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].repo // ""')
+        tag=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].tag // ""')
+        git_ver=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].git_version // ""')
+        sha=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].sha // ""')
 
-        cpm_repo=$(echo "$CPM" | jq -r --arg k "$key" '.[$k].repo // ""')
-        tag=$(echo "$CPM" | jq -r --arg k "$key" '.[$k].tag // ""')
-        git_ver=$(echo "$CPM" | jq -r --arg k "$key" '.[$k].git_version // ""')
-        sha=$(echo "$CPM" | jq -r --arg k "$key" '.[$k].sha // ""')
-
-        repo=$(get_repo "$nvf" "$cpm_repo")
-        [[ -z "$repo" ]] && continue
+        repo="${REPO_OVERRIDES[$nvf]:-$cpm_repo}"
 
         echo "[$nvf]"
         [[ "$repo" != "$cpm_repo" && -n "$cpm_repo" ]] && echo "# upstream: $cpm_repo"
@@ -87,7 +106,7 @@ HEADER
         echo ""
     done
 
-    # nx_tzdb (custom git host)
+    # nx_tzdb (custom git host, special-cased — uses an artifact)
     if echo "$CPM" | jq -e '.tzdb' >/dev/null 2>&1; then
         ver=$(echo "$CPM" | jq -r '.tzdb.version')
         host=$(echo "$CPM" | jq -r '.tzdb.git_host // ""')
@@ -109,8 +128,41 @@ HEADER
 
 if [[ -f "$EDEN_NVFETCHER" ]] && diff -q "$EDEN_NVFETCHER" "$EDEN_NVFETCHER.new" >/dev/null 2>&1; then
     rm "$EDEN_NVFETCHER.new"
-    echo "Eden CPM deps already up to date." >&2
+    echo "nvfetcher.toml already up to date." >&2
 else
     mv "$EDEN_NVFETCHER.new" "$EDEN_NVFETCHER"
     echo "Updated pkgs/eden-emulator/nvfetcher.toml" >&2
 fi
+
+# Rebuild the cpmSources block in default.nix between marker comments
+SOURCES_BLOCK=""
+for nvf in "${NEEDED_DEPS[@]}"; do
+    pkg=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].package // $k')
+    SOURCES_BLOCK+="    ${pkg} = cpm.${nvf}.src;"$'\n'
+done
+
+awk -v block="$SOURCES_BLOCK" '
+    BEGIN { in_block = 0 }
+    /# >>> AUTO-CPM-SOURCES/ {
+        print
+        printf "%s", block
+        in_block = 1
+        next
+    }
+    /# <<< AUTO-CPM-SOURCES/ {
+        in_block = 0
+        print
+        next
+    }
+    !in_block { print }
+' "$EDEN_DEFAULT_NIX" > "$EDEN_DEFAULT_NIX.new"
+
+if diff -q "$EDEN_DEFAULT_NIX" "$EDEN_DEFAULT_NIX.new" >/dev/null 2>&1; then
+    rm "$EDEN_DEFAULT_NIX.new"
+    echo "default.nix cpmSources already up to date." >&2
+else
+    mv "$EDEN_DEFAULT_NIX.new" "$EDEN_DEFAULT_NIX"
+    echo "Updated pkgs/eden-emulator/default.nix cpmSources" >&2
+fi
+
+echo "Vendored ${#NEEDED_DEPS[@]} CPM entries." >&2

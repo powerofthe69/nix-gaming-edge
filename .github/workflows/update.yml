@@ -142,6 +142,7 @@ jobs:
             _sources/
             pkgs/eden-emulator/_dependencies/
             pkgs/eden-emulator/nvfetcher.toml
+            pkgs/eden-emulator/default.nix
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
