@@ -1,5 +1,19 @@
 # A Nix user repository providing the 'essential' bleeding-edge packages like mesa-git and proton-cachyos alongside a collection of random, 'niche' gaming packages such as pokemmo, vintagestory (latest), and more to come.
 
+**Before Building:**
+
+Most packages here (mesa-git, eden, proton-cachyos, etc.) are pre-built and served from a binary cache. If you don't wire it up, your first build will compile everything from source. You can either pass it ad-hoc on a single rebuild:
+
+```bash
+sudo nixos-rebuild boot --flake .#<hostname> \
+  --option substituters "https://nix-cache.tokidoki.dev/tokidoki" \
+  --option trusted-public-keys "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
+```
+
+Or, you can add it declaratively to your NixOS config so every rebuild uses it automatically (shown in the `nix.settings` block in the example below)
+
+**Background:**
+
 After Chaotic-Nyx archived themselves in the middle of December 2025, I decided to step up and host my own flake for installing proton-cachyos into Steam, mostly for personal reasons. Since getting an itch for it, I've created a few flakes (one of my most important being the mesa-git module) and it's been getting a little unwieldy managing all the flakes in separate repositories. This repository is meant to rein it all in and allow me a single point of management. The existing repositories will be archived sometime soon, but their contents have already been migrated here.
 
 **What all is included in this repo?**
@@ -90,6 +104,11 @@ Here is a minimal representation of what your configuration might look like:
         nix-gaming-edge.nixosModules.default
         # nix-gaming-edge.nixosModules.mesa-git
         ({ pkgs, ... }: { # destructure module args by 'importing' pkgs - only needed when defining a protonPackage
+          nix.settings = { # set the binary cache declaratively - optional
+            substituters = [ "https://nix-cache.tokidoki.dev/tokidoki" ];
+            trusted-public-keys = [ "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk=" ];
+          };
+
           nixpkgs.overlays = [
             nix-gaming-edge.overlays.default
             # nix-gaming-edge.overlays.mesa-git
@@ -198,13 +217,3 @@ in
   };
 }
 ```
-
-To use the cache on your first build (and subsequent rebuilds), you can use the `--option` flag with `nixos-rebuild`:
-
-```bash
-sudo nixos-rebuild boot --flake .#<hostname> \
---option substituters "https://nix-cache.tokidoki.dev/tokidoki" \
---option trusted-public-keys "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
-```
-
-If you don't configure the cache, then the build will compile from source on your first build. However, subsequent builds will use the cache, as the cache is configured to be used by default.
