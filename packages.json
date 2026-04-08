@@ -59,6 +59,11 @@
       "name": "opengoal",
       "packages": "opengoal-launcher",
       "runner": ["self-hosted", "light-tasks"]
+    },
+    {
+      "name": "harkinian",
+      "packages": "shipwright _2ship2harkinian",
+      "runner": ["self-hosted", "heavy-tasks"]
     }
   ]
 }

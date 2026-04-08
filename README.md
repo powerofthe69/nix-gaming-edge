@@ -66,6 +66,8 @@ Other packages that were mostly for me:
 
 - `pseudoregalia-rando`: this installs the latest release of the pseudoregalia randomizer mod. Niche.
 
+- `shipwright` and `_2ship2harkinian`: these expose the Ship of Harkinian (Ocarina of Time) and 2 Ship 2 Harkinian (Majora's Mask) PC ports. Re-exported straight from Nixpkgs so they're built and cached, since otherwise they'd be compiled from source on every nixpkgs bump.
+
 - `vintagestory`: this installs the latest release of Vintage Story, even unstable release candidates. Those that don't want to use the unstable channel at all can use the official nixpkgs version instead.
 
 **NixOS Installation:**
@@ -161,6 +163,8 @@ Here is a minimal representation of what your configuration might look like:
             opengoal-launcher
             pokemmo
             pseudoregalia-rando
+            shipwright
+            _2ship2harkinian
             vintagestory
           ];
         

@@ -143,9 +143,6 @@
         millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
         # Discord (stable) and Vencord (nightly)
-        # Got annoyed at 0.121 Discord updating and breaking Vencord
-        # Vencord updated to fix it, but Nixpkgs lags behind
-        # Maintaining versions myself now with nightly builds
         discord = discord.discord;
         vencord = discord.vencord;
 
@@ -157,6 +154,11 @@
 
         # OpenGoal Launcher
         opengoal-launcher = opengoal-launcher;
+
+        # Harkinian (Ship of Harkinian / 2 Ship 2 Harkinian)
+        # Building these from Nixpkgs and pushing to Attic cache
+        shipwright = pkgs.shipwright;
+        _2ship2harkinian = pkgs._2ship2harkinian;
       };
 
       overlays = {
@@ -204,6 +206,9 @@
           modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
 
           opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
+
+          shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
+          _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
         };
 
         mesa-git = final: prev: {
@@ -273,6 +278,11 @@
 
         opengoal = final: prev: {
           opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
+        };
+
+        harkinian = final: prev: {
+          shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
+          _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
         };
       };
 
