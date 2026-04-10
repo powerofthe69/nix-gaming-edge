@@ -16,7 +16,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-04-08",
+        "date": "2026-04-09",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -26,17 +26,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3d0eb4b5d71c6e051480408ab4274082c6b232e3",
-            "sha256": "sha256-oHPglt/R4zIoU4oySKoZvHnp1sG81rWQlXL7j01Ru5s=",
+            "rev": "c95cb8f8ec6ce256b75fd85c858c7b80f91e088e",
+            "sha256": "sha256-WMV8NX26OXPsl7D6rbL/yudAveTqPkuusrj5EYb7GZk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "3d0eb4b5d71c6e051480408ab4274082c6b232e3"
+        "version": "c95cb8f8ec6ce256b75fd85c858c7b80f91e088e"
     },
     "fluxer-desktop": {
         "cargoLock": null,
-        "date": "2026-03-19",
+        "date": "2026-04-09",
         "extract": null,
         "name": "fluxer-desktop",
         "passthru": null,
@@ -46,13 +46,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5da26d4ed5ef9f3fe8bef993c0f10ea4f4ee9c1d",
-            "sha256": "sha256-L5EmJH7wlZi1hG6dhf8ohI+L6jcIcbnbxlt8b2bAEfA=",
+            "rev": "ee1f27fe1a372b5291aead8042944afd706bf5db",
+            "sha256": "sha256-94rLtgG5s/aJfNL2v/KTqLOnGsT05Qy6l3jPuL15SkE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/fluxerapp/fluxer"
         },
-        "version": "5da26d4ed5ef9f3fe8bef993c0f10ea4f4ee9c1d"
+        "version": "ee1f27fe1a372b5291aead8042944afd706bf5db"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -91,7 +91,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-04-09",
+        "date": "2026-04-10",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2bf520340d02702bde1067c6cd816790540e81ed",
-            "sha256": "sha256-y47sCSOn1dhekCIrgk30trjzm8aMF2Xm3aTbtO9eaKo=",
+            "rev": "a7c63ae6fa95426186d02c754393b5f6ab91c8e8",
+            "sha256": "sha256-n4gNd+gF/1kFN6JwFqpF40NnnfOzNagJX+vA8a7STdI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "2bf520340d02702bde1067c6cd816790540e81ed"
+        "version": "a7c63ae6fa95426186d02c754393b5f6ab91c8e8"
     },
     "modengine3": {
         "cargoLock": null,
