@@ -16,15 +16,15 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "abb616c3570f88133e8717d80c48fc5cffe7c8e4";
+    version = "2c1eff2e6003918e48a20f2961905b06be701690";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "abb616c3570f88133e8717d80c48fc5cffe7c8e4";
+      rev = "2c1eff2e6003918e48a20f2961905b06be701690";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LfcoOfhMy4LmtioTcTyX9iDeimSRziR67txzI8vq3h8=";
+      sha256 = "sha256-f674HteLQ3zuK/JFd8oZ+BFP+OH/YLDe8b0Hy5HyxOc=";
     };
     date = "2026-04-11";
   };
@@ -66,15 +66,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "f92cfe9a744e3028b144c693f064ee5b7ef14603";
+    version = "9e56c7bd8f4c5ae4fab743751db0c476302e13f4";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "f92cfe9a744e3028b144c693f064ee5b7ef14603";
+      rev = "9e56c7bd8f4c5ae4fab743751db0c476302e13f4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kNRK2BMnunBPL2mJAmDrY1GnGGaFs7i/t0lMVB0fQ7M=";
+      sha256 = "sha256-qRa/5K4MZr55djQsBIt4pxZicnMR+FJkaVcRHzXRvOE=";
     };
     date = "2026-04-11";
   };
@@ -166,10 +166,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "unstable/vs_client_linux-x64_1.22.0-rc.7";
+    version = "unstable/vs_client_linux-x64_1.22.0-rc.8";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.7.tar.gz";
-      sha256 = "sha256-87if48ayHfu0NshTjCWvO3hjsJo9r2ciHnBf4DlxlJ4=";
+      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.8.tar.gz";
+      sha256 = "sha256-MOAkg49P02OOjbxzK8h6WZxtz0HmldP/o4Hr4nB2wwg=";
     };
   };
   wayland = {

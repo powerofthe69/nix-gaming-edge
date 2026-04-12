@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "abb616c3570f88133e8717d80c48fc5cffe7c8e4",
-            "sha256": "sha256-LfcoOfhMy4LmtioTcTyX9iDeimSRziR67txzI8vq3h8=",
+            "rev": "2c1eff2e6003918e48a20f2961905b06be701690",
+            "sha256": "sha256-f674HteLQ3zuK/JFd8oZ+BFP+OH/YLDe8b0Hy5HyxOc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "abb616c3570f88133e8717d80c48fc5cffe7c8e4"
+        "version": "2c1eff2e6003918e48a20f2961905b06be701690"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f92cfe9a744e3028b144c693f064ee5b7ef14603",
-            "sha256": "sha256-kNRK2BMnunBPL2mJAmDrY1GnGGaFs7i/t0lMVB0fQ7M=",
+            "rev": "9e56c7bd8f4c5ae4fab743751db0c476302e13f4",
+            "sha256": "sha256-qRa/5K4MZr55djQsBIt4pxZicnMR+FJkaVcRHzXRvOE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "f92cfe9a744e3028b144c693f064ee5b7ef14603"
+        "version": "9e56c7bd8f4c5ae4fab743751db0c476302e13f4"
     },
     "modengine3": {
         "cargoLock": null,
@@ -273,11 +273,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-87if48ayHfu0NshTjCWvO3hjsJo9r2ciHnBf4DlxlJ4=",
+            "sha256": "sha256-MOAkg49P02OOjbxzK8h6WZxtz0HmldP/o4Hr4nB2wwg=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.7.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.8.tar.gz"
         },
-        "version": "unstable/vs_client_linux-x64_1.22.0-rc.7"
+        "version": "unstable/vs_client_linux-x64_1.22.0-rc.8"
     },
     "wayland": {
         "cargoLock": null,
