@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "2c1eff2e6003918e48a20f2961905b06be701690";
+    version = "a7ef19e0286b9913c451f500a52ec3fe2c3f576c";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "2c1eff2e6003918e48a20f2961905b06be701690";
+      rev = "a7ef19e0286b9913c451f500a52ec3fe2c3f576c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-f674HteLQ3zuK/JFd8oZ+BFP+OH/YLDe8b0Hy5HyxOc=";
+      sha256 = "sha256-XxzlQzsd9MUBcJaUmJKTCflm2/zizO7ML2tlvY98B54=";
     };
-    date = "2026-04-11";
+    date = "2026-04-13";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9e56c7bd8f4c5ae4fab743751db0c476302e13f4";
+    version = "21047e61a50db6d5e92690210f4a5219e025c267";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9e56c7bd8f4c5ae4fab743751db0c476302e13f4";
+      rev = "21047e61a50db6d5e92690210f4a5219e025c267";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-qRa/5K4MZr55djQsBIt4pxZicnMR+FJkaVcRHzXRvOE=";
+      sha256 = "sha256-Q1o8NB682z/xyecUbx/ZdvkeP61/Gems1e9jlSs3rNc=";
     };
-    date = "2026-04-11";
+    date = "2026-04-13";
   };
   modengine3 = {
     pname = "modengine3";
@@ -96,10 +96,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.8.18";
+    version = "2.9.0";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.8.18/OpenGOAL-Launcher_2.8.18_amd64.AppImage";
-      sha256 = "sha256-FLm+l9LysxnItldDV9G0WKCjzQlvePC6Tf34eumnMPc=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.9.0/OpenGOAL-Launcher_2.9.0_amd64.AppImage";
+      sha256 = "sha256-7w6ZCWAcx3t4365ZiCSlD4huPf0tWtr7ojAM0u7l+tY=";
     };
   };
   pokemmo = {
@@ -112,10 +112,10 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260330-slr";
+    version = "cachyos-10.0-20260407-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260330-slr/proton-cachyos-10.0-20260330-slr-x86_64.tar.xz";
-      sha256 = "sha256-PGERl2u3nWrSqNErExRUKdlNCnz7sskX1HT1lUY7+G4=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64.tar.xz";
+      sha256 = "sha256-1Ia9yKFMXtqcdIZhyOR0gr4Yt6jlBBHjiN7ruh6KfkU=";
     };
   };
   proton-cachyos-x86_64-v2 = {
@@ -128,18 +128,18 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260330-slr";
+    version = "cachyos-10.0-20260407-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260330-slr/proton-cachyos-10.0-20260330-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-xQxG7j1bhWhI2qhTQp+AsJeqVZk9ljXMibYgcVFqybY=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-j6hTz8lQPEODc5237kDmoK2tDZTH4uzv2OaNbkK8YJU=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260330-slr";
+    version = "cachyos-10.0-20260407-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260330-slr/proton-cachyos-10.0-20260330-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-wFJkA/fQy4d36MA+HSPKbc2MMCdsH3lALG+RGFRpVfI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260407-slr/proton-cachyos-10.0-20260407-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-cexP3jpfhn7rAvzdSOOmsmfvQvuqqEgRFwJl52QI5GY=";
     };
   };
   pseudoregalia-rando = {
