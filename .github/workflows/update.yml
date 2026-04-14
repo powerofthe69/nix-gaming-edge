@@ -254,12 +254,14 @@ jobs:
           ref: nightly
           fetch-depth: 0
 
-      - name: Promote Master off-cycle if Nixpkgs updated
+      - name: Promote Master off-cycle if Nixpkgs or Proton CachyOS updated
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MASTER_REV=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
-          NIGHTLY_REV=$(git show origin/nightly:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
-          if [ "$MASTER_REV" != "$NIGHTLY_REV" ]; then
+          MASTER_NIXPKGS=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
+          NIGHTLY_NIXPKGS=$(git show origin/nightly:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
+          MASTER_PROTON=$(git show origin/master:_sources/generated.json | jq -r '.["proton-cachyos"].version')
+          NIGHTLY_PROTON=$(git show origin/nightly:_sources/generated.json | jq -r '.["proton-cachyos"].version')
+          if [ "$MASTER_NIXPKGS" != "$NIGHTLY_NIXPKGS" ] || [ "$MASTER_PROTON" != "$NIGHTLY_PROTON" ]; then
             gh workflow run promote.yml
           fi
