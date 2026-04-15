@@ -16,15 +16,15 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "27cadb24f3b9feacc0312b89632cd8555c3db588";
+    version = "f11b69d6b78b2b64060b6fd6a97120f002436cc7";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "27cadb24f3b9feacc0312b89632cd8555c3db588";
+      rev = "f11b69d6b78b2b64060b6fd6a97120f002436cc7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1N30LkxarWtc3v9uJYKhrXG+1vc4eoPplvcPc4FU42k=";
+      sha256 = "sha256-kAW6AXSi5pgSPpRIbF5IRl19/QpmOkgfSlhxDawiohw=";
     };
     date = "2026-04-14";
   };
@@ -66,15 +66,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "739e3d20f02e522c97b172ea3cbe494e989d7eb8";
+    version = "5982deb48b90264dd7644525f40dbd89ae5b6344";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "739e3d20f02e522c97b172ea3cbe494e989d7eb8";
+      rev = "5982deb48b90264dd7644525f40dbd89ae5b6344";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-v8wu2azWVdtiBdIJTTez5PDjgqM6MNu3wknCPBpX4Ig=";
+      sha256 = "sha256-xaadhdTu29A9KJU+J/vy6GVUS+2XJYhI/inCezRQfOI=";
     };
     date = "2026-04-14";
   };
@@ -187,16 +187,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "8eeadc857ff40919465964b354c374113da99ba2";
+    version = "0f52a676b632b4e32931c8fd893e8e415c5a098d";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "8eeadc857ff40919465964b354c374113da99ba2";
+      rev = "0f52a676b632b4e32931c8fd893e8e415c5a098d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-FleNKg7F/s3LSHdcwYdXjG5P/jkvYtiDb/Zr1HzDnts=";
+      sha256 = "sha256-SCPZeZnQwfoz+fl+zKMPfFBlyKNfNzeSJ2gXdOj1SoE=";
     };
-    date = "2026-04-05";
+    date = "2026-04-14";
   };
 }
