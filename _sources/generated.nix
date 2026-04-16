@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "5982deb48b90264dd7644525f40dbd89ae5b6344";
+    version = "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "5982deb48b90264dd7644525f40dbd89ae5b6344";
+      rev = "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xaadhdTu29A9KJU+J/vy6GVUS+2XJYhI/inCezRQfOI=";
+      sha256 = "sha256-u8QfE7Af17bp1FE61m5yOpCgHtmHyb9KtTKKIHMTyWM=";
     };
-    date = "2026-04-14";
+    date = "2026-04-16";
   };
   modengine3 = {
     pname = "modengine3";
@@ -152,17 +152,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "cba0eb9897419432e68277b0b60c301a6f8323cf";
+    version = "541e50dcf45eefee104916dc64805439cb24a5f0";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "cba0eb9897419432e68277b0b60c301a6f8323cf";
+      rev = "541e50dcf45eefee104916dc64805439cb24a5f0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Wl89sRv49os6uRuYQVB/LgsOD7Rz3DPoxqeeELyY/o4=";
+      sha256 = "sha256-uLuWTquRwguWYu3eolrHa5rguSI8ydwzHY6CrOcP7qM=";
     };
-    date = "2026-03-19";
+    date = "2026-04-15";
   };
   vintagestory = {
     pname = "vintagestory";
@@ -187,16 +187,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "0f52a676b632b4e32931c8fd893e8e415c5a098d";
+    version = "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "0f52a676b632b4e32931c8fd893e8e415c5a098d";
+      rev = "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-SCPZeZnQwfoz+fl+zKMPfFBlyKNfNzeSJ2gXdOj1SoE=";
+      sha256 = "sha256-umW/3vKPcIs4YwsK5K6CZkPa6eLFkjqUwmb/v42+4hA=";
     };
-    date = "2026-04-14";
+    date = "2026-04-15";
   };
 }

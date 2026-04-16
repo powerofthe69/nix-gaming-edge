@@ -91,7 +91,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-04-14",
+        "date": "2026-04-16",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5982deb48b90264dd7644525f40dbd89ae5b6344",
-            "sha256": "sha256-xaadhdTu29A9KJU+J/vy6GVUS+2XJYhI/inCezRQfOI=",
+            "rev": "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21",
+            "sha256": "sha256-u8QfE7Af17bp1FE61m5yOpCgHtmHyb9KtTKKIHMTyWM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "5982deb48b90264dd7644525f40dbd89ae5b6344"
+        "version": "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21"
     },
     "modengine3": {
         "cargoLock": null,
@@ -246,7 +246,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-03-19",
+        "date": "2026-04-15",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -256,13 +256,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "cba0eb9897419432e68277b0b60c301a6f8323cf",
-            "sha256": "sha256-Wl89sRv49os6uRuYQVB/LgsOD7Rz3DPoxqeeELyY/o4=",
+            "rev": "541e50dcf45eefee104916dc64805439cb24a5f0",
+            "sha256": "sha256-uLuWTquRwguWYu3eolrHa5rguSI8ydwzHY6CrOcP7qM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "cba0eb9897419432e68277b0b60c301a6f8323cf"
+        "version": "541e50dcf45eefee104916dc64805439cb24a5f0"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -301,7 +301,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-04-14",
+        "date": "2026-04-15",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -311,12 +311,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0f52a676b632b4e32931c8fd893e8e415c5a098d",
-            "sha256": "sha256-SCPZeZnQwfoz+fl+zKMPfFBlyKNfNzeSJ2gXdOj1SoE=",
+            "rev": "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888",
+            "sha256": "sha256-umW/3vKPcIs4YwsK5K6CZkPa6eLFkjqUwmb/v42+4hA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "0f52a676b632b4e32931c8fd893e8e415c5a098d"
+        "version": "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888"
     }
 }
