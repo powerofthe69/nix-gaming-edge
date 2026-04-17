@@ -16,17 +16,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "f11b69d6b78b2b64060b6fd6a97120f002436cc7";
+    version = "e6ad51e3d58894c388bd94753e11a4c118089e68";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "f11b69d6b78b2b64060b6fd6a97120f002436cc7";
+      rev = "e6ad51e3d58894c388bd94753e11a4c118089e68";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kAW6AXSi5pgSPpRIbF5IRl19/QpmOkgfSlhxDawiohw=";
+      sha256 = "sha256-UD8oKd9ae0CbpA+y/RyKJx9MDVZn8yPprrBa4Sa6PDY=";
     };
-    date = "2026-04-14";
+    date = "2026-04-17";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -44,10 +44,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.04.08-1dcf1b2";
+    version = "2026.04.16-d252bc2";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.08-1dcf1b2.zip";
-      sha256 = "sha256-BfqDkeCqKdvbr5WCI0moOnA1AkvoWtFWqpI350nXQDs=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.16-d252bc2.zip";
+      sha256 = "sha256-H28zqP1Gu5LKhvmwLvZVexQL/pDalYmStTIv6DiYBNg=";
     };
   };
   libdrm = {
@@ -66,15 +66,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21";
+    version = "78e2bbc70f55f1cf6ef922e2052b1ce6b879b952";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "19d64d6f7dc72c50b8c351d6bb7652647c3f2d21";
+      rev = "78e2bbc70f55f1cf6ef922e2052b1ce6b879b952";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-u8QfE7Af17bp1FE61m5yOpCgHtmHyb9KtTKKIHMTyWM=";
+      sha256 = "sha256-uxGRfGVOAaRFmmSpwVHmIzHhSZ4ePOJU+PkO9gKizpo=";
     };
     date = "2026-04-16";
   };
@@ -112,10 +112,10 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260408-slr";
+    version = "cachyos-10.0-20260409-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260408-slr/proton-cachyos-10.0-20260408-slr-x86_64.tar.xz";
-      sha256 = "sha256-JxdP77sruLFWLoL7UqW4msmXE4vykz3rA3jtfHo/d0k=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64.tar.xz";
+      sha256 = "sha256-FSbrR6Z45HZJs9Zq0w3T9eDF/j8c9xspdyE8nObj9oQ=";
     };
   };
   proton-cachyos-x86_64-v2 = {
@@ -128,18 +128,18 @@
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260408-slr";
+    version = "cachyos-10.0-20260409-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260408-slr/proton-cachyos-10.0-20260408-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-1TQUNLSvFlMTGaSOCusm5wtJ+IcSPWGTbt5S+Zg0XUk=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-inm8HhCyR7xew2qr/u5BIOlz/DTA6KrtdreRX19305Q=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260408-slr";
+    version = "cachyos-10.0-20260409-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260408-slr/proton-cachyos-10.0-20260408-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-I7xKQyT4KV1zmQofiSlhkahS2m40s5q3epAmit0jvTY=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-cy8T09V5+uzp7EiGOV86ZgC1SnkjC2lBTRMzgfRVzDc=";
     };
   };
   pseudoregalia-rando = {
@@ -187,15 +187,15 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888";
+    version = "911ab509edf6fc14b89599658199cc932417e9c8";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "cf59e7119b3cb0cc143167a1d6cc0453c8fd7888";
+      rev = "911ab509edf6fc14b89599658199cc932417e9c8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-umW/3vKPcIs4YwsK5K6CZkPa6eLFkjqUwmb/v42+4hA=";
+      sha256 = "sha256-JD1S7zHUCZ4ID6rg1nEiGqBzCn9EkxxU9DoFNBgkIS0=";
     };
     date = "2026-04-15";
   };
