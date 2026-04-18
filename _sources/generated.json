@@ -26,13 +26,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e6ad51e3d58894c388bd94753e11a4c118089e68",
-            "sha256": "sha256-UD8oKd9ae0CbpA+y/RyKJx9MDVZn8yPprrBa4Sa6PDY=",
+            "rev": "6c76908ddbf67854fd45fdbfa73edb440f420f14",
+            "sha256": "sha256-7J+WR3F0ci95mJkUJxLcKOh5p75epJKv0xnqTLOXEGc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "e6ad51e3d58894c388bd94753e11a4c118089e68"
+        "version": "6c76908ddbf67854fd45fdbfa73edb440f420f14"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -63,11 +63,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-H28zqP1Gu5LKhvmwLvZVexQL/pDalYmStTIv6DiYBNg=",
+            "sha256": "sha256-XBurprSLXooUaYiRCSPAJneW7WJXipI6oUGEIe75JC8=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.16-d252bc2.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.16-ec7a5a4.zip"
         },
-        "version": "2026.04.16-d252bc2"
+        "version": "2026.04.16-ec7a5a4"
     },
     "libdrm": {
         "cargoLock": null,
@@ -91,7 +91,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-04-16",
+        "date": "2026-04-18",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -101,13 +101,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "78e2bbc70f55f1cf6ef922e2052b1ce6b879b952",
-            "sha256": "sha256-uxGRfGVOAaRFmmSpwVHmIzHhSZ4ePOJU+PkO9gKizpo=",
+            "rev": "fcfdd4cfead83bcda48b2c2f983e1aab3062e36a",
+            "sha256": "sha256-HTjsSg2x31SZIUij90uZYJ3Buc+MG2vACxEoHbAhBtA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "78e2bbc70f55f1cf6ef922e2052b1ce6b879b952"
+        "version": "fcfdd4cfead83bcda48b2c2f983e1aab3062e36a"
     },
     "modengine3": {
         "cargoLock": null,
@@ -178,11 +178,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-FSbrR6Z45HZJs9Zq0w3T9eDF/j8c9xspdyE8nObj9oQ=",
+            "sha256": "sha256-7ahXvl7PuqZnV9VUjVXCZiXrUMfDyieqL4tDe2Et+N4=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64.tar.xz"
         },
-        "version": "cachyos-10.0-20260409-slr"
+        "version": "cachyos-10.0-20260410-slr"
     },
     "proton-cachyos-x86_64-v2": {
         "cargoLock": null,
@@ -208,11 +208,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-inm8HhCyR7xew2qr/u5BIOlz/DTA6KrtdreRX19305Q=",
+            "sha256": "sha256-vJipf1yacr98lu7IkoZCg/563fvCp1x/8Nolyoj23SI=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-10.0-20260409-slr"
+        "version": "cachyos-10.0-20260410-slr"
     },
     "proton-cachyos-x86_64-v4": {
         "cargoLock": null,
@@ -223,11 +223,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-cy8T09V5+uzp7EiGOV86ZgC1SnkjC2lBTRMzgfRVzDc=",
+            "sha256": "sha256-pF5K89iZO35+9qnUBCDL5SmLp331stcKbEml4Fi+E3Q=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260409-slr/proton-cachyos-10.0-20260409-slr-x86_64_v4.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64_v4.tar.xz"
         },
-        "version": "cachyos-10.0-20260409-slr"
+        "version": "cachyos-10.0-20260410-slr"
     },
     "pseudoregalia-rando": {
         "cargoLock": null,
@@ -246,7 +246,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-04-15",
+        "date": "2026-04-17",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -256,13 +256,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "541e50dcf45eefee104916dc64805439cb24a5f0",
-            "sha256": "sha256-uLuWTquRwguWYu3eolrHa5rguSI8ydwzHY6CrOcP7qM=",
+            "rev": "51b4748ba7489201f3efb378b6e6e2734f97e080",
+            "sha256": "sha256-fsd3LXsTovDRfET/UnxVDRAWGgln1kSUiKFA9/5v288=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "541e50dcf45eefee104916dc64805439cb24a5f0"
+        "version": "51b4748ba7489201f3efb378b6e6e2734f97e080"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -273,11 +273,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-MOAkg49P02OOjbxzK8h6WZxtz0HmldP/o4Hr4nB2wwg=",
+            "sha256": "sha256-0ztxVcPYI9iRey+Tp78adl9vm8kgelh6RawTt8e4jJA=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.8.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.9.tar.gz"
         },
-        "version": "unstable/vs_client_linux-x64_1.22.0-rc.8"
+        "version": "unstable/vs_client_linux-x64_1.22.0-rc.9"
     },
     "wayland": {
         "cargoLock": null,
