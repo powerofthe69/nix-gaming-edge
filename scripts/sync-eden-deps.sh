@@ -13,7 +13,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SOURCES_JSON="$REPO_ROOT/_sources/generated.json"
 EDEN_NVFETCHER="$REPO_ROOT/pkgs/eden-emulator/nvfetcher.toml"
 EDEN_DEFAULT_NIX="$REPO_ROOT/pkgs/eden-emulator/default.nix"
-EDEN_RAW="https://git.eden-emu.dev/eden-emu/eden/raw"
+EDEN_GIT="https://git.eden-emu.dev/eden-emu/eden.git"
 
 # Patched forks — always use these instead of upstream repos.
 declare -A REPO_OVERRIDES=(
@@ -42,19 +42,19 @@ if [[ -z "$REV" ]]; then
 fi
 echo "Syncing Eden CPM deps @ ${REV:0:10}..." >&2
 
-# Fetch and merge both cpmfile.json files into one object.
+# Fetch cpmfile.json files via git (Cloudflare blocks raw HTTP access).
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
-echo '{}' > "$TMPDIR/externals.json"
-echo '{}' > "$TMPDIR/root.json"
 
-for pair in "externals/cpmfile.json:externals.json" "cpmfile.json:root.json"; do
-    remote="${pair%%:*}" local_file="${pair##*:}"
-    if curl -fsSL "$EDEN_RAW/$REV/$remote" -o "$TMPDIR/$local_file" 2>/dev/null; then
-        echo "  Fetched $remote" >&2
-    fi
-done
-CPM=$(jq -s '.[0] * .[1]' "$TMPDIR/externals.json" "$TMPDIR/root.json")
+git clone --depth=1 --no-checkout -q "$EDEN_GIT" "$TMPDIR/eden"
+git -C "$TMPDIR/eden" checkout HEAD -- cpmfile.json externals/cpmfile.json 2>/dev/null
+
+# Fall back to empty objects for whichever file doesn't exist in this rev.
+[[ -f "$TMPDIR/eden/cpmfile.json" ]]            || echo '{}' > "$TMPDIR/eden/cpmfile.json"
+[[ -f "$TMPDIR/eden/externals/cpmfile.json" ]]   || echo '{}' > "$TMPDIR/eden/externals/cpmfile.json"
+
+echo "  Fetched cpmfile.json via git" >&2
+CPM=$(jq -s '.[0] * .[1]' "$TMPDIR/eden/externals/cpmfile.json" "$TMPDIR/eden/cpmfile.json")
 
 if [[ "$(echo "$CPM" | jq 'length')" -eq 0 ]]; then
     echo "Error: no CPM deps found" >&2; exit 1
