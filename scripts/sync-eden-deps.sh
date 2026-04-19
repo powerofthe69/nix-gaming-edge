@@ -106,21 +106,17 @@ HEADER
         echo ""
     done
 
-    # nx_tzdb (custom git host, special-cased — uses an artifact)
+    # nx_tzdb (special-cased — uses a release artifact, mirrored on git.crueter.xyz
+    # since Cloudflare challenges block downloads from git.eden-emu.dev)
     if echo "$CPM" | jq -e '.tzdb' >/dev/null 2>&1; then
         ver=$(echo "$CPM" | jq -r '.tzdb.version')
-        host=$(echo "$CPM" | jq -r '.tzdb.git_host // ""')
         repo=$(echo "$CPM" | jq -r '.tzdb.repo')
         artifact=$(echo "$CPM" | jq -r '.tzdb.artifact' | sed "s/%VERSION%/$ver/g")
         tag=$(echo "$CPM" | jq -r '.tzdb.tag' | sed "s/%VERSION%/$ver/g")
 
         echo "[nx_tzdb]"
         echo "src.manual = \"$ver\""
-        if [[ -n "$host" ]]; then
-            echo "fetch.url = \"https://$host/$repo/releases/download/$tag/$artifact\""
-        else
-            echo "fetch.url = \"https://github.com/$repo/releases/download/$tag/$artifact\""
-        fi
+        echo "fetch.url = \"https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/$tag/$artifact\""
         echo ""
     fi
 
