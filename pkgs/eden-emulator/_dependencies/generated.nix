@@ -32,15 +32,15 @@
   };
   frozen = {
     pname = "frozen";
-    version = "61dce5ae18ca59931e27675c468e64118aba8744";
+    version = "bbb46f414970162fb264f44e478653f42e010d68";
     src = fetchFromGitHub {
       owner = "serge-sans-paille";
       repo = "frozen";
-      rev = "61dce5ae18ca59931e27675c468e64118aba8744";
+      rev = "bbb46f414970162fb264f44e478653f42e010d68";
       fetchSubmodules = false;
-      sha256 = "sha256-zIczBSRDWjX9hcmYWYkbWY3NAAQwQtKhMTeHlYp4BKk=";
+      sha256 = "sha256-WQapZx6t887KTmcqHWJk0eXnpXblleQPB4tRXdjnqDU=";
     };
-    date = "2025-07-29";
+    date = "2026-04-18";
   };
   httplib = {
     pname = "httplib";
@@ -57,7 +57,7 @@
     pname = "nx_tzdb";
     version = "121125";
     src = fetchurl {
-      url = "https://git.eden-emu.dev/eden-emu/tzdb_to_nx/releases/download/121125/121125.tar.gz";
+      url = "https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/121125/121125.tar.gz";
       sha256 = "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=";
     };
   };

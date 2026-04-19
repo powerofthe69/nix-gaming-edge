@@ -66,17 +66,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "fcfdd4cfead83bcda48b2c2f983e1aab3062e36a";
+    version = "8736d1a9a6b323fc2c6c1bdb5d6a445f1cef1575";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "fcfdd4cfead83bcda48b2c2f983e1aab3062e36a";
+      rev = "8736d1a9a6b323fc2c6c1bdb5d6a445f1cef1575";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HTjsSg2x31SZIUij90uZYJ3Buc+MG2vACxEoHbAhBtA=";
+      sha256 = "sha256-Bi4519aeVns37jtq5OtYX1x8wFyFh/Xpz6ZrrcXZB9o=";
     };
-    date = "2026-04-18";
+    date = "2026-04-19";
   };
   modengine3 = {
     pname = "modengine3";
@@ -166,10 +166,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "unstable/vs_client_linux-x64_1.22.0-rc.9";
+    version = "unstable/vs_client_linux-x64_1.22.0-rc.10";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.9.tar.gz";
-      sha256 = "sha256-0ztxVcPYI9iRey+Tp78adl9vm8kgelh6RawTt8e4jJA=";
+      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.10.tar.gz";
+      sha256 = "sha256-4kxKC99uBUHhkH/Nm5zBezhCasKUpdG/q/cgXZ3G1Ro=";
     };
   };
   wayland = {
