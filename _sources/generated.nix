@@ -6,27 +6,40 @@
   dockerTools,
 }:
 {
+  _2ship2harkinian = {
+    pname = "_2ship2harkinian";
+    version = "4.0.2";
+    src = fetchgit {
+      url = "https://github.com/HarbourMasters/2ship2harkinian.git";
+      rev = "4.0.2";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-3SgRvQL27e+MoTBGX4/iUwgELd6UFbjrb23gV1UvAJ8=";
+    };
+  };
   discord = {
     pname = "discord";
-    version = "0.0.133";
+    version = "0.0.134";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.133/discord-0.0.133.tar.gz";
-      sha256 = "sha256-Ri4QDintjzbdKM/tKLcMq9ZimllbWa8NvS+fap1dYrw=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.134/discord-0.0.134.tar.gz";
+      sha256 = "sha256-N4gdcj8LYiXxvkbZhZyiWr375vaXt6JnwcoqLOKMsGg=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "6c76908ddbf67854fd45fdbfa73edb440f420f14";
+    version = "a0bb6324c0a11bf6578fe7d6951d08968fc16e12";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "6c76908ddbf67854fd45fdbfa73edb440f420f14";
+      rev = "a0bb6324c0a11bf6578fe7d6951d08968fc16e12";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7J+WR3F0ci95mJkUJxLcKOh5p75epJKv0xnqTLOXEGc=";
+      sha256 = "sha256-tRIEBbScTbuH2TFDaN45DVIFGvq0G49n4C8ukQ218uc=";
     };
-    date = "2026-04-17";
+    date = "2026-04-21";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -44,10 +57,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.04.16-ec7a5a4";
+    version = "2026.04.21-f3e42b5";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.16-ec7a5a4.zip";
-      sha256 = "sha256-XBurprSLXooUaYiRCSPAJneW7WJXipI6oUGEIe75JC8=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.21-f3e42b5.zip";
+      sha256 = "sha256-koQptOag+ybq9CXArTy0VuXAJWHsIMWiZmqp01gpRUE=";
     };
   };
   libdrm = {
@@ -66,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "8736d1a9a6b323fc2c6c1bdb5d6a445f1cef1575";
+    version = "12f81eaa88d5422219e78b4ed34eee9fd3451eb2";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "8736d1a9a6b323fc2c6c1bdb5d6a445f1cef1575";
+      rev = "12f81eaa88d5422219e78b4ed34eee9fd3451eb2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Bi4519aeVns37jtq5OtYX1x8wFyFh/Xpz6ZrrcXZB9o=";
+      sha256 = "sha256-kvQ16D+KA/U9ZLmNteMJ2wcZg03w4HgHp/r5oTS5cVY=";
     };
-    date = "2026-04-19";
+    date = "2026-04-22";
   };
   modengine3 = {
     pname = "modengine3";
@@ -107,39 +120,31 @@
     version = "100884776";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
+      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
     };
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260410-slr";
+    version = "cachyos-10.0-20260420-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64.tar.xz";
-      sha256 = "sha256-7ahXvl7PuqZnV9VUjVXCZiXrUMfDyieqL4tDe2Et+N4=";
-    };
-  };
-  proton-cachyos-x86_64-v2 = {
-    pname = "proton-cachyos-x86_64-v2";
-    version = "cachyos-10.0-20260312-slr";
-    src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260312-slr/proton-cachyos-10.0-20260312-slr-x86_64_v2.tar.xz";
-      sha256 = "sha256-4akXJ03GKp2h5RBNfA9gth3abKJUO24JRqTcnVK3nS8=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64.tar.xz";
+      sha256 = "sha256-YGX3mOWhM+mokF/ifNrChIDYS9pgsljwyz+AYj8N4lY=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260410-slr";
+    version = "cachyos-10.0-20260420-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-vJipf1yacr98lu7IkoZCg/563fvCp1x/8Nolyoj23SI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-rTpavOdfN+DYYfi05uQyTkp/+bA0mhVdlY0BRIte6As=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260410-slr";
+    version = "cachyos-10.0-20260420-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260410-slr/proton-cachyos-10.0-20260410-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-pF5K89iZO35+9qnUBCDL5SmLp331stcKbEml4Fi+E3Q=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-CTYxrKhEH4zLft2kSpPq+vb3iWakp9SdaWu5obNPHjg=";
     };
   };
   pseudoregalia-rando = {
@@ -150,26 +155,39 @@
       sha256 = "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=";
     };
   };
+  shipwright = {
+    pname = "shipwright";
+    version = "9.2.3";
+    src = fetchgit {
+      url = "https://github.com/harbourmasters/shipwright.git";
+      rev = "9.2.3";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-tu6hS9Q/np4QqVHlI50QmhSOeVTO3RKolO2F2iSiU7Q=";
+    };
+  };
   vencord = {
     pname = "vencord";
-    version = "51b4748ba7489201f3efb378b6e6e2734f97e080";
+    version = "6ee6033beb45b1f493789e74b7d930cdf7fa905c";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "51b4748ba7489201f3efb378b6e6e2734f97e080";
+      rev = "6ee6033beb45b1f493789e74b7d930cdf7fa905c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fsd3LXsTovDRfET/UnxVDRAWGgln1kSUiKFA9/5v288=";
+      sha256 = "sha256-Y2hUJveld1inngHlSYqQF0rf08gz7jzvS5GiV/PLc/w=";
     };
-    date = "2026-04-17";
+    date = "2026-04-21";
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "unstable/vs_client_linux-x64_1.22.0-rc.10";
+    version = "stable/vs_client_linux-x64_1.22.0";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/unstable/vs_client_linux-x64_1.22.0-rc.10.tar.gz";
-      sha256 = "sha256-4kxKC99uBUHhkH/Nm5zBezhCasKUpdG/q/cgXZ3G1Ro=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.0.tar.gz";
+      sha256 = "sha256-c90Mb5hyL8StLFrKokAgER/u6l3jhhluP5ErgVs4geI=";
     };
   };
   wayland = {
