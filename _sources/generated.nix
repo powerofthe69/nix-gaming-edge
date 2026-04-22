@@ -29,17 +29,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "a0bb6324c0a11bf6578fe7d6951d08968fc16e12";
+    version = "860acb4faf0b453912c451238b44f77e6a7a7fdf";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "a0bb6324c0a11bf6578fe7d6951d08968fc16e12";
+      rev = "860acb4faf0b453912c451238b44f77e6a7a7fdf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-tRIEBbScTbuH2TFDaN45DVIFGvq0G49n4C8ukQ218uc=";
+      sha256 = "sha256-3K/TUSRWO5Anb8bVErXj4nRftoptq8u2djj1H2GN/ns=";
     };
-    date = "2026-04-21";
+    date = "2026-04-22";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -120,7 +120,7 @@
     version = "100884776";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
+      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
     };
   };
   proton-cachyos = {

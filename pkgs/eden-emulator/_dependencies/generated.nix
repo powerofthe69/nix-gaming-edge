@@ -32,15 +32,15 @@
   };
   frozen = {
     pname = "frozen";
-    version = "bbb46f414970162fb264f44e478653f42e010d68";
+    version = "b07a5c8187bc3e6f1461efab89fe07f467e300db";
     src = fetchFromGitHub {
       owner = "serge-sans-paille";
       repo = "frozen";
-      rev = "bbb46f414970162fb264f44e478653f42e010d68";
+      rev = "b07a5c8187bc3e6f1461efab89fe07f467e300db";
       fetchSubmodules = false;
-      sha256 = "sha256-WQapZx6t887KTmcqHWJk0eXnpXblleQPB4tRXdjnqDU=";
+      sha256 = "sha256-eZdiLKUcx1MTcW+HyoRi6U/lUbs/qAQhRw0wX3tpUjY=";
     };
-    date = "2026-04-18";
+    date = "2026-04-20";
   };
   httplib = {
     pname = "httplib";

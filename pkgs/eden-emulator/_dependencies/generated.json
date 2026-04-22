@@ -43,7 +43,7 @@
     },
     "frozen": {
         "cargoLock": null,
-        "date": "2026-04-18",
+        "date": "2026-04-20",
         "extract": null,
         "name": "frozen",
         "passthru": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "serge-sans-paille",
             "repo": "frozen",
-            "rev": "bbb46f414970162fb264f44e478653f42e010d68",
-            "sha256": "sha256-WQapZx6t887KTmcqHWJk0eXnpXblleQPB4tRXdjnqDU=",
+            "rev": "b07a5c8187bc3e6f1461efab89fe07f467e300db",
+            "sha256": "sha256-eZdiLKUcx1MTcW+HyoRi6U/lUbs/qAQhRw0wX3tpUjY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "bbb46f414970162fb264f44e478653f42e010d68"
+        "version": "b07a5c8187bc3e6f1461efab89fe07f467e300db"
     },
     "httplib": {
         "cargoLock": null,
