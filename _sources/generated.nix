@@ -57,10 +57,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.04.21-f3e42b5";
+    version = "2026.04.23-8981adc";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.21-f3e42b5.zip";
-      sha256 = "sha256-koQptOag+ybq9CXArTy0VuXAJWHsIMWiZmqp01gpRUE=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.23-8981adc.zip";
+      sha256 = "sha256-GKaHbC/uplPPaBgm5ISbfeaAMWrkJOreexaq9kVUWjw=";
     };
   };
   libdrm = {
@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "809bf45c126cf8790b7fd151da6fe7ed3f7351c9";
+    version = "3f5d54ab8ca608566a75900d22b909ad84925c44";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "809bf45c126cf8790b7fd151da6fe7ed3f7351c9";
+      rev = "3f5d54ab8ca608566a75900d22b909ad84925c44";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-N/vun2GDEdghQ222UMal0pistACko3GfYnTuFsRJsI8=";
+      sha256 = "sha256-9Ao4sp6jBXCIXEm6zwCLmUUJBW72loTjzE+pg/yGS2U=";
     };
-    date = "2026-04-23";
+    date = "2026-04-24";
   };
   modengine3 = {
     pname = "modengine3";
@@ -170,17 +170,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "392d76fe6fb49f95edf5493cbcb687693338c541";
+    version = "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "392d76fe6fb49f95edf5493cbcb687693338c541";
+      rev = "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PZMxdVpfA3lCUJoj9BnIRUSo2LiepHHL5s1lSHrpC/0=";
+      sha256 = "sha256-RnxhUGI0eji7gQf+FJnG+BoHphJmjxT9EF5FYUWYCbs=";
     };
-    date = "2026-04-23";
+    date = "2026-04-24";
   };
   vintagestory = {
     pname = "vintagestory";

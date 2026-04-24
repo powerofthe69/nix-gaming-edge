@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-koQptOag+ybq9CXArTy0VuXAJWHsIMWiZmqp01gpRUE=",
+            "sha256": "sha256-GKaHbC/uplPPaBgm5ISbfeaAMWrkJOreexaq9kVUWjw=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.21-f3e42b5.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.23-8981adc.zip"
         },
-        "version": "2026.04.21-f3e42b5"
+        "version": "2026.04.23-8981adc"
     },
     "libdrm": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-04-23",
+        "date": "2026-04-24",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "809bf45c126cf8790b7fd151da6fe7ed3f7351c9",
-            "sha256": "sha256-N/vun2GDEdghQ222UMal0pistACko3GfYnTuFsRJsI8=",
+            "rev": "3f5d54ab8ca608566a75900d22b909ad84925c44",
+            "sha256": "sha256-9Ao4sp6jBXCIXEm6zwCLmUUJBW72loTjzE+pg/yGS2U=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "809bf45c126cf8790b7fd151da6fe7ed3f7351c9"
+        "version": "3f5d54ab8ca608566a75900d22b909ad84925c44"
     },
     "modengine3": {
         "cargoLock": null,
@@ -271,7 +271,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-04-23",
+        "date": "2026-04-24",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -281,13 +281,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "392d76fe6fb49f95edf5493cbcb687693338c541",
-            "sha256": "sha256-PZMxdVpfA3lCUJoj9BnIRUSo2LiepHHL5s1lSHrpC/0=",
+            "rev": "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae",
+            "sha256": "sha256-RnxhUGI0eji7gQf+FJnG+BoHphJmjxT9EF5FYUWYCbs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "392d76fe6fb49f95edf5493cbcb687693338c541"
+        "version": "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae"
     },
     "vintagestory": {
         "cargoLock": null,
