@@ -253,14 +253,24 @@ jobs:
           ref: nightly
           fetch-depth: 0
 
-      - name: Promote Master off-cycle if Nixpkgs or Proton CachyOS updated
+      - name: Promote Master off-cycle if tracked packages updated
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MASTER_NIXPKGS=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
-          NIGHTLY_NIXPKGS=$(git show origin/nightly:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
-          MASTER_PROTON=$(git show origin/master:_sources/generated.json | jq -r '.["proton-cachyos"].version')
-          NIGHTLY_PROTON=$(git show origin/nightly:_sources/generated.json | jq -r '.["proton-cachyos"].version')
-          if [ "$MASTER_NIXPKGS" != "$NIGHTLY_NIXPKGS" ] || [ "$MASTER_PROTON" != "$NIGHTLY_PROTON" ]; then
+          NIXPKGS_MASTER=$(git show origin/master:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
+          NIXPKGS_NIGHTLY=$(git show origin/nightly:flake.lock | jq -r '.nodes.nixpkgs.locked.rev')
+
+          CHANGED=false
+          [ "$NIXPKGS_MASTER" != "$NIXPKGS_NIGHTLY" ] && CHANGED=true
+
+          for pkg in proton-cachyos; do
+            MASTER_VER=$(git show origin/master:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].version')
+            NIGHTLY_VER=$(git show origin/nightly:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].version')
+            if [ "$MASTER_VER" != "$NIGHTLY_VER" ]; then
+              CHANGED=true
+            fi
+          done
+
+          if [ "$CHANGED" = "true" ]; then
             gh workflow run promote.yml
           fi
