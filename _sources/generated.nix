@@ -29,17 +29,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "417ed904f038543f91288692a5153ffffbd8617d";
+    version = "26ce96297cd3ca014bc526cd4ef03c731ef7bbd9";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "417ed904f038543f91288692a5153ffffbd8617d";
+      rev = "26ce96297cd3ca014bc526cd4ef03c731ef7bbd9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ShnzM3v9n7infckrdhDB1FqWBE3LdBtoSofjqdbljx0=";
+      sha256 = "sha256-uLLh9PnJh8VeiZ6XWvEJ2QdgE2BQwaDk9h76HzRlauQ=";
     };
-    date = "2026-04-23";
+    date = "2026-04-24";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -57,10 +57,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.04.23-8981adc";
+    version = "2026.04.24-b97c38b";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.23-8981adc.zip";
-      sha256 = "sha256-GKaHbC/uplPPaBgm5ISbfeaAMWrkJOreexaq9kVUWjw=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.24-b97c38b.zip";
+      sha256 = "sha256-8ELoUdcTsFM7VPs0Rv9U7zpHD/bm7+9JPjNRnp7hzQM=";
     };
   };
   libdrm = {
@@ -79,15 +79,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "3f5d54ab8ca608566a75900d22b909ad84925c44";
+    version = "bfb6c41b648d50a5f6f41e3113f1efaba68555ef";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "3f5d54ab8ca608566a75900d22b909ad84925c44";
+      rev = "bfb6c41b648d50a5f6f41e3113f1efaba68555ef";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9Ao4sp6jBXCIXEm6zwCLmUUJBW72loTjzE+pg/yGS2U=";
+      sha256 = "sha256-Cy1GuOsdEMrjsH48gjuDiJlmDD5DC43cYLMA5LioZT0=";
     };
     date = "2026-04-24";
   };
@@ -125,26 +125,26 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-10.0-20260420-slr";
+    version = "cachyos-10.0-20260424-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64.tar.xz";
-      sha256 = "sha256-YGX3mOWhM+mokF/ifNrChIDYS9pgsljwyz+AYj8N4lY=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260424-slr/proton-cachyos-10.0-20260424-slr-x86_64.tar.xz";
+      sha256 = "sha256-MjumtRqEcZ9wht6+aLd0NlVFQR3e4H3FdFjvfisiu6I=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-10.0-20260420-slr";
+    version = "cachyos-10.0-20260424-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-rTpavOdfN+DYYfi05uQyTkp/+bA0mhVdlY0BRIte6As=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260424-slr/proton-cachyos-10.0-20260424-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-Zob6+zSBWHs2GTloOUy33/mLs1m7uy8U1E8u2LHDy7M=";
     };
   };
   proton-cachyos-x86_64-v4 = {
     pname = "proton-cachyos-x86_64-v4";
-    version = "cachyos-10.0-20260420-slr";
+    version = "cachyos-10.0-20260424-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260420-slr/proton-cachyos-10.0-20260420-slr-x86_64_v4.tar.xz";
-      sha256 = "sha256-CTYxrKhEH4zLft2kSpPq+vb3iWakp9SdaWu5obNPHjg=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-10.0-20260424-slr/proton-cachyos-10.0-20260424-slr-x86_64_v4.tar.xz";
+      sha256 = "sha256-Z1M6p8sU/X2TLtKPg4nxb1ymTonfIFowpUDDs/ikYjg=";
     };
   };
   pseudoregalia-rando = {
@@ -170,17 +170,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae";
+    version = "caba178b1c7a5242e3d82096a8ce4ebefbbfc06d";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "cacd0efd87a8aba95ad2a3be8ae569a295b9eaae";
+      rev = "caba178b1c7a5242e3d82096a8ce4ebefbbfc06d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-RnxhUGI0eji7gQf+FJnG+BoHphJmjxT9EF5FYUWYCbs=";
+      sha256 = "sha256-OHS8N1+U92ANXwh+Q9z7gayqd8ZtkiYjxH1d0tpVJbI=";
     };
-    date = "2026-04-24";
+    date = "2026-04-25";
   };
   vintagestory = {
     pname = "vintagestory";
