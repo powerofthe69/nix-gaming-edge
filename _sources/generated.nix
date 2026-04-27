@@ -29,17 +29,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "91058d738389490cfb31e9fb4932717f807f6179";
+    version = "f088f5bd452bcc824848194525c8eaf08e7a76e6";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "91058d738389490cfb31e9fb4932717f807f6179";
+      rev = "f088f5bd452bcc824848194525c8eaf08e7a76e6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ombg1KQS5wGqz9OtDPHhk49lt9aR3ZMZxtJnJa2zY3I=";
+      sha256 = "sha256-3TndSXwNVUSOZDlzrfKQYCbEjoBY5WHIwB27F2DGJy8=";
     };
-    date = "2026-04-26";
+    date = "2026-04-27";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "642bed9eba724132c5e0802fac99af11b9ef7841";
+    version = "9225ba47d5dd338b2d25e71b77a3fddedb7da9df";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "642bed9eba724132c5e0802fac99af11b9ef7841";
+      rev = "9225ba47d5dd338b2d25e71b77a3fddedb7da9df";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-P84ZXqyyZ61JVQzsrq5lPkpOKEuIvRcPMNmC397spZc=";
+      sha256 = "sha256-ddX3oh14fj4VrNbIiXC9dMboKs/86a3XJsN/jMgSZXc=";
     };
-    date = "2026-04-25";
+    date = "2026-04-27";
   };
   modengine3 = {
     pname = "modengine3";
