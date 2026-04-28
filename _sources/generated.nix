@@ -21,25 +21,25 @@
   };
   discord = {
     pname = "discord";
-    version = "0.0.134";
+    version = "0.0.135";
     src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.134/discord-0.0.134.tar.gz";
-      sha256 = "sha256-N4gdcj8LYiXxvkbZhZyiWr375vaXt6JnwcoqLOKMsGg=";
+      url = "https://dl.discordapp.net/apps/linux/0.0.135/discord-0.0.135.tar.gz";
+      sha256 = "sha256-vMuoz1OR0cKvrfT/ilkNXEtEP3zEwyNGh6AW5iQADws=";
     };
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "f088f5bd452bcc824848194525c8eaf08e7a76e6";
+    version = "d69bd861833c9f33c4dbfa273f73ae29d0e4164a";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "f088f5bd452bcc824848194525c8eaf08e7a76e6";
+      rev = "d69bd861833c9f33c4dbfa273f73ae29d0e4164a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3TndSXwNVUSOZDlzrfKQYCbEjoBY5WHIwB27F2DGJy8=";
+      sha256 = "sha256-Iug1RtkLWHIJeCFBxt69fSPya9J/yqrMXxzCqiZMI68=";
     };
-    date = "2026-04-27";
+    date = "2026-04-28";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -65,31 +65,31 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "8de45ef60d69472a0f8ba898f91250dac88bb81f";
+    version = "b8b7c57c00954b22ac182543602bd8f654ea1c30";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "8de45ef60d69472a0f8ba898f91250dac88bb81f";
+      rev = "b8b7c57c00954b22ac182543602bd8f654ea1c30";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aUJQ76SBZt7ijDNGrkUZ4A4CeTs/cVGOa24i5NKIv4k=";
+      sha256 = "sha256-BrUIoA3mwykCB0O4kaMHNcqw+RV0zsacEt8RcTCpx6Y=";
     };
-    date = "2026-04-06";
+    date = "2026-04-27";
   };
   mesa = {
     pname = "mesa";
-    version = "9225ba47d5dd338b2d25e71b77a3fddedb7da9df";
+    version = "4b662587170196783ae0abd10fb34161d30db394";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9225ba47d5dd338b2d25e71b77a3fddedb7da9df";
+      rev = "4b662587170196783ae0abd10fb34161d30db394";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ddX3oh14fj4VrNbIiXC9dMboKs/86a3XJsN/jMgSZXc=";
+      sha256 = "sha256-Li83P+YzAiXeDj4CntY8bcgFfqJQMCm6cyndzR5JTK4=";
     };
-    date = "2026-04-27";
+    date = "2026-04-28";
   };
   modengine3 = {
     pname = "modengine3";
