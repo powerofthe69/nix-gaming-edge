@@ -96,13 +96,14 @@ let
         in
         if is32bit then lib.remove "opencl" base else base;
 
+      # Filter on `pname` (not `name`): `name` is `${pname}-${version}` and grabs the wrong libdrm
       buildInputs =
         (lib.filter (
           x:
           let
-            name = x.name or x.pname or "";
+            pname = x.pname or x.name or "";
           in
-          name != "libdrm" && name != "mesa-libgbm"
+          pname != "libdrm" && pname != "mesa-libgbm"
         ) old.buildInputs)
         ++ [
           pkgs.libdisplay-info
@@ -115,9 +116,9 @@ let
             (lib.filter (
               x:
               let
-                name = x.name or x.pname or "";
+                pname = x.pname or x.name or "";
               in
-              name != "mesa"
+              pname != "mesa"
             ) old.nativeBuildInputs)
             ++ [ mesa-git ]
           else
