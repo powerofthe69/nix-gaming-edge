@@ -36,7 +36,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-04-28",
+        "date": "2026-04-29",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -46,13 +46,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d69bd861833c9f33c4dbfa273f73ae29d0e4164a",
-            "sha256": "sha256-Iug1RtkLWHIJeCFBxt69fSPya9J/yqrMXxzCqiZMI68=",
+            "rev": "8765b4951201a94673d5b561f6ba5094b2af0fa5",
+            "sha256": "sha256-ouV/0h2XyzZEzKQ4E9h7wabS08OD5QrGKYeSGsGYCmk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "d69bd861833c9f33c4dbfa273f73ae29d0e4164a"
+        "version": "8765b4951201a94673d5b561f6ba5094b2af0fa5"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8ELoUdcTsFM7VPs0Rv9U7zpHD/bm7+9JPjNRnp7hzQM=",
+            "sha256": "sha256-fu9sp+hOi5t/wsQaSPAfzinLUrpdg5e2+b4S+nvzAgE=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.24-b97c38b.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.28-d3d25ae.zip"
         },
-        "version": "2026.04.24-b97c38b"
+        "version": "2026.04.28-d3d25ae"
     },
     "libdrm": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-04-28",
+        "date": "2026-04-30",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4b662587170196783ae0abd10fb34161d30db394",
-            "sha256": "sha256-Li83P+YzAiXeDj4CntY8bcgFfqJQMCm6cyndzR5JTK4=",
+            "rev": "ee5daf590b4a33f69401870f43f1421bccd74175",
+            "sha256": "sha256-mP4m1GzuHNZlp7OXoRxTXuXW3PyRUbC0QkulRKBXuhQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "4b662587170196783ae0abd10fb34161d30db394"
+        "version": "ee5daf590b4a33f69401870f43f1421bccd74175"
     },
     "modengine3": {
         "cargoLock": null,
@@ -271,7 +271,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-04-25",
+        "date": "2026-04-30",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -281,13 +281,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "caba178b1c7a5242e3d82096a8ce4ebefbbfc06d",
-            "sha256": "sha256-OHS8N1+U92ANXwh+Q9z7gayqd8ZtkiYjxH1d0tpVJbI=",
+            "rev": "e009d5f8824675ec0612172943fd56e51d5ec8c7",
+            "sha256": "sha256-Ylu1O4zvnVVEXzNQ5j1+Y2X54lVCyqVJLJa1Ngz+7aA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "caba178b1c7a5242e3d82096a8ce4ebefbbfc06d"
+        "version": "e009d5f8824675ec0612172943fd56e51d5ec8c7"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -298,11 +298,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-c90Mb5hyL8StLFrKokAgER/u6l3jhhluP5ErgVs4geI=",
+            "sha256": "sha256-LCX59pWRKDQEHXYw87bo3iX3hfj+CEU8Y4V2M4jNdpM=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.0.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.1.tar.gz"
         },
-        "version": "stable/vs_client_linux-x64_1.22.0"
+        "version": "stable/vs_client_linux-x64_1.22.1"
     },
     "wayland": {
         "cargoLock": null,
@@ -326,7 +326,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-04-15",
+        "date": "2026-04-29",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -336,12 +336,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "911ab509edf6fc14b89599658199cc932417e9c8",
-            "sha256": "sha256-JD1S7zHUCZ4ID6rg1nEiGqBzCn9EkxxU9DoFNBgkIS0=",
+            "rev": "e193660a389f2e0a4990c593ae9719d57465c9da",
+            "sha256": "sha256-Ok9iw5EBcZ3BlBnltmD/GsxyTGW6nDeB2qJt3ST9AJ0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "911ab509edf6fc14b89599658199cc932417e9c8"
+        "version": "e193660a389f2e0a4990c593ae9719d57465c9da"
     }
 }
