@@ -39,12 +39,15 @@ let
     passthru = { };
   });
 
-  discord-stable = pkgs.discord.override {
-    version = discordSrc.version;
-    src = extractedDiscord;
-    withVencord = false;
-    vencord = vencord-git;
-  };
+  discord-stable =
+    (pkgs.discord.override {
+      withVencord = false;
+      vencord = vencord-git;
+    }).overrideAttrs
+      (_: {
+        version = discordSrc.version;
+        src = extractedDiscord;
+      });
 
 in
 
