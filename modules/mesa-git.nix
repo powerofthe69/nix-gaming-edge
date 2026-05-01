@@ -312,6 +312,47 @@ in
       // lib.optionalAttrs shouldEnable32Bit {
         package32 = pkgs.mesa32-git;
       };
+
+      # mesa-git correctly uses libdrm-git and now fails inside any FHS env that ships stable libdrm (e.g. Steam!)
+      nixpkgs.overlays = [
+        (
+          final: prev:
+          let
+            # match libdrm to arch or the 64-bit lib lands in the 32-bit path
+            withLibdrmGit =
+              p:
+              if p.stdenv.hostPlatform.is32bit then
+                p.extend (_: _: { libdrm = final.libdrm32-git; })
+              else
+                p.extend (
+                  _: prev': {
+                    libdrm = final.libdrm-git;
+                    pkgsi686Linux = prev'.pkgsi686Linux.extend (
+                      _: _: {
+                        libdrm = final.libdrm32-git;
+                      }
+                    );
+                  }
+                );
+            wrapFhsEnv =
+              orig: args:
+              orig (
+                args
+                // lib.optionalAttrs (args ? targetPkgs) {
+                  targetPkgs = p: args.targetPkgs (withLibdrmGit p);
+                }
+                // lib.optionalAttrs (args ? multiPkgs) {
+                  multiPkgs = p: args.multiPkgs (withLibdrmGit p);
+                }
+              );
+          in
+          {
+            # buildFHSEnv is an alias; some packages call it directly, wrap both.
+            buildFHSEnv = wrapFhsEnv prev.buildFHSEnv;
+            buildFHSEnvBubblewrap = wrapFhsEnv prev.buildFHSEnvBubblewrap;
+          }
+        )
+      ];
     })
 
     (lib.mkIf (cfg.enable && cfg.withStableFallback) {
