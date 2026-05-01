@@ -29,17 +29,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "8765b4951201a94673d5b561f6ba5094b2af0fa5";
+    version = "b537e83bed5ccfa2595259b1ae220683a16d3e27";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "8765b4951201a94673d5b561f6ba5094b2af0fa5";
+      rev = "b537e83bed5ccfa2595259b1ae220683a16d3e27";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ouV/0h2XyzZEzKQ4E9h7wabS08OD5QrGKYeSGsGYCmk=";
+      sha256 = "sha256-Smx4cueGFKO1IWcmtA9wNu4wZ6iuLqVDJsWr4dNTonY=";
     };
-    date = "2026-04-29";
+    date = "2026-04-30";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "ee5daf590b4a33f69401870f43f1421bccd74175";
+    version = "645de2b433f154203ff27ae30eb7b8db816e5843";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "ee5daf590b4a33f69401870f43f1421bccd74175";
+      rev = "645de2b433f154203ff27ae30eb7b8db816e5843";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mP4m1GzuHNZlp7OXoRxTXuXW3PyRUbC0QkulRKBXuhQ=";
+      sha256 = "sha256-iZGswcX4iJ0BmH7U7cC3yYnazF9uTuDrD21m0kFTr80=";
     };
-    date = "2026-04-30";
+    date = "2026-05-01";
   };
   modengine3 = {
     pname = "modengine3";
@@ -170,17 +170,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "e009d5f8824675ec0612172943fd56e51d5ec8c7";
+    version = "14508c1537611d2bb9567380dec21c82139a8434";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "e009d5f8824675ec0612172943fd56e51d5ec8c7";
+      rev = "14508c1537611d2bb9567380dec21c82139a8434";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ylu1O4zvnVVEXzNQ5j1+Y2X54lVCyqVJLJa1Ngz+7aA=";
+      sha256 = "sha256-OKUTvIv/7eidSdhxGVr2XNdrhBCokLCIvH9NunzFi1I=";
     };
-    date = "2026-04-30";
+    date = "2026-05-01";
   };
   vintagestory = {
     pname = "vintagestory";
