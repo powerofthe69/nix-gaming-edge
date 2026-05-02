@@ -37,7 +37,7 @@
     },
     {
       "name": "proton",
-      "packages": "proton-cachyos proton-cachyos-x86_64-v3 proton-cachyos-x86_64-v4",
+      "packages": "proton-cachyos proton-cachyos-x86_64-v3",
       "runner": ["self-hosted", "light-tasks"]
     },
     {

@@ -29,10 +29,6 @@ fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/pr
 src.github = "CachyOS/proton-cachyos"
 fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v3.tar.xz"
 
-[proton-cachyos-x86_64-v4]
-src.github = "CachyOS/proton-cachyos"
-fetch.url = "https://github.com/CachyOS/proton-cachyos/releases/download/$ver/proton-$ver-x86_64_v4.tar.xz"
-
 # Vintage Story
 # tracks official modding api and using src.cmd to fetch the latest versions
 # Looks like: "stable/vs_client_linux-x64_x.xx.x" or "unstable/vs_client_linux-x64_x.xx.x-rc.x"

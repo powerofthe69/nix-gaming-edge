@@ -68,7 +68,6 @@
 
       proton = mkProton "proton-cachyos" "base";
       protonv3 = mkProton "proton-cachyos-x86_64-v3" "x86_64-v3";
-      protonv4 = mkProton "proton-cachyos-x86_64-v4" "x86_64-v4";
 
       # Discord (stable) and Vencord (nightly)
       discord = pkgs.callPackage ./pkgs/discord {
@@ -111,10 +110,8 @@
         # Proton CachyOS
         proton-cachyos = proton;
         proton-cachyos-x86_64-v3 = protonv3;
-        proton-cachyos-x86_64-v4 = protonv4;
         # Deprecated aliases (w/ underscores) for backwards compatibility
         proton-cachyos-x86_64_v3 = protonv3;
-        proton-cachyos-x86_64_v4 = protonv4;
 
         # Vintage Story
         vintagestory = mkVintageStory "vintagestory";
@@ -175,13 +172,9 @@
           proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
           proton-cachyos-x86_64-v3 =
             self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 =
-            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
           # Deprecated aliases w/ underscores
           proton-cachyos-x86_64_v3 =
             self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 =
-            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           vintagestory = self.packages.${final.stdenv.hostPlatform.system}.vintagestory;
 
@@ -222,14 +215,10 @@
           proton-cachyos = self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos;
           proton-cachyos-x86_64-v3 =
             self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64-v4 =
-            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
 
           # Deprecated aliases w/ underscores
           proton-cachyos-x86_64_v3 =
             self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3;
-          proton-cachyos-x86_64_v4 =
-            self.packages.${final.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v4;
         };
 
         vintagestory = final: prev: {
