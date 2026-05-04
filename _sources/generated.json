@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-05-02",
+        "date": "2026-05-03",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9cb688af88a72aef8b40937899736561da44427c",
-            "sha256": "sha256-vZLmfKYAB20F3OFmR+L+3zirwyJHjAAk6mth4itrweo=",
+            "rev": "38e691fc0a693fe338c9de4ab13ab3f48bbcaf92",
+            "sha256": "sha256-FYYzMejmq6mSq7aiou3OpLoNMwpSFl7bEZAF7XIL1ak=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "9cb688af88a72aef8b40937899736561da44427c"
+        "version": "38e691fc0a693fe338c9de4ab13ab3f48bbcaf92"
     },
     "modengine3": {
         "cargoLock": null,
@@ -168,11 +168,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-McdifSYCHmCTkbmAlSBYlsJwjNTSdinMnMoETi6g4C8=",
+            "sha256": "sha256-/JniWL3+5gpd89Rlx0EgHqEKxOp2beDMBdMp1GqGiko=",
             "type": "url",
-            "url": "https://github.com/open-goal/launcher/releases/download/v2.9.1/OpenGOAL-Launcher_2.9.1_amd64.AppImage"
+            "url": "https://github.com/open-goal/launcher/releases/download/v2.10.2/OpenGOAL-Launcher_2.10.2_amd64.AppImage"
         },
-        "version": "2.9.1"
+        "version": "2.10.2"
     },
     "pokemmo": {
         "cargoLock": null,
@@ -198,11 +198,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-opp0W7pdDC40KHzvSK4jkDeBi9E+OUMlsUi/QGTTvxk=",
+            "sha256": "sha256-KPdU1vUS6f7U71brmjATpa38BqTT9s8tP7p+wFBrqKI=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260428-slr/proton-cachyos-11.0-20260428-slr-x86_64.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64.tar.xz"
         },
-        "version": "cachyos-11.0-20260428-slr"
+        "version": "cachyos-11.0-20260429-slr"
     },
     "proton-cachyos-x86_64-v3": {
         "cargoLock": null,
@@ -213,11 +213,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-bInyex+pQ7nppPzoTNzbH/rVuZ15ZdH55N2S+WdmCSI=",
+            "sha256": "sha256-LemiIEFqlz+xSypYpwO/oy1lXBYxcGdwqhS/b7xOrlw=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260428-slr/proton-cachyos-11.0-20260428-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260428-slr"
+        "version": "cachyos-11.0-20260429-slr"
     },
     "pseudoregalia-rando": {
         "cargoLock": null,
@@ -283,11 +283,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-LCX59pWRKDQEHXYw87bo3iX3hfj+CEU8Y4V2M4jNdpM=",
+            "sha256": "sha256-caLSOm/WXpXrjC1az72Nc0XDWOpWB2R9iVq8ShDEZgU=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.1.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.2.tar.gz"
         },
-        "version": "stable/vs_client_linux-x64_1.22.1"
+        "version": "stable/vs_client_linux-x64_1.22.2"
     },
     "wayland": {
         "cargoLock": null,

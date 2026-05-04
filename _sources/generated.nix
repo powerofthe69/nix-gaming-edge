@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9cb688af88a72aef8b40937899736561da44427c";
+    version = "38e691fc0a693fe338c9de4ab13ab3f48bbcaf92";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9cb688af88a72aef8b40937899736561da44427c";
+      rev = "38e691fc0a693fe338c9de4ab13ab3f48bbcaf92";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-vZLmfKYAB20F3OFmR+L+3zirwyJHjAAk6mth4itrweo=";
+      sha256 = "sha256-FYYzMejmq6mSq7aiou3OpLoNMwpSFl7bEZAF7XIL1ak=";
     };
-    date = "2026-05-02";
+    date = "2026-05-03";
   };
   modengine3 = {
     pname = "modengine3";
@@ -109,10 +109,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.9.1";
+    version = "2.10.2";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.9.1/OpenGOAL-Launcher_2.9.1_amd64.AppImage";
-      sha256 = "sha256-McdifSYCHmCTkbmAlSBYlsJwjNTSdinMnMoETi6g4C8=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.10.2/OpenGOAL-Launcher_2.10.2_amd64.AppImage";
+      sha256 = "sha256-/JniWL3+5gpd89Rlx0EgHqEKxOp2beDMBdMp1GqGiko=";
     };
   };
   pokemmo = {
@@ -125,18 +125,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260428-slr";
+    version = "cachyos-11.0-20260429-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260428-slr/proton-cachyos-11.0-20260428-slr-x86_64.tar.xz";
-      sha256 = "sha256-opp0W7pdDC40KHzvSK4jkDeBi9E+OUMlsUi/QGTTvxk=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64.tar.xz";
+      sha256 = "sha256-KPdU1vUS6f7U71brmjATpa38BqTT9s8tP7p+wFBrqKI=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260428-slr";
+    version = "cachyos-11.0-20260429-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260428-slr/proton-cachyos-11.0-20260428-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-bInyex+pQ7nppPzoTNzbH/rVuZ15ZdH55N2S+WdmCSI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-LemiIEFqlz+xSypYpwO/oy1lXBYxcGdwqhS/b7xOrlw=";
     };
   };
   pseudoregalia-rando = {
@@ -176,10 +176,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "stable/vs_client_linux-x64_1.22.1";
+    version = "stable/vs_client_linux-x64_1.22.2";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.1.tar.gz";
-      sha256 = "sha256-LCX59pWRKDQEHXYw87bo3iX3hfj+CEU8Y4V2M4jNdpM=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.2.tar.gz";
+      sha256 = "sha256-caLSOm/WXpXrjC1az72Nc0XDWOpWB2R9iVq8ShDEZgU=";
     };
   };
   wayland = {
