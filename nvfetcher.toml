@@ -64,8 +64,9 @@ src.cmd = "curl -s https://launcher.hytale.com/version/release/launcher.json | j
 fetch.url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-$ver.zip"
 
 # Discord Stable Client
+# Pinned to 0.0.135 — the last real Discord tarball
 [discord]
-src.cmd = "curl -sI 'https://discord.com/api/download/stable?platform=linux&format=tar.gz' | grep -i location: | grep -o 'discord-[0-9.]*.tar.gz' | sed 's/discord-//;s/.tar.gz//'"
+src.manual = "0.0.135"
 fetch.url = "https://dl.discordapp.net/apps/linux/$ver/discord-$ver.tar.gz"
 
 # Vencord - nightly
