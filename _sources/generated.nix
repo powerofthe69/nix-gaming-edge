@@ -29,17 +29,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "b154a7da3cb657a9e224c29ebda2cba83b16290e";
+    version = "bf115ef5a74977f795e54d2aa2cb1270950e50a2";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "b154a7da3cb657a9e224c29ebda2cba83b16290e";
+      rev = "bf115ef5a74977f795e54d2aa2cb1270950e50a2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7Wi6FAQr0O1oizig5ilCljJjetx65iUcHWB0MEqQNI4=";
+      sha256 = "sha256-1jCkCGjkMEHaXfvXSFCESCd0xaiYNtDd57PPA4FXty8=";
     };
-    date = "2026-05-06";
+    date = "2026-05-07";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -57,10 +57,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.04.28-d3d25ae";
+    version = "2026.05.07-8c147f8";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.04.28-d3d25ae.zip";
-      sha256 = "sha256-fu9sp+hOi5t/wsQaSPAfzinLUrpdg5e2+b4S+nvzAgE=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.07-8c147f8.zip";
+      sha256 = "sha256-9xWJGqVy8m1j6MyVQZPppdwZPyusc3uHlQOEEWWAgn8=";
     };
   };
   libdrm = {
@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "75d9cb0b323cd40d90fe3d6b8fc57fdeb0a18873";
+    version = "ccdcbde6dd7ae610f955dfb59ae19dc7997f0b15";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "75d9cb0b323cd40d90fe3d6b8fc57fdeb0a18873";
+      rev = "ccdcbde6dd7ae610f955dfb59ae19dc7997f0b15";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xsyJQBIOD6Ol4uOkINnXERfqHwFYzQjHeVWReRezA5I=";
+      sha256 = "sha256-OMdUD0FFyppHSrwrffvXlrxTRcNwnc0lg2Df3iow3Qs=";
     };
-    date = "2026-05-07";
+    date = "2026-05-08";
   };
   modengine3 = {
     pname = "modengine3";
@@ -109,10 +109,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.10.2";
+    version = "2.10.3";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.10.2/OpenGOAL-Launcher_2.10.2_amd64.AppImage";
-      sha256 = "sha256-/JniWL3+5gpd89Rlx0EgHqEKxOp2beDMBdMp1GqGiko=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.10.3/OpenGOAL-Launcher_2.10.3_amd64.AppImage";
+      sha256 = "sha256-oJU6V5Ku9yf2eEtqQ469KsEYQlMp0hAMN/Hkk40/3Lg=";
     };
   };
   pokemmo = {
@@ -197,16 +197,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "e193660a389f2e0a4990c593ae9719d57465c9da";
+    version = "ad2e022d35be74801a9f6db220a6f5931fa86f46";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "e193660a389f2e0a4990c593ae9719d57465c9da";
+      rev = "ad2e022d35be74801a9f6db220a6f5931fa86f46";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ok9iw5EBcZ3BlBnltmD/GsxyTGW6nDeB2qJt3ST9AJ0=";
+      sha256 = "sha256-k2mZaDtFt2YLFLpCtpk1jaDkSK1qJRA4nyxSLSghxwM=";
     };
-    date = "2026-04-29";
+    date = "2026-05-07";
   };
 }
