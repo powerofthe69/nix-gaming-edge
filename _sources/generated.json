@@ -36,7 +36,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-05-07",
+        "date": "2026-05-09",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -46,13 +46,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bf115ef5a74977f795e54d2aa2cb1270950e50a2",
-            "sha256": "sha256-1jCkCGjkMEHaXfvXSFCESCd0xaiYNtDd57PPA4FXty8=",
+            "rev": "672c21829b1126aeb1c1bfb867ac03e57e2e3c3a",
+            "sha256": "sha256-yMn71O/fPIo8QdXKp5Ry5EJZLLMR1eF5lG7tlWWcxGw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "bf115ef5a74977f795e54d2aa2cb1270950e50a2"
+        "version": "672c21829b1126aeb1c1bfb867ac03e57e2e3c3a"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-9xWJGqVy8m1j6MyVQZPppdwZPyusc3uHlQOEEWWAgn8=",
+            "sha256": "sha256-CCMEzA5LS5ErIPBwr7qU7N11hnT2mwU2haM/8B7ve0Y=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.07-8c147f8.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.07-c55b318.zip"
         },
-        "version": "2026.05.07-8c147f8"
+        "version": "2026.05.07-c55b318"
     },
     "libdrm": {
         "cargoLock": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ccdcbde6dd7ae610f955dfb59ae19dc7997f0b15",
-            "sha256": "sha256-OMdUD0FFyppHSrwrffvXlrxTRcNwnc0lg2Df3iow3Qs=",
+            "rev": "24aa7715cb8852f4278f3168de9df37dbfcd2910",
+            "sha256": "sha256-6v+cWaywU0tXZBWri3KRVGMDPkWuhR/APBhAsoHtVZI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "ccdcbde6dd7ae610f955dfb59ae19dc7997f0b15"
+        "version": "24aa7715cb8852f4278f3168de9df37dbfcd2910"
     },
     "modengine3": {
         "cargoLock": null,
@@ -256,7 +256,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-05-05",
+        "date": "2026-05-08",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -266,13 +266,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2fbe267499205d0854a1d0b7079f39db1d5dbc40",
-            "sha256": "sha256-sx3CGdOxkm4O0eM5s3K6N+FClNG6f6Jup1r86w0SaT8=",
+            "rev": "909df8b8c22e377aacbab6587db10e952bf1a461",
+            "sha256": "sha256-Xqk/akTa/NcHjSm6h77y6Fkvq7ayBcR0w0HG0Hwfkf8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "2fbe267499205d0854a1d0b7079f39db1d5dbc40"
+        "version": "909df8b8c22e377aacbab6587db10e952bf1a461"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -311,7 +311,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-05-07",
+        "date": "2026-05-08",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -321,12 +321,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ad2e022d35be74801a9f6db220a6f5931fa86f46",
-            "sha256": "sha256-k2mZaDtFt2YLFLpCtpk1jaDkSK1qJRA4nyxSLSghxwM=",
+            "rev": "c364bf61ec0c8fed865aa6fcfd79c2078fb6d356",
+            "sha256": "sha256-QCVystAelLH1XiggB83cpzDqQ7kldIl3bDupoVcqYf8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "ad2e022d35be74801a9f6db220a6f5931fa86f46"
+        "version": "c364bf61ec0c8fed865aa6fcfd79c2078fb6d356"
     }
 }
