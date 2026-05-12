@@ -334,17 +334,34 @@ in
                     );
                   }
                 );
+            # Returns a callable attrset (functor) that preserves `.override`.
+            # `pkgs.buildFHSEnv` is `makeOverridable buildFHSEnv'`, and callers
+            # like nixos/modules/programs/steam.nix do
+            #   buildFHSEnv = pkgs.buildFHSEnv.override { ... };
+            # to swap in setuid bubblewrap when gamescopeSession + capSysNice
+            # are both enabled. A plain function loses `.override`, so that
+            # callsite fails with "expected a set but found a function".
             wrapFhsEnv =
-              orig: args:
-              orig (
-                args
-                // lib.optionalAttrs (args ? targetPkgs) {
-                  targetPkgs = p: args.targetPkgs (withLibdrmGit p);
-                }
-                // lib.optionalAttrs (args ? multiPkgs) {
-                  multiPkgs = p: args.multiPkgs (withLibdrmGit p);
-                }
-              );
+              orig:
+              let
+                wrap =
+                  args:
+                  orig (
+                    args
+                    // lib.optionalAttrs (args ? targetPkgs) {
+                      targetPkgs = p: args.targetPkgs (withLibdrmGit p);
+                    }
+                    // lib.optionalAttrs (args ? multiPkgs) {
+                      multiPkgs = p: args.multiPkgs (withLibdrmGit p);
+                    }
+                  );
+              in
+              {
+                __functor = _: wrap;
+              }
+              // lib.optionalAttrs (orig ? override) {
+                override = newArgs: wrapFhsEnv (orig.override newArgs);
+              };
           in
           {
             # buildFHSEnv is an alias; some packages call it directly, wrap both.
