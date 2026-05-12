@@ -6,11 +6,6 @@
       "runner": ["self-hosted", "heavy-tasks"]
     },
     {
-      "name": "millennium-steam",
-      "packages": "millennium-steam",
-      "runner": ["self-hosted", "heavy-tasks"]
-    },
-    {
       "name": "pseudoregalia",
       "packages": "pseudoregalia-rando",
       "runner": ["self-hosted", "heavy-tasks"]

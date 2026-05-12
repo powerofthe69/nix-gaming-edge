@@ -3,10 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    millennium = {
-      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # millennium-steam is currently broken upstream and disabled here.
+    # Re-enable this input (and the related references below) if/when
+    # upstream is fixed.
+    # millennium = {
+    #   url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   nixConfig = {
@@ -20,7 +23,7 @@
     {
       self,
       nixpkgs,
-      millennium,
+      # millennium, # disabled: millennium-steam is broken upstream
     }:
     let
       system = "x86_64-linux";
@@ -140,7 +143,8 @@
         hytale = self.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher;
 
         # Millennium for theming Steam
-        millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        # Disabled: broken upstream and unable to build. Re-enable if/when fixed.
+        # millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
         # Discord (stable) and Vencord (nightly)
         discord = discord.discord;
@@ -188,7 +192,8 @@
           hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
 
-          millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+          # Disabled: millennium-steam is broken upstream. Re-enable if/when fixed.
+          # millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
 
           discord = self.packages.${final.stdenv.hostPlatform.system}.discord;
           vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
@@ -243,9 +248,10 @@
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
         };
 
-        millennium-steam = final: prev: {
-          millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
-        };
+        # Disabled: millennium-steam is broken upstream. Re-enable if/when fixed.
+        # millennium-steam = final: prev: {
+        #   millennium-steam = self.packages.${final.stdenv.hostPlatform.system}.millennium-steam;
+        # };
 
         discord = final: prev: {
           discord = self.packages.${final.stdenv.hostPlatform.system}.discord;

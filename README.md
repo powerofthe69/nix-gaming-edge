@@ -56,7 +56,7 @@ Other packages that were mostly for me:
 
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates
 
-- `millennium-steam`: this exposes the Millennium plugin/theming framework for Steam. It's just re-exported from the official Millennium flake so I have a single point of installation alongside everything else here.
+- `millennium-steam` _(currently disabled)_: this exposes the Millennium plugin/theming framework for Steam. It's just re-exported from the official Millennium flake so I have a single point of installation alongside everything else here. Temporarily disabled because the upstream flake is broken and unable to build — will be re-enabled if/when upstream is fixed.
 
 - `modengine3` or `me3`: this installs me3, a framework for modding and instrumenting FROMSOFTWARE games (Elden Ring, Dark Souls, etc.). Tracks the upstream releases.
 
