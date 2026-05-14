@@ -36,7 +36,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-05-11",
+        "date": "2026-05-14",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -46,13 +46,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7e84f9ef59314375ff9b626e83c1870173ee14b1",
-            "sha256": "sha256-xDNMCVz22YIajHvnu2Fm9Gq6nlnzQZyZER9xvcO9+Ho=",
+            "rev": "d1ceeeca229383ed44b74d4d9d248c50359d5b58",
+            "sha256": "sha256-rhkMv5QT4xUVxDMMa2AmBvSyXItNxSLYkPYSQsD8gKk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "7e84f9ef59314375ff9b626e83c1870173ee14b1"
+        "version": "d1ceeeca229383ed44b74d4d9d248c50359d5b58"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-05-12",
+        "date": "2026-05-14",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "db95df3da453aa497715b7e07dfbecbcb0975afd",
-            "sha256": "sha256-ywKtw+L6gSqeCSvc1uthWRbm2LMvx2rSrViyyEyYOsc=",
+            "rev": "76c39acad74d106900957ee46b7920feed606034",
+            "sha256": "sha256-QkjP933/k97aiXRd+j9TwwkCOa8t/aqdL6DlWuRL/jM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "db95df3da453aa497715b7e07dfbecbcb0975afd"
+        "version": "76c39acad74d106900957ee46b7920feed606034"
     },
     "modengine3": {
         "cargoLock": null,
