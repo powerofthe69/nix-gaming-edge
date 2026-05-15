@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-CCMEzA5LS5ErIPBwr7qU7N11hnT2mwU2haM/8B7ve0Y=",
+            "sha256": "sha256-hmsLMDbWKgMZAowmTaI+xZE8JzTFdCxloZmHdfabHO0=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.07-c55b318.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.13-c70a12f.zip"
         },
-        "version": "2026.05.07-c55b318"
+        "version": "2026.05.13-c70a12f"
     },
     "libdrm": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-05-14",
+        "date": "2026-05-15",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "76c39acad74d106900957ee46b7920feed606034",
-            "sha256": "sha256-QkjP933/k97aiXRd+j9TwwkCOa8t/aqdL6DlWuRL/jM=",
+            "rev": "d3cfe04b3d0816279e95be63b50d20d83fc194de",
+            "sha256": "sha256-hLPfRkEpqFtCZVOi0Nxxe2/8nnO9dE5znF55Cstn/6Q=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "76c39acad74d106900957ee46b7920feed606034"
+        "version": "d3cfe04b3d0816279e95be63b50d20d83fc194de"
     },
     "modengine3": {
         "cargoLock": null,
@@ -168,11 +168,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-oJU6V5Ku9yf2eEtqQ469KsEYQlMp0hAMN/Hkk40/3Lg=",
+            "sha256": "sha256-eikzjdOYNdJM9FM3O/HuCFDzf97Fm1nhbRedDyKZ1/s=",
             "type": "url",
-            "url": "https://github.com/open-goal/launcher/releases/download/v2.10.3/OpenGOAL-Launcher_2.10.3_amd64.AppImage"
+            "url": "https://github.com/open-goal/launcher/releases/download/v2.10.4/OpenGOAL-Launcher_2.10.4_amd64.AppImage"
         },
-        "version": "2.10.3"
+        "version": "2.10.4"
     },
     "pokemmo": {
         "cargoLock": null,

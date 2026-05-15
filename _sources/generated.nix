@@ -57,10 +57,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.05.07-c55b318";
+    version = "2026.05.13-c70a12f";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.07-c55b318.zip";
-      sha256 = "sha256-CCMEzA5LS5ErIPBwr7qU7N11hnT2mwU2haM/8B7ve0Y=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.13-c70a12f.zip";
+      sha256 = "sha256-hmsLMDbWKgMZAowmTaI+xZE8JzTFdCxloZmHdfabHO0=";
     };
   };
   libdrm = {
@@ -79,17 +79,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "76c39acad74d106900957ee46b7920feed606034";
+    version = "d3cfe04b3d0816279e95be63b50d20d83fc194de";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "76c39acad74d106900957ee46b7920feed606034";
+      rev = "d3cfe04b3d0816279e95be63b50d20d83fc194de";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QkjP933/k97aiXRd+j9TwwkCOa8t/aqdL6DlWuRL/jM=";
+      sha256 = "sha256-hLPfRkEpqFtCZVOi0Nxxe2/8nnO9dE5znF55Cstn/6Q=";
     };
-    date = "2026-05-14";
+    date = "2026-05-15";
   };
   modengine3 = {
     pname = "modengine3";
@@ -109,10 +109,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.10.3";
+    version = "2.10.4";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.10.3/OpenGOAL-Launcher_2.10.3_amd64.AppImage";
-      sha256 = "sha256-oJU6V5Ku9yf2eEtqQ469KsEYQlMp0hAMN/Hkk40/3Lg=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.10.4/OpenGOAL-Launcher_2.10.4_amd64.AppImage";
+      sha256 = "sha256-eikzjdOYNdJM9FM3O/HuCFDzf97Fm1nhbRedDyKZ1/s=";
     };
   };
   pokemmo = {
