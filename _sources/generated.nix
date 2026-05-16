@@ -19,14 +19,6 @@
       sha256 = "sha256-3SgRvQL27e+MoTBGX4/iUwgELd6UFbjrb23gV1UvAJ8=";
     };
   };
-  discord = {
-    pname = "discord";
-    version = "0.0.135";
-    src = fetchurl {
-      url = "https://dl.discordapp.net/apps/linux/0.0.135/discord-0.0.135.tar.gz";
-      sha256 = "sha256-vMuoz1OR0cKvrfT/ilkNXEtEP3zEwyNGh6AW5iQADws=";
-    };
-  };
   eden-emulator = {
     pname = "eden-emulator";
     version = "4d49341918981a782395fe379a8e6846e1fd11b2";
@@ -79,17 +71,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "e76abd1e3a69a10481cc5f5a1c9c3002551f27d3";
+    version = "f22587abc3d47ec4878df9b4347927055bff57cc";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "e76abd1e3a69a10481cc5f5a1c9c3002551f27d3";
+      rev = "f22587abc3d47ec4878df9b4347927055bff57cc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hxic8WhDDDHzJwzBhSq1Y3YBI/T6niEyQpjd1gI0Hoc=";
+      sha256 = "sha256-ImmZkKMwz/XSYyMIBxv46U5u5Q0k+b85/Ay8U5YL2Mc=";
     };
-    date = "2026-05-15";
+    date = "2026-05-16";
   };
   modengine3 = {
     pname = "modengine3";
@@ -125,18 +117,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260429-slr";
+    version = "cachyos-11.0-20260506-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64.tar.xz";
-      sha256 = "sha256-KPdU1vUS6f7U71brmjATpa38BqTT9s8tP7p+wFBrqKI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260506-slr/proton-cachyos-11.0-20260506-slr-x86_64.tar.xz";
+      sha256 = "sha256-Yy9Npm5J/O1x0DyHROPRkhREa27pHihqZvL4fRtNQ9A=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260429-slr";
+    version = "cachyos-11.0-20260506-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260429-slr/proton-cachyos-11.0-20260429-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-LemiIEFqlz+xSypYpwO/oy1lXBYxcGdwqhS/b7xOrlw=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260506-slr/proton-cachyos-11.0-20260506-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-c7Zj46wubq3ZYqganMx4TfP4OgMiEBKoDRuR3KJMSY0=";
     };
   };
   pseudoregalia-rando = {
