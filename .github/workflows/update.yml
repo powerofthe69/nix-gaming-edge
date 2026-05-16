@@ -45,6 +45,7 @@ jobs:
       - name: Save old versions
         run: |
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
+          cp pkgs/discord/sources.json /tmp/old-discord-sources.json 2>/dev/null || echo '{}' > /tmp/old-discord-sources.json
 
       - name: Run nvfetcher to update sources
         env:
@@ -56,6 +57,9 @@ jobs:
           nvfetcher -o _sources -k ~/.config/nvchecker/keyfile.toml
           ./scripts/sync-eden-deps.sh
           nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies -k ~/.config/nvchecker/keyfile.toml
+
+      - name: Refresh Discord source manifest
+        run: ./scripts/sync-discord-deps.py
 
       - name: Check what changed
         id: check
@@ -79,16 +83,30 @@ jobs:
             fi
           done
 
+          # Discord lives outside _sources because it needs a structured
+          # manifest (distro + modules) the distributions API gives us.
+          OLD_DISCORD=$(jq -r '.version // "none"' /tmp/old-discord-sources.json)
+          NEW_DISCORD=$(jq -r '.version // "none"' pkgs/discord/sources.json)
+          if [ "$OLD_DISCORD" != "$NEW_DISCORD" ]; then
+            if [ -n "$CHANGES" ]; then
+              CHANGES="${CHANGES}, "
+            fi
+            CHANGES="${CHANGES}discord: ${NEW_DISCORD}"
+          fi
+
           # Use multiline output for GitHub Actions
           echo "version_changes<<EOF" >> $GITHUB_OUTPUT
           echo "$CHANGES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
+          ANY_CHANGED=false
           if ! diff -q /tmp/old-generated.json _sources/generated.json > /dev/null 2>&1; then
-            echo "any_changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "any_changed=false" >> $GITHUB_OUTPUT
+            ANY_CHANGED=true
           fi
+          if ! diff -q /tmp/old-discord-sources.json pkgs/discord/sources.json > /dev/null 2>&1; then
+            ANY_CHANGED=true
+          fi
+          echo "any_changed=$ANY_CHANGED" >> $GITHUB_OUTPUT
 
       - name: Update Cargo.lock for pseudoregalia
         run: |
@@ -145,6 +163,7 @@ jobs:
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
+            pkgs/discord/sources.json
             pkgs/fluxer-desktop/pnpm-hash.txt
             flake.lock
 

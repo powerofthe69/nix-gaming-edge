@@ -74,7 +74,6 @@
 
       # Discord (stable) and Vencord (nightly)
       discord = pkgs.callPackage ./pkgs/discord {
-        discordSrc = nvSources.discord;
         vencordSrc = nvSources.vencord;
       };
 
