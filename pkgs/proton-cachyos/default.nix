@@ -57,11 +57,11 @@ pkgs.stdenv.mkDerivation {
         'def __dll_download_exists(url: str) -> bool:' \
         $'def __dll_download_exists(url: str) -> bool:\n    _nix_cache = Path(__file__).resolve().parent.parent / "fsr4-cache"\n    if _nix_cache.is_dir():\n        _url_id = Path(unquote(urlparse(url).path)).parent.name\n        if any(_url_id in _f.name for _f in _nix_cache.iterdir()):\n            log.info(f\x27Nix-cached DLL matches URL {url}\x27)\n            return True' \
       --replace-fail \
-        "version = '4.0.3'" \
+        "version = '4.1.0'" \
         'version = next(reversed(__fsr4_dlls))' \
       --replace-fail \
-        'def __download_fsr4(file: dict, cache: Path, dst: Path) -> None:' \
-        $'def __download_fsr4(file: dict, cache: Path, dst: Path) -> None:\n    _nix_cache = Path(__file__).resolve().parent.parent / "fsr4-cache"\n    if _nix_cache.is_dir():\n        _url_path = Path(unquote(urlparse(file["download_url"]).path))\n        _nix_cached = _nix_cache / (_url_path.stem + f\x27_v{file["version"]}\x27 + _url_path.suffix)\n        if _nix_cached.is_file():\n            dst.parent.mkdir(parents=True, exist_ok=True)\n            shutil.copy(_nix_cached, dst)\n            log.info(f\x27Using Nix-cached FSR4 DLL: {_nix_cached.name}\x27)\n            return'
+        'def __download_fsr4(item: dict, cache: Path, dst: Path) -> None:' \
+        $'def __download_fsr4(item: dict, cache: Path, dst: Path) -> None:\n    _nix_cache = Path(__file__).resolve().parent.parent / "fsr4-cache"\n    if _nix_cache.is_dir():\n        _url_path = Path(unquote(urlparse(item["download_url"]).path))\n        _nix_cached = _nix_cache / (_url_path.stem + f\x27_v{item["version"]}\x27 + _url_path.suffix)\n        if _nix_cached.is_file():\n            dst.parent.mkdir(parents=True, exist_ok=True)\n            shutil.copy(_nix_cached, dst)\n            log.info(f\x27Using Nix-cached FSR4 DLL: {_nix_cached.name}\x27)\n            return'
 
     # Create a real folder so that Steam doesn't require reselecting compatibility tool on update
     mkdir -p $out/share/
