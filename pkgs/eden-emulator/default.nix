@@ -23,7 +23,7 @@
   openssl,
   pkg-config,
   qt6,
-  SDL2,
+  sdl3,
   spirv-headers,
   spirv-tools,
   src,
@@ -93,7 +93,7 @@ llvmPackages.stdenv.mkDerivation {
     qt6.qtmultimedia
     qt6.qttools
     qt6.qtwayland
-    SDL2
+    sdl3
     spirv-headers
     spirv-tools
     vulkan-headers
@@ -108,8 +108,7 @@ llvmPackages.stdenv.mkDerivation {
     "-DENABLE_QT=ON"
     "-DUSE_DISCORD_PRESENCE=ON"
 
-    "-DYUZU_USE_BUNDLED_SDL2=OFF"
-    "-DYUZU_USE_EXTERNAL_SDL2=OFF"
+    "-DYUZU_USE_BUNDLED_SDL3=OFF"
     "-DYUZU_USE_BUNDLED_FFMPEG=OFF"
     "-DSIRIT_USE_SYSTEM_SPIRV_HEADERS=ON"
 

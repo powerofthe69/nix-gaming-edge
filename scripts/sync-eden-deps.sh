@@ -30,7 +30,7 @@ SKIP_DEPS=(
     spirv-headers spirv-tools
     vulkan-headers vulkan-utility-libraries vulkan-memory-allocator
     vulkan-validation-layers
-    sdl2 sdl2_generic sdl2_steamdeck ffmpeg
+    sdl3 sdl3-ci ffmpeg
     oaknut biscuit libadrenotools moltenvk oboe llvm-mingw
     ffmpeg-ci sirit-ci tzdb
 )
