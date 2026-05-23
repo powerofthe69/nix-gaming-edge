@@ -42,7 +42,7 @@ stdenv.mkDerivation {
     sourceRoot = "${source.src.name}/fluxer_desktop";
     inherit postUnpack;
     pnpm = pnpm_10;
-    fetcherVersion = 2;
+    fetcherVersion = 3;
     hash = pnpmHash;
   };
 
