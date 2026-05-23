@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "46cfd9b6f3de00cc0b3b7e5f3369a66f66f7d115";
+    version = "83683440b24c2d07536fddf2faa77c000c14374b";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "46cfd9b6f3de00cc0b3b7e5f3369a66f66f7d115";
+      rev = "83683440b24c2d07536fddf2faa77c000c14374b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ZdGsAa2IfQ2vxKjHc1iYDEHsIQGdltqI9Z1HvLYYlag=";
+      sha256 = "sha256-z8yJWrrRsv4N0cmWp9tTQEPPaDN2XVVvLEWm/USOUsI=";
     };
-    date = "2026-05-21";
+    date = "2026-05-22";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -49,10 +49,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.05.14-26cebac";
+    version = "2026.05.22-c731d18";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.14-26cebac.zip";
-      sha256 = "sha256-6Ggtzio6ZDQBLPTZrftkW7RuxBNIql7vjgMZXV4DWtI=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.22-c731d18.zip";
+      sha256 = "sha256-HcuvnqQ1egh2BUoQpu9gZshu86KZv8WdCHne/QBYAMw=";
     };
   };
   libdrm = {
@@ -71,17 +71,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "73382c8126356c0344b7323d7555d8e4ba7af7db";
+    version = "c88e30f0e4b8e31ce82e6b6b7d5bce8e78492e65";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "73382c8126356c0344b7323d7555d8e4ba7af7db";
+      rev = "c88e30f0e4b8e31ce82e6b6b7d5bce8e78492e65";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PYV5ISxypQ+jwgxAbGB0GIITPc2/7CjldlAU2UsZmrw=";
+      sha256 = "sha256-kTFALB2bm2mUvy+qegwzX6oagw8yl3t1tCYVVt8t/AA=";
     };
-    date = "2026-05-22";
+    date = "2026-05-23";
   };
   modengine3 = {
     pname = "modengine3";
