@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "9d55875377f4060592313f5db8d618f1f735a20f";
+    version = "8fd495f906f03e59cdc3e68ec33d0b9b6f257427";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "9d55875377f4060592313f5db8d618f1f735a20f";
+      rev = "8fd495f906f03e59cdc3e68ec33d0b9b6f257427";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-i1HJhDpLhsPXVdq9esbCy8DclXM+PfUzg7qib47d5mc=";
+      sha256 = "sha256-IDlMWMKHv26XfccW4+Ufg30+AY/UkPnrRvnAoiepjC0=";
     };
-    date = "2026-05-26";
+    date = "2026-05-27";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -49,10 +49,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.05.22-c731d18";
+    version = "2026.05.26-a9aec87";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.22-c731d18.zip";
-      sha256 = "sha256-HcuvnqQ1egh2BUoQpu9gZshu86KZv8WdCHne/QBYAMw=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.26-a9aec87.zip";
+      sha256 = "sha256-N1x4iJtV7eidKKxx5g4ha8EaiAUnOivcFJhMSvVMR7w=";
     };
   };
   libdrm = {
@@ -71,17 +71,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "cf8a61a0711ea69de86c3345558019dd118c8218";
+    version = "8c9995e7fadce73e69e15d18615ccc00c4d82216";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "cf8a61a0711ea69de86c3345558019dd118c8218";
+      rev = "8c9995e7fadce73e69e15d18615ccc00c4d82216";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-C/MYvzULwTuXiTXP4La0/q76/X/0t2B9QKmt5cjWEMY=";
+      sha256 = "sha256-RX/gBrQzKFg9XYmCDOl25bG2NysA/y6LfNSfFL502+A=";
     };
-    date = "2026-05-26";
+    date = "2026-05-27";
   };
   modengine3 = {
     pname = "modengine3";
@@ -117,18 +117,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260519-slr";
+    version = "cachyos-11.0-20260520-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260519-slr/proton-cachyos-11.0-20260519-slr-x86_64.tar.xz";
-      sha256 = "sha256-m9Uie8p93MbvUhYBnvN8UCg47DHDJ1DN21EGl76d85E=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64.tar.xz";
+      sha256 = "sha256-2einKIRxRfLegNaH7+kBlrpfkoOCQ6FzBdfczJ0uf5c=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260519-slr";
+    version = "cachyos-11.0-20260520-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260519-slr/proton-cachyos-11.0-20260519-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-wc74EgQpmRiCShAEKaGP2cPM83m/qMipnQTXFJmUwE0=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-YSDaUcoYYfT/UMkxpULfq7fVvELAhi8b/wIrpSv4yJQ=";
     };
   };
   pseudoregalia-rando = {
