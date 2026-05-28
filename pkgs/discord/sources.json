@@ -6,19 +6,9 @@
     "hash": "sha256-BJp6OoY5iMvEQ6D8tE01lD4o99kd64EPotZY6eEghI8="
   },
   "modules": {
-    "discord_voice": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_voice/1/full.distro",
-      "hash": "sha256-bBDbByUv/TTP083znR5gpHVZNxsbKVdAuGf5PWzb/4o=",
-      "version": 1
-    },
-    "discord_utils": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_utils/1/full.distro",
-      "hash": "sha256-asGIf6krpqUfJjco3BGMUbcT1JTLRxHwN7jkFYz3y8s=",
-      "version": 1
-    },
-    "discord_zstd": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_zstd/1/full.distro",
-      "hash": "sha256-ZwFq0NRYvdsfeSIAdNHuPpgKsPLCJyIAeqWaFKysYOI=",
+    "discord_spellcheck": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_spellcheck/1/full.distro",
+      "hash": "sha256-H0jx0FvnOq4F0d1PlP0ZSKmR21WyXqZrhZ1yA9UH67c=",
       "version": 1
     },
     "discord_desktop_core": {
@@ -26,19 +16,14 @@
       "hash": "sha256-WXlfAh6XEWC+AY54LTIq2+7LWMowWoriP9/MzyI/3e0=",
       "version": 1
     },
-    "discord_game_utils": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_game_utils/1/full.distro",
-      "hash": "sha256-Nzy0TsQuGWWD1ioviuDFrANwLCKG4ZYlhYt0PG4fkFU=",
+    "discord_erlpack": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_erlpack/1/full.distro",
+      "hash": "sha256-ceeZ6goEglh5MQ2lBH/FxSZ8F3iCXqEf+nwaLH8v+dM=",
       "version": 1
     },
-    "discord_cloudsync": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_cloudsync/1/full.distro",
-      "hash": "sha256-uYLrYAJsOHJXNNvFFFbzEHwXW07a2zkr/bX1Mad1n30=",
-      "version": 1
-    },
-    "discord_modules": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_modules/1/full.distro",
-      "hash": "sha256-sN0od/vd6R0nZym/GVdHBzhwnGjgE9e1wKeBD8KMDNQ=",
+    "discord_zstd": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_zstd/1/full.distro",
+      "hash": "sha256-ZwFq0NRYvdsfeSIAdNHuPpgKsPLCJyIAeqWaFKysYOI=",
       "version": 1
     },
     "discord_krisp": {
@@ -46,14 +31,14 @@
       "hash": "sha256-YycZ4D3tyJbo8dL/3V2+yl9F7he23+/AMp1YtDezghY=",
       "version": 1
     },
+    "discord_modules": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_modules/1/full.distro",
+      "hash": "sha256-sN0od/vd6R0nZym/GVdHBzhwnGjgE9e1wKeBD8KMDNQ=",
+      "version": 1
+    },
     "discord_rpc": {
       "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_rpc/1/full.distro",
       "hash": "sha256-fG4d1opLSQW5H+7pljDjyVC53GS9bl2AIpamup0FVoo=",
-      "version": 1
-    },
-    "discord_spellcheck": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_spellcheck/1/full.distro",
-      "hash": "sha256-H0jx0FvnOq4F0d1PlP0ZSKmR21WyXqZrhZ1yA9UH67c=",
       "version": 1
     },
     "discord_dispatch": {
@@ -61,9 +46,24 @@
       "hash": "sha256-qjmeEirIE9iGrcG2KNE1TQc1zDJwBtccvD1MvUaYpnU=",
       "version": 1
     },
-    "discord_erlpack": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_erlpack/1/full.distro",
-      "hash": "sha256-ceeZ6goEglh5MQ2lBH/FxSZ8F3iCXqEf+nwaLH8v+dM=",
+    "discord_utils": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_utils/1/full.distro",
+      "hash": "sha256-asGIf6krpqUfJjco3BGMUbcT1JTLRxHwN7jkFYz3y8s=",
+      "version": 1
+    },
+    "discord_game_utils": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_game_utils/1/full.distro",
+      "hash": "sha256-Nzy0TsQuGWWD1ioviuDFrANwLCKG4ZYlhYt0PG4fkFU=",
+      "version": 1
+    },
+    "discord_voice": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_voice/1/full.distro",
+      "hash": "sha256-bBDbByUv/TTP083znR5gpHVZNxsbKVdAuGf5PWzb/4o=",
+      "version": 1
+    },
+    "discord_cloudsync": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.140/discord_cloudsync/1/full.distro",
+      "hash": "sha256-uYLrYAJsOHJXNNvFFFbzEHwXW07a2zkr/bX1Mad1n30=",
       "version": 1
     }
   }
