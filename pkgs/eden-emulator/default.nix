@@ -48,6 +48,7 @@ let
     DiscordRPC = cpm.discord-rpc.src;
     frozen = cpm.frozen.src;
     httplib = cpm.httplib.src;
+    lagoon = cpm.lagoon.src;
     QuaZip-Qt6 = cpm.quazip.src;
     SimpleIni = cpm.simpleini.src;
     sirit = cpm.sirit.src;

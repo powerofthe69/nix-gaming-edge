@@ -53,6 +53,18 @@
       sha256 = "sha256-I7mfT4Eb5sXUURReq3nzQRUhI4sMx4wQpdJBw+vOA/s=";
     };
   };
+  lagoon = {
+    pname = "lagoon";
+    version = "19317357d0623addc02e7bad533f48074f939c9e";
+    src = fetchFromGitHub {
+      owner = "loongson-community";
+      repo = "lagoon";
+      rev = "19317357d0623addc02e7bad533f48074f939c9e";
+      fetchSubmodules = false;
+      sha256 = "sha256-rdAL8tWPbH5lVuH6jy0KSu4ChSEFgW3vjNctWg519qE=";
+    };
+    date = "2026-05-21";
+  };
   nx_tzdb = {
     pname = "nx_tzdb";
     version = "121125";

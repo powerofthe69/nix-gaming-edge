@@ -21,6 +21,10 @@ fetch.github = "serge-sans-paille/frozen"
 src.manual = "v0.37.0"
 fetch.github = "yhirose/cpp-httplib"
 
+[lagoon]
+src.git = "https://github.com/loongson-community/lagoon.git"
+fetch.github = "loongson-community/lagoon"
+
 [quazip]
 # upstream: stachenov/quazip
 # cpmfile.json sha: 2e95c9001b
