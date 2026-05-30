@@ -59,6 +59,11 @@
       "name": "harkinian",
       "packages": "shipwright _2ship2harkinian",
       "runner": ["self-hosted", "heavy-tasks"]
+    },
+    {
+      "name": "jellyfin-desktop",
+      "packages": "jellyfin-desktop",
+      "runner": ["self-hosted", "heavy-tasks"]
     }
   ]
 }

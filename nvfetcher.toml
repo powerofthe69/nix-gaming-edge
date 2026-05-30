@@ -94,3 +94,10 @@ git.fetchSubmodules = true
 [opengoal-launcher]
 src.cmd = "curl -s https://api.github.com/repos/open-goal/launcher/releases/latest | jq -r '.tag_name | ltrimstr(\"v\")'"
 fetch.url = "https://github.com/open-goal/launcher/releases/download/v$ver/OpenGOAL-Launcher_$ver_amd64.AppImage"
+
+# Jellyfin Desktop v3 - nightly (CEF + mpv source build)
+# Vendored CEF tarball + libmpv fork in pkgs/jellyfin-desktop/nvfetcher.toml
+[jellyfin-desktop]
+src.git = "https://github.com/jellyfin/jellyfin-desktop"
+src.branch = "main"
+fetch.git = "https://github.com/jellyfin/jellyfin-desktop.git"

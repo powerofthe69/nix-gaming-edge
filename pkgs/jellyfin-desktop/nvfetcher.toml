@@ -1,0 +1,15 @@
+# pkgs/jellyfin-desktop/nvfetcher.toml
+# Vendored deps for jellyfin-desktop v3. Run:
+#   nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies
+
+# libmpv fork - cef-mpv branch of upstream mpv
+[jellyfin-desktop-libmpv]
+src.git = "https://github.com/andrewrabert/mpv"
+src.branch = "cef-mpv"
+fetch.git = "https://github.com/andrewrabert/mpv.git"
+
+# CEF binary tracking jellyfin-desktop's CEF_VERSION file. Spotify CDN accepts
+# the full "<cef>+g<rev>+chromium-<chromium>" string verbatim in the URL.
+[jellyfin-desktop-cef]
+src.cmd = "curl -fsSL https://raw.githubusercontent.com/jellyfin/jellyfin-desktop/main/CEF_VERSION | tr -d '\\n\\r'"
+fetch.url = "https://cef-builds.spotifycdn.com/cef_binary_$ver_linux64_minimal.tar.bz2"

@@ -98,6 +98,11 @@
         _2ship2harkinianSrc = nvSources._2ship2harkinian;
       };
 
+      # Jellyfin Desktop v3 (CEF + mpv source build)
+      jellyfin-desktop = pkgs.callPackage ./pkgs/jellyfin-desktop {
+        source = nvSources.jellyfin-desktop;
+      };
+
     in
     {
       packages.${pkgs.stdenv.hostPlatform.system} = {
@@ -162,6 +167,9 @@
         # Source tracked by nvfetcher to stay ahead of Nixpkgs hash updates
         shipwright = harkinian.shipwright;
         _2ship2harkinian = harkinian._2ship2harkinian;
+
+        # Jellyfin Desktop v3
+        jellyfin-desktop = jellyfin-desktop;
       };
 
       overlays = {
@@ -205,6 +213,8 @@
 
           shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
           _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
+
+          jellyfin-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellyfin-desktop;
         };
 
         mesa-git = final: prev: {
@@ -272,6 +282,10 @@
         harkinian = final: prev: {
           shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
           _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
+        };
+
+        jellyfin-desktop = final: prev: {
+          jellyfin-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellyfin-desktop;
         };
       };
 

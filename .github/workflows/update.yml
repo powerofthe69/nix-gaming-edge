@@ -57,6 +57,7 @@ jobs:
           nvfetcher -o _sources -k ~/.config/nvchecker/keyfile.toml
           ./scripts/sync-eden-deps.sh
           nvfetcher -c pkgs/eden-emulator/nvfetcher.toml -o pkgs/eden-emulator/_dependencies -k ~/.config/nvchecker/keyfile.toml
+          nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies -k ~/.config/nvchecker/keyfile.toml
 
       - name: Refresh Discord source manifest
         run: ./scripts/sync-discord-deps.py
@@ -124,6 +125,19 @@ jobs:
             rm -rf "$WORK_DIR"
           fi
 
+      - name: Refresh jellyfin-desktop cargoHash
+        run: |
+          if ! nix build .#jellyfin-desktop.cargoDeps --no-link 2> nix-err.log; then
+            NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
+            if [[ $NEW_HASH == sha256-* ]]; then
+              sed -i "s|cargoHash = \"sha256-[^\"]*\"|cargoHash = \"$NEW_HASH\"|" pkgs/jellyfin-desktop/default.nix
+            else
+              echo "cargoHash could not be scraped for jellyfin-desktop:"
+              cat nix-err.log
+              exit 1
+            fi
+          fi
+
       - name: Update pnpm hashes
         run: |
           for pkg in vencord fluxer-desktop; do
@@ -160,6 +174,9 @@ jobs:
             pkgs/eden-emulator/_dependencies/
             pkgs/eden-emulator/nvfetcher.toml
             pkgs/eden-emulator/default.nix
+            pkgs/jellyfin-desktop/_dependencies/
+            pkgs/jellyfin-desktop/nvfetcher.toml
+            pkgs/jellyfin-desktop/default.nix
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
