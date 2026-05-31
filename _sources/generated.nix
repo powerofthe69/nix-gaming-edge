@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "ff7bbaea7db5a9a9528c1ef087d3a49a18931b52";
+    version = "bd2d34404063f51c7eb7970fd4d5591a7788774c";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "ff7bbaea7db5a9a9528c1ef087d3a49a18931b52";
+      rev = "bd2d34404063f51c7eb7970fd4d5591a7788774c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Fn/HqgyowIP0VDaF1vx/VJluj1mFFJSj5lGEHqZt+Y4=";
+      sha256 = "sha256-fE4yahqYOFGjnxnmGId1NXKxelP5j+ENXPW1o4CYBPs=";
     };
-    date = "2026-05-30";
+    date = "2026-05-31";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -57,17 +57,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "49af4a109dffacd15b5fa734dede58c9a493f490";
+    version = "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "49af4a109dffacd15b5fa734dede58c9a493f490";
+      rev = "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-zLL6XMKoZbstG43+Nv1u3LOTFg4keudoRn8V7RqwPeY=";
+      sha256 = "sha256-uLM5mV0UJN/gOcfXbHh4qmOX1ejZmueNy0ZXzz+iDJk=";
     };
-    date = "2026-05-29";
+    date = "2026-05-30";
   };
   libdrm = {
     pname = "libdrm";
@@ -131,18 +131,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260520-slr";
+    version = "cachyos-11.0-20260521-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64.tar.xz";
-      sha256 = "sha256-2einKIRxRfLegNaH7+kBlrpfkoOCQ6FzBdfczJ0uf5c=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64.tar.xz";
+      sha256 = "sha256-svDsjpMbAsvLV1xvTPHzeTKmSKOt0nHdfdEvE5X1tyw=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260520-slr";
+    version = "cachyos-11.0-20260521-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260520-slr/proton-cachyos-11.0-20260520-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-YSDaUcoYYfT/UMkxpULfq7fVvELAhi8b/wIrpSv4yJQ=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=";
     };
   };
   pseudoregalia-rando = {
@@ -182,10 +182,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "stable/vs_client_linux-x64_1.22.2";
+    version = "stable/vs_client_linux-x64_1.22.3";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.2.tar.gz";
-      sha256 = "sha256-caLSOm/WXpXrjC1az72Nc0XDWOpWB2R9iVq8ShDEZgU=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.3.tar.gz";
+      sha256 = "sha256-1ZqbT4peFjuz3kUB1sC2Lau7ZrEQYF677tCE+nRLLyo=";
     };
   };
   wayland = {
@@ -203,16 +203,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "1571cf6ae9f8ed2d5b3b8f65bee758cad025375b";
+    version = "3de6742006076df4be038cbd325d011c93a1db90";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "1571cf6ae9f8ed2d5b3b8f65bee758cad025375b";
+      rev = "3de6742006076df4be038cbd325d011c93a1db90";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-NY5fX4bpw6PnQBmma+Xa5F04/b5fsqR9Ws/H3Rvsmr8=";
+      sha256 = "sha256-B6DKqyVFGIkKkK23uQr12whN2d73El94CUMZbMroDDM=";
     };
-    date = "2026-05-29";
+    date = "2026-05-30";
   };
 }
