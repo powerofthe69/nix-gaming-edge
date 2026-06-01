@@ -49,7 +49,7 @@ pkgs.rustPlatform.buildRustPackage {
   cargoRoot = "src";
 
   # Bumped by .github/workflows/update.yml when the vendor FOD's hash drifts.
-  cargoHash = "sha256-HY/VhE8lRpdbHc4AHd6REkD+BLia5pFrD1Ut1CIKfxs=";
+  cargoHash = "sha256-NjOA/If/jjdGJwWZ61J71xWw2FcWwSSrWPE2ahrZfB8=";
 
   nativeBuildInputs = with pkgs; [
     makeWrapper
@@ -66,28 +66,34 @@ pkgs.rustPlatform.buildRustPackage {
   buildInputs = runtimeLibs ++ buildOnlyLibs;
 
   env = {
-    # xtask shells out to git for these; the sandbox has no .git, so seed
-    # from the nvfetcher rev for traceability.
+    # xtask reads gix on the repo and overwrites JFN_GIT_HASH/JFN_GIT_DIRTY in
+    # the cargo subprocess; the sandbox has no .git so xtask will set these to
+    # empty. Setting them here lets jfn_rust's build.rs find them via gix
+    # fallback when xtask leaves them empty. They get clobbered by xtask in
+    # the actual rustc env, but we keep them as a documented seed in case the
+    # override is dropped in a future xtask version.
     JFN_GIT_HASH = source.version;
     JFN_GIT_DIRTY = "0";
-    # Linux-only. build.rs reads JFN_EXTRA_RPATH and bakes each entry into
-    # the binary's RPATH via rustc -C link-arg.
-    JFN_EXTRA_RPATH = "${cef}/Release:${libmpv}/lib";
-    # cef-dll-sys downloads CEF if CEF_PATH is unset. Point at the merged-
-    # layout subdir of our CEF derivation.
-    CEF_PATH = "${cef}/cef-dll-sys";
   };
 
   # Drive the build through xtask so it stages CEF/mpv next to the binary.
   # The repo's .cargo/config `cargo xtask` alias doesn't resolve under
   # rustPlatform's CARGO_HOME, so expand it inline.
+  #
+  # --cef-path (NOT --external-cef): `--external-cef <dir>` treats <dir> as
+  # download-cef's cache root, expects <dir>/<ver>/<os-arch>/ layout, and
+  # downloads from spotifycdn if missing. `--cef-path <dir>` uses the SDK in
+  # place — just needs <dir>/libcef.so to be resolvable. Our cef derivation
+  # exposes the flattened SDK-plus-runtime layout under $out/cef-dll-sys/;
+  # xtask's sdk_proxy then symlinks that into a tempdir for cef-dll-sys's
+  # build.rs (which reads CEF_PATH, which xtask sets to the proxy).
   buildPhase = ''
     runHook preBuild
 
     cargo run --quiet --release \
       --manifest-path src/xtask/Cargo.toml -- \
       build \
-        --external-cef ${cef} \
+        --cef-path ${cef}/cef-dll-sys \
         --external-mpv ${libmpv} \
         --out build
 
