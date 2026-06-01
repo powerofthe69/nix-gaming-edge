@@ -8,8 +8,15 @@ src.git = "https://github.com/andrewrabert/mpv"
 src.branch = "cef-mpv"
 fetch.git = "https://github.com/andrewrabert/mpv.git"
 
-# CEF binary tracking jellyfin-desktop's CEF_VERSION file. Spotify CDN accepts
-# the full "<cef>+g<rev>+chromium-<chromium>" string verbatim in the URL.
+# CEF binary. Upstream removed CEF_VERSION in d2669e6 (2026-05-30) and now
+# pins CEF via the `cef` crate in src/Cargo.lock (e.g. "148.3.0+148.0.9").
+# The build metadata after "+" is the CEF base version; the full string
+# "<cef>+g<rev>+chromium-<chromium>" needed for the Spotify CDN URL has to
+# be resolved against the CDN's index.json.
 [jellyfin-desktop-cef]
-src.cmd = "curl -fsSL https://raw.githubusercontent.com/jellyfin/jellyfin-desktop/main/CEF_VERSION | tr -d '\\n\\r'"
+src.cmd = '''
+PKG=$(curl -fsSL https://raw.githubusercontent.com/jellyfin/jellyfin-desktop/main/src/Cargo.lock | awk '/^\[\[package\]\]/{n=""} /^name = "cef"$/{n="cef"} n=="cef" && /^version = /{gsub(/"/,""); print $3; exit}')
+BUILD="${PKG##*+}"
+curl -fsSL https://cef-builds.spotifycdn.com/index.json | jq -r --arg v "$BUILD" '[.linux64.versions[] | select(.channel == "stable" and (.cef_version | startswith($v + "+")))][0].cef_version'
+'''
 fetch.url = "https://cef-builds.spotifycdn.com/cef_binary_$ver_linux64_minimal.tar.bz2"
