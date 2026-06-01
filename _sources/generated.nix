@@ -57,17 +57,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a";
+    version = "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a";
+      rev = "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uLM5mV0UJN/gOcfXbHh4qmOX1ejZmueNy0ZXzz+iDJk=";
+      sha256 = "sha256-P7ZHStleEsPPe23JcLCDwoB99E4eCREcpLsKqgN++y8=";
     };
-    date = "2026-05-30";
+    date = "2026-05-31";
   };
   libdrm = {
     pname = "libdrm";
@@ -85,17 +85,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "154d3b581246613beff1dea1bc6b47824bf3a7ad";
+    version = "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "154d3b581246613beff1dea1bc6b47824bf3a7ad";
+      rev = "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-C8l8DUVtZqW+2Lb1OAlq4Bk2sXwe/YwNjk1NHs25s6Y=";
+      sha256 = "sha256-FdmQjAXbm53Gdly9vuo0ihKdCno4cJOwWopwMB1O8Us=";
     };
-    date = "2026-05-30";
+    date = "2026-06-01";
   };
   modengine3 = {
     pname = "modengine3";
@@ -185,7 +185,7 @@
     version = "stable/vs_client_linux-x64_1.22.3";
     src = fetchurl {
       url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.3.tar.gz";
-      sha256 = "sha256-1ZqbT4peFjuz3kUB1sC2Lau7ZrEQYF677tCE+nRLLyo=";
+      sha256 = "sha256-sa4Pj1DwT6W6LJCAYznmbyqPtMUTaLSNTkXS1imQp04=";
     };
   };
   wayland = {

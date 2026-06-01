@@ -76,7 +76,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-05-30",
+        "date": "2026-05-31",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a",
-            "sha256": "sha256-uLM5mV0UJN/gOcfXbHh4qmOX1ejZmueNy0ZXzz+iDJk=",
+            "rev": "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e",
+            "sha256": "sha256-P7ZHStleEsPPe23JcLCDwoB99E4eCREcpLsKqgN++y8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "a1b7739b5980c24ea8e136ec1591d9e48f4cb73a"
+        "version": "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e"
     },
     "libdrm": {
         "cargoLock": null,
@@ -116,7 +116,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-05-30",
+        "date": "2026-06-01",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -126,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "154d3b581246613beff1dea1bc6b47824bf3a7ad",
-            "sha256": "sha256-C8l8DUVtZqW+2Lb1OAlq4Bk2sXwe/YwNjk1NHs25s6Y=",
+            "rev": "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff",
+            "sha256": "sha256-FdmQjAXbm53Gdly9vuo0ihKdCno4cJOwWopwMB1O8Us=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "154d3b581246613beff1dea1bc6b47824bf3a7ad"
+        "version": "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff"
     },
     "modengine3": {
         "cargoLock": null,
@@ -288,7 +288,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-1ZqbT4peFjuz3kUB1sC2Lau7ZrEQYF677tCE+nRLLyo=",
+            "sha256": "sha256-sa4Pj1DwT6W6LJCAYznmbyqPtMUTaLSNTkXS1imQp04=",
             "type": "url",
             "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.3.tar.gz"
         },
