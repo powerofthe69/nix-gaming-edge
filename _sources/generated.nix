@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "bd2d34404063f51c7eb7970fd4d5591a7788774c";
+    version = "a8047d3b122d69e8074a477c6b93f966fa77d3bc";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "bd2d34404063f51c7eb7970fd4d5591a7788774c";
+      rev = "a8047d3b122d69e8074a477c6b93f966fa77d3bc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fE4yahqYOFGjnxnmGId1NXKxelP5j+ENXPW1o4CYBPs=";
+      sha256 = "sha256-lmdvn9QGiuetCxyIb2IIJ7Ctl0TkKql5JaPZvjOzQ0c=";
     };
-    date = "2026-05-31";
+    date = "2026-06-02";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -49,25 +49,25 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.05.26-a9aec87";
+    version = "2026.05.29-125f35f";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.26-a9aec87.zip";
-      sha256 = "sha256-N1x4iJtV7eidKKxx5g4ha8EaiAUnOivcFJhMSvVMR7w=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.29-125f35f.zip";
+      sha256 = "sha256-5hk1gzs6YCxM3GyYk/nZq8VRep+OnK19m/onN6rHkgQ=";
     };
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e";
+    version = "1a22be4451a5eadb30011cf00a45b8b21e4347a0";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e";
+      rev = "1a22be4451a5eadb30011cf00a45b8b21e4347a0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-P7ZHStleEsPPe23JcLCDwoB99E4eCREcpLsKqgN++y8=";
+      sha256 = "sha256-k5O6Qgx7VfIqQYiCc4B3MDTc7qkU31vekpKNQs7ggrs=";
     };
-    date = "2026-05-31";
+    date = "2026-06-02";
   };
   libdrm = {
     pname = "libdrm";
@@ -85,15 +85,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff";
+    version = "ff67b27f485a944963ce0a0e83e53b68f100701a";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff";
+      rev = "ff67b27f485a944963ce0a0e83e53b68f100701a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-FdmQjAXbm53Gdly9vuo0ihKdCno4cJOwWopwMB1O8Us=";
+      sha256 = "sha256-87AMZQy8RAs29kyU0nNiWG1Hp8wXvKyb4nQP044HScQ=";
     };
     date = "2026-06-01";
   };

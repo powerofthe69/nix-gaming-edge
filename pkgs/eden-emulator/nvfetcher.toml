@@ -25,6 +25,10 @@ fetch.github = "yhirose/cpp-httplib"
 src.git = "https://github.com/loongson-community/lagoon.git"
 fetch.github = "loongson-community/lagoon"
 
+[openssl-cmake]
+src.manual = "3.6.2"
+fetch.github = "jimmy-park/openssl-cmake"
+
 [quazip]
 # upstream: stachenov/quazip
 # cpmfile.json sha: 2e95c9001b

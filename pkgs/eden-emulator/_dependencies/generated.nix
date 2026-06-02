@@ -73,6 +73,17 @@
       sha256 = "sha256-wX3BUywYcZFVrOQk8VhByd/GY2gb/sawC7ft2IRC/wI=";
     };
   };
+  openssl-cmake = {
+    pname = "openssl-cmake";
+    version = "3.6.2";
+    src = fetchFromGitHub {
+      owner = "jimmy-park";
+      repo = "openssl-cmake";
+      rev = "3.6.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-Bkq49d+fcEAvV477gfUg2km/94KjkDKXFS6wukzyDWk=";
+    };
+  };
   quazip = {
     pname = "quazip";
     version = "f838774d6306eb5a500af9ab336ec85f01ebd7ec";

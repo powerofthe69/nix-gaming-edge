@@ -21,7 +21,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-05-31",
+        "date": "2026-06-02",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bd2d34404063f51c7eb7970fd4d5591a7788774c",
-            "sha256": "sha256-fE4yahqYOFGjnxnmGId1NXKxelP5j+ENXPW1o4CYBPs=",
+            "rev": "a8047d3b122d69e8074a477c6b93f966fa77d3bc",
+            "sha256": "sha256-lmdvn9QGiuetCxyIb2IIJ7Ctl0TkKql5JaPZvjOzQ0c=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "bd2d34404063f51c7eb7970fd4d5591a7788774c"
+        "version": "a8047d3b122d69e8074a477c6b93f966fa77d3bc"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -68,15 +68,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-N1x4iJtV7eidKKxx5g4ha8EaiAUnOivcFJhMSvVMR7w=",
+            "sha256": "sha256-5hk1gzs6YCxM3GyYk/nZq8VRep+OnK19m/onN6rHkgQ=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.26-a9aec87.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.05.29-125f35f.zip"
         },
-        "version": "2026.05.26-a9aec87"
+        "version": "2026.05.29-125f35f"
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-05-31",
+        "date": "2026-06-02",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e",
-            "sha256": "sha256-P7ZHStleEsPPe23JcLCDwoB99E4eCREcpLsKqgN++y8=",
+            "rev": "1a22be4451a5eadb30011cf00a45b8b21e4347a0",
+            "sha256": "sha256-k5O6Qgx7VfIqQYiCc4B3MDTc7qkU31vekpKNQs7ggrs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "c693bdbfcc90a1c5e200474fb2c5bde2ed2dd73e"
+        "version": "1a22be4451a5eadb30011cf00a45b8b21e4347a0"
     },
     "libdrm": {
         "cargoLock": null,
@@ -126,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff",
-            "sha256": "sha256-FdmQjAXbm53Gdly9vuo0ihKdCno4cJOwWopwMB1O8Us=",
+            "rev": "ff67b27f485a944963ce0a0e83e53b68f100701a",
+            "sha256": "sha256-87AMZQy8RAs29kyU0nNiWG1Hp8wXvKyb4nQP044HScQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "fa867cf1895bca4ec2b3f4708e6e7e4b946dafff"
+        "version": "ff67b27f485a944963ce0a0e83e53b68f100701a"
     },
     "modengine3": {
         "cargoLock": null,

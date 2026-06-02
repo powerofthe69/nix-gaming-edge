@@ -119,6 +119,27 @@
         },
         "version": "121125"
     },
+    "openssl-cmake": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "openssl-cmake",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jimmy-park",
+            "repo": "openssl-cmake",
+            "rev": "3.6.2",
+            "sha256": "sha256-Bkq49d+fcEAvV477gfUg2km/94KjkDKXFS6wukzyDWk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3.6.2"
+    },
     "quazip": {
         "cargoLock": null,
         "date": "2025-07-17",

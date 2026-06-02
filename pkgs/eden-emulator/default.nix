@@ -49,6 +49,7 @@ let
     frozen = cpm.frozen.src;
     httplib = cpm.httplib.src;
     lagoon = cpm.lagoon.src;
+    openssl-cmake = cpm.openssl-cmake.src;
     QuaZip-Qt6 = cpm.quazip.src;
     SimpleIni = cpm.simpleini.src;
     sirit = cpm.sirit.src;
