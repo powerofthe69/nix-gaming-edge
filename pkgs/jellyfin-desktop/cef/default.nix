@@ -3,19 +3,6 @@
   source,
 }:
 
-# nixpkgs.cef-binary override pinned to the CEF release in jellyfin-desktop's
-# CEF_VERSION file. Swap src for the nvfetcher-prefetched tarball; the
-# default-version fetchurl still evaluates but never realizes.
-#
-# Two consumers want different layouts at the same prefix:
-#   xtask --external-cef expects the SDK as shipped (include/, Release/,
-#     Resources/, CMakeLists.txt, cmake/, libcef_dll/), which is already what
-#     cef-binary produces at $out.
-#   cef-dll-sys's build.rs expects Release/ and Resources/ flattened into the
-#     root plus an archive.json sentinel that download-cef checks. We stitch
-#     that view under $out/cef-dll-sys/ with symlinks, and the main derivation
-#     points CEF_PATH at it.
-
 let
   inherit (pkgs) lib;
   shortVersion = lib.head (lib.splitString "+" source.version);
@@ -59,5 +46,14 @@ pkgs.cef-binary.overrideAttrs (old: {
       "sha1": ""
     }
     EOF
+
+    # CEF loads its resource bundle (icudtl.dat, the *.pak files, locales/) from
+    # the dir containing libcef.so. The binary's RPATH resolves that to
+    # $out/Release, but upstream ships the data only under Resources/ — so
+    # CefInitialize aborts in InitializeICU when icudtl.dat is missing. Mirror
+    # the data into Release/ to make it a self-contained runtime dir.
+    for f in icudtl.dat chrome_100_percent.pak chrome_200_percent.pak resources.pak locales; do
+      ln -s "../Resources/$f" "$out/Release/$f"
+    done
   '';
 })
