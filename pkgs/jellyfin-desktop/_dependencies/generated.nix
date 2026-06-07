@@ -8,10 +8,10 @@
 {
   jellyfin-desktop-cef = {
     pname = "jellyfin-desktop-cef";
-    version = "148.0.9+g0d9d52a+chromium-148.0.7778.180";
+    version = "148.0.10+g7ee53f5+chromium-148.0.7778.218";
     src = fetchurl {
-      url = "https://cef-builds.spotifycdn.com/cef_binary_148.0.9+g0d9d52a+chromium-148.0.7778.180_linux64_minimal.tar.bz2";
-      sha256 = "sha256-k8TnU9qgVP97WBi/3WvQ/5UKJEH5WktzpEHNJdYY8kw=";
+      url = "https://cef-builds.spotifycdn.com/cef_binary_148.0.10+g7ee53f5+chromium-148.0.7778.218_linux64_minimal.tar.bz2";
+      sha256 = "sha256-tKcIC8OtMgjppwBQJsXwaXaN7lEr8ivJKRt7Nm6j+Mw=";
     };
   };
   jellyfin-desktop-libmpv = {
