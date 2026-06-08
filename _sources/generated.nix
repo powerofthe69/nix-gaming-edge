@@ -57,17 +57,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "7df40637975f7a1194cb9238d901979d75fbda5c";
+    version = "3500d01d10313cc1b05aa25520921144ac3191d4";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "7df40637975f7a1194cb9238d901979d75fbda5c";
+      rev = "3500d01d10313cc1b05aa25520921144ac3191d4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-r3Lh1YzrlH/cmeG2md5U++ECMfp/wD5CdD9o9tEmhr4=";
+      sha256 = "sha256-szRqbLFryw31UlCMrj23xmC6vNulzylyh04B233eSrc=";
     };
-    date = "2026-06-06";
+    date = "2026-06-07";
   };
   libdrm = {
     pname = "libdrm";
@@ -85,17 +85,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "b9c763454e6642dc90e47506d5b56f00c4b9b773";
+    version = "43b110dd62cd386c5ccdca73defe1b30a8cd972b";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b9c763454e6642dc90e47506d5b56f00c4b9b773";
+      rev = "43b110dd62cd386c5ccdca73defe1b30a8cd972b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-x6jbCpnQtVEN5Oyt27i0rRn1AOvr+D3G4+537jjsFtM=";
+      sha256 = "sha256-uRdil98Ge3DPTnMEhwSJtjLIH8Hk9PuoMPiy2qserBQ=";
     };
-    date = "2026-06-06";
+    date = "2026-06-08";
   };
   modengine3 = {
     pname = "modengine3";
@@ -203,16 +203,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "3de6742006076df4be038cbd325d011c93a1db90";
+    version = "ee78491a237eaff9389a0ccf8680521d074407d3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "3de6742006076df4be038cbd325d011c93a1db90";
+      rev = "ee78491a237eaff9389a0ccf8680521d074407d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-B6DKqyVFGIkKkK23uQr12whN2d73El94CUMZbMroDDM=";
+      sha256 = "sha256-kYCbEbh4C4FnqJzwrI+6soYTm5qffEor1Rn2B2f1IKA=";
     };
-    date = "2026-05-30";
+    date = "2026-06-07";
   };
 }

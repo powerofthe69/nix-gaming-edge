@@ -76,7 +76,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-06-06",
+        "date": "2026-06-07",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7df40637975f7a1194cb9238d901979d75fbda5c",
-            "sha256": "sha256-r3Lh1YzrlH/cmeG2md5U++ECMfp/wD5CdD9o9tEmhr4=",
+            "rev": "3500d01d10313cc1b05aa25520921144ac3191d4",
+            "sha256": "sha256-szRqbLFryw31UlCMrj23xmC6vNulzylyh04B233eSrc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "7df40637975f7a1194cb9238d901979d75fbda5c"
+        "version": "3500d01d10313cc1b05aa25520921144ac3191d4"
     },
     "libdrm": {
         "cargoLock": null,
@@ -116,7 +116,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-06-06",
+        "date": "2026-06-08",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -126,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b9c763454e6642dc90e47506d5b56f00c4b9b773",
-            "sha256": "sha256-x6jbCpnQtVEN5Oyt27i0rRn1AOvr+D3G4+537jjsFtM=",
+            "rev": "43b110dd62cd386c5ccdca73defe1b30a8cd972b",
+            "sha256": "sha256-uRdil98Ge3DPTnMEhwSJtjLIH8Hk9PuoMPiy2qserBQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "b9c763454e6642dc90e47506d5b56f00c4b9b773"
+        "version": "43b110dd62cd386c5ccdca73defe1b30a8cd972b"
     },
     "modengine3": {
         "cargoLock": null,
@@ -316,7 +316,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-05-30",
+        "date": "2026-06-07",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -326,12 +326,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3de6742006076df4be038cbd325d011c93a1db90",
-            "sha256": "sha256-B6DKqyVFGIkKkK23uQr12whN2d73El94CUMZbMroDDM=",
+            "rev": "ee78491a237eaff9389a0ccf8680521d074407d3",
+            "sha256": "sha256-kYCbEbh4C4FnqJzwrI+6soYTm5qffEor1Rn2B2f1IKA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "3de6742006076df4be038cbd325d011c93a1db90"
+        "version": "ee78491a237eaff9389a0ccf8680521d074407d3"
     }
 }
