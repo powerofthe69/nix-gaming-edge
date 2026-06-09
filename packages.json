@@ -1,69 +1,69 @@
 {
   "include": [
     {
-      "name": "mesa",
-      "packages": "mesa-git mesa32-git",
-      "runner": ["self-hosted", "heavy-tasks"]
-    },
-    {
-      "name": "pseudoregalia",
-      "packages": "pseudoregalia-rando",
-      "runner": ["self-hosted", "heavy-tasks"]
+      "name": "discord",
+      "packages": "discord vencord",
+      "runner": ["self-hosted"]
     },
     {
       "name": "eden-emulator",
       "packages": "eden-emulator",
-      "runner": ["self-hosted", "heavy-tasks"]
-    },
-    {
-      "name": "discord",
-      "packages": "discord vencord",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "hytale",
-      "packages": "hytale-launcher",
-      "runner": ["self-hosted", "light-tasks"]
+      "runner": ["self-hosted"]
     },
     {
       "name": "fluxer-desktop",
       "packages": "fluxer-desktop",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "proton",
-      "packages": "proton-cachyos proton-cachyos-x86_64-v3",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "vintagestory",
-      "packages": "vintagestory",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "pokemmo",
-      "packages": "pokemmo",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "modengine3",
-      "packages": "modengine3",
-      "runner": ["self-hosted", "light-tasks"]
-    },
-    {
-      "name": "opengoal",
-      "packages": "opengoal-launcher",
-      "runner": ["self-hosted", "light-tasks"]
+      "runner": ["self-hosted"]
     },
     {
       "name": "harkinian",
       "packages": "shipwright _2ship2harkinian",
-      "runner": ["self-hosted", "heavy-tasks"]
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "hytale",
+      "packages": "hytale-launcher",
+      "runner": ["self-hosted"]
     },
     {
       "name": "jellyfin-desktop",
       "packages": "jellyfin-desktop",
-      "runner": ["self-hosted", "heavy-tasks"]
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "mesa",
+      "packages": "mesa-git mesa32-git",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "modengine3",
+      "packages": "modengine3",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "opengoal",
+      "packages": "opengoal-launcher",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "pokemmo",
+      "packages": "pokemmo",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "proton",
+      "packages": "proton-cachyos proton-cachyos-x86_64-v3",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "pseudoregalia",
+      "packages": "pseudoregalia-rando",
+      "runner": ["self-hosted"]
+    },
+    {
+      "name": "vintagestory",
+      "packages": "vintagestory",
+      "runner": ["self-hosted"]
     }
   ]
 }
