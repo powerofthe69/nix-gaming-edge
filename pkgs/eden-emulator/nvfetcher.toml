@@ -18,7 +18,7 @@ src.git = "https://github.com/serge-sans-paille/frozen.git"
 fetch.github = "serge-sans-paille/frozen"
 
 [httplib]
-src.manual = "v0.37.0"
+src.manual = "v0.46.0"
 fetch.github = "yhirose/cpp-httplib"
 
 [lagoon]

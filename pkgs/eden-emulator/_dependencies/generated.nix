@@ -44,13 +44,13 @@
   };
   httplib = {
     pname = "httplib";
-    version = "v0.37.0";
+    version = "v0.46.0";
     src = fetchFromGitHub {
       owner = "yhirose";
       repo = "cpp-httplib";
-      rev = "v0.37.0";
+      rev = "v0.46.0";
       fetchSubmodules = false;
-      sha256 = "sha256-I7mfT4Eb5sXUURReq3nzQRUhI4sMx4wQpdJBw+vOA/s=";
+      sha256 = "sha256-Vzr51oo344jFNwmqdtLWxClJpuCTzmnMqXyLCz8UZj4=";
     };
   };
   lagoon = {

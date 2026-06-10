@@ -16,16 +16,16 @@
   };
   jellyfin-desktop-libmpv = {
     pname = "jellyfin-desktop-libmpv";
-    version = "3ccd26745a4d746367fd04e288a3eab004b0bd47";
+    version = "a4399f48b4c872e5b8a0eb83ba3ff9b1f7a7add6";
     src = fetchgit {
       url = "https://github.com/andrewrabert/mpv.git";
-      rev = "3ccd26745a4d746367fd04e288a3eab004b0bd47";
+      rev = "a4399f48b4c872e5b8a0eb83ba3ff9b1f7a7add6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GcFGk+2MwrF+0BDIN7LsZajkkaaCdAT1JE5wE/mqSwo=";
+      sha256 = "sha256-26dK2aL5v+Lo7dnlm1SeIH3zYr5UP0p5eCxmTxGemyU=";
     };
-    date = "2026-05-28";
+    date = "2026-06-08";
   };
 }
