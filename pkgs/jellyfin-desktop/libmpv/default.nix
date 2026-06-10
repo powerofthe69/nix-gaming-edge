@@ -16,9 +16,13 @@
 let
   inherit (pkgs) lib;
 
-  libmpv = pkgs.mpv-unwrapped.overrideAttrs (_old: {
+  libmpv = pkgs.mpv-unwrapped.overrideAttrs (old: {
     pname = "jellyfin-desktop-libmpv-unmerged";
     inherit (source) version src;
+
+    prePatch = (old.prePatch or "") + ''
+      sed -i "s|conf_data\.set_quoted('CONFIGURATION'.*|conf_data.set_quoted('CONFIGURATION', meson.build_options())|" meson.build
+    '';
 
     # mpv self-reports "0.41.0-UNKNOWN" because fetchgit drops .git, so
     # versionCheckHook (greps for `version` in `mpv --version`) fails on
