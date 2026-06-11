@@ -196,12 +196,12 @@
             "name": null,
             "owner": "eden-emulator",
             "repo": "sirit",
-            "rev": "v1.0.4",
-            "sha256": "sha256-ThyUaoVmnYz9eQ1a19BbLhqfOpPxRjSovBl2wvlfRoI=",
+            "rev": "v1.0.5",
+            "sha256": "sha256-T4f1C33rh8KEXPyxPiIbdDUQLGT3ufTIt4XmgSsLRpA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.0.4"
+        "version": "v1.0.5"
     },
     "unordered-dense": {
         "cargoLock": null,

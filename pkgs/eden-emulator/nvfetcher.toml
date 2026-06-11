@@ -40,7 +40,7 @@ src.manual = "v4.25"
 fetch.github = "brofield/simpleini"
 
 [sirit]
-src.manual = "v1.0.4"
+src.manual = "v1.0.5"
 fetch.github = "eden-emulator/sirit"
 
 [unordered-dense]

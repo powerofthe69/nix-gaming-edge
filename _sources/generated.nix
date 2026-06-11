@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "eaad33adcdfdddbf6d6aec7afdd3df9e1ceed3d5";
+    version = "5219b9f3d2b92802352dda16273d520abbe179b4";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "eaad33adcdfdddbf6d6aec7afdd3df9e1ceed3d5";
+      rev = "5219b9f3d2b92802352dda16273d520abbe179b4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HGDJsWXRvPfEJYHEbyluhreg3LR9PABHNC3I6CHG2Cc=";
+      sha256 = "sha256-LiFV8XaCvASEzABOzaqbgc1oQ4ysfjI39a4u+RMaCHo=";
     };
-    date = "2026-06-09";
+    date = "2026-06-10";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -49,25 +49,25 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.06.08-c407342";
+    version = "2026.06.11-34646dd";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.08-c407342.zip";
-      sha256 = "sha256-zUTjWyF6aZWY/LYrHYOXPawji/bTdKtn84axd4f+jjQ=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.11-34646dd.zip";
+      sha256 = "sha256-hlWci2PXCaoTFoStkolRk7JimzyEm+2qg8//RvEqBLc=";
     };
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "814e79c2c30ccaa45cda7a84ac837fb4571fbcbc";
+    version = "72867f3617da0b6ef8700b7912fea03b9488c4c0";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "814e79c2c30ccaa45cda7a84ac837fb4571fbcbc";
+      rev = "72867f3617da0b6ef8700b7912fea03b9488c4c0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-BmZV2Vthx2ljIDEiuSOKFWGTCnWzlUP6jDSTNk+dKIU=";
+      sha256 = "sha256-S4LeR4CNl63u+Ym+2BIY1ZadL5q0V1HXO6Y/7aGB4tk=";
     };
-    date = "2026-06-09";
+    date = "2026-06-11";
   };
   libdrm = {
     pname = "libdrm";
@@ -85,17 +85,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "1a9a0a15f7cafdbdb3037bb109b6d77bf282d41c";
+    version = "924ccc2f6c8edc7a42ee1f6e7ad2e637d87a3633";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "1a9a0a15f7cafdbdb3037bb109b6d77bf282d41c";
+      rev = "924ccc2f6c8edc7a42ee1f6e7ad2e637d87a3633";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-zP2fYGQwT5TmdnORgoVWivna0ioo+s1pev/jLcOnYrU=";
+      sha256 = "sha256-EsXfT0dTlwO6x/WWt+A+bTa7HRNLYtxCxgl9qImRz2M=";
     };
-    date = "2026-06-10";
+    date = "2026-06-11";
   };
   modengine3 = {
     pname = "modengine3";
@@ -131,18 +131,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260521-slr";
+    version = "cachyos-11.0-20260601-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64.tar.xz";
-      sha256 = "sha256-svDsjpMbAsvLV1xvTPHzeTKmSKOt0nHdfdEvE5X1tyw=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64.tar.xz";
+      sha256 = "sha256-N2bcB4voaFNlRpAyQ6NvDCw/tSwfC5tHXuIPV0+puZs=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260521-slr";
+    version = "cachyos-11.0-20260601-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260521-slr/proton-cachyos-11.0-20260521-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-hWkZ+22va9Icx8DEj80k3lZId/jv/ETxXmB8UdwIz6U=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260601-slr/proton-cachyos-11.0-20260601-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-bxGB0L/MZ0TwZ//rffW52LeD1nWeF4ZK4fIjPPNuAIE=";
     };
   };
   pseudoregalia-rando = {
