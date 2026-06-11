@@ -28,6 +28,9 @@ pkgs.stdenv.mkDerivation {
     "steamcompattool"
   ];
 
+  # dead symlinks in upstream, ignore them
+  dontCheckForBrokenSymlinks = true;
+
   installPhase = ''
     runHook preInstall
 
