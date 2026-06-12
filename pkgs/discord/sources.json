@@ -6,14 +6,34 @@
     "hash": "sha256-lg+exxWrgVqXWucV2X06yCSVWyIwGxdm5AjOcmcp++U="
   },
   "modules": {
+    "discord_dispatch": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_dispatch/1/full.distro",
+      "hash": "sha256-tAVq/M6xK6edKLdvhfs12rPPtsrqlRtGCbcLOpjH9D4=",
+      "version": 1
+    },
+    "discord_zstd": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_zstd/1/full.distro",
+      "hash": "sha256-I3Sr4lXS+qnz2NAC17ugYRpEuMlxBk679aPb59olNsU=",
+      "version": 1
+    },
+    "discord_modules": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_modules/1/full.distro",
+      "hash": "sha256-bn29SNQVK05AFfR4MAbw/0NK3x/auakWAP81lcDDt6o=",
+      "version": 1
+    },
+    "discord_cloudsync": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_cloudsync/1/full.distro",
+      "hash": "sha256-NeyrROQxi92+lmIojpFQuhNuSBxSd/axcksLOVXyw2A=",
+      "version": 1
+    },
     "discord_rpc": {
       "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_rpc/1/full.distro",
       "hash": "sha256-L/DkEJAZC49PwItLcq8oFvtW4rODcJOsI94LRS00v0A=",
       "version": 1
     },
-    "discord_krisp": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_krisp/1/full.distro",
-      "hash": "sha256-4qcJQtYUA/0nkpcKInOj17D5cycIULPn3MGYbb+fNjk=",
+    "discord_spellcheck": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_spellcheck/1/full.distro",
+      "hash": "sha256-oIczS8x3jmDtzGzQ/T5oYOOu2auxJ8KfGn30Y57RMr0=",
       "version": 1
     },
     "discord_utils": {
@@ -26,9 +46,9 @@
       "hash": "sha256-9Ia+2MOjvXPC2I41IIfT/32KqpnS9z6mLeF7J353Luc=",
       "version": 1
     },
-    "discord_zstd": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_zstd/1/full.distro",
-      "hash": "sha256-I3Sr4lXS+qnz2NAC17ugYRpEuMlxBk679aPb59olNsU=",
+    "discord_erlpack": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_erlpack/1/full.distro",
+      "hash": "sha256-FWKKU60+8u5WUTiiUmZtObFC4eOf+XJKmoYvJJCaQoA=",
       "version": 1
     },
     "discord_voice": {
@@ -36,34 +56,14 @@
       "hash": "sha256-NcS5lzX2aImPhZ6ngDKTQc3aBbCxFQITT4SwQ0WRXS4=",
       "version": 1
     },
-    "discord_cloudsync": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_cloudsync/1/full.distro",
-      "hash": "sha256-NeyrROQxi92+lmIojpFQuhNuSBxSd/axcksLOVXyw2A=",
-      "version": 1
-    },
-    "discord_modules": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_modules/1/full.distro",
-      "hash": "sha256-bn29SNQVK05AFfR4MAbw/0NK3x/auakWAP81lcDDt6o=",
-      "version": 1
-    },
-    "discord_erlpack": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_erlpack/1/full.distro",
-      "hash": "sha256-FWKKU60+8u5WUTiiUmZtObFC4eOf+XJKmoYvJJCaQoA=",
+    "discord_krisp": {
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_krisp/1/full.distro",
+      "hash": "sha256-4qcJQtYUA/0nkpcKInOj17D5cycIULPn3MGYbb+fNjk=",
       "version": 1
     },
     "discord_desktop_core": {
       "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_desktop_core/1/full.distro",
       "hash": "sha256-JbFW7c17LxV8APFngjvxigjxIj43m7YXeAd5yRkSKMY=",
-      "version": 1
-    },
-    "discord_dispatch": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_dispatch/1/full.distro",
-      "hash": "sha256-tAVq/M6xK6edKLdvhfs12rPPtsrqlRtGCbcLOpjH9D4=",
-      "version": 1
-    },
-    "discord_spellcheck": {
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.142/discord_spellcheck/1/full.distro",
-      "hash": "sha256-oIczS8x3jmDtzGzQ/T5oYOOu2auxJ8KfGn30Y57RMr0=",
       "version": 1
     }
   }

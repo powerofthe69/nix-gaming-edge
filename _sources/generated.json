@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-hlWci2PXCaoTFoStkolRk7JimzyEm+2qg8//RvEqBLc=",
+            "sha256": "sha256-SKL7KpoffZoNa7J4YGD71wJ/U+yTVirz1ZVslAEBsNE=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.11-34646dd.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.11-00b733c.zip"
         },
-        "version": "2026.06.11-34646dd"
+        "version": "2026.06.11-00b733c"
     },
     "jellyfin-desktop": {
         "cargoLock": null,
@@ -96,7 +96,7 @@
     },
     "libdrm": {
         "cargoLock": null,
-        "date": "2026-05-29",
+        "date": "2026-06-11",
         "extract": null,
         "name": "libdrm",
         "passthru": null,
@@ -106,17 +106,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e984d448b8b17aab853369e6c203e53719f46de1",
-            "sha256": "sha256-btHG+p8FJObTl/k04bDaRb7hclVtyijjLHqrFJ9aIM8=",
+            "rev": "35c7c536d5d1c0124a416a531df4432508d7d2f1",
+            "sha256": "sha256-7+PoH4c98Hf30wxX2mooD9OMTGpSqjJueMrVrmF6w98=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/drm.git"
         },
-        "version": "e984d448b8b17aab853369e6c203e53719f46de1"
+        "version": "35c7c536d5d1c0124a416a531df4432508d7d2f1"
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-06-11",
+        "date": "2026-06-12",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -126,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "924ccc2f6c8edc7a42ee1f6e7ad2e637d87a3633",
-            "sha256": "sha256-EsXfT0dTlwO6x/WWt+A+bTa7HRNLYtxCxgl9qImRz2M=",
+            "rev": "a07ded8e8cf1d2f2b758ebb0520a7845f608c284",
+            "sha256": "sha256-oj1+jUZR8cxN4SDEk2Cn7x0SQV5F+we9/Qj76zxkBHw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "924ccc2f6c8edc7a42ee1f6e7ad2e637d87a3633"
+        "version": "a07ded8e8cf1d2f2b758ebb0520a7845f608c284"
     },
     "modengine3": {
         "cargoLock": null,
