@@ -21,7 +21,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-06-10",
+        "date": "2026-06-13",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5219b9f3d2b92802352dda16273d520abbe179b4",
-            "sha256": "sha256-LiFV8XaCvASEzABOzaqbgc1oQ4ysfjI39a4u+RMaCHo=",
+            "rev": "eb8086a0119ff25a9b1b97df46bc62faba87f911",
+            "sha256": "sha256-WWYjfexI5K3DWPIhfUBPh/JE1bzn2fxsaUDFg2UB6p8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "5219b9f3d2b92802352dda16273d520abbe179b4"
+        "version": "eb8086a0119ff25a9b1b97df46bc62faba87f911"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -76,7 +76,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-06-11",
+        "date": "2026-06-12",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -86,13 +86,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "72867f3617da0b6ef8700b7912fea03b9488c4c0",
-            "sha256": "sha256-S4LeR4CNl63u+Ym+2BIY1ZadL5q0V1HXO6Y/7aGB4tk=",
+            "rev": "7de39a1f16bbbf4568f1181d404cf73f01a84467",
+            "sha256": "sha256-fUdOYWEA1S2Uk3qEQPrqMPTeyx3o7/pqIta8Z3/ZrNM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "72867f3617da0b6ef8700b7912fea03b9488c4c0"
+        "version": "7de39a1f16bbbf4568f1181d404cf73f01a84467"
     },
     "libdrm": {
         "cargoLock": null,
@@ -126,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a07ded8e8cf1d2f2b758ebb0520a7845f608c284",
-            "sha256": "sha256-oj1+jUZR8cxN4SDEk2Cn7x0SQV5F+we9/Qj76zxkBHw=",
+            "rev": "8faf71d84f0ef92538107d132ff48f7179e922d4",
+            "sha256": "sha256-GSInJ7hUcZ2bI7LhYOaST1fpRNgLdAUHKxqK8WPB4OY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "a07ded8e8cf1d2f2b758ebb0520a7845f608c284"
+        "version": "8faf71d84f0ef92538107d132ff48f7179e922d4"
     },
     "modengine3": {
         "cargoLock": null,

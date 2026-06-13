@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "5219b9f3d2b92802352dda16273d520abbe179b4";
+    version = "eb8086a0119ff25a9b1b97df46bc62faba87f911";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "5219b9f3d2b92802352dda16273d520abbe179b4";
+      rev = "eb8086a0119ff25a9b1b97df46bc62faba87f911";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LiFV8XaCvASEzABOzaqbgc1oQ4ysfjI39a4u+RMaCHo=";
+      sha256 = "sha256-WWYjfexI5K3DWPIhfUBPh/JE1bzn2fxsaUDFg2UB6p8=";
     };
-    date = "2026-06-10";
+    date = "2026-06-13";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -57,17 +57,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "72867f3617da0b6ef8700b7912fea03b9488c4c0";
+    version = "7de39a1f16bbbf4568f1181d404cf73f01a84467";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "72867f3617da0b6ef8700b7912fea03b9488c4c0";
+      rev = "7de39a1f16bbbf4568f1181d404cf73f01a84467";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-S4LeR4CNl63u+Ym+2BIY1ZadL5q0V1HXO6Y/7aGB4tk=";
+      sha256 = "sha256-fUdOYWEA1S2Uk3qEQPrqMPTeyx3o7/pqIta8Z3/ZrNM=";
     };
-    date = "2026-06-11";
+    date = "2026-06-12";
   };
   libdrm = {
     pname = "libdrm";
@@ -85,15 +85,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "a07ded8e8cf1d2f2b758ebb0520a7845f608c284";
+    version = "8faf71d84f0ef92538107d132ff48f7179e922d4";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "a07ded8e8cf1d2f2b758ebb0520a7845f608c284";
+      rev = "8faf71d84f0ef92538107d132ff48f7179e922d4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-oj1+jUZR8cxN4SDEk2Cn7x0SQV5F+we9/Qj76zxkBHw=";
+      sha256 = "sha256-GSInJ7hUcZ2bI7LhYOaST1fpRNgLdAUHKxqK8WPB4OY=";
     };
     date = "2026-06-12";
   };
