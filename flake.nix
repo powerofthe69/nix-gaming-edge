@@ -173,6 +173,9 @@
       };
 
       overlays = {
+        # Inside FHS envs, swap stable libdrm for libdrm-git (mesa-git needs it)
+        libdrmGitFhsenv = import ./overlays/libdrm-git-fhsenv.nix;
+
         default = final: prev: {
           mesa-git = self.packages.${final.stdenv.hostPlatform.system}.mesa-git;
           mesa32-git = self.packages.${final.stdenv.hostPlatform.system}.mesa32-git;

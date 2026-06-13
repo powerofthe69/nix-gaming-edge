@@ -324,63 +324,10 @@ in
         "libdrm_nouveau.so.2"
       ];
 
-      # mesa-git correctly uses libdrm-git and now fails inside any FHS env that ships stable libdrm (e.g. Steam!)
-      nixpkgs.overlays = [
-        (
-          final: prev:
-          let
-            # match libdrm to arch or the 64-bit lib lands in the 32-bit path
-            withLibdrmGit =
-              p:
-              if p.stdenv.hostPlatform.is32bit then
-                p.extend (_: _: { libdrm = final.libdrm32-git; })
-              else
-                p.extend (
-                  _: prev': {
-                    libdrm = final.libdrm-git;
-                    pkgsi686Linux = prev'.pkgsi686Linux.extend (
-                      _: _: {
-                        libdrm = final.libdrm32-git;
-                      }
-                    );
-                  }
-                );
-            # Returns a callable attrset (functor) that preserves `.override`.
-            # `pkgs.buildFHSEnv` is `makeOverridable buildFHSEnv'`, and callers
-            # like nixos/modules/programs/steam.nix do
-            #   buildFHSEnv = pkgs.buildFHSEnv.override { ... };
-            # to swap in setuid bubblewrap when gamescopeSession + capSysNice
-            # are both enabled. A plain function loses `.override`, so that
-            # callsite fails with "expected a set but found a function".
-            wrapFhsEnv =
-              orig:
-              let
-                wrap =
-                  args:
-                  orig (
-                    args
-                    // lib.optionalAttrs (args ? targetPkgs) {
-                      targetPkgs = p: args.targetPkgs (withLibdrmGit p);
-                    }
-                    // lib.optionalAttrs (args ? multiPkgs) {
-                      multiPkgs = p: args.multiPkgs (withLibdrmGit p);
-                    }
-                  );
-              in
-              {
-                __functor = _: wrap;
-              }
-              // lib.optionalAttrs (orig ? override) {
-                override = newArgs: wrapFhsEnv (orig.override newArgs);
-              };
-          in
-          {
-            # buildFHSEnv is an alias; some packages call it directly, wrap both.
-            buildFHSEnv = wrapFhsEnv prev.buildFHSEnv;
-            buildFHSEnvBubblewrap = wrapFhsEnv prev.buildFHSEnvBubblewrap;
-          }
-        )
-      ];
+      # mesa-git correctly uses libdrm-git and now fails inside any FHS env that
+      # ships stable libdrm (e.g. Steam!). Overlay lives in a shared file so a
+      # cache builder can apply the identical swap — see overlays/libdrm-git-fhsenv.nix.
+      nixpkgs.overlays = [ (import ../overlays/libdrm-git-fhsenv.nix) ];
     })
 
     (lib.mkIf (cfg.enable && cfg.withStableFallback) {
