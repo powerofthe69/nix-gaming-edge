@@ -35,7 +35,7 @@
   libXi,
   libXrandr,
   libXrender,
-  libXt, # stable's uiohook-napi
+  libXt,
   libXtst,
   libxcb,
   libxkbcommon,
@@ -46,9 +46,8 @@
   pipewire,
   systemd,
   wayland,
-  # nvfetcher entry (nvSources.fluxer-desktop / .fluxer-desktop-canary): provides
-  # the prebuilt tarball src + version, with the hash managed by nvfetcher.
   source,
+
   # "stable" or "canary"
   channel ? "canary",
 }:

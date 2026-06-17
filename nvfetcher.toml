@@ -73,9 +73,7 @@ fetch.git = "https://github.com/Vendicated/Vencord.git"
 src.github = "garyttierney/me3"
 fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linux-amd64.tar.gz"
 
-# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix).
-# Version comes from the channel manifest.json; the artifact is the "latest"
-# tarball endpoint, so the nightly nvfetcher run refreshes version + hash.
+# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix)
 [fluxer-desktop]
 src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://api.fluxer.app/dl/desktop/stable/linux/x64/manifest.json"
