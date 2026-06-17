@@ -21,31 +21,33 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "5ebb5b8772452f6144358bb12c7bd0443e3711ae";
+    version = "ce14fc91fb84c51650f57c059396756e1fc3c4cf";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "5ebb5b8772452f6144358bb12c7bd0443e3711ae";
+      rev = "ce14fc91fb84c51650f57c059396756e1fc3c4cf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-V+G2sedXFpYT2sx3F74894d56pzILshLK5swr4krKGI=";
+      sha256 = "sha256-8D8gc7hiMiFo73l/Q1scEnQZD1mloKg0gMtzjcFB1UE=";
     };
-    date = "2026-06-15";
+    date = "2026-06-16";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "ee1f27fe1a372b5291aead8042944afd706bf5db";
-    src = fetchgit {
-      url = "https://github.com/fluxerapp/fluxer";
-      rev = "ee1f27fe1a372b5291aead8042944afd706bf5db";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-94rLtgG5s/aJfNL2v/KTqLOnGsT05Qy6l3jPuL15SkE=";
+    version = "0.0.8";
+    src = fetchurl {
+      url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz";
+      sha256 = "sha256-rPY5j6aBByD+2FsGwBGzJOfbT+xr8vx62TwkRsNgDy0=";
     };
-    date = "2026-04-09";
+  };
+  fluxer-desktop-canary = {
+    pname = "fluxer-desktop-canary";
+    version = "2026.602.31138";
+    src = fetchurl {
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
+      sha256 = "sha256-IhzEcYaCcClCO/qIYkEo2JsTLEB+K0+cQWCaJO1Zz7A=";
+    };
   };
   hytale-launcher = {
     pname = "hytale-launcher";
@@ -85,17 +87,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "7c018be258d107f74c79a4f0dd37cf42486889e1";
+    version = "4d92a069ff93316aa7fb798ed8317476032c5e49";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "7c018be258d107f74c79a4f0dd37cf42486889e1";
+      rev = "4d92a069ff93316aa7fb798ed8317476032c5e49";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-pMzQy7zzOeLDjQcN2U6Tt63IfFmosMTnTo7caL4gAfU=";
+      sha256 = "sha256-JsyZNqDpG+UEcHOHvWV12RQ74qz4n48itHTmJcP1RI8=";
     };
-    date = "2026-06-15";
+    date = "2026-06-16";
   };
   modengine3 = {
     pname = "modengine3";
