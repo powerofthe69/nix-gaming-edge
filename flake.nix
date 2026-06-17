@@ -77,9 +77,14 @@
         vencordSrc = nvSources.vencord;
       };
 
-      # Fluxer Desktop
+      # Fluxer Desktop (upstream prebuilt tarballs, patchelf'd)
       fluxer-desktop = pkgs.callPackage ./pkgs/fluxer-desktop {
         source = nvSources.fluxer-desktop;
+        channel = "stable";
+      };
+      fluxer-desktop-canary = pkgs.callPackage ./pkgs/fluxer-desktop {
+        source = nvSources.fluxer-desktop-canary;
+        channel = "canary";
       };
 
       # ModEngine 3
@@ -156,6 +161,7 @@
 
         # Fluxer Desktop
         fluxer-desktop = fluxer-desktop;
+        fluxer-desktop-canary = fluxer-desktop-canary;
 
         # ModEngine 3
         modengine3 = modengine3;
@@ -209,6 +215,7 @@
           vencord = self.packages.${final.stdenv.hostPlatform.system}.vencord;
 
           fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
+          fluxer-desktop-canary = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop-canary;
 
           modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
 
@@ -272,6 +279,7 @@
 
         fluxer = final: prev: {
           fluxer-desktop = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop;
+          fluxer-desktop-canary = self.packages.${final.stdenv.hostPlatform.system}.fluxer-desktop-canary;
         };
 
         modengine3 = final: prev: {

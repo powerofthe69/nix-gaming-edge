@@ -1,131 +1,198 @@
 {
-  autoPatchelfHook,
-  electron,
-  fetchPnpmDeps,
   lib,
-  libglvnd,
-  libXt,
-  libXtst,
-  makeWrapper,
-  nodejs,
-  pipewire,
-  pnpm_10,
-  pnpmConfigHook,
-  source,
   stdenv,
+  autoPatchelfHook,
+  makeWrapper,
+  wrapGAppsHook3,
+  # chromium / electron runtime
+  alsa-lib,
+  at-spi2-atk,
+  at-spi2-core,
+  atk,
+  cairo,
+  cups,
+  dbus,
+  expat,
+  fontconfig,
+  freetype,
+  gdk-pixbuf,
+  glib,
+  gtk3,
+  libdrm,
+  libgbm,
+  libglvnd,
+  libnotify,
+  libpulseaudio,
+  libsecret,
+  libuuid,
+  libX11,
+  libXScrnSaver,
+  libXcomposite,
+  libXcursor,
+  libXdamage,
+  libXext,
+  libXfixes,
+  libXi,
+  libXrandr,
+  libXrender,
+  libXt, # stable's uiohook-napi
+  libXtst,
+  libxcb,
+  libxkbcommon,
+  libxshmfence,
+  nspr,
+  nss,
+  pango,
+  pipewire,
   systemd,
   wayland,
-  wrapGAppsHook3,
+  # nvfetcher entry (nvSources.fluxer-desktop / .fluxer-desktop-canary): provides
+  # the prebuilt tarball src + version, with the hash managed by nvfetcher.
+  source,
+  # "stable" or "canary"
+  channel ? "canary",
 }:
 
 let
-  pnpmHash = lib.fileContents ./pnpm-hash.txt;
-
-  postUnpack = ''
-    chmod u+w ${source.src.name} ${source.src.name}/package.json
-    sed -i '/"packageManager"/d' ${source.src.name}/package.json
-  '';
+  # Per-channel runtime bits; the tarball + version come from nvfetcher (source).
+  channelMeta = {
+    stable = {
+      exe = "fluxer";
+      displayName = "Fluxer";
+    };
+    canary = {
+      exe = "fluxer-canary";
+      displayName = "Fluxer Canary";
+    };
+  };
+  ch = channelMeta.${channel};
 in
 
 stdenv.mkDerivation {
-  pname = "fluxer-desktop";
-  inherit (source) version;
-  src = source.src;
+  inherit (source) pname version src;
 
-  sourceRoot = "${source.src.name}/fluxer_desktop";
-  inherit postUnpack;
-
-  pnpmDeps = fetchPnpmDeps {
-    pname = "fluxer-desktop-pnpm-deps";
-    inherit (source) version;
-    src = source.src;
-    sourceRoot = "${source.src.name}/fluxer_desktop";
-    inherit postUnpack;
-    pnpm = pnpm_10;
-    fetcherVersion = 3;
-    hash = pnpmHash;
-  };
+  # Tarball extracts to a single dir whose name contains spaces + version.
+  unpackPhase = ''
+    runHook preUnpack
+    mkdir -p app
+    tar xf "$src" -C app --strip-components=1
+    runHook postUnpack
+  '';
+  sourceRoot = "app";
 
   nativeBuildInputs = [
     autoPatchelfHook
     makeWrapper
-    nodejs
-    pnpm_10
-    pnpmConfigHook
     wrapGAppsHook3
   ];
 
-  # Only libstdc++ for prebuilt native node addons (@electron-webauthn/native, uiohook-napi)
+  # Patched into the bundled Electron + its .so/.node native addons.
   buildInputs = [
+    alsa-lib
+    at-spi2-atk
+    at-spi2-core
+    atk
+    cairo
+    cups
+    dbus
+    expat
+    fontconfig
+    freetype
+    gdk-pixbuf
+    glib
+    gtk3
+    libdrm
+    libgbm
+    libglvnd
+    libnotify
+    libpulseaudio
+    libsecret
+    libuuid
+    libX11
+    libXScrnSaver
+    libXcomposite
+    libXcursor
+    libXdamage
+    libXext
+    libXfixes
+    libXi
+    libXrandr
+    libXrender
     libXt
     libXtst
-    stdenv.cc.cc.lib
+    libxcb
+    libxkbcommon
+    libxshmfence
+    nspr
+    nss
+    pango
+    pipewire # @fluxer/linux-{audio,screen}-capture
+    systemd # @fluxer/linux-evdev (libudev)
+    stdenv.cc.cc
   ];
 
-  env.ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
-  dontWrapGApps = true;
+  # dlopen'd at runtime (not in DT_NEEDED), so autoPatchelf needs the hint.
+  runtimeDependencies = [ (lib.getLib systemd) ];
 
-  buildPhase = ''
-    runHook preBuild
-    NODE_ENV=production node scripts/build.mjs
-    runHook postBuild
-  '';
+  dontWrapGApps = true;
 
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/lib/fluxer-desktop
-    cp package.json $out/lib/fluxer-desktop/
-    cp -r dist $out/lib/fluxer-desktop/
-    cp -r node_modules $out/lib/fluxer-desktop/
+    mkdir -p $out/opt/fluxer
+    cp -r . $out/opt/fluxer
+
+    # The bundled chrome-sandbox needs to be setuid-root, which a store path
+    # can't be. Remove it so Electron falls back to the user-namespace sandbox
+    # (enabled by default on NixOS).
+    rm -f $out/opt/fluxer/chrome-sandbox
 
     mkdir -p $out/bin
-    makeWrapper ${electron}/bin/electron $out/bin/fluxer \
+    makeWrapper "$out/opt/fluxer/${ch.exe}" "$out/bin/${ch.exe}" \
       "''${gappsWrapperArgs[@]}" \
       --prefix LD_LIBRARY_PATH : "${
-        lib.makeLibraryPath (
-          map lib.getLib [
-            libglvnd
-            pipewire
-            systemd
-            wayland
-          ]
-        )
+        lib.makeLibraryPath [
+          libglvnd
+          pipewire
+          systemd
+          wayland
+        ]
       }" \
-      --add-flags "$out/lib/fluxer-desktop" \
-      --add-flags "\''${NIXOS_OZONE_WL:+--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations}"
+      --add-flags "--ozone-platform-hint=auto" \
+      --add-flags "--enable-features=WaylandWindowDecorations"
+
+    # Canary keeps icons under resources/icons/<size>.png; stable only ships
+    # resources/512x512.png.
+    for size in 16 24 32 48 64 128 256 512; do
+      for cand in "resources/icons/''${size}x''${size}.png" "resources/''${size}x''${size}.png"; do
+        if [ -f "$cand" ]; then
+          install -Dm644 "$cand" "$out/share/icons/hicolor/''${size}x''${size}/apps/${source.pname}.png"
+          break
+        fi
+      done
+    done
 
     mkdir -p $out/share/applications
-    cat > $out/share/applications/fluxer.desktop <<EOF
+    cat > "$out/share/applications/${source.pname}.desktop" <<EOF
     [Desktop Entry]
-    Name=Fluxer
+    Name=${ch.displayName}
     Comment=A chat app that puts you first
-    Exec=$out/bin/fluxer
-    Icon=fluxer
+    Exec=$out/bin/${ch.exe} %U
+    Icon=${source.pname}
     Type=Application
     Categories=Network;Chat;InstantMessaging;
-    StartupWMClass=fluxer_desktop
+    StartupWMClass=${ch.exe}
     EOF
-
-    for size in 16 24 32 48 64 128 256 512 1024; do
-      icon="build_resources/icons-stable/''${size}x''${size}.png"
-      if [ -f "$icon" ]; then
-        install -Dm644 "$icon" "$out/share/icons/hicolor/''${size}x''${size}/apps/fluxer.png"
-      fi
-    done
 
     runHook postInstall
   '';
 
-  meta = with lib; {
-    description = "Fluxer desktop client";
+  meta = {
+    description = "Fluxer desktop client (${channel}, upstream prebuilt)";
     homepage = "https://fluxer.app";
-    license = licenses.agpl3Only;
-    mainProgram = "fluxer";
-    platforms = [
-      "x86_64-linux"
-      "aarch64-linux"
-    ];
-    sourceProvenance = [ sourceTypes.fromSource ];
+    license = lib.licenses.agpl3Only;
+    mainProgram = ch.exe;
+    platforms = [ "x86_64-linux" ];
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
 }

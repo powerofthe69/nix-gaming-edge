@@ -73,10 +73,18 @@ fetch.git = "https://github.com/Vendicated/Vencord.git"
 src.github = "garyttierney/me3"
 fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linux-amd64.tar.gz"
 
-# Fluxer - source build (uses sourceRoot for fluxer_desktop/)
+# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix).
+# Version comes from the channel manifest.json; the artifact is the "latest"
+# tarball endpoint, so the nightly nvfetcher run refreshes version + hash.
 [fluxer-desktop]
-src.git = "https://github.com/fluxerapp/fluxer"
-fetch.git = "https://github.com/fluxerapp/fluxer"
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://api.fluxer.app/dl/desktop/stable/linux/x64/manifest.json"
+fetch.url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz"
+
+[fluxer-desktop-canary]
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/manifest.json"
+fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
 
 # Ship of Harkinian (Shipwright) - Ocarina of Time PC port
 [shipwright]

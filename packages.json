@@ -12,7 +12,7 @@
     },
     {
       "name": "fluxer-desktop",
-      "packages": "fluxer-desktop",
+      "packages": "fluxer-desktop fluxer-desktop-canary",
       "runner": ["self-hosted"]
     },
     {

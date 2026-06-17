@@ -140,10 +140,9 @@ jobs:
 
       - name: Update pnpm hashes
         run: |
-          for pkg in vencord fluxer-desktop; do
+          for pkg in vencord; do
             case $pkg in
               vencord) HASH_FILE=pkgs/discord/vencord-pnpm-hash.txt ;;
-              fluxer-desktop) HASH_FILE=pkgs/fluxer-desktop/pnpm-hash.txt ;;
             esac
 
             echo -n "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > "$HASH_FILE"
@@ -181,7 +180,6 @@ jobs:
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
             pkgs/discord/sources.json
-            pkgs/fluxer-desktop/pnpm-hash.txt
             flake.lock
 
   # Build packages from a matrix
