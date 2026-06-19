@@ -86,7 +86,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-06-13",
+        "date": "2026-06-18",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7ecfcdf816d5221e14a511d10c51d131b7f82249",
-            "sha256": "sha256-7PyfMrYWCcbiIGIViBm1rHB1Ksqv5dfthV2dGi58a/o=",
+            "rev": "ca8ef7f5b62ac09575d4a290c9e10ab3d5d5cf52",
+            "sha256": "sha256-atPXBO+Yt9xscIZWP0CCxzJ7jY0xbYQGBG03jUuoFE8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "7ecfcdf816d5221e14a511d10c51d131b7f82249"
+        "version": "ca8ef7f5b62ac09575d4a290c9e10ab3d5d5cf52"
     },
     "libdrm": {
         "cargoLock": null,
@@ -126,7 +126,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-06-18",
+        "date": "2026-06-19",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -136,13 +136,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "dac0019373a2a2cb2ed8b68b066b13dd3d822ef2",
-            "sha256": "sha256-oa85rBBjPQUosXNd/haWiALtAcGPjXahOMhM4SYg8mQ=",
+            "rev": "1b484501281816ff05b60832601286b1302ac72c",
+            "sha256": "sha256-Q0yDlDGxTQLJyrluMXWBLVjT4IX3oyFSWwuDDqWxD18=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "dac0019373a2a2cb2ed8b68b066b13dd3d822ef2"
+        "version": "1b484501281816ff05b60832601286b1302ac72c"
     },
     "modengine3": {
         "cargoLock": null,
@@ -213,7 +213,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-KeYloyihLtG7BzNh4280H+yKYu8KND07vc3vZfwpZAY=",
+            "sha256": "sha256-qC20cEi08yTC1RMu8mCXbrIf+yl1QBUpFSKzRKzmZTg=",
             "type": "url",
             "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64.tar.xz"
         },
@@ -228,7 +228,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-g74Xzfp1LKNVyTYssAsTZJl/MN/GScFvLwgMKsBxJYs=",
+            "sha256": "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=",
             "type": "url",
             "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz"
         },
