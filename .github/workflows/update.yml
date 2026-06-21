@@ -297,9 +297,9 @@ jobs:
           [ "$NIXPKGS_MASTER" != "$NIXPKGS_NIGHTLY" ] && CHANGED=true
 
           for pkg in proton-cachyos; do
-            MASTER_VER=$(git show origin/master:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].version')
-            NIGHTLY_VER=$(git show origin/nightly:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].version')
-            if [ "$MASTER_VER" != "$NIGHTLY_VER" ]; then
+            MASTER_HASH=$(git show origin/master:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].src.sha256')
+            NIGHTLY_HASH=$(git show origin/nightly:_sources/generated.json | jq -r --arg p "$pkg" '.[$p].src.sha256')
+            if [ "$MASTER_HASH" != "$NIGHTLY_HASH" ]; then
               CHANGED=true
             fi
           done
