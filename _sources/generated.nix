@@ -59,17 +59,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "096a01257fc4993d1b3eb785c5d8176f734d9364";
+    version = "676919e2eca998f2ef048be7a13675731c97c794";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "096a01257fc4993d1b3eb785c5d8176f734d9364";
+      rev = "676919e2eca998f2ef048be7a13675731c97c794";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-pP+NXdI39+vxNkKLsHuibiKhMCOk7+iHC4lBhJpRfeg=";
+      sha256 = "sha256-KatFwFuCrcUm1+A9Msi98Yem6JAQR2OmXHCZtCdhPC4=";
     };
-    date = "2026-06-19";
+    date = "2026-06-20";
   };
   libdrm = {
     pname = "libdrm";
@@ -87,17 +87,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "27e63a959ee44b7b18bce07cb32d7f3c6a08fb4b";
+    version = "4a6f6dd266cce89912d1eb093f141753626ef795";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "27e63a959ee44b7b18bce07cb32d7f3c6a08fb4b";
+      rev = "4a6f6dd266cce89912d1eb093f141753626ef795";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+/4felAVeroa/YqoxrllUeqa4BU5U5MfWQ7H8rkHvbM=";
+      sha256 = "sha256-yae1fFl1oKouVG0sI18yv2a3/FF7bWzbnush25va9nk=";
     };
-    date = "2026-06-20";
+    date = "2026-06-21";
   };
   modengine3 = {
     pname = "modengine3";
