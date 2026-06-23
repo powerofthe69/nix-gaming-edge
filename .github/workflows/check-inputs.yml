@@ -1,0 +1,75 @@
+name: Check inputs
+
+# Cheap hourly poll: dispatch the nightly update.yml early when nixpkgs or
+# proton-cachyos advanced upstream, instead of waiting for the nightly cron.
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: check-inputs
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: write # dispatch update.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          ref: nightly
+
+      - name: Compare locked pins against upstream
+        id: cmp
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # nixpkgs -> NixOS/nixpkgs @ nixos-unstable (ref tip, no tree fetch)
+          npk_locked=$(jq -r '.nodes.nixpkgs.locked.rev' flake.lock)
+          npk_remote=$(git ls-remote https://github.com/NixOS/nixpkgs.git refs/heads/nixos-unstable | cut -f1)
+
+          # proton-cachyos -> CachyOS/proton-cachyos latest release (what src.github tracks)
+          proton_locked=$(jq -r '.["proton-cachyos"].version' _sources/generated.json)
+          proton_remote=$(gh api repos/CachyOS/proton-cachyos/releases/latest -q '.tag_name')
+
+          echo "nixpkgs: locked=$npk_locked upstream=$npk_remote"
+          echo "proton:  locked=$proton_locked upstream=$proton_remote"
+
+          if [ -z "$npk_remote" ] || [ -z "$proton_remote" ] || [ "$proton_remote" = "null" ]; then
+            echo "::error::could not resolve an upstream pin (network/ratelimit?) — not dispatching"
+            exit 1
+          fi
+
+          if [ "$npk_locked" != "$npk_remote" ] || [ "$proton_locked" != "$proton_remote" ]; then
+            echo "An input advanced."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Inputs unchanged — nothing to do."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dispatch update (skip if one is already running/queued)
+        if: steps.cmp.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # update.yml has no concurrency group, so an hourly tick during a run
+          # would pile up a redundant build. Skip if one is already in flight.
+          active=$(gh run list --workflow=update.yml --json status \
+            -q '[.[] | select(.status=="in_progress" or .status=="queued" or .status=="waiting")] | length')
+          if [ "$active" -gt 0 ]; then
+            echo "update already in flight ($active run(s)) — not dispatching."
+            exit 0
+          fi
+
+          gh workflow run update.yml --ref nightly
+          echo "Dispatched update.yml on nightly."

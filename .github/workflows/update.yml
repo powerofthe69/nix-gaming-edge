@@ -46,6 +46,7 @@ jobs:
         run: |
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
           cp pkgs/discord/sources.json /tmp/old-discord-sources.json 2>/dev/null || echo '{}' > /tmp/old-discord-sources.json
+          cp flake.lock /tmp/old-flake.lock
 
       - name: Run nvfetcher to update sources
         env:
@@ -61,6 +62,10 @@ jobs:
 
       - name: Refresh Discord source manifest
         run: ./scripts/sync-discord-deps.py
+
+      # Always bump nixpkgs so a nixpkgs-only advance is a committable change too.
+      - name: Update flake.lock
+        run: nix flake update
 
       - name: Check what changed
         id: check
@@ -95,6 +100,15 @@ jobs:
             CHANGES="${CHANGES}discord: ${NEW_DISCORD}"
           fi
 
+          OLD_NIXPKGS=$(jq -r '.nodes.nixpkgs.locked.rev // "none"' /tmp/old-flake.lock)
+          NEW_NIXPKGS=$(jq -r '.nodes.nixpkgs.locked.rev // "none"' flake.lock)
+          if [ "$OLD_NIXPKGS" != "$NEW_NIXPKGS" ]; then
+            if [ -n "$CHANGES" ]; then
+              CHANGES="${CHANGES}, "
+            fi
+            CHANGES="${CHANGES}nixpkgs: ${NEW_NIXPKGS:0:7}"
+          fi
+
           # Use multiline output for GitHub Actions
           echo "version_changes<<EOF" >> $GITHUB_OUTPUT
           echo "$CHANGES" >> $GITHUB_OUTPUT
@@ -105,6 +119,9 @@ jobs:
             ANY_CHANGED=true
           fi
           if ! diff -q /tmp/old-discord-sources.json pkgs/discord/sources.json > /dev/null 2>&1; then
+            ANY_CHANGED=true
+          fi
+          if ! diff -q /tmp/old-flake.lock flake.lock > /dev/null 2>&1; then
             ANY_CHANGED=true
           fi
           echo "any_changed=$ANY_CHANGED" >> $GITHUB_OUTPUT
@@ -157,10 +174,6 @@ jobs:
               exit 1
             fi
           done
-
-      - name: Update flake.lock
-        if: steps.check.outputs.any_changed == 'true'
-        run: nix flake update
 
       - name: Upload updated sources
         uses: actions/upload-artifact@main
