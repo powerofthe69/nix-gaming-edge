@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "7b97ec4594b682d19fb3ce921c37297112d9cb87";
+    version = "3aa0d462598beb2021308eee1d757d74fe33b312";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "7b97ec4594b682d19fb3ce921c37297112d9cb87";
+      rev = "3aa0d462598beb2021308eee1d757d74fe33b312";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-yyKZ10rPh82OAkwQz2mbCEXaLkIqE7fPyHTKKSiUMYU=";
+      sha256 = "sha256-X4l37aPS2PJfyNLenXVFnRKjz6KOcwaySBQuTqoKfG0=";
     };
-    date = "2026-06-20";
+    date = "2026-06-23";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -59,17 +59,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "676919e2eca998f2ef048be7a13675731c97c794";
+    version = "04fae1c9530683cd917478370c6a584d863c5257";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "676919e2eca998f2ef048be7a13675731c97c794";
+      rev = "04fae1c9530683cd917478370c6a584d863c5257";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-KatFwFuCrcUm1+A9Msi98Yem6JAQR2OmXHCZtCdhPC4=";
+      sha256 = "sha256-WqtU8Vrj0XF1zcCi05ZGdIDOQmHr712JZFT1h6JuFhI=";
     };
-    date = "2026-06-20";
+    date = "2026-06-22";
   };
   libdrm = {
     pname = "libdrm";
@@ -87,17 +87,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "dc1db5367ef1245498d2d0fc74637a9e56e22f0d";
+    version = "475efed859b667388d60df1f4c1df2f0af7ac8c0";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "dc1db5367ef1245498d2d0fc74637a9e56e22f0d";
+      rev = "475efed859b667388d60df1f4c1df2f0af7ac8c0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-MdCapJ0WOPCICeBzOqx4uKsF2U/+TQ9nvOa/ZZvIUmI=";
+      sha256 = "sha256-GQLyzkvIGRLleQwsHegzUfUaVE26od00C8gk7g2xNgk=";
     };
-    date = "2026-06-21";
+    date = "2026-06-23";
   };
   modengine3 = {
     pname = "modengine3";
