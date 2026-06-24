@@ -21,7 +21,7 @@
     },
     "eden-emulator": {
         "cargoLock": null,
-        "date": "2026-06-23",
+        "date": "2026-06-24",
         "extract": null,
         "name": "eden-emulator",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3aa0d462598beb2021308eee1d757d74fe33b312",
-            "sha256": "sha256-X4l37aPS2PJfyNLenXVFnRKjz6KOcwaySBQuTqoKfG0=",
+            "rev": "599ab16288169d93595718c8f73717c96bc6ad00",
+            "sha256": "sha256-w87jer72uqN0Jz5P6eNFV87mFm5dwASdEe9JV07bqsA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://git.eden-emu.dev/eden-emu/eden.git"
         },
-        "version": "3aa0d462598beb2021308eee1d757d74fe33b312"
+        "version": "599ab16288169d93595718c8f73717c96bc6ad00"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-06-22",
+        "date": "2026-06-23",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "04fae1c9530683cd917478370c6a584d863c5257",
-            "sha256": "sha256-WqtU8Vrj0XF1zcCi05ZGdIDOQmHr712JZFT1h6JuFhI=",
+            "rev": "f224a4b736005532e335194d6d0d759b7ce460e8",
+            "sha256": "sha256-FrW05eb9Tu+LCKO/SbhZ+zvaZs4leb67d2UyXfKT5vg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "04fae1c9530683cd917478370c6a584d863c5257"
+        "version": "f224a4b736005532e335194d6d0d759b7ce460e8"
     },
     "libdrm": {
         "cargoLock": null,
@@ -126,7 +126,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-06-23",
+        "date": "2026-06-24",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -136,13 +136,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "475efed859b667388d60df1f4c1df2f0af7ac8c0",
-            "sha256": "sha256-GQLyzkvIGRLleQwsHegzUfUaVE26od00C8gk7g2xNgk=",
+            "rev": "7ccd70b9ec3853e05dde1dcc330fbc74331a5b51",
+            "sha256": "sha256-Dju57VMim4890EQP8gw76S/sGr+Mb8YT9JjWDKPvlDo=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "475efed859b667388d60df1f4c1df2f0af7ac8c0"
+        "version": "7ccd70b9ec3853e05dde1dcc330fbc74331a5b51"
     },
     "modengine3": {
         "cargoLock": null,
@@ -271,7 +271,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-06-14",
+        "date": "2026-06-24",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -281,13 +281,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e8415d7c64d421616eb6d9081cc9ac05c6d1fb15",
-            "sha256": "sha256-WLhvP9kjvb6dOJfqc9eYwRMcwCjY7mAvvvU4zgTyRvQ=",
+            "rev": "117b362634205d82cd0e08f06c764fbe29a074f7",
+            "sha256": "sha256-4rB+4gk0rGe4IQH8QyJplaXVycv6ZWdaz9SVDzTZW08=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "e8415d7c64d421616eb6d9081cc9ac05c6d1fb15"
+        "version": "117b362634205d82cd0e08f06c764fbe29a074f7"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -326,7 +326,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-06-07",
+        "date": "2026-06-23",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -336,12 +336,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ee78491a237eaff9389a0ccf8680521d074407d3",
-            "sha256": "sha256-kYCbEbh4C4FnqJzwrI+6soYTm5qffEor1Rn2B2f1IKA=",
+            "rev": "afb614d5fcbd02d261a6ae91920aa91cf3915a8a",
+            "sha256": "sha256-EgUVZoH2V9suDICELRgrjNi7NqCRu9LjxDSE3VNgSz0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "ee78491a237eaff9389a0ccf8680521d074407d3"
+        "version": "afb614d5fcbd02d261a6ae91920aa91cf3915a8a"
     }
 }

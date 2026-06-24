@@ -21,17 +21,17 @@
   };
   eden-emulator = {
     pname = "eden-emulator";
-    version = "3aa0d462598beb2021308eee1d757d74fe33b312";
+    version = "599ab16288169d93595718c8f73717c96bc6ad00";
     src = fetchgit {
       url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "3aa0d462598beb2021308eee1d757d74fe33b312";
+      rev = "599ab16288169d93595718c8f73717c96bc6ad00";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-X4l37aPS2PJfyNLenXVFnRKjz6KOcwaySBQuTqoKfG0=";
+      sha256 = "sha256-w87jer72uqN0Jz5P6eNFV87mFm5dwASdEe9JV07bqsA=";
     };
-    date = "2026-06-23";
+    date = "2026-06-24";
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
@@ -59,17 +59,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "04fae1c9530683cd917478370c6a584d863c5257";
+    version = "f224a4b736005532e335194d6d0d759b7ce460e8";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "04fae1c9530683cd917478370c6a584d863c5257";
+      rev = "f224a4b736005532e335194d6d0d759b7ce460e8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-WqtU8Vrj0XF1zcCi05ZGdIDOQmHr712JZFT1h6JuFhI=";
+      sha256 = "sha256-FrW05eb9Tu+LCKO/SbhZ+zvaZs4leb67d2UyXfKT5vg=";
     };
-    date = "2026-06-22";
+    date = "2026-06-23";
   };
   libdrm = {
     pname = "libdrm";
@@ -87,17 +87,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "475efed859b667388d60df1f4c1df2f0af7ac8c0";
+    version = "7ccd70b9ec3853e05dde1dcc330fbc74331a5b51";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "475efed859b667388d60df1f4c1df2f0af7ac8c0";
+      rev = "7ccd70b9ec3853e05dde1dcc330fbc74331a5b51";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GQLyzkvIGRLleQwsHegzUfUaVE26od00C8gk7g2xNgk=";
+      sha256 = "sha256-Dju57VMim4890EQP8gw76S/sGr+Mb8YT9JjWDKPvlDo=";
     };
-    date = "2026-06-23";
+    date = "2026-06-24";
   };
   modengine3 = {
     pname = "modengine3";
@@ -170,17 +170,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "e8415d7c64d421616eb6d9081cc9ac05c6d1fb15";
+    version = "117b362634205d82cd0e08f06c764fbe29a074f7";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "e8415d7c64d421616eb6d9081cc9ac05c6d1fb15";
+      rev = "117b362634205d82cd0e08f06c764fbe29a074f7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-WLhvP9kjvb6dOJfqc9eYwRMcwCjY7mAvvvU4zgTyRvQ=";
+      sha256 = "sha256-4rB+4gk0rGe4IQH8QyJplaXVycv6ZWdaz9SVDzTZW08=";
     };
-    date = "2026-06-14";
+    date = "2026-06-24";
   };
   vintagestory = {
     pname = "vintagestory";
@@ -205,16 +205,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "ee78491a237eaff9389a0ccf8680521d074407d3";
+    version = "afb614d5fcbd02d261a6ae91920aa91cf3915a8a";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "ee78491a237eaff9389a0ccf8680521d074407d3";
+      rev = "afb614d5fcbd02d261a6ae91920aa91cf3915a8a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kYCbEbh4C4FnqJzwrI+6soYTm5qffEor1Rn2B2f1IKA=";
+      sha256 = "sha256-EgUVZoH2V9suDICELRgrjNi7NqCRu9LjxDSE3VNgSz0=";
     };
-    date = "2026-06-07";
+    date = "2026-06-23";
   };
 }
