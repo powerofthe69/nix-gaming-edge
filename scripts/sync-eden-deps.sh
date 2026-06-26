@@ -109,17 +109,31 @@ HEADER
         echo ""
     done
 
-    # nx_tzdb (special-cased — uses a release artifact, mirrored on git.crueter.xyz
-    # since Cloudflare challenges block downloads from git.eden-emu.dev)
+    # nx_tzdb (special-cased — uses a release artifact). We prefer the
+    # git.crueter.xyz mirror because Cloudflare challenges can block release
+    # downloads from git.eden-emu.dev in CI. The mirror lags upstream, though,
+    # so when it doesn't yet carry the pinned version we fall back to the
+    # upstream git_host from cpmfile.json.
     if echo "$CPM" | jq -e '.tzdb' >/dev/null 2>&1; then
         ver=$(echo "$CPM" | jq -r '.tzdb.version')
+        git_host=$(echo "$CPM" | jq -r '.tzdb.git_host')
         repo=$(echo "$CPM" | jq -r '.tzdb.repo')
         artifact=$(echo "$CPM" | jq -r '.tzdb.artifact' | sed "s/%VERSION%/$ver/g")
         tag=$(echo "$CPM" | jq -r '.tzdb.tag' | sed "s/%VERSION%/$ver/g")
 
+        mirror_url="https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/$tag/$artifact"
+        upstream_url="https://$git_host/$repo/releases/download/$tag/$artifact"
+
+        if curl -sfIL --max-time 30 "$mirror_url" >/dev/null 2>&1; then
+            tzdb_url="$mirror_url"
+        else
+            echo "  nx_tzdb $ver not on git.crueter.xyz mirror; falling back to $git_host" >&2
+            tzdb_url="$upstream_url"
+        fi
+
         echo "[nx_tzdb]"
         echo "src.manual = \"$ver\""
-        echo "fetch.url = \"https://git.crueter.xyz/misc/tzdb_to_nx/releases/download/$tag/$artifact\""
+        echo "fetch.url = \"$tzdb_url\""
         echo ""
     fi
 
