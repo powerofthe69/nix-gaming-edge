@@ -42,19 +42,21 @@ if [[ -z "$REV" ]]; then
 fi
 echo "Syncing Eden CPM deps @ ${REV:0:10}..." >&2
 
-# Fetch cpmfile.json files via git (Cloudflare blocks raw HTTP access).
+# Fetch cpmfile.json via git (Cloudflare blocks raw HTTP access).
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
 
 git clone --depth=1 --no-checkout -q "$EDEN_GIT" "$TMPDIR/eden"
-git -C "$TMPDIR/eden" checkout HEAD -- cpmfile.json externals/cpmfile.json 2>/dev/null
-
-# Fall back to empty objects for whichever file doesn't exist in this rev.
-[[ -f "$TMPDIR/eden/cpmfile.json" ]]            || echo '{}' > "$TMPDIR/eden/cpmfile.json"
-[[ -f "$TMPDIR/eden/externals/cpmfile.json" ]]   || echo '{}' > "$TMPDIR/eden/externals/cpmfile.json"
+if ! git -C "$TMPDIR/eden" checkout HEAD -- cpmfile.json 2>/dev/null; then
+    echo "Error: failed to check out cpmfile.json from $EDEN_GIT" >&2
+    echo "       Eden likely restructured their CPM tooling and renamed or" >&2
+    echo "       removed cpmfile.json. Inspect the repo layout and update the" >&2
+    echo "       checkout path in this script accordingly." >&2
+    exit 1
+fi
 
 echo "  Fetched cpmfile.json via git" >&2
-CPM=$(jq -s '.[0] * .[1]' "$TMPDIR/eden/externals/cpmfile.json" "$TMPDIR/eden/cpmfile.json")
+CPM=$(jq '.' "$TMPDIR/eden/cpmfile.json")
 
 if [[ "$(echo "$CPM" | jq 'length')" -eq 0 ]]; then
     echo "Error: no CPM deps found" >&2; exit 1
@@ -88,7 +90,8 @@ HEADER
     for nvf in "${NEEDED_DEPS[@]}"; do
         cpm_repo=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].repo // ""')
         tag=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].tag // ""')
-        git_ver=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].git_version // ""')
+        # Eden renamed git_version -> version; accept either for compatibility.
+        git_ver=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].git_version // .[$k].version // ""')
         sha=$(echo "$CPM" | jq -r --arg k "$nvf" '.[$k].sha // ""')
 
         repo="${REPO_OVERRIDES[$nvf]:-$cpm_repo}"
