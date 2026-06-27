@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-bUNgdnXkfta/pA0c/OE20E53IFKfjxxENdS6Hc0YObI=",
+            "sha256": "sha256-OPGMBJmvvLiLdBDniBQwx7LmTGGI59AcesJdILSeqcs=",
             "type": "url",
-            "url": "https://cef-builds.spotifycdn.com/cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal.tar.bz2"
+            "url": "https://cef-builds.spotifycdn.com/cef_binary_149.0.5+g6770623+chromium-149.0.7827.197_linux64_minimal.tar.bz2"
         },
-        "version": "149.0.4+g2f1bfd8+chromium-149.0.7827.156"
+        "version": "149.0.5+g6770623+chromium-149.0.7827.197"
     },
     "jellyfin-desktop-libmpv": {
         "cargoLock": null,

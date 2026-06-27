@@ -19,20 +19,6 @@
       sha256 = "sha256-3SgRvQL27e+MoTBGX4/iUwgELd6UFbjrb23gV1UvAJ8=";
     };
   };
-  eden-emulator = {
-    pname = "eden-emulator";
-    version = "6bdb03d8ac5a626256e52e4601fae9d245405345";
-    src = fetchgit {
-      url = "https://git.eden-emu.dev/eden-emu/eden.git";
-      rev = "6bdb03d8ac5a626256e52e4601fae9d245405345";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-Rw1UXcMRIWE9LQaYc0rMnFaw9pTimtcmZKyGqVTCibU=";
-    };
-    date = "2026-06-25";
-  };
   fluxer-desktop = {
     pname = "fluxer-desktop";
     version = "0.0.8";
@@ -59,17 +45,17 @@
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "1d9a52931cc5304acc31c0dc129733cbc6290e88";
+    version = "865e186719a77937323ce7596014da33ad1f3d02";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "1d9a52931cc5304acc31c0dc129733cbc6290e88";
+      rev = "865e186719a77937323ce7596014da33ad1f3d02";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xqj7lwzKBBKL6KGVRfGYl09yQ0zTPj6WkQXGnbQUA98=";
+      sha256 = "sha256-vIcvKGCDimhZcHd+q38Gu1+cjQz84gIjsQEb39ggA3c=";
     };
-    date = "2026-06-24";
+    date = "2026-06-25";
   };
   libdrm = {
     pname = "libdrm";
@@ -87,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "b4e2c7924a515b44accc5c06cb2f2442ace1f7e3";
+    version = "a330409fa7e3551b1a2892d8ccd00275fe6a9462";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b4e2c7924a515b44accc5c06cb2f2442ace1f7e3";
+      rev = "a330409fa7e3551b1a2892d8ccd00275fe6a9462";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-JZd9u/6VqChaTwK54nDRYFijRyFXHLE+nDwuMneNqLs=";
+      sha256 = "sha256-xNMlfctitIeSDuc03Ep5QI2WcWw91NdV5QKetKdclT8=";
     };
-    date = "2026-06-25";
+    date = "2026-06-27";
   };
   modengine3 = {
     pname = "modengine3";
