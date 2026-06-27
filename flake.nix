@@ -139,12 +139,6 @@
           oodleSrc = nvSources.oodle-lib.src;
         };
 
-        # Eden Emulator
-        eden-emulator = pkgs.callPackage ./pkgs/eden-emulator {
-          inherit (nvSources.eden-emulator) version src;
-        };
-        eden = self.packages.${pkgs.stdenv.hostPlatform.system}.eden-emulator;
-
         # Hytale Launcher
         hytale-launcher = pkgs.callPackage ./pkgs/hytale-launcher {
           source = nvSources.hytale-launcher;
@@ -202,9 +196,6 @@
 
           pseudoregalia-rando = self.packages.${final.stdenv.hostPlatform.system}.pseudoregalia-rando;
 
-          eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
-          eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
-
           hytale-launcher = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
           hytale = self.packages.${final.stdenv.hostPlatform.system}.hytale-launcher;
 
@@ -255,11 +246,6 @@
 
         pseudoregalia-rando = final: prev: {
           pseudoregalia-rando = self.packages.${final.stdenv.hostPlatform.system}.pseudoregalia-rando;
-        };
-
-        eden-emulator = final: prev: {
-          eden-emulator = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
-          eden = self.packages.${final.stdenv.hostPlatform.system}.eden-emulator;
         };
 
         hytale-launcher = final: prev: {

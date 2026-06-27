@@ -6,11 +6,6 @@
       "runner": ["self-hosted"]
     },
     {
-      "name": "eden-emulator",
-      "packages": "eden-emulator",
-      "runner": ["self-hosted"]
-    },
-    {
       "name": "fluxer-desktop",
       "packages": "fluxer-desktop fluxer-desktop-canary",
       "runner": ["self-hosted"]

@@ -2,7 +2,7 @@
 
 **Before Building:**
 
-Most packages here (mesa-git, eden, proton-cachyos, etc.) are pre-built and served from a binary cache. If you don't wire it up, your first build will compile everything from source. You can either pass it ad-hoc on a single rebuild:
+Most packages here (mesa-git, proton-cachyos, etc.) are pre-built and served from a binary cache. If you don't wire it up, your first build will compile everything from source. You can either pass it ad-hoc on a single rebuild:
 
 ```bash
 sudo nixos-rebuild boot --flake .#<hostname> \
@@ -49,8 +49,6 @@ The largest ones that most will probably want to use are:
 Other packages that were mostly for me:
 
 - `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo.
-
-- `eden` or `eden-emulator`: this installs the Eden emulator, an emulator forked from the popular Yuzu. This grabs the latest commits nightly and compiles them on my local server before backing up on my cache server, similar to mesa-git. Builds are not guaranteed to be stable, but should usually be functional and receive the latest performance improvements. This is not associated with the official project. Do not report issues to them.
 
 - `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete.
 
@@ -157,7 +155,6 @@ Here is a minimal representation of what your configuration might look like:
             (discord.override {
               withVencord = true; # latest Vencord build managed in here
             })
-            eden
             fluxer-desktop
             hytale
             opengoal-launcher

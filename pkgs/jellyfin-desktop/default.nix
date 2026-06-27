@@ -10,7 +10,7 @@
 # the binary's RPATH.
 #
 # CEF tarball and libmpv-fork sources live in ./nvfetcher.toml -> ./_dependencies/
-# (eden-emulator layout). Regenerate with:
+# (per-package vendored-deps layout). Regenerate with:
 #   nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies
 
 let
