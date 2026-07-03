@@ -18,10 +18,9 @@ let
       pname = "vencord-git";
       version = vencordSrc.version;
       src = vencordSrc.src;
+      patches = [ ];
+      postPatch = "";
 
-      # Forward patches/postPatch — upstream's fix-deps.patch and the
-      # @types/react bump have to apply before the pnpm lockfile is resolved
-      # or the deps hash will not match.
       pnpmDeps = pkgs.fetchPnpmDeps {
         inherit (finalAttrs)
           pname
@@ -29,10 +28,14 @@ let
           patches
           postPatch
           ;
-        pnpm = pkgs.pnpm_10;
-        fetcherVersion = 3;
+        pnpm = pkgs.pnpm;
+        fetcherVersion = 4;
         hash = pnpmHash;
       };
+
+      nativeBuildInputs = map (dep: if dep == pkgs.pnpm_10 then pkgs.pnpm else dep) (
+        _prev.nativeBuildInputs or [ ]
+      );
 
       env = {
         VENCORD_REMOTE = "Vendicated/Vencord";
