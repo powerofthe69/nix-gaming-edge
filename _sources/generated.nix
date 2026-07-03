@@ -37,25 +37,25 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.06.24-5dbd7e9";
+    version = "2026.07.03-737d217";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.24-5dbd7e9.zip";
-      sha256 = "sha256-XBmIBdA65iv7WWa6C/K3pU6wRKkEMUGe9MFPXjqz3nk=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.03-737d217.zip";
+      sha256 = "sha256-Ap2d9qSofu5KjDtLBEQTa0qtJqHjM/tJmENps7Ui0rk=";
     };
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "865e186719a77937323ce7596014da33ad1f3d02";
+    version = "225af09b41e8aa98a13f2f03e7e50f471c15fd16";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "865e186719a77937323ce7596014da33ad1f3d02";
+      rev = "225af09b41e8aa98a13f2f03e7e50f471c15fd16";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-vIcvKGCDimhZcHd+q38Gu1+cjQz84gIjsQEb39ggA3c=";
+      sha256 = "sha256-Dvqz+3Miky9SQNB71o+SNal/zSi1x8q56rCuM3R8HFY=";
     };
-    date = "2026-06-25";
+    date = "2026-07-03";
   };
   libdrm = {
     pname = "libdrm";
@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "5d4b3d64982c42614873880764d3ae392cf1ca0d";
+    version = "f2d39008f9c2537f723b8854e980d9151e4b178f";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "5d4b3d64982c42614873880764d3ae392cf1ca0d";
+      rev = "f2d39008f9c2537f723b8854e980d9151e4b178f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-opqNCEy3shAI5sIWlpEM3eBdtcmJ9uTLvFjbP5OL0GU=";
+      sha256 = "sha256-9AOi73AE3yGFBGj0caHzW1GE5VeH8aFje+L8sXmzRlQ=";
     };
-    date = "2026-07-01";
+    date = "2026-07-03";
   };
   modengine3 = {
     pname = "modengine3";
@@ -156,17 +156,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "70d41b0584d8e8b094cbaa771b170dc6e7cf68b3";
+    version = "94cc541e38905063988094249a40e618f83a12e4";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "70d41b0584d8e8b094cbaa771b170dc6e7cf68b3";
+      rev = "94cc541e38905063988094249a40e618f83a12e4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-jQeLZa1rpKDkzWSpAqOa8snGRKLpv9xf9cwJ6hUwMzA=";
+      sha256 = "sha256-X+q8itQWPRjUNTS23KPANg36sbl4M9jtT6SL22+RtMc=";
     };
-    date = "2026-06-24";
+    date = "2026-07-02";
   };
   vintagestory = {
     pname = "vintagestory";

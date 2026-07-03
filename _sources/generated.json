@@ -58,15 +58,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-XBmIBdA65iv7WWa6C/K3pU6wRKkEMUGe9MFPXjqz3nk=",
+            "sha256": "sha256-Ap2d9qSofu5KjDtLBEQTa0qtJqHjM/tJmENps7Ui0rk=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.06.24-5dbd7e9.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.03-737d217.zip"
         },
-        "version": "2026.06.24-5dbd7e9"
+        "version": "2026.07.03-737d217"
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-06-25",
+        "date": "2026-07-03",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "865e186719a77937323ce7596014da33ad1f3d02",
-            "sha256": "sha256-vIcvKGCDimhZcHd+q38Gu1+cjQz84gIjsQEb39ggA3c=",
+            "rev": "225af09b41e8aa98a13f2f03e7e50f471c15fd16",
+            "sha256": "sha256-Dvqz+3Miky9SQNB71o+SNal/zSi1x8q56rCuM3R8HFY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "865e186719a77937323ce7596014da33ad1f3d02"
+        "version": "225af09b41e8aa98a13f2f03e7e50f471c15fd16"
     },
     "libdrm": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-01",
+        "date": "2026-07-03",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5d4b3d64982c42614873880764d3ae392cf1ca0d",
-            "sha256": "sha256-opqNCEy3shAI5sIWlpEM3eBdtcmJ9uTLvFjbP5OL0GU=",
+            "rev": "f2d39008f9c2537f723b8854e980d9151e4b178f",
+            "sha256": "sha256-9AOi73AE3yGFBGj0caHzW1GE5VeH8aFje+L8sXmzRlQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "5d4b3d64982c42614873880764d3ae392cf1ca0d"
+        "version": "f2d39008f9c2537f723b8854e980d9151e4b178f"
     },
     "modengine3": {
         "cargoLock": null,
@@ -251,7 +251,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-06-24",
+        "date": "2026-07-02",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -261,13 +261,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "70d41b0584d8e8b094cbaa771b170dc6e7cf68b3",
-            "sha256": "sha256-jQeLZa1rpKDkzWSpAqOa8snGRKLpv9xf9cwJ6hUwMzA=",
+            "rev": "94cc541e38905063988094249a40e618f83a12e4",
+            "sha256": "sha256-X+q8itQWPRjUNTS23KPANg36sbl4M9jtT6SL22+RtMc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "70d41b0584d8e8b094cbaa771b170dc6e7cf68b3"
+        "version": "94cc541e38905063988094249a40e618f83a12e4"
     },
     "vintagestory": {
         "cargoLock": null,
