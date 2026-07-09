@@ -49,7 +49,7 @@ pkgs.rustPlatform.buildRustPackage {
   cargoRoot = "src";
 
   # Bumped by .github/workflows/update.yml when the vendor FOD's hash drifts.
-  cargoHash = "sha256-dcgkX/j0c4nZ/75sYHNlIMuYhPf37LfBBe6jsD5i2QM=";
+  cargoHash = "sha256-eg9+7q/9PqKKGL1yFQMlAo17fmOWBVm6A7OkpFR2YDQ=";
 
   nativeBuildInputs = with pkgs; [
     makeWrapper

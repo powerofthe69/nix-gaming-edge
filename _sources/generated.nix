@@ -37,25 +37,25 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.07.03-737d217";
+    version = "2026.07.07-325d709";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.03-737d217.zip";
-      sha256 = "sha256-Ap2d9qSofu5KjDtLBEQTa0qtJqHjM/tJmENps7Ui0rk=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.07-325d709.zip";
+      sha256 = "sha256-qC5q+5DRkl0jqmPRdWlcZ9n0sYKQdwmPncL/It9FhMw=";
     };
   };
   jellyfin-desktop = {
     pname = "jellyfin-desktop";
-    version = "225af09b41e8aa98a13f2f03e7e50f471c15fd16";
+    version = "9705b06d8fb714f44d86d47fe15acf9b6d088d30";
     src = fetchgit {
       url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "225af09b41e8aa98a13f2f03e7e50f471c15fd16";
+      rev = "9705b06d8fb714f44d86d47fe15acf9b6d088d30";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Dvqz+3Miky9SQNB71o+SNal/zSi1x8q56rCuM3R8HFY=";
+      sha256 = "sha256-Y5+uR/IJDtMBpm9hU7jNMyMtByMSgd2GoKAhsyIuXoE=";
     };
-    date = "2026-07-03";
+    date = "2026-07-08";
   };
   libdrm = {
     pname = "libdrm";
@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "c1f982af998de92052901e73aefe486620867e06";
+    version = "058b45eede94f3912a1ab3ee2e3c556ede040730";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "c1f982af998de92052901e73aefe486620867e06";
+      rev = "058b45eede94f3912a1ab3ee2e3c556ede040730";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QFbgE+eJqg1S+7v1UvJI6cTUlhVHxIvlzJ9Sjhch0yE=";
+      sha256 = "sha256-bvA6MIduRkY0xb2uQQtBSyvjejYr+OROjyxO4wvkl7M=";
     };
-    date = "2026-07-08";
+    date = "2026-07-09";
   };
   modengine3 = {
     pname = "modengine3";
