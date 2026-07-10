@@ -66,7 +66,7 @@
     },
     "jellyfin-desktop": {
         "cargoLock": null,
-        "date": "2026-07-08",
+        "date": "2026-07-09",
         "extract": null,
         "name": "jellyfin-desktop",
         "passthru": null,
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9705b06d8fb714f44d86d47fe15acf9b6d088d30",
-            "sha256": "sha256-Y5+uR/IJDtMBpm9hU7jNMyMtByMSgd2GoKAhsyIuXoE=",
+            "rev": "8722abd2ce0f54e163a75928b72ca79e9b36b550",
+            "sha256": "sha256-zf7w0P4MvPrudVbZVcsDGhWLSJmmLBUef1E7dauSk5A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jellyfin/jellyfin-desktop.git"
         },
-        "version": "9705b06d8fb714f44d86d47fe15acf9b6d088d30"
+        "version": "8722abd2ce0f54e163a75928b72ca79e9b36b550"
     },
     "libdrm": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-09",
+        "date": "2026-07-10",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "058b45eede94f3912a1ab3ee2e3c556ede040730",
-            "sha256": "sha256-bvA6MIduRkY0xb2uQQtBSyvjejYr+OROjyxO4wvkl7M=",
+            "rev": "9578b2c62dee79e7170ad05ef52603a5d2ded7c1",
+            "sha256": "sha256-+9mJKIzlheA6y6jYqF+JUpLmRMxhKiBvk4wWKbHR+t8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "058b45eede94f3912a1ab3ee2e3c556ede040730"
+        "version": "9578b2c62dee79e7170ad05ef52603a5d2ded7c1"
     },
     "modengine3": {
         "cargoLock": null,
