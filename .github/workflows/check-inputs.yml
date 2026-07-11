@@ -24,8 +24,27 @@ jobs:
         with:
           ref: nightly
 
+      # Pause the hourly poll if the last update run has failed
+      - name: Skip while the last update run is failing
+        id: guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          last=$(gh run list --workflow=update.yml --limit 20 \
+            --json status,conclusion \
+            -q 'map(select(.status=="completed")) | .[0].conclusion // ""' 2>/dev/null || echo "")
+          echo "last completed update.yml conclusion: ${last:-<none>}"
+          if [ "$last" = "failure" ]; then
+            echo "::notice::last update run failed — pausing check-inputs until it goes green"
+            echo "paused=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "paused=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Compare locked pins against upstream
         id: cmp
+        if: steps.guard.outputs.paused != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -56,7 +75,7 @@ jobs:
           fi
 
       - name: Dispatch update (skip if one is already running/queued)
-        if: steps.cmp.outputs.changed == 'true'
+        if: steps.guard.outputs.paused != 'true' && steps.cmp.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

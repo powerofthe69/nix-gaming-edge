@@ -83,8 +83,13 @@ let
       basePkgs = if is32bit then pkgs.pkgsi686Linux else latestPkgs;
       gitLibdrm = if is32bit then libdrm32-git else libdrm-git;
     in
-    # Use clang for allegedly faster compilation and tighter integration with LLVM
-    (basePkgs.mesa.override { stdenv = basePkgs.clangStdenv; }).overrideAttrs (old: {
+    # Use clang for allegedly faster compilation and tighter integration with LLVM.
+    # && pin codegen to python 3.13: python 3.14 uses ~40 MB more RSS per interpreter
+    # which has been causing OOMs on my Actions runners.
+    (basePkgs.mesa.override {
+      stdenv = basePkgs.clangStdenv;
+      python3Packages = basePkgs.python313Packages;
+    }).overrideAttrs (old: {
       pname = "mesa-git";
       version = "${mesaVersion}";
       src = mesa-src;
