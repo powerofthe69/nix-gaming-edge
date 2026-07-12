@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9e6e6e5db7c892447496aef01892464142adfcd8";
+    version = "584a0997c8e4e93cfd517abe7db41c369642460a";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9e6e6e5db7c892447496aef01892464142adfcd8";
+      rev = "584a0997c8e4e93cfd517abe7db41c369642460a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-WKE9GBH84garJi0xeQpimbKXPTmPJV0uz3aZpoQfZIg=";
+      sha256 = "sha256-wSRR80sMPsfWIvn9qeVyxxH8VWzyziGDHdeT+G+JBsM=";
     };
-    date = "2026-07-11";
+    date = "2026-07-12";
   };
   modengine3 = {
     pname = "modengine3";
@@ -119,18 +119,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20260602-slr";
+    version = "cachyos-11.0-20260702-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64.tar.xz";
-      sha256 = "sha256-qC20cEi08yTC1RMu8mCXbrIf+yl1QBUpFSKzRKzmZTg=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64.tar.xz";
+      sha256 = "sha256-Qo16R7KVGYVuW61Q634PASPsJDHi03wxzr7ycD8k8lM=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20260602-slr";
+    version = "cachyos-11.0-20260702-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260602-slr/proton-cachyos-11.0-20260602-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-HZmTHTziUU2nfmSTinG8qJntTweI5Xtk8SZ3BnHgpmI=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-ETl4U+uV+PtEhTXOviZVRxMGyAw0VsRrUs1Whwik/lw=";
     };
   };
   pseudoregalia-rando = {
