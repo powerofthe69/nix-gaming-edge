@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-16",
+        "date": "2026-07-17",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c470bb08c4e0f196f1c2b54aa9e3f3906adebced",
-            "sha256": "sha256-5jEQ82X0X7f1Ng2Bl5PanwzkM5ZqPPQkDYIE4EXOknY=",
+            "rev": "be696377a17b63228fc4ff78284ac1379506d0ae",
+            "sha256": "sha256-PAZd63191kHMD2bcjOQZSSqdteoe3hLPjQilf4wjKXs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "c470bb08c4e0f196f1c2b54aa9e3f3906adebced"
+        "version": "be696377a17b63228fc4ff78284ac1379506d0ae"
     },
     "modengine3": {
         "cargoLock": null,
@@ -296,13 +296,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "1.25.0",
-            "sha256": "sha256-aQTciXUsYIV5rWr2wNN+daH0KZfcrVSVZHoUdTutizM=",
+            "rev": "1.26.0",
+            "sha256": "sha256-dnaXYcVfc4DfNRsAEL316eSTen9tpf+nuQbActege4E=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland.git"
         },
-        "version": "1.25.0"
+        "version": "1.26.0"
     },
     "wayland-protocols": {
         "cargoLock": null,

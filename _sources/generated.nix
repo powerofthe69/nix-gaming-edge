@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "c470bb08c4e0f196f1c2b54aa9e3f3906adebced";
+    version = "be696377a17b63228fc4ff78284ac1379506d0ae";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "c470bb08c4e0f196f1c2b54aa9e3f3906adebced";
+      rev = "be696377a17b63228fc4ff78284ac1379506d0ae";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5jEQ82X0X7f1Ng2Bl5PanwzkM5ZqPPQkDYIE4EXOknY=";
+      sha256 = "sha256-PAZd63191kHMD2bcjOQZSSqdteoe3hLPjQilf4wjKXs=";
     };
-    date = "2026-07-16";
+    date = "2026-07-17";
   };
   modengine3 = {
     pname = "modengine3";
@@ -178,15 +178,15 @@
   };
   wayland = {
     pname = "wayland";
-    version = "1.25.0";
+    version = "1.26.0";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland.git";
-      rev = "1.25.0";
+      rev = "1.26.0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aQTciXUsYIV5rWr2wNN+daH0KZfcrVSVZHoUdTutizM=";
+      sha256 = "sha256-dnaXYcVfc4DfNRsAEL316eSTen9tpf+nuQbActege4E=";
     };
   };
   wayland-protocols = {
