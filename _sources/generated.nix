@@ -43,19 +43,19 @@
       sha256 = "sha256-qC5q+5DRkl0jqmPRdWlcZ9n0sYKQdwmPncL/It9FhMw=";
     };
   };
-  jellyfin-desktop = {
-    pname = "jellyfin-desktop";
-    version = "8d7ba662f32bcb38c3fa312ca20c86ac26fb5df1";
+  jellium-desktop = {
+    pname = "jellium-desktop";
+    version = "1272c89883c72453e1632f077336729c7d34ad16";
     src = fetchgit {
-      url = "https://github.com/jellyfin/jellyfin-desktop.git";
-      rev = "8d7ba662f32bcb38c3fa312ca20c86ac26fb5df1";
+      url = "https://github.com/andrewrabert/jellium-desktop.git";
+      rev = "1272c89883c72453e1632f077336729c7d34ad16";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-C9mNDeqJ4az6j3NURRJTNhMUZLT5fgk7Y+Cs0dD63lY=";
+      sha256 = "sha256-ippLfD7ROO4PUJGSSkk8CCiZFCPLpVNEFrF+ApRBir8=";
     };
-    date = "2026-07-15";
+    date = "2026-07-17";
   };
   libdrm = {
     pname = "libdrm";
@@ -114,7 +114,7 @@
     version = "100884776";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
+      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
     };
   };
   proton-cachyos = {

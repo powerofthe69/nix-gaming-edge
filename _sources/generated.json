@@ -64,11 +64,11 @@
         },
         "version": "2026.07.07-325d709"
     },
-    "jellyfin-desktop": {
+    "jellium-desktop": {
         "cargoLock": null,
-        "date": "2026-07-15",
+        "date": "2026-07-17",
         "extract": null,
-        "name": "jellyfin-desktop",
+        "name": "jellium-desktop",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8d7ba662f32bcb38c3fa312ca20c86ac26fb5df1",
-            "sha256": "sha256-C9mNDeqJ4az6j3NURRJTNhMUZLT5fgk7Y+Cs0dD63lY=",
+            "rev": "1272c89883c72453e1632f077336729c7d34ad16",
+            "sha256": "sha256-ippLfD7ROO4PUJGSSkk8CCiZFCPLpVNEFrF+ApRBir8=",
             "sparseCheckout": [],
             "type": "git",
-            "url": "https://github.com/jellyfin/jellyfin-desktop.git"
+            "url": "https://github.com/andrewrabert/jellium-desktop.git"
         },
-        "version": "8d7ba662f32bcb38c3fa312ca20c86ac26fb5df1"
+        "version": "1272c89883c72453e1632f077336729c7d34ad16"
     },
     "libdrm": {
         "cargoLock": null,
@@ -178,7 +178,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
+            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },

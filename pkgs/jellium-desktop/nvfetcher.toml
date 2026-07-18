@@ -1,9 +1,9 @@
-# pkgs/jellyfin-desktop/nvfetcher.toml
-# Vendored deps for jellyfin-desktop v3. Run:
-#   nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies
+# pkgs/jellium-desktop/nvfetcher.toml
+# Vendored deps for jellium-desktop. Run:
+#   nvfetcher -c pkgs/jellium-desktop/nvfetcher.toml -o pkgs/jellium-desktop/_dependencies
 
 # libmpv fork - cef-mpv branch of upstream mpv
-[jellyfin-desktop-libmpv]
+[jellium-desktop-libmpv]
 src.git = "https://github.com/andrewrabert/mpv"
 src.branch = "cef-mpv"
 fetch.git = "https://github.com/andrewrabert/mpv.git"
@@ -13,9 +13,9 @@ fetch.git = "https://github.com/andrewrabert/mpv.git"
 # The build metadata after "+" is the CEF base version; the full string
 # "<cef>+g<rev>+chromium-<chromium>" needed for the Spotify CDN URL has to
 # be resolved against the CDN's index.json.
-[jellyfin-desktop-cef]
+[jellium-desktop-cef]
 src.cmd = '''
-PKG=$(curl -fsSL https://raw.githubusercontent.com/jellyfin/jellyfin-desktop/main/src/Cargo.lock | awk '/^\[\[package\]\]/{n=""} /^name = "cef"$/{n="cef"} n=="cef" && /^version = /{gsub(/"/,""); print $3; exit}')
+PKG=$(curl -fsSL https://raw.githubusercontent.com/andrewrabert/jellium-desktop/main/src/Cargo.lock | awk '/^\[\[package\]\]/{n=""} /^name = "cef"$/{n="cef"} n=="cef" && /^version = /{gsub(/"/,""); print $3; exit}')
 BUILD="${PKG##*+}"
 curl -fsSL https://cef-builds.spotifycdn.com/index.json | jq -r --arg v "$BUILD" '[.linux64.versions[] | select(.channel == "stable" and (.cef_version | startswith($v + "+")))][0].cef_version'
 '''

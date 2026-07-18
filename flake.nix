@@ -102,9 +102,9 @@
         _2ship2harkinianSrc = nvSources._2ship2harkinian;
       };
 
-      # Jellyfin Desktop v3 (CEF + mpv source build)
-      jellyfin-desktop = pkgs.callPackage ./pkgs/jellyfin-desktop {
-        source = nvSources.jellyfin-desktop;
+      # Jellium Desktop (CEF + mpv source build; formerly jellyfin-desktop v3)
+      jellium-desktop = pkgs.callPackage ./pkgs/jellium-desktop {
+        source = nvSources.jellium-desktop;
       };
 
     in
@@ -167,8 +167,8 @@
         shipwright = harkinian.shipwright;
         _2ship2harkinian = harkinian._2ship2harkinian;
 
-        # Jellyfin Desktop v3
-        jellyfin-desktop = jellyfin-desktop;
+        # Jellium Desktop
+        jellium-desktop = jellium-desktop;
       };
 
       overlays = {
@@ -214,7 +214,7 @@
           shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
           _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
 
-          jellyfin-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellyfin-desktop;
+          jellium-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellium-desktop;
         };
 
         mesa-git = final: prev: {
@@ -280,8 +280,8 @@
           _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
         };
 
-        jellyfin-desktop = final: prev: {
-          jellyfin-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellyfin-desktop;
+        jellium-desktop = final: prev: {
+          jellium-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellium-desktop;
         };
       };
 

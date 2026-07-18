@@ -3,7 +3,8 @@
   source,
 }:
 
-# Jellyfin Desktop v3 (CEF + mpv rewrite of the archived Qt client).
+# Jellium Desktop (CEF + mpv rewrite of the archived Qt client; formerly
+# jellyfin/jellyfin-desktop v3, renamed and moved to andrewrabert's account).
 # xtask drives the build and stages CEF + libmpv next to the binary.
 # --external-cef / --external-mpv let us hand it pre-built dirs so nothing
 # fetches at build time. JFN_EXTRA_RPATH is read by build.rs and baked into
@@ -11,7 +12,7 @@
 #
 # CEF tarball and libmpv-fork sources live in ./nvfetcher.toml -> ./_dependencies/
 # (per-package vendored-deps layout). Regenerate with:
-#   nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies
+#   nvfetcher -c pkgs/jellium-desktop/nvfetcher.toml -o pkgs/jellium-desktop/_dependencies
 
 let
   inherit (pkgs) lib;
@@ -19,11 +20,11 @@ let
   deps = pkgs.callPackage ./_dependencies/generated.nix { };
 
   cef = pkgs.callPackage ./cef {
-    source = deps.jellyfin-desktop-cef;
+    source = deps.jellium-desktop-cef;
   };
 
   libmpv = pkgs.callPackage ./libmpv {
-    source = deps.jellyfin-desktop-libmpv;
+    source = deps.jellium-desktop-libmpv;
   };
 
   runtimeLibs = with pkgs; [
@@ -42,14 +43,14 @@ let
   ];
 in
 pkgs.rustPlatform.buildRustPackage {
-  pname = "jellyfin-desktop";
+  pname = "jellium-desktop";
   inherit (source) version src;
 
   # Workspace lives in src/, not the repo root.
   cargoRoot = "src";
 
   # Bumped by .github/workflows/update.yml when the vendor FOD's hash drifts.
-  cargoHash = "sha256-jJVKfKWgKJaFsw8nerys+QMnLPPCb2zYPFJVzwg86lk=";
+  cargoHash = "sha256-FlZxfW6677TLGzk0limYJLm42SprkNkKw9ATt/HjIow=";
 
   nativeBuildInputs = with pkgs; [
     makeWrapper
@@ -102,7 +103,7 @@ pkgs.rustPlatform.buildRustPackage {
 
   doCheck = false;
 
-  # Build cef or libmpv standalone with `nix build .#jellyfin-desktop.passthru.{cef,libmpv}`.
+  # Build cef or libmpv standalone with `nix build .#jellium-desktop.passthru.{cef,libmpv}`.
   passthru = {
     inherit cef libmpv;
   };
@@ -114,32 +115,34 @@ pkgs.rustPlatform.buildRustPackage {
     # /build/-tainted RPATH.
     rm -rf build/cargo-target
 
-    install -dm755 $out/libexec/jellyfin-desktop
-    cp -r build/. $out/libexec/jellyfin-desktop/
+    install -dm755 $out/libexec/jellium-desktop
+    cp -r build/. $out/libexec/jellium-desktop/
 
     # Strip cargo's auto-added $CARGO_TARGET_DIR/release/deps from RPATH.
     # The JFN_EXTRA_RPATH entries (CEF, libmpv) survive shrink because their
     # .so files are actually needed.
-    patchelf --shrink-rpath $out/libexec/jellyfin-desktop/jellyfin-desktop
+    patchelf --shrink-rpath $out/libexec/jellium-desktop/jellium-desktop
 
     install -dm755 $out/bin
-    makeWrapper $out/libexec/jellyfin-desktop/jellyfin-desktop $out/bin/jellyfin-desktop \
+    makeWrapper $out/libexec/jellium-desktop/jellium-desktop $out/bin/jellium-desktop \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}"
 
-    install -Dm644 resources/linux/org.jellyfin.JellyfinDesktop.desktop \
-      $out/share/applications/org.jellyfin.JellyfinDesktop.desktop
-    install -Dm644 resources/linux/org.jellyfin.JellyfinDesktop.svg \
-      $out/share/icons/hicolor/scalable/apps/org.jellyfin.JellyfinDesktop.svg
-    install -Dm644 LICENSE $out/share/licenses/jellyfin-desktop/LICENSE
+    install -Dm644 resources/linux/net.nullsum.JelliumDesktop.desktop \
+      $out/share/applications/net.nullsum.JelliumDesktop.desktop
+    install -Dm644 resources/linux/net.nullsum.JelliumDesktop.svg \
+      $out/share/icons/hicolor/scalable/apps/net.nullsum.JelliumDesktop.svg
+    install -Dm644 resources/linux/net.nullsum.JelliumDesktop.metainfo.xml \
+      $out/share/metainfo/net.nullsum.JelliumDesktop.metainfo.xml
+    install -Dm644 LICENSE $out/share/licenses/jellium-desktop/LICENSE
 
     runHook postInstall
   '';
 
   meta = with lib; {
-    description = "Jellyfin desktop client";
-    homepage = "https://github.com/jellyfin/jellyfin-desktop";
+    description = "Unofficial Jellyfin desktop client built on CEF and mpv";
+    homepage = "https://github.com/andrewrabert/jellium-desktop";
     license = licenses.gpl2Only;
-    mainProgram = "jellyfin-desktop";
+    mainProgram = "jellium-desktop";
     platforms = [ "x86_64-linux" ];
     sourceProvenance = with sourceTypes; [
       fromSource

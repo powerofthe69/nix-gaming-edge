@@ -21,8 +21,8 @@
       "runner": ["self-hosted"]
     },
     {
-      "name": "jellyfin-desktop",
-      "packages": "jellyfin-desktop",
+      "name": "jellium-desktop",
+      "packages": "jellium-desktop",
       "runner": ["self-hosted"]
     },
     {

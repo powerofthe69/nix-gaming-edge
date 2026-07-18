@@ -6,16 +6,16 @@
   dockerTools,
 }:
 {
-  jellyfin-desktop-cef = {
-    pname = "jellyfin-desktop-cef";
+  jellium-desktop-cef = {
+    pname = "jellium-desktop-cef";
     version = "150.0.10+g8042e43+chromium-150.0.7871.101";
     src = fetchurl {
       url = "https://cef-builds.spotifycdn.com/cef_binary_150.0.10+g8042e43+chromium-150.0.7871.101_linux64_minimal.tar.bz2";
       sha256 = "sha256-bB1Ike84huPM9l0JKI2DBOP343JKR8kyk+K9Y+dlKOQ=";
     };
   };
-  jellyfin-desktop-libmpv = {
-    pname = "jellyfin-desktop-libmpv";
+  jellium-desktop-libmpv = {
+    pname = "jellium-desktop-libmpv";
     version = "a4399f48b4c872e5b8a0eb83ba3ff9b1f7a7add6";
     src = fetchgit {
       url = "https://github.com/andrewrabert/mpv.git";

@@ -1,9 +1,9 @@
 {
-    "jellyfin-desktop-cef": {
+    "jellium-desktop-cef": {
         "cargoLock": null,
         "date": null,
         "extract": null,
-        "name": "jellyfin-desktop-cef",
+        "name": "jellium-desktop-cef",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -14,11 +14,11 @@
         },
         "version": "150.0.10+g8042e43+chromium-150.0.7871.101"
     },
-    "jellyfin-desktop-libmpv": {
+    "jellium-desktop-libmpv": {
         "cargoLock": null,
         "date": "2026-06-08",
         "extract": null,
-        "name": "jellyfin-desktop-libmpv",
+        "name": "jellium-desktop-libmpv",
         "passthru": null,
         "pinned": false,
         "src": {

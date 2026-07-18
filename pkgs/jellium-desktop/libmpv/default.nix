@@ -17,7 +17,7 @@ let
   inherit (pkgs) lib;
 
   libmpv = pkgs.mpv-unwrapped.overrideAttrs (old: {
-    pname = "jellyfin-desktop-libmpv-unmerged";
+    pname = "jellium-desktop-libmpv-unmerged";
     inherit (source) version src;
 
     prePatch = (old.prePatch or "") + ''
@@ -30,12 +30,16 @@ let
     doInstallCheck = false;
   });
 in
-pkgs.runCommand "jellyfin-desktop-libmpv-${source.version}"
+pkgs.runCommand "jellium-desktop-libmpv-${source.version}"
   {
     inherit (libmpv) version;
     passthru = { inherit libmpv; };
     meta = libmpv.meta // {
-      description = "${libmpv.meta.description or "libmpv"} (jellyfin-desktop merged view)";
+      description = "${libmpv.meta.description or "libmpv"} (jellium-desktop merged view)";
+      # mpv-unwrapped's meta says to install [out man]; this merged view only
+      # has out. Without this, `nix build .#jellium-desktop.passthru.libmpv`
+      # fails with "does not have wanted outputs 'man'".
+      outputsToInstall = [ "out" ];
     };
   }
   ''

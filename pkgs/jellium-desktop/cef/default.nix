@@ -8,7 +8,7 @@ let
   shortVersion = lib.head (lib.splitString "+" source.version);
 in
 pkgs.cef-binary.overrideAttrs (old: {
-  pname = "jellyfin-desktop-cef";
+  pname = "jellium-desktop-cef";
   version = shortVersion;
   src = source.src;
 
@@ -32,17 +32,18 @@ pkgs.cef-binary.overrideAttrs (old: {
       ln -s "$f" "$(basename "$f")"
     done
 
-    # download-cef checks archive.json's version is <= cef-dll-sys's pinned
-    # Chromium (147.0.14, from `cef-dll-sys = "=148.1.0+147.0.14"` in
-    # upstream src/Cargo.toml). Upstream intentionally ships skew: link-time
-    # bindings target the older ABI, runtime gets the newer libcef.so via
-    # stage_cef. Claim the older version here so the check passes; the actual
-    # 148.0.9 binaries are reachable through the symlinks above. Bump this
-    # when upstream advances the cef-dll-sys pin.
-    cat > archive.json <<'EOF'
+    # archive.json marks this dir as a download-cef extraction so cef-dll-sys's
+    # build.rs accepts it as CEF_PATH. download-cef's check parses the version
+    # as the name's `cef_binary_` .. first `+` span and requires it <= the cef
+    # crate pin (`cef = "=150.0.0+150.0.10"` in upstream src/Cargo.lock). Since
+    # upstream rev 1272c89 the pin matches this tarball exactly (no more
+    # version skew), so we can claim the real archive name. Note: xtask's
+    # sdk_proxy now *excludes* this file and synthesizes its own from the crate
+    # pin; this copy only matters for direct CEF_PATH use without xtask.
+    cat > archive.json <<EOF
     {
       "type": "minimal",
-      "name": "cef_binary_147.0.14+linux64_minimal.tar.bz2",
+      "name": "cef_binary_${source.version}_linux64_minimal.tar.bz2",
       "sha1": ""
     }
     EOF

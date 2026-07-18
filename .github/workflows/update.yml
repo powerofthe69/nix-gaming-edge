@@ -56,7 +56,7 @@ jobs:
           mkdir -p ~/.config/nvchecker
           printf '[keys]\ngithub = "%s"\ngitlab = "%s"\n' "$GITHUB_TOKEN" "$GITLAB_TOKEN" > ~/.config/nvchecker/keyfile.toml
           nvfetcher -o _sources -k ~/.config/nvchecker/keyfile.toml
-          nvfetcher -c pkgs/jellyfin-desktop/nvfetcher.toml -o pkgs/jellyfin-desktop/_dependencies -k ~/.config/nvchecker/keyfile.toml
+          nvfetcher -c pkgs/jellium-desktop/nvfetcher.toml -o pkgs/jellium-desktop/_dependencies -k ~/.config/nvchecker/keyfile.toml
 
       - name: Refresh Discord source manifest
         run: ./scripts/sync-discord-deps.py
@@ -140,14 +140,14 @@ jobs:
             rm -rf "$WORK_DIR"
           fi
 
-      - name: Refresh jellyfin-desktop cargoHash
+      - name: Refresh jellium-desktop cargoHash
         run: |
-          if ! nix build .#jellyfin-desktop.cargoDeps --no-link 2> nix-err.log; then
+          if ! nix build .#jellium-desktop.cargoDeps --no-link 2> nix-err.log; then
             NEW_HASH=$(awk '/got:/ {print $2}' nix-err.log)
             if [[ $NEW_HASH == sha256-* ]]; then
-              sed -i "s|cargoHash = \"sha256-[^\"]*\"|cargoHash = \"$NEW_HASH\"|" pkgs/jellyfin-desktop/default.nix
+              sed -i "s|cargoHash = \"sha256-[^\"]*\"|cargoHash = \"$NEW_HASH\"|" pkgs/jellium-desktop/default.nix
             else
-              echo "cargoHash could not be scraped for jellyfin-desktop:"
+              echo "cargoHash could not be scraped for jellium-desktop:"
               cat nix-err.log
               exit 1
             fi
@@ -181,9 +181,9 @@ jobs:
           path: |
             nvfetcher.toml
             _sources/
-            pkgs/jellyfin-desktop/_dependencies/
-            pkgs/jellyfin-desktop/nvfetcher.toml
-            pkgs/jellyfin-desktop/default.nix
+            pkgs/jellium-desktop/_dependencies/
+            pkgs/jellium-desktop/nvfetcher.toml
+            pkgs/jellium-desktop/default.nix
             pkgs/pseudoregalia-rando/Cargo.lock
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
