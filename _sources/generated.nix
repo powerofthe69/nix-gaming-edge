@@ -73,24 +73,24 @@
   };
   mesa = {
     pname = "mesa";
-    version = "be696377a17b63228fc4ff78284ac1379506d0ae";
+    version = "db128e2f552610de79e2912925929c40c9a55652";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "be696377a17b63228fc4ff78284ac1379506d0ae";
+      rev = "db128e2f552610de79e2912925929c40c9a55652";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PAZd63191kHMD2bcjOQZSSqdteoe3hLPjQilf4wjKXs=";
+      sha256 = "sha256-mvXtyeu5o32UcdofcSO0N1a/hC3Ui88soo4ow+b5k3k=";
     };
-    date = "2026-07-17";
+    date = "2026-07-18";
   };
   modengine3 = {
     pname = "modengine3";
-    version = "v0.11.0";
+    version = "v0.12.0";
     src = fetchurl {
-      url = "https://github.com/garyttierney/me3/releases/download/v0.11.0/me3-linux-amd64.tar.gz";
-      sha256 = "sha256-D+sJD3EN0AhUwWPmmJp7a9kVMEEQfHxoQb96OtTtjZc=";
+      url = "https://github.com/garyttierney/me3/releases/download/v0.12.0/me3-linux-amd64.tar.gz";
+      sha256 = "sha256-NWx/SF7aKN8S7/Jvp5T5U0oOQyE0DKzy9EUJGHOoH78=";
     };
   };
   oodle-lib = {
@@ -114,7 +114,7 @@
     version = "100884776";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=";
+      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
     };
   };
   proton-cachyos = {
@@ -156,17 +156,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "c4d8e8624b36866134b09b2092ecc9a62127c261";
+    version = "0a5dfaa1caa0799899b4d14e3862b70c665d8223";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "c4d8e8624b36866134b09b2092ecc9a62127c261";
+      rev = "0a5dfaa1caa0799899b4d14e3862b70c665d8223";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-XHvPgljliR/CkVUKyE/sxOcKd1hcqjQTkRUKhhSW1KM=";
+      sha256 = "sha256-5j2BN51toR9ygtcL+DLChTdeGjoVjo8uBNjI86Q2wgY=";
     };
-    date = "2026-07-15";
+    date = "2026-07-17";
   };
   vintagestory = {
     pname = "vintagestory";

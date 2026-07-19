@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-17",
+        "date": "2026-07-18",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "be696377a17b63228fc4ff78284ac1379506d0ae",
-            "sha256": "sha256-PAZd63191kHMD2bcjOQZSSqdteoe3hLPjQilf4wjKXs=",
+            "rev": "db128e2f552610de79e2912925929c40c9a55652",
+            "sha256": "sha256-mvXtyeu5o32UcdofcSO0N1a/hC3Ui88soo4ow+b5k3k=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "be696377a17b63228fc4ff78284ac1379506d0ae"
+        "version": "db128e2f552610de79e2912925929c40c9a55652"
     },
     "modengine3": {
         "cargoLock": null,
@@ -133,11 +133,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-D+sJD3EN0AhUwWPmmJp7a9kVMEEQfHxoQb96OtTtjZc=",
+            "sha256": "sha256-NWx/SF7aKN8S7/Jvp5T5U0oOQyE0DKzy9EUJGHOoH78=",
             "type": "url",
-            "url": "https://github.com/garyttierney/me3/releases/download/v0.11.0/me3-linux-amd64.tar.gz"
+            "url": "https://github.com/garyttierney/me3/releases/download/v0.12.0/me3-linux-amd64.tar.gz"
         },
-        "version": "v0.11.0"
+        "version": "v0.12.0"
     },
     "oodle-lib": {
         "cargoLock": null,
@@ -178,7 +178,7 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-udw91RtbdJ3zv8xA9AwtibdghF4k0w7Db70UHMifASc=",
+            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
@@ -251,7 +251,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-07-15",
+        "date": "2026-07-17",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -261,13 +261,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c4d8e8624b36866134b09b2092ecc9a62127c261",
-            "sha256": "sha256-XHvPgljliR/CkVUKyE/sxOcKd1hcqjQTkRUKhhSW1KM=",
+            "rev": "0a5dfaa1caa0799899b4d14e3862b70c665d8223",
+            "sha256": "sha256-5j2BN51toR9ygtcL+DLChTdeGjoVjo8uBNjI86Q2wgY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "c4d8e8624b36866134b09b2092ecc9a62127c261"
+        "version": "0a5dfaa1caa0799899b4d14e3862b70c665d8223"
     },
     "vintagestory": {
         "cargoLock": null,
