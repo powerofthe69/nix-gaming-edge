@@ -66,7 +66,7 @@
     },
     "jellium-desktop": {
         "cargoLock": null,
-        "date": "2026-07-19",
+        "date": "2026-07-20",
         "extract": null,
         "name": "jellium-desktop",
         "passthru": null,
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5a2a702d3e5589f14aa92de04558508e4721b035",
-            "sha256": "sha256-RD2g53Hcd0DMvSfCW5aakidcC/hfDNyda7ucznQykaQ=",
+            "rev": "79c035481d743144aafcf7c893d81ee9edfafc29",
+            "sha256": "sha256-dKoJ8CdLX3n68jYDMjCz2ndBx5SzBqYR5LTH8GvoOlQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/andrewrabert/jellium-desktop.git"
         },
-        "version": "5a2a702d3e5589f14aa92de04558508e4721b035"
+        "version": "79c035481d743144aafcf7c893d81ee9edfafc29"
     },
     "libdrm": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-19",
+        "date": "2026-07-20",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a11215b318f6208cca39b49315a3856d4870210b",
-            "sha256": "sha256-xOCvvFqGTd9Fxby39Haocl7dIHJzSp5hw0brvuJ0Ugw=",
+            "rev": "69416494db271747d015b6ab010f3e348d7f76da",
+            "sha256": "sha256-fnW90zQMXyeJhCOcA7UqLMr2UlZPY9tmZjKtBFgYWkI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "a11215b318f6208cca39b49315a3856d4870210b"
+        "version": "69416494db271747d015b6ab010f3e348d7f76da"
     },
     "modengine3": {
         "cargoLock": null,
@@ -133,11 +133,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-NWx/SF7aKN8S7/Jvp5T5U0oOQyE0DKzy9EUJGHOoH78=",
+            "sha256": "sha256-mq1tRZ8DfQaGKRsvsrp/tvh+2JFFR2cYKB285hLmuVo=",
             "type": "url",
-            "url": "https://github.com/garyttierney/me3/releases/download/v0.12.0/me3-linux-amd64.tar.gz"
+            "url": "https://github.com/garyttierney/me3/releases/download/v0.12.1/me3-linux-amd64.tar.gz"
         },
-        "version": "v0.12.0"
+        "version": "v0.12.1"
     },
     "oodle-lib": {
         "cargoLock": null,
