@@ -96,17 +96,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f9816a42b0d6138851cbe5eb7a33ee1a2f2a15ca",
-            "sha256": "sha256-jljFpM2GMXLBY5bDibk6bIobSNfxhW8duRNacSvXK7M=",
+            "rev": "f198c21dfcb89127083413dd4779a13b3f9a6507",
+            "sha256": "sha256-w2dJQQMdftCPfdqYy8kRznvnXgWURBW0s62m0m3VKQc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/drm.git"
         },
-        "version": "f9816a42b0d6138851cbe5eb7a33ee1a2f2a15ca"
+        "version": "f198c21dfcb89127083413dd4779a13b3f9a6507"
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-20",
+        "date": "2026-07-21",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "69416494db271747d015b6ab010f3e348d7f76da",
-            "sha256": "sha256-fnW90zQMXyeJhCOcA7UqLMr2UlZPY9tmZjKtBFgYWkI=",
+            "rev": "c85e3522b592344ecb6de4bb00362108c0a80cd2",
+            "sha256": "sha256-Rm/E+/Na3mK8t/BpKvNlIfWeLjQ3K6eYvdmnxFT6rw4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "69416494db271747d015b6ab010f3e348d7f76da"
+        "version": "c85e3522b592344ecb6de4bb00362108c0a80cd2"
     },
     "modengine3": {
         "cargoLock": null,
@@ -251,7 +251,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-07-17",
+        "date": "2026-07-20",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -261,13 +261,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0a5dfaa1caa0799899b4d14e3862b70c665d8223",
-            "sha256": "sha256-5j2BN51toR9ygtcL+DLChTdeGjoVjo8uBNjI86Q2wgY=",
+            "rev": "4b9c27d905d6255141617546227a56073916ebd4",
+            "sha256": "sha256-dhBD/xlgf0VXVEP6I5kB6wmyJz7k8Epy1m8mHKhZuqs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "0a5dfaa1caa0799899b4d14e3862b70c665d8223"
+        "version": "4b9c27d905d6255141617546227a56073916ebd4"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -278,11 +278,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-sa4Pj1DwT6W6LJCAYznmbyqPtMUTaLSNTkXS1imQp04=",
+            "sha256": "sha256-6efnjDUXMweOzN1mnkwVyQzQjs1QlFHBss1qb62Z2o0=",
             "type": "url",
-            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.3.tar.gz"
+            "url": "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.4.tar.gz"
         },
-        "version": "stable/vs_client_linux-x64_1.22.3"
+        "version": "stable/vs_client_linux-x64_1.22.4"
     },
     "wayland": {
         "cargoLock": null,

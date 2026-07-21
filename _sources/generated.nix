@@ -59,31 +59,31 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "f9816a42b0d6138851cbe5eb7a33ee1a2f2a15ca";
+    version = "f198c21dfcb89127083413dd4779a13b3f9a6507";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "f9816a42b0d6138851cbe5eb7a33ee1a2f2a15ca";
+      rev = "f198c21dfcb89127083413dd4779a13b3f9a6507";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-jljFpM2GMXLBY5bDibk6bIobSNfxhW8duRNacSvXK7M=";
+      sha256 = "sha256-w2dJQQMdftCPfdqYy8kRznvnXgWURBW0s62m0m3VKQc=";
     };
     date = "2026-07-14";
   };
   mesa = {
     pname = "mesa";
-    version = "69416494db271747d015b6ab010f3e348d7f76da";
+    version = "c85e3522b592344ecb6de4bb00362108c0a80cd2";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "69416494db271747d015b6ab010f3e348d7f76da";
+      rev = "c85e3522b592344ecb6de4bb00362108c0a80cd2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fnW90zQMXyeJhCOcA7UqLMr2UlZPY9tmZjKtBFgYWkI=";
+      sha256 = "sha256-Rm/E+/Na3mK8t/BpKvNlIfWeLjQ3K6eYvdmnxFT6rw4=";
     };
-    date = "2026-07-20";
+    date = "2026-07-21";
   };
   modengine3 = {
     pname = "modengine3";
@@ -156,24 +156,24 @@
   };
   vencord = {
     pname = "vencord";
-    version = "0a5dfaa1caa0799899b4d14e3862b70c665d8223";
+    version = "4b9c27d905d6255141617546227a56073916ebd4";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "0a5dfaa1caa0799899b4d14e3862b70c665d8223";
+      rev = "4b9c27d905d6255141617546227a56073916ebd4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5j2BN51toR9ygtcL+DLChTdeGjoVjo8uBNjI86Q2wgY=";
+      sha256 = "sha256-dhBD/xlgf0VXVEP6I5kB6wmyJz7k8Epy1m8mHKhZuqs=";
     };
-    date = "2026-07-17";
+    date = "2026-07-20";
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "stable/vs_client_linux-x64_1.22.3";
+    version = "stable/vs_client_linux-x64_1.22.4";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.3.tar.gz";
-      sha256 = "sha256-sa4Pj1DwT6W6LJCAYznmbyqPtMUTaLSNTkXS1imQp04=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.4.tar.gz";
+      sha256 = "sha256-6efnjDUXMweOzN1mnkwVyQzQjs1QlFHBss1qb62Z2o0=";
     };
   };
   wayland = {
