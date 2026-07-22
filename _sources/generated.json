@@ -66,7 +66,7 @@
     },
     "jellium-desktop": {
         "cargoLock": null,
-        "date": "2026-07-20",
+        "date": "2026-07-21",
         "extract": null,
         "name": "jellium-desktop",
         "passthru": null,
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "79c035481d743144aafcf7c893d81ee9edfafc29",
-            "sha256": "sha256-dKoJ8CdLX3n68jYDMjCz2ndBx5SzBqYR5LTH8GvoOlQ=",
+            "rev": "61e5801afc42713a2cd730c69024bfd377333646",
+            "sha256": "sha256-pDyF7VYBDqbZwZdNqqGXTafFFXTZcpOWSAZ77RhJHUM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/andrewrabert/jellium-desktop.git"
         },
-        "version": "79c035481d743144aafcf7c893d81ee9edfafc29"
+        "version": "61e5801afc42713a2cd730c69024bfd377333646"
     },
     "libdrm": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-21",
+        "date": "2026-07-22",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c85e3522b592344ecb6de4bb00362108c0a80cd2",
-            "sha256": "sha256-Rm/E+/Na3mK8t/BpKvNlIfWeLjQ3K6eYvdmnxFT6rw4=",
+            "rev": "d49a00bdf15fd48b31af93aaf5feed3eebcbda12",
+            "sha256": "sha256-1goYOt83HlE1qxyJr3kgSfcNlwRyE8rkdJnR+uoGNxg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "c85e3522b592344ecb6de4bb00362108c0a80cd2"
+        "version": "d49a00bdf15fd48b31af93aaf5feed3eebcbda12"
     },
     "modengine3": {
         "cargoLock": null,
@@ -193,11 +193,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Qo16R7KVGYVuW61Q634PASPsJDHi03wxzr7ycD8k8lM=",
+            "sha256": "sha256-Yv9LJ1AYByPMAFOGCP5ofiHR2Rox72TOGnyfRsPbMQs=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260703-slr/proton-cachyos-11.0-20260703-slr-x86_64.tar.xz"
         },
-        "version": "cachyos-11.0-20260702-slr"
+        "version": "cachyos-11.0-20260703-slr"
     },
     "proton-cachyos-x86_64-v3": {
         "cargoLock": null,
@@ -208,11 +208,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ETl4U+uV+PtEhTXOviZVRxMGyAw0VsRrUs1Whwik/lw=",
+            "sha256": "sha256-A+zUK9fUdOm6RDzoly2WeKH6Osvykg12HzU5eUbs4oQ=",
             "type": "url",
-            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260702-slr/proton-cachyos-11.0-20260702-slr-x86_64_v3.tar.xz"
+            "url": "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20260703-slr/proton-cachyos-11.0-20260703-slr-x86_64_v3.tar.xz"
         },
-        "version": "cachyos-11.0-20260702-slr"
+        "version": "cachyos-11.0-20260703-slr"
     },
     "pseudoregalia-rando": {
         "cargoLock": null,
