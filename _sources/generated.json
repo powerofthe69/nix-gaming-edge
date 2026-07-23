@@ -66,7 +66,7 @@
     },
     "jellium-desktop": {
         "cargoLock": null,
-        "date": "2026-07-21",
+        "date": "2026-07-23",
         "extract": null,
         "name": "jellium-desktop",
         "passthru": null,
@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "61e5801afc42713a2cd730c69024bfd377333646",
-            "sha256": "sha256-pDyF7VYBDqbZwZdNqqGXTafFFXTZcpOWSAZ77RhJHUM=",
+            "rev": "4d7de926d3de44e4bb7863fd9cb0384ba594cfee",
+            "sha256": "sha256-3+PBHOL0Ov382Tcuap09IwXxOarGX/wCFL/qFtuQreo=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/andrewrabert/jellium-desktop.git"
         },
-        "version": "61e5801afc42713a2cd730c69024bfd377333646"
+        "version": "4d7de926d3de44e4bb7863fd9cb0384ba594cfee"
     },
     "libdrm": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-22",
+        "date": "2026-07-23",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d49a00bdf15fd48b31af93aaf5feed3eebcbda12",
-            "sha256": "sha256-1goYOt83HlE1qxyJr3kgSfcNlwRyE8rkdJnR+uoGNxg=",
+            "rev": "42f591b906b7e8a966cc339f84d2671f423d48c4",
+            "sha256": "sha256-5ii/wLwdbfqrixEdJZB/vgoQ3pDt++usT1n6/F1duDE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "d49a00bdf15fd48b31af93aaf5feed3eebcbda12"
+        "version": "42f591b906b7e8a966cc339f84d2671f423d48c4"
     },
     "modengine3": {
         "cargoLock": null,
