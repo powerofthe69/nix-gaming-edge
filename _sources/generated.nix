@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "6015d5e538d531f230bb102e0af10eed566e6900";
+    version = "c810f97ad70db582277b74326d610ec62528eeb9";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "6015d5e538d531f230bb102e0af10eed566e6900";
+      rev = "c810f97ad70db582277b74326d610ec62528eeb9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6CvzkLwQN7bRZ9Ou2M/cfOwJ4Ik31A0zRJzqCqnLteg=";
+      sha256 = "sha256-LjwbXpLpL1Zytt9fjOzmh4jB6r0VdVgx88nRgT3cEGI=";
     };
-    date = "2026-07-27";
+    date = "2026-07-28";
   };
   modengine3 = {
     pname = "modengine3";
