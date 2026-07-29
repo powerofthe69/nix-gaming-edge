@@ -37,10 +37,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.07.07-325d709";
+    version = "2026.07.29-8228f98";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.07-325d709.zip";
-      sha256 = "sha256-qC5q+5DRkl0jqmPRdWlcZ9n0sYKQdwmPncL/It9FhMw=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.29-8228f98.zip";
+      sha256 = "sha256-k2IKxmkFyGAf05YnLW5T0f1dKK/5PcrX7nbN0etzoaA=";
     };
   };
   jellium-desktop = {
@@ -73,15 +73,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "f44a6b57f0b83b952144b7210831b6f82f507627";
+    version = "4e2e284654faf92b3cb755f0bd1bd4d7e158b0bc";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "f44a6b57f0b83b952144b7210831b6f82f507627";
+      rev = "4e2e284654faf92b3cb755f0bd1bd4d7e158b0bc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5mRBJQWqZCpEk5jcXjXAvyTW4tU9PAnXuZSZtuJA5r0=";
+      sha256 = "sha256-YemGYpiRJWmFjAidYXVtCW36umoGQkY6Kk2HcmXJ2TY=";
     };
     date = "2026-07-29";
   };
@@ -111,10 +111,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "266896188";
+    version = "266983386";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-LuoUMe7stKrXI+Lv2wEIwtNI5dku8vBjPsEg8gQvwhA=";
+      sha256 = "sha256-Ik/sMs/QyeTMGAq0/N/2pObq9gHjxwO0ZIDAEPc9x2E=";
     };
   };
   proton-cachyos = {
@@ -156,17 +156,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "83b74e2305cb4718b3d55af5fbd93ade50d2bb50";
+    version = "a3250ea50e376c19b63fdd0103d75bb540e7c220";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "83b74e2305cb4718b3d55af5fbd93ade50d2bb50";
+      rev = "a3250ea50e376c19b63fdd0103d75bb540e7c220";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-z3EY/nc9pHPjuMteY8ubYM3sqgjASznEG6B1U4mNCU4=";
+      sha256 = "sha256-0BWREh/1/53IAu6CGfXQB7MdEE/SnnHbfG3wxGKZOxo=";
     };
-    date = "2026-07-26";
+    date = "2026-07-29";
   };
   vintagestory = {
     pname = "vintagestory";
