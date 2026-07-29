@@ -86,7 +86,7 @@
     },
     "libdrm": {
         "cargoLock": null,
-        "date": "2026-07-14",
+        "date": "2026-07-28",
         "extract": null,
         "name": "libdrm",
         "passthru": null,
@@ -96,17 +96,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f198c21dfcb89127083413dd4779a13b3f9a6507",
-            "sha256": "sha256-w2dJQQMdftCPfdqYy8kRznvnXgWURBW0s62m0m3VKQc=",
+            "rev": "82f74e7a5a7403392e91352af00210ae26a81f19",
+            "sha256": "sha256-c83rpdyN5pnyNTZzNsWjMXNLGkEPAA2vzzf1Jf8VIqM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/drm.git"
         },
-        "version": "f198c21dfcb89127083413dd4779a13b3f9a6507"
+        "version": "82f74e7a5a7403392e91352af00210ae26a81f19"
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-07-28",
+        "date": "2026-07-29",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c810f97ad70db582277b74326d610ec62528eeb9",
-            "sha256": "sha256-LjwbXpLpL1Zytt9fjOzmh4jB6r0VdVgx88nRgT3cEGI=",
+            "rev": "f44a6b57f0b83b952144b7210831b6f82f507627",
+            "sha256": "sha256-5mRBJQWqZCpEk5jcXjXAvyTW4tU9PAnXuZSZtuJA5r0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "c810f97ad70db582277b74326d610ec62528eeb9"
+        "version": "f44a6b57f0b83b952144b7210831b6f82f507627"
     },
     "modengine3": {
         "cargoLock": null,
@@ -178,11 +178,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=",
+            "sha256": "sha256-LuoUMe7stKrXI+Lv2wEIwtNI5dku8vBjPsEg8gQvwhA=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
-        "version": "100884776"
+        "version": "266896188"
     },
     "proton-cachyos": {
         "cargoLock": null,

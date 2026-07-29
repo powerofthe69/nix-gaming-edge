@@ -59,31 +59,31 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "f198c21dfcb89127083413dd4779a13b3f9a6507";
+    version = "82f74e7a5a7403392e91352af00210ae26a81f19";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "f198c21dfcb89127083413dd4779a13b3f9a6507";
+      rev = "82f74e7a5a7403392e91352af00210ae26a81f19";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-w2dJQQMdftCPfdqYy8kRznvnXgWURBW0s62m0m3VKQc=";
+      sha256 = "sha256-c83rpdyN5pnyNTZzNsWjMXNLGkEPAA2vzzf1Jf8VIqM=";
     };
-    date = "2026-07-14";
+    date = "2026-07-28";
   };
   mesa = {
     pname = "mesa";
-    version = "c810f97ad70db582277b74326d610ec62528eeb9";
+    version = "f44a6b57f0b83b952144b7210831b6f82f507627";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "c810f97ad70db582277b74326d610ec62528eeb9";
+      rev = "f44a6b57f0b83b952144b7210831b6f82f507627";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LjwbXpLpL1Zytt9fjOzmh4jB6r0VdVgx88nRgT3cEGI=";
+      sha256 = "sha256-5mRBJQWqZCpEk5jcXjXAvyTW4tU9PAnXuZSZtuJA5r0=";
     };
-    date = "2026-07-28";
+    date = "2026-07-29";
   };
   modengine3 = {
     pname = "modengine3";
@@ -111,10 +111,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "100884776";
+    version = "266896188";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-8foFB6p3K0Ija9ZQ+oam1tcGFka4wSJSOOOvtr6ydbU=";
+      sha256 = "sha256-LuoUMe7stKrXI+Lv2wEIwtNI5dku8vBjPsEg8gQvwhA=";
     };
   };
   proton-cachyos = {
