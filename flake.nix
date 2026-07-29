@@ -172,7 +172,7 @@
       };
 
       overlays = {
-        # Inside FHS envs, swap stable libdrm for libdrm-git (mesa-git needs it)
+        # Inside FHS envs, shadow stable libdrm with libdrm-git (mesa-git needs it)
         libdrmGitFhsenv = import ./overlays/libdrm-git-fhsenv.nix;
 
         default = final: prev: {

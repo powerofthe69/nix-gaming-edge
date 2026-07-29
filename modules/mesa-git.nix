@@ -320,7 +320,7 @@ in
 
         # mesa-git correctly uses libdrm-git and now fails inside any FHS env that
         # ships stable libdrm (e.g. Steam!). Overlay lives in a shared file so a
-        # cache builder can apply the identical swap — see overlays/libdrm-git-fhsenv.nix.
+        # cache builder can apply the identical shadowing — see overlays/libdrm-git-fhsenv.nix.
         nixpkgs.overlays = [ (import ../overlays/libdrm-git-fhsenv.nix) ];
       }
 
