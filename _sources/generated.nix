@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4e2e284654faf92b3cb755f0bd1bd4d7e158b0bc";
+    version = "c13d920dda2c799eb8322fd79478b0ae36c93c8b";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4e2e284654faf92b3cb755f0bd1bd4d7e158b0bc";
+      rev = "c13d920dda2c799eb8322fd79478b0ae36c93c8b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-YemGYpiRJWmFjAidYXVtCW36umoGQkY6Kk2HcmXJ2TY=";
+      sha256 = "sha256-Ui+ma8JTsDuotxJSiw3lxtaImxATZXB6nN6QbESduMs=";
     };
-    date = "2026-07-29";
+    date = "2026-07-30";
   };
   modengine3 = {
     pname = "modengine3";
@@ -111,10 +111,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "266983386";
+    version = "266902256";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-Ik/sMs/QyeTMGAq0/N/2pObq9gHjxwO0ZIDAEPc9x2E=";
+      sha256 = "sha256-W0ucV1eS1FSejufas2cl1w3g1O+0sLLg/r5jNRa7tG4=";
     };
   };
   proton-cachyos = {
@@ -156,15 +156,15 @@
   };
   vencord = {
     pname = "vencord";
-    version = "a3250ea50e376c19b63fdd0103d75bb540e7c220";
+    version = "c84389de5a964f15fa37628b393c4d1a9ca80810";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "a3250ea50e376c19b63fdd0103d75bb540e7c220";
+      rev = "c84389de5a964f15fa37628b393c4d1a9ca80810";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-0BWREh/1/53IAu6CGfXQB7MdEE/SnnHbfG3wxGKZOxo=";
+      sha256 = "sha256-O0jncIwZXlTPudoDQDOqrLQR8Up7XcRfi46Snd+W49Q=";
     };
     date = "2026-07-29";
   };
