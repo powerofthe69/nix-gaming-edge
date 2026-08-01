@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "b3f90cea88602d8bec6ea2bb48c6650329aef852";
+    version = "a5ab30520c7b29b519dd1464e8af8b27c9a37cb3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b3f90cea88602d8bec6ea2bb48c6650329aef852";
+      rev = "a5ab30520c7b29b519dd1464e8af8b27c9a37cb3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-yVdJyagYlE28NW0Obd2/gSLDwbNGoJ7kxduWD3Hqjfo=";
+      sha256 = "sha256-h0AG62jGn/5IURdJlSHLU6S/nn9aLvSR6gElHbgJ//U=";
     };
-    date = "2026-07-31";
+    date = "2026-08-01";
   };
   modengine3 = {
     pname = "modengine3";
@@ -111,10 +111,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "266902256";
+    version = "267146721";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-W0ucV1eS1FSejufas2cl1w3g1O+0sLLg/r5jNRa7tG4=";
+      sha256 = "sha256-Z34ettoq9s4CK4Ymlcq2Z2OABW0GQUQptPSlTaq59hw=";
     };
   };
   proton-cachyos = {
@@ -170,10 +170,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "stable/vs_client_linux-x64_1.22.5";
+    version = "stable/vs_client_linux-x64_1.22.6";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.5.tar.gz";
-      sha256 = "sha256-ozpjsnqJKFdzKeJuOSuurYN8UEvLrBw17quGZeMN8PY=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.6.tar.gz";
+      sha256 = "sha256-xJPyaYklEq2BeUX9+7hNPI6WC6ibcQDS+sKeqKYSh3A=";
     };
   };
   wayland = {
