@@ -1,7 +1,9 @@
 {
+  alsa-lib,
   coreutils,
   lib,
   libGL,
+  libpulseaudio,
   libX11,
   libXcursor,
   libXext,
@@ -21,6 +23,7 @@
   wget,
   which,
   zenity,
+  zlib,
 }:
 
 stdenv.mkDerivation rec {
@@ -35,8 +38,10 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    alsa-lib
     coreutils
     libGL
+    libpulseaudio
     libX11
     libXcursor
     libXext
@@ -52,6 +57,7 @@ stdenv.mkDerivation rec {
     wget
     which
     zenity
+    zlib
   ];
 
   unpackPhase = ''
@@ -77,7 +83,7 @@ stdenv.mkDerivation rec {
 
     mkdir -p $out/share/pokemmo
     cp -r * $out/share/pokemmo
-    rm -f $out/share/pokemmo/PokeMMO.sh
+    rm -f $out/share/pokemmo/PokeMMO.sh $out/share/pokemmo/env-vars
 
     # Install Icon
     mkdir -p $out/share/icons/hicolor/128x128/apps
@@ -85,6 +91,9 @@ stdenv.mkDerivation rec {
 
     runtime_libs="${
       lib.makeLibraryPath [
+        alsa-lib
+        libpulseaudio
+        stdenv.cc.cc.lib
         libGL
         libX11
         libXcursor
@@ -97,6 +106,7 @@ stdenv.mkDerivation rec {
         openssl
         pipewire
         udev
+        zlib
       ]
     }"
 
@@ -122,12 +132,14 @@ stdenv.mkDerivation rec {
 
         chmod -R u+w \"\$USER_DIR\"
 
-        if [ ! -f \"\$USER_DIR/PokeMMO.exe\" ]; then
-          cp \"\$STORE_SRC/PokeMMO.exe\" \"\$USER_DIR/PokeMMO.exe\"
-          chmod u+w \"\$USER_DIR/PokeMMO.exe\"
+        cd \"\$USER_DIR\"
+
+        NATIVE=\"bin/linux/${if stdenv.hostPlatform.isAarch64 then "arm64" else "x64"}/PokeMMO\"
+        if [ -f \"\$NATIVE\" ]; then
+          chmod u+x \"\$NATIVE\"
+          exec ${stdenv.cc.bintools.dynamicLinker} \"\$NATIVE\"
         fi
 
-        cd \"\$USER_DIR\"
         exec ${openjdk25}/bin/java \\
           -Xmx384M \\
           -Dfile.encoding=\"UTF-8\" \\
