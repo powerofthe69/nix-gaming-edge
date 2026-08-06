@@ -45,17 +45,17 @@
   };
   jellium-desktop = {
     pname = "jellium-desktop";
-    version = "0b88f9d995250451bcd6e73154d2a3d74aa9a144";
+    version = "41bcfd7c9a1e26a2b6f418e814e6e44f9227cb6d";
     src = fetchgit {
       url = "https://github.com/andrewrabert/jellium-desktop.git";
-      rev = "0b88f9d995250451bcd6e73154d2a3d74aa9a144";
+      rev = "41bcfd7c9a1e26a2b6f418e814e6e44f9227cb6d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ydwzv4pjlwIJsEbxN93e1Z60Ua7YPdmWN4C1JHA2xag=";
+      sha256 = "sha256-W9xu5Jf8KF2PaLYvlB1AggHnuiJkK3EDU00yxaa3r8Y=";
     };
-    date = "2026-08-02";
+    date = "2026-08-06";
   };
   libdrm = {
     pname = "libdrm";
@@ -73,17 +73,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "64f9ff1d26fe56acedc50f484bc0e2bb2ed07942";
+    version = "c2af98113d87c9b9ebacc571b68b0bccc7fbf4b3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "64f9ff1d26fe56acedc50f484bc0e2bb2ed07942";
+      rev = "c2af98113d87c9b9ebacc571b68b0bccc7fbf4b3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mNcSdD68ePwe0HAZvXUgncy7ggTAJ0NQWm767t8wRLc=";
+      sha256 = "sha256-cgpIE/pmMEOClNDz0Psx0J8KqY44xbarAPwd/nzJcoY=";
     };
-    date = "2026-08-05";
+    date = "2026-08-06";
   };
   modengine3 = {
     pname = "modengine3";
@@ -111,10 +111,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "267146721";
+    version = "267314400";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-Z34ettoq9s4CK4Ymlcq2Z2OABW0GQUQptPSlTaq59hw=";
+      sha256 = "sha256-p3qBOvTqXhkzUSzTnkqxWgQsL+CNm1u0UVCX3wGBFUM=";
     };
   };
   proton-cachyos = {
@@ -156,17 +156,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "c84389de5a964f15fa37628b393c4d1a9ca80810";
+    version = "1a8c3b71bbfaeb195a7f402458b6b68b0ccea7ef";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "c84389de5a964f15fa37628b393c4d1a9ca80810";
+      rev = "1a8c3b71bbfaeb195a7f402458b6b68b0ccea7ef";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-O0jncIwZXlTPudoDQDOqrLQR8Up7XcRfi46Snd+W49Q=";
+      sha256 = "sha256-KOBe4jg4wXy7yH3x/sEvSzZIeL48H8p04CAA/63Jrz0=";
     };
-    date = "2026-07-29";
+    date = "2026-08-06";
   };
   vintagestory = {
     pname = "vintagestory";
