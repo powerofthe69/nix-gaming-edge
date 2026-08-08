@@ -58,11 +58,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-k2IKxmkFyGAf05YnLW5T0f1dKK/5PcrX7nbN0etzoaA=",
+            "sha256": "sha256-eqNIO+0x8qSbg/ECI7KrGbpIWtr8MCZ82xCCEfJalYs=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.07.29-8228f98.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.06-68d97a2.zip"
         },
-        "version": "2026.07.29-8228f98"
+        "version": "2026.08.06-68d97a2"
     },
     "jellium-desktop": {
         "cargoLock": null,
@@ -106,7 +106,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-08-08",
+        "date": "2026-08-09",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -116,13 +116,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "32fab1ad098a393ffa40dce8e5272f52aa0ff70a",
-            "sha256": "sha256-RwWes2XLM11EaATu5KGG2CpJ/f8RhHGnPB+DRqNyEH8=",
+            "rev": "bab34da4a378379e65d212b405525f50255efd31",
+            "sha256": "sha256-k96S6quesbDpFlGV1CW8PeYIROY2myZ6i39PiqtHaNg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "32fab1ad098a393ffa40dce8e5272f52aa0ff70a"
+        "version": "bab34da4a378379e65d212b405525f50255efd31"
     },
     "modengine3": {
         "cargoLock": null,
