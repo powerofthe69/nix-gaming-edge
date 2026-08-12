@@ -6,19 +6,6 @@
   dockerTools,
 }:
 {
-  _2ship2harkinian = {
-    pname = "_2ship2harkinian";
-    version = "4.0.2";
-    src = fetchgit {
-      url = "https://github.com/HarbourMasters/2ship2harkinian.git";
-      rev = "4.0.2";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-3SgRvQL27e+MoTBGX4/iUwgELd6UFbjrb23gV1UvAJ8=";
-    };
-  };
   fluxer-desktop = {
     pname = "fluxer-desktop";
     version = "0.0.8";
@@ -29,18 +16,18 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.602.31138";
+    version = "2026.811.124022";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-IhzEcYaCcClCO/qIYkEo2JsTLEB+K0+cQWCaJO1Zz7A=";
+      sha256 = "sha256-2ni3XMMJrQLlmlAbZDc78t3A6cWjynB0+ABkm68Wb6Q=";
     };
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.08.06-68d97a2";
+    version = "2026.08.11-f021bf9";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.06-68d97a2.zip";
-      sha256 = "sha256-eqNIO+0x8qSbg/ECI7KrGbpIWtr8MCZ82xCCEfJalYs=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.11-f021bf9.zip";
+      sha256 = "sha256-pgIZ1ow5PjXrqneVOUa/+n619oG2E4yn2QVSVO0kwA8=";
     };
   };
   jellium-desktop = {
@@ -73,24 +60,24 @@
   };
   mesa = {
     pname = "mesa";
-    version = "e060f20717a311059ba2ccc34cd52516c1c8865d";
+    version = "1f562a1ff4c45acb28b20355a480956466ab4c62";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "e060f20717a311059ba2ccc34cd52516c1c8865d";
+      rev = "1f562a1ff4c45acb28b20355a480956466ab4c62";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ulYc02UYP2vdql94BJ7/tS8kQgj9OeF0xs8NX/bos4E=";
+      sha256 = "sha256-z4lOHNElfgkO1ZOhAkrhFoeuZA6GDan0eLMdvUOu/GI=";
     };
-    date = "2026-08-11";
+    date = "2026-08-12";
   };
   modengine3 = {
     pname = "modengine3";
-    version = "v0.12.1";
+    version = "v0.13.0";
     src = fetchurl {
-      url = "https://github.com/garyttierney/me3/releases/download/v0.12.1/me3-linux-amd64.tar.gz";
-      sha256 = "sha256-mq1tRZ8DfQaGKRsvsrp/tvh+2JFFR2cYKB285hLmuVo=";
+      url = "https://github.com/garyttierney/me3/releases/download/v0.13.0/me3-linux-amd64.tar.gz";
+      sha256 = "sha256-8xV53uv3W0cCBZaUtmS92JF8R3OrDCZnFcqPkuHpP8E=";
     };
   };
   oodle-lib = {
@@ -139,19 +126,6 @@
     src = fetchurl {
       url = "https://github.com/pseudoregalia-modding/rando/archive/1.8.6.tar.gz";
       sha256 = "sha256-viI3nxgwdTxH3m4dG564Lay45Q2m1AUlelYsABAdt/Q=";
-    };
-  };
-  shipwright = {
-    pname = "shipwright";
-    version = "9.2.3";
-    src = fetchgit {
-      url = "https://github.com/harbourmasters/shipwright.git";
-      rev = "9.2.3";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-tu6hS9Q/np4QqVHlI50QmhSOeVTO3RKolO2F2iSiU7Q=";
     };
   };
   vencord = {
