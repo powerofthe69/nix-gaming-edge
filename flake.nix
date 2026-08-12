@@ -96,12 +96,6 @@
         source = nvSources.opengoal-launcher;
       };
 
-      # Harkinian (Ship of Harkinian / 2 Ship 2 Harkinian)
-      harkinian = pkgs.callPackage ./pkgs/harkinian {
-        shipwrightSrc = nvSources.shipwright;
-        _2ship2harkinianSrc = nvSources._2ship2harkinian;
-      };
-
       # Jellium Desktop (CEF + mpv source build; formerly jellyfin-desktop v3)
       jellium-desktop = pkgs.callPackage ./pkgs/jellium-desktop {
         source = nvSources.jellium-desktop;
@@ -162,11 +156,6 @@
         # OpenGoal Launcher
         opengoal-launcher = opengoal-launcher;
 
-        # Harkinian (Ship of Harkinian / 2 Ship 2 Harkinian)
-        # Source tracked by nvfetcher to stay ahead of Nixpkgs hash updates
-        shipwright = harkinian.shipwright;
-        _2ship2harkinian = harkinian._2ship2harkinian;
-
         # Jellium Desktop
         jellium-desktop = jellium-desktop;
       };
@@ -210,9 +199,6 @@
           modengine3 = self.packages.${final.stdenv.hostPlatform.system}.modengine3;
 
           opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
-
-          shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
-          _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
 
           jellium-desktop = self.packages.${final.stdenv.hostPlatform.system}.jellium-desktop;
         };
@@ -273,11 +259,6 @@
 
         opengoal = final: prev: {
           opengoal-launcher = self.packages.${final.stdenv.hostPlatform.system}.opengoal-launcher;
-        };
-
-        harkinian = final: prev: {
-          shipwright = self.packages.${final.stdenv.hostPlatform.system}.shipwright;
-          _2ship2harkinian = self.packages.${final.stdenv.hostPlatform.system}._2ship2harkinian;
         };
 
         jellium-desktop = final: prev: {

@@ -79,18 +79,6 @@ src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/manifest.json"
 fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
 
-# Ship of Harkinian (Shipwright) - Ocarina of Time PC port
-[shipwright]
-src.github = "harbourmasters/shipwright"
-fetch.git = "https://github.com/harbourmasters/shipwright.git"
-git.fetchSubmodules = true
-
-# 2 Ship 2 Harkinian - Majora's Mask PC port
-[_2ship2harkinian]
-src.github = "HarbourMasters/2ship2harkinian"
-fetch.git = "https://github.com/HarbourMasters/2ship2harkinian.git"
-git.fetchSubmodules = true
-
 # OpenGoal Launcher - GUI for managing and launching OpenGoal games
 [opengoal-launcher]
 src.cmd = "curl -s https://api.github.com/repos/open-goal/launcher/releases/latest | jq -r '.tag_name | ltrimstr(\"v\")'"
