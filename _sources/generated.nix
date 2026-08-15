@@ -16,10 +16,10 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.811.124022";
+    version = "2026.814.215154";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-2ni3XMMJrQLlmlAbZDc78t3A6cWjynB0+ABkm68Wb6Q=";
+      sha256 = "sha256-kU6MTV5AGKNEyXq/Sa0QcokmK+RmxkdlEZIsAd43QQM=";
     };
   };
   hytale-launcher = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "f458cc75ec116376060fe2070f17b5fc32b5398e";
+    version = "822039414ce22530906183913e5afd7a6f075670";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "f458cc75ec116376060fe2070f17b5fc32b5398e";
+      rev = "822039414ce22530906183913e5afd7a6f075670";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1F4A/Q4xBsLRwMQEAgjBOpRNpxzKIfVt98YeJp++l4g=";
+      sha256 = "sha256-4C0+3o0keBqM+9rI01ymJhojmLDl8DwKVls6VBp2/7o=";
     };
-    date = "2026-08-14";
+    date = "2026-08-15";
   };
   modengine3 = {
     pname = "modengine3";
@@ -98,10 +98,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "271183842";
+    version = "271185371";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-x5MMhUqUcvZSHTTAeA8UwAFfrbqVigAMihgwOLftJNA=";
+      sha256 = "sha256-gsO6jexmcOHz4tPEls91hKWsAWPn5inpptQNmx1mpuA=";
     };
   };
   proton-cachyos = {
