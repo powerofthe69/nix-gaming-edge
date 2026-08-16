@@ -16,10 +16,10 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.815.125342";
+    version = "2026.816.172808";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-D55Pe1iDyIE4B38YFetLl64locwdzjiSFaSNOsnh0dk=";
+      sha256 = "sha256-dXvT3bX5HxFdxPIKq9p5m0PHfK5AMN6aoUGpXncZWG8=";
     };
   };
   hytale-launcher = {
@@ -144,10 +144,10 @@
   };
   vintagestory = {
     pname = "vintagestory";
-    version = "stable/vs_client_linux-x64_1.22.6";
+    version = "stable/vs_client_linux-x64_1.22.7";
     src = fetchurl {
-      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.6.tar.gz";
-      sha256 = "sha256-xJPyaYklEq2BeUX9+7hNPI6WC6ibcQDS+sKeqKYSh3A=";
+      url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.22.7.tar.gz";
+      sha256 = "sha256-SDzGgnpQwIxcQczQJixvEiPBBOVMpxNcRmBSeNifXeE=";
     };
   };
   wayland = {
