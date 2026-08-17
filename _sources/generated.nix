@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "f0bcf54488119f97502da9f4cca87a214e502a3e";
+    version = "efeda58bb23294b848e846219c37fe95c6d939b8";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "f0bcf54488119f97502da9f4cca87a214e502a3e";
+      rev = "efeda58bb23294b848e846219c37fe95c6d939b8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-K6728IMgVd9vhzsKIizsixyxxmmTepepcqcP4oB3rgo=";
+      sha256 = "sha256-0PHN6BhOd8Uz4YcSDEIZDe08LqWajKaBcac3dMPwQi0=";
     };
-    date = "2026-08-15";
+    date = "2026-08-17";
   };
   modengine3 = {
     pname = "modengine3";
@@ -98,10 +98,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "271185371";
+    version = "271486206";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-gsO6jexmcOHz4tPEls91hKWsAWPn5inpptQNmx1mpuA=";
+      sha256 = "sha256-eFJBIDbpawkRL2Zr3HE41+YY0bqvVCUqzQr0cdj2xM4=";
     };
   };
   proton-cachyos = {
