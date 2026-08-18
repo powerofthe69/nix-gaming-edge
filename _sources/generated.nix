@@ -24,10 +24,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.08.11-f021bf9";
+    version = "2026.08.17-178c5fc";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.11-f021bf9.zip";
-      sha256 = "sha256-pgIZ1ow5PjXrqneVOUa/+n619oG2E4yn2QVSVO0kwA8=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.17-178c5fc.zip";
+      sha256 = "sha256-Kaf/6VRBye5mFMSBi4BRjkbr1ASt3S9kGE2NsF4biao=";
     };
   };
   jellium-desktop = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "efeda58bb23294b848e846219c37fe95c6d939b8";
+    version = "728fd222ce70b0e5415e39d1a796b9b60b8a4679";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "efeda58bb23294b848e846219c37fe95c6d939b8";
+      rev = "728fd222ce70b0e5415e39d1a796b9b60b8a4679";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-0PHN6BhOd8Uz4YcSDEIZDe08LqWajKaBcac3dMPwQi0=";
+      sha256 = "sha256-iFHndQoeF48X3RKRoaqDywxjZ5unSmfQk+BVMFaH8vI=";
     };
-    date = "2026-08-17";
+    date = "2026-08-18";
   };
   modengine3 = {
     pname = "modengine3";
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "aa5a764b7ff9cd0d433201dafcc8966e0edbebd7";
+    version = "ef29bbeb6119cfb53d1273ed78147bcc97d91261";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "aa5a764b7ff9cd0d433201dafcc8966e0edbebd7";
+      rev = "ef29bbeb6119cfb53d1273ed78147bcc97d91261";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QwJoc49N0F03w7FvOcFJDmpv+qVO6PwX+o5ZFx1KrUo=";
+      sha256 = "sha256-EiGvwQ/S62Qfnpns39lxCGRB5QvLnzUd3tvcKc4nzKo=";
     };
-    date = "2026-08-10";
+    date = "2026-08-17";
   };
   vintagestory = {
     pname = "vintagestory";
