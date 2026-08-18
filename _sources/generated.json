@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "728fd222ce70b0e5415e39d1a796b9b60b8a4679",
-            "sha256": "sha256-iFHndQoeF48X3RKRoaqDywxjZ5unSmfQk+BVMFaH8vI=",
+            "rev": "d22b355f035c57d2051575cd93c05bb98dbb455e",
+            "sha256": "sha256-feuXKOqIjrRcA//Y4QDOEYLoMZYzLWK8xXcbOGKqV+0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "728fd222ce70b0e5415e39d1a796b9b60b8a4679"
+        "version": "d22b355f035c57d2051575cd93c05bb98dbb455e"
     },
     "modengine3": {
         "cargoLock": null,
