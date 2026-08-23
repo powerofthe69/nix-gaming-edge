@@ -29,6 +29,47 @@ let
       pname = "libdrm-git";
       version = "${libdrmVersion}";
       src = libdrm-src;
+
+      # Private SONAMEs (libdrm.so.2 -> libdrm_git.so.2) so mesa-git can never collide with a stable
+      # libdrm on LD_LIBRARY_PATH; the libdrm.so dev symlinks stay so pkg-config -ldrm still links.
+      postFixup = (old.postFixup or "") + ''
+        cd "$out/lib"
+
+        find . -maxdepth 1 -type l -name 'libdrm*' -delete
+
+        for f in libdrm*.so.*; do
+          [ -f "$f" ] || continue
+
+          old_soname=$(patchelf --print-soname "$f")
+          stem=''${old_soname%%.so.*}
+          abi=''${old_soname#*.so.}
+          new_soname="''${stem}_git.so.''${abi}"
+          new_file="''${stem}_git.so.''${f#''${stem}.so.}"
+
+          patchelf --set-soname "$new_soname" "$f"
+          mv "$f" "$new_file"
+
+          ln -s "$new_file" "$new_soname"      # runtime lookup
+          ln -s "$new_file" "''${stem}.so"     # link-time lookup
+        done
+
+        for outName in $outputs; do
+          d=''${!outName}
+          [ -d "$d" ] || continue
+          while IFS= read -r f; do
+            for n in $(patchelf --print-needed "$f" 2>/dev/null || true); do
+              case "$n" in
+                *_git.so.*) continue ;;
+                libdrm.so.* | libdrm_*.so.*) ;;
+                *) continue ;;
+              esac
+              stem=''${n%%.so.*}
+              abi=''${n#*.so.}
+              patchelf --replace-needed "$n" "''${stem}_git.so.''${abi}" "$f"
+            done
+          done < <(find "$d" -type f)
+        done
+      '';
     });
 
   libdrm-git = gitLibdrm { is32bit = false; };

@@ -307,21 +307,7 @@ in
           package32 = pkgs.mesa32-git;
         };
 
-        # mesa-git's libgallium needs symbols from libdrm-git and apps that use LD_LIBRARY_PATH
-        # crash when libgallium is opened because they prepend stable libdrm and load that first.
-        # Preload the libdrm-git libraries to satisfy apps that do this. Chrome under Wayland needs this.
-        environment.sessionVariables.LD_PRELOAD = map (so: "${pkgs.libdrm-git}/lib/${so}") [
-          "libdrm.so.2"
-          "libdrm_amdgpu.so.1"
-          "libdrm_radeon.so.1"
-          "libdrm_intel.so.1"
-          "libdrm_nouveau.so.2"
-        ];
-
-        # mesa-git correctly uses libdrm-git and now fails inside any FHS env that
-        # ships stable libdrm (e.g. Steam!). Overlay lives in a shared file so a
-        # cache builder can apply the identical shadowing — see overlays/libdrm-git-fhsenv.nix.
-        nixpkgs.overlays = [ (import ../overlays/libdrm-git-fhsenv.nix) ];
+        # No LD_PRELOAD or buildFHSEnv overlay needed: libdrm-git ships private SONAMEs.
       }
 
       (lib.mkIf cfg.enableCache {
