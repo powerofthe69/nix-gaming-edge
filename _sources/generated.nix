@@ -16,10 +16,10 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.825.215649";
+    version = "2026.827.132039";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-FUUUlHzdoE5zectyJyyVxHvzXicSrVBBgG2+WdH4YrM=";
+      sha256 = "sha256-6pRb0hJf7fV1Yeb/yv3Ni/8Dohk2hrEzx/RcFmAn9Do=";
     };
   };
   hytale-launcher = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "bb63b1797b657b64dac605391d251a22e1c9cefc";
+    version = "2c1106adb54bad01bb6d6454a9bb9f0ecfcc1225";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "bb63b1797b657b64dac605391d251a22e1c9cefc";
+      rev = "2c1106adb54bad01bb6d6454a9bb9f0ecfcc1225";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-jWiW0WcBsFq0qKx91OA+wRrc+tfvhOl4UOMZyBklGeg=";
+      sha256 = "sha256-u3g1RQpSmeGilk2VcOjXl8IajjH1KyOswL9dlLOeyP4=";
     };
-    date = "2026-08-26";
+    date = "2026-08-27";
   };
   modengine3 = {
     pname = "modengine3";
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "ada5cfeb805e77853bde5b04ba4b248a338de66f";
+    version = "bc680139be4526aa5525d33fbac8a271eb0cfd02";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "ada5cfeb805e77853bde5b04ba4b248a338de66f";
+      rev = "bc680139be4526aa5525d33fbac8a271eb0cfd02";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-YjejceAa5MwJu1+J93UVD0IOuwLEmHwQcaoSGvl734k=";
+      sha256 = "sha256-1TcTsbSSHke1ld/n0fNAzyWSWSGIEdphB4Za5/yQ/UA=";
     };
-    date = "2026-08-26";
+    date = "2026-08-27";
   };
   vintagestory = {
     pname = "vintagestory";
