@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-XamDGoU28cnGycAqe2iQsVvMIABEk2YblkOna/b3fWI=",
+            "sha256": "sha256-LYpquCQhlj6AFCgUOyAGF70YIvTtr2iWvro3D6J7ijw=",
             "type": "url",
             "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
         },
-        "version": "2026.828.162342"
+        "version": "2026.828.171905"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-LBj8yo05DC//XnnXtRoT3uhJyaJzsVaO68AlHoivmGc=",
+            "sha256": "sha256-DLFvaRSfwilOkkdOz4rcnmsQTFQZvtIITmFBfhV67hg=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.18-22e8a87.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.28-3d62362.zip"
         },
-        "version": "2026.08.18-22e8a87"
+        "version": "2026.08.28-3d62362"
     },
     "jellium-desktop": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-08-28",
+        "date": "2026-08-29",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f5f841333e6936e6d561c699c2d8ca73817aec55",
-            "sha256": "sha256-MsAag++AnPjkWW2QiyS2LKXbtBVmdwPrm3Q/Msdc84E=",
+            "rev": "4a7a29d007446f68ac6ac3633b58282fe99cd700",
+            "sha256": "sha256-yaRvr4cUosps7yfT0xNgX1eazAF7Hfv+kJuD5Ps2RX4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "f5f841333e6936e6d561c699c2d8ca73817aec55"
+        "version": "4a7a29d007446f68ac6ac3633b58282fe99cd700"
     },
     "modengine3": {
         "cargoLock": null,
