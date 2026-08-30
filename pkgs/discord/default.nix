@@ -11,7 +11,9 @@ let
 
   # Discord source manifest (version + distro + per-module brotli archives),
   # refreshed by scripts/sync-discord-deps.py from the distributions API.
-  source = lib.importJSON ./sources.json;
+  source = lib.importJSON (
+    if pkgs.stdenv.hostPlatform.isDarwin then ./sources-darwin.json else ./sources.json
+  );
 
   vencord-git = pkgs.vencord.overrideAttrs (
     finalAttrs: _prev: {

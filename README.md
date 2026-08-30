@@ -48,9 +48,9 @@ The largest ones that most will probably want to use are:
 
 Other packages that were mostly for me:
 
-- `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo.
+- `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo. Also built for `aarch64-darwin` from the official macOS distro, so the Mac and Linux pins never drift.
 
-- `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete.
+- `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip (`fluxer-desktop-canary` tracks the current macOS canary; upstream's macOS stable lags).
 
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates
 

@@ -79,6 +79,17 @@ src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/manifest.json"
 fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
 
+# Fluxer Desktop - aarch64-darwin .app zips
+[fluxer-desktop-darwin]
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/manifest.json"
+fetch.url = "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/latest/zip"
+
+[fluxer-desktop-canary-darwin]
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/manifest.json"
+fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip"
+
 # OpenGoal Launcher - GUI for managing and launching OpenGoal games
 [opengoal-launcher]
 src.cmd = "curl -s https://api.github.com/repos/open-goal/launcher/releases/latest | jq -r '.tag_name | ltrimstr(\"v\")'"

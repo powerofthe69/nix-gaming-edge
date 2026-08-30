@@ -46,6 +46,7 @@ jobs:
         run: |
           cp _sources/generated.json /tmp/old-generated.json 2>/dev/null || echo '{}' > /tmp/old-generated.json
           cp pkgs/discord/sources.json /tmp/old-discord-sources.json 2>/dev/null || echo '{}' > /tmp/old-discord-sources.json
+          cp pkgs/discord/sources-darwin.json /tmp/old-discord-sources-darwin.json 2>/dev/null || echo '{}' > /tmp/old-discord-sources-darwin.json
           cp flake.lock /tmp/old-flake.lock
 
       - name: Run nvfetcher to update sources
@@ -89,14 +90,16 @@ jobs:
 
           # Discord lives outside _sources because it needs a structured
           # manifest (distro + modules) the distributions API gives us.
-          OLD_DISCORD=$(jq -r '.version // "none"' /tmp/old-discord-sources.json)
-          NEW_DISCORD=$(jq -r '.version // "none"' pkgs/discord/sources.json)
-          if [ "$OLD_DISCORD" != "$NEW_DISCORD" ]; then
-            if [ -n "$CHANGES" ]; then
-              CHANGES="${CHANGES}, "
+          for variant in "" -darwin; do
+            OLD_DISCORD=$(jq -r '.version // "none"' /tmp/old-discord-sources$variant.json)
+            NEW_DISCORD=$(jq -r '.version // "none"' pkgs/discord/sources$variant.json)
+            if [ "$OLD_DISCORD" != "$NEW_DISCORD" ]; then
+              if [ -n "$CHANGES" ]; then
+                CHANGES="${CHANGES}, "
+              fi
+              CHANGES="${CHANGES}discord$variant: ${NEW_DISCORD}"
             fi
-            CHANGES="${CHANGES}discord: ${NEW_DISCORD}"
-          fi
+          done
 
           OLD_NIXPKGS=$(jq -r '.nodes.nixpkgs.locked.rev // "none"' /tmp/old-flake.lock)
           NEW_NIXPKGS=$(jq -r '.nodes.nixpkgs.locked.rev // "none"' flake.lock)
@@ -117,6 +120,9 @@ jobs:
             ANY_CHANGED=true
           fi
           if ! diff -q /tmp/old-discord-sources.json pkgs/discord/sources.json > /dev/null 2>&1; then
+            ANY_CHANGED=true
+          fi
+          if ! diff -q /tmp/old-discord-sources-darwin.json pkgs/discord/sources-darwin.json > /dev/null 2>&1; then
             ANY_CHANGED=true
           fi
           if ! diff -q /tmp/old-flake.lock flake.lock > /dev/null 2>&1; then
@@ -188,6 +194,7 @@ jobs:
             pkgs/pseudoregalia-rando/.version
             pkgs/discord/vencord-pnpm-hash.txt
             pkgs/discord/sources.json
+            pkgs/discord/sources-darwin.json
             flake.lock
 
   # Build packages from a matrix
@@ -198,6 +205,8 @@ jobs:
         access-tokens = github.com=${{ secrets.GITHUB_TOKEN }} gitlab.freedesktop.org=${{ secrets.GITLAB_TOKEN }}
     if: needs.update-sources.outputs.any_changed == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.runner }}
+    # Hosted macOS rows are build checks only; don't let them block the nightly commit.
+    continue-on-error: ${{ !contains(matrix.runner, 'self-hosted') }}
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.update-sources.outputs.matrix) }}
@@ -224,7 +233,7 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
             accept-flake-config = true
-            extra-substituters = http://attic:8080/tokidoki
+            extra-substituters = ${{ contains(matrix.runner, 'self-hosted') && 'http://attic:8080/tokidoki' || '' }}
             extra-trusted-public-keys = tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk=
 
       - name: Build ${{ matrix.name }}
