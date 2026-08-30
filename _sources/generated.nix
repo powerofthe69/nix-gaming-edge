@@ -16,10 +16,10 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.828.171905";
+    version = "2026.829.211303";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-LYpquCQhlj6AFCgUOyAGF70YIvTtr2iWvro3D6J7ijw=";
+      sha256 = "sha256-WlWODPMSnhwz/JzGf30M+94sQd+pLJUGH+Bg/j34E8U=";
     };
   };
   hytale-launcher = {
@@ -60,15 +60,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4a7a29d007446f68ac6ac3633b58282fe99cd700";
+    version = "e87a03754d9a39632a78503f551d51bab2a6c5a5";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4a7a29d007446f68ac6ac3633b58282fe99cd700";
+      rev = "e87a03754d9a39632a78503f551d51bab2a6c5a5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-yaRvr4cUosps7yfT0xNgX1eazAF7Hfv+kJuD5Ps2RX4=";
+      sha256 = "sha256-zpN9hkJKAXDe6lXKwHLsv90Pu8J/Epohv/T4PVf/VAA=";
     };
     date = "2026-08-29";
   };
