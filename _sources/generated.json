@@ -23,11 +23,41 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-WlWODPMSnhwz/JzGf30M+94sQd+pLJUGH+Bg/j34E8U=",
+            "sha256": "sha256-AuugQP036GhxPxNuA4kvsx8VmEHEuzkNDC6zXriZ1dc=",
             "type": "url",
             "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
         },
-        "version": "2026.829.211303"
+        "version": "2026.830.132530"
+    },
+    "fluxer-desktop-canary-darwin": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "fluxer-desktop-canary-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-ck/vmzZd/ibupqWMLGgCttjFz3GpykOeJVNEDVGRXkM=",
+            "type": "url",
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip"
+        },
+        "version": "2026.830.132530"
+    },
+    "fluxer-desktop-darwin": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "fluxer-desktop-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-xOosvmiVYYzejNP7HNhUxV84xkL22OQBcgUG4zizNjk=",
+            "type": "url",
+            "url": "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/latest/zip"
+        },
+        "version": "0.0.8"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -96,13 +126,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "80f5c9174b094c26befc5efa90d0ba863999bfa6",
-            "sha256": "sha256-cyGKLESs5O2nnwaGj5Qjqcd7y4ZfgbYSkr4ExAR3ulI=",
+            "rev": "29c5f0ad445246ba8352aee61702bc3b5887389d",
+            "sha256": "sha256-OSWRHLJLq4M41YVVvFa07QMPLelzqxolUjHxF8KtpDo=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "80f5c9174b094c26befc5efa90d0ba863999bfa6"
+        "version": "29c5f0ad445246ba8352aee61702bc3b5887389d"
     },
     "modengine3": {
         "cargoLock": null,
