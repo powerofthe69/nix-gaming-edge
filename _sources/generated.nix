@@ -8,34 +8,18 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "0.0.8";
-    src = fetchurl {
-      url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz";
-      sha256 = "sha256-rPY5j6aBByD+2FsGwBGzJOfbT+xr8vx62TwkRsNgDy0=";
-    };
-  };
-  fluxer-desktop-canary = {
-    pname = "fluxer-desktop-canary";
-    version = "2026.831.195359";
+    version = "2026.902.161542";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-6zW5X7wHaiQreRtwm4IebnS7XuztGGaYvFqe8ozSC24=";
-    };
-  };
-  fluxer-desktop-canary-darwin = {
-    pname = "fluxer-desktop-canary-darwin";
-    version = "2026.831.195359";
-    src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip";
-      sha256 = "sha256-AyMl3zqsFbzt1/Cx//TSq66hqxtAB1Yrsgd2iaUFqBU=";
+      sha256 = "sha256-aJrwhZ5kzadTtpCAwPQf/MNRIPo39k6+KmtemzpMnNo=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "0.0.8";
+    version = "2026.902.161542";
     src = fetchurl {
-      url = "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/latest/zip";
-      sha256 = "sha256-xOosvmiVYYzejNP7HNhUxV84xkL22OQBcgUG4zizNjk=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip";
+      sha256 = "sha256-qag2Nqdo/XGWOoqds45aHdOf8EzZ6I9Oeqx1uthL7DM=";
     };
   };
   hytale-launcher = {
@@ -76,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "95419b140ada2797b624fb56bdbdc7c0661765bf";
+    version = "c0682c54768a5e247c6627fc3b632eb81b7af2a4";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "95419b140ada2797b624fb56bdbdc7c0661765bf";
+      rev = "c0682c54768a5e247c6627fc3b632eb81b7af2a4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-wNLtU7A3+kYq+5SBmjN4BifMCwiL9ZtwXwY0wccK4/k=";
+      sha256 = "sha256-gzQdVkIN6wclzyVDkbGD/zgWtSno1QDF95rQbbvBsKk=";
     };
-    date = "2026-09-01";
+    date = "2026-09-02";
   };
   modengine3 = {
     pname = "modengine3";
