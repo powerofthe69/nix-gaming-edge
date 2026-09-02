@@ -48,28 +48,17 @@
   systemd,
   wayland,
   source,
-
-  # "stable" or "canary"
-  channel ? "canary",
 }:
 
 let
-  # Per-channel runtime bits; the tarball/zip + version come from nvfetcher (source).
-  channelMeta = {
-    stable = {
-      exe = "fluxer";
-      displayName = "Fluxer";
-      app = "Fluxer.app";
-      bundleExe = "Fluxer";
-    };
-    canary = {
-      exe = "fluxer-canary";
-      displayName = "Fluxer Canary";
-      app = "Fluxer Canary.app";
-      bundleExe = "Fluxer Canary";
-    };
+  # Upstream ships only the canary feed (stable dropped 2026-09-02), and the
+  # artifacts are still canary-branded; the tarball/zip + version come from nvfetcher.
+  ch = {
+    exe = "fluxer-canary";
+    displayName = "Fluxer Canary";
+    app = "Fluxer Canary.app";
+    bundleExe = "Fluxer Canary";
   };
-  ch = channelMeta.${channel};
 
   linuxAttrs = {
     # Tarball extracts to a single dir whose name contains spaces + version.
@@ -162,8 +151,7 @@ let
         --add-flags "--ozone-platform-hint=auto" \
         --add-flags "--enable-features=WaylandWindowDecorations"
 
-      # Canary keeps icons under resources/icons/<size>.png; stable only ships
-      # resources/512x512.png.
+      # Icons live under resources/icons/<size>.png (older builds used resources/<size>x<size>.png).
       for size in 16 24 32 48 64 128 256 512; do
         for cand in "resources/icons/''${size}x''${size}.png" "resources/''${size}x''${size}.png"; do
           if [ -f "$cand" ]; then
@@ -222,7 +210,7 @@ stdenv.mkDerivation (
     inherit (source) pname version src;
 
     meta = {
-      description = "Fluxer desktop client (${channel}, upstream prebuilt)";
+      description = "Fluxer desktop client (upstream prebuilt)";
       homepage = "https://fluxer.app";
       license = lib.licenses.agpl3Only;
       mainProgram = ch.exe;

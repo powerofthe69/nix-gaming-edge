@@ -52,22 +52,16 @@
             vencordSrc = nvSources.vencord;
           };
 
-          # Fluxer Desktop (Linux tarball or darwin .app zip, tracked per platform by nvfetcher)
-          mkFluxer =
-            channel:
-            let
-              key = "fluxer-desktop" + lib.optionalString (channel == "canary") "-canary";
-            in
-            pkgs.callPackage ./pkgs/fluxer-desktop {
-              inherit channel;
-              source = nvSources.${key + lib.optionalString pkgs.stdenv.hostPlatform.isDarwin "-darwin"};
-            };
         in
         {
           discord = discord.discord;
           vencord = discord.vencord;
-          fluxer-desktop = mkFluxer "stable";
-          fluxer-desktop-canary = mkFluxer "canary";
+
+          # Fluxer Desktop (Linux tarball or darwin .app zip, tracked per platform by nvfetcher).
+          # Upstream dropped the stable channel 2026-09-02; the canary feed is the only client now.
+          fluxer-desktop = pkgs.callPackage ./pkgs/fluxer-desktop {
+            source = nvSources.${"fluxer-desktop" + lib.optionalString pkgs.stdenv.hostPlatform.isDarwin "-darwin"};
+          };
         };
 
       # Packages that only build on Linux.
@@ -232,10 +226,7 @@
           "vencord"
         ];
 
-        fluxer = mkOverlay [
-          "fluxer-desktop"
-          "fluxer-desktop-canary"
-        ];
+        fluxer = mkOverlay [ "fluxer-desktop" ];
 
         modengine3 = mkOverlay [ "modengine3" ];
 

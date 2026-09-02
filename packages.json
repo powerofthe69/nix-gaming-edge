@@ -16,14 +16,14 @@
     },
     {
       "name": "fluxer-desktop",
-      "packages": "fluxer-desktop fluxer-desktop-canary",
+      "packages": "fluxer-desktop",
       "runner": [
         "self-hosted"
       ]
     },
     {
       "name": "fluxer-desktop-darwin",
-      "packages": "fluxer-desktop fluxer-desktop-canary",
+      "packages": "fluxer-desktop",
       "runner": [
         "macos-latest"
       ]

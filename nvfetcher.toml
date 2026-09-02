@@ -68,24 +68,17 @@ fetch.git = "https://github.com/Vendicated/Vencord.git"
 src.github = "garyttierney/me3"
 fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linux-amd64.tar.gz"
 
-# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix)
+# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix).
+# Canary API: upstream dropped stable 2026-09-02; the stable manifest is frozen at
+# 0.0.8 while its /latest downloads serve canary bytes, so canary is the only
+# usable version oracle. Revisit if the stable manifest starts tracking the feed.
 [fluxer-desktop]
-src.regex = '"version":\s*"([^"]+)"'
-src.webpage = "https://api.fluxer.app/dl/desktop/stable/linux/x64/manifest.json"
-fetch.url = "https://api.fluxer.app/dl/desktop/stable/linux/x64/latest/tar_gz"
-
-[fluxer-desktop-canary]
 src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/manifest.json"
 fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
 
 # Fluxer Desktop - aarch64-darwin .app zips
 [fluxer-desktop-darwin]
-src.regex = '"version":\s*"([^"]+)"'
-src.webpage = "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/manifest.json"
-fetch.url = "https://api.fluxer.app/dl/desktop/stable/darwin/arm64/latest/zip"
-
-[fluxer-desktop-canary-darwin]
 src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/manifest.json"
 fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip"
