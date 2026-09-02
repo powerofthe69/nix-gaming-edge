@@ -179,36 +179,52 @@ Here is a minimal representation of what your configuration might look like:
 
 **Setting up modengine3 ( me3 ):**
 
-`modengine3` needs two things to actually be usable from Steam: the `me3` binary has to live inside Steam's FHS sandbox so games can exec it, and me3 has to be able to find a Proton install to launch the game under. The latter is done by exposing a small `linkFarm` of compat tools and adding it to `STEAM_EXTRA_COMPAT_TOOLS_PATHS`.
-
-Pull the compat-tools `linkFarm` out into a `let` binding so it stays readable, then override the Steam package to inject `me3` and point at it:
+`modengine3` needs two things to actually be usable from Steam: the `me3` binary has to live inside Steam's FHS sandbox so games can exec it, and me3 has to be able to find a Proton install to launch the game under. The latter comes for free: `extraCompatPackages` populates `STEAM_EXTRA_COMPAT_TOOLS_PATHS`, and me3 discovers tools from that variable by the internal name in each tool's `compatibilitytool.vdf` (e.g. `Proton CachyOS`):
 
 ```nix
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  compatToolsDir = pkgs.linkFarm "me3-compat-tools" [
-    {
-      name = "proton-cachyos"; # me3 looks for the proton by this name
-      path = pkgs.proton-cachyos.steamcompattool; # or whichever variant
-    }
-  ];
-in
 {
   programs.steam = {
     enable = true;
     extraCompatPackages = with pkgs; [
-      proton-cachyos
+      proton-cachyos # or whichever variant
     ];
     package = pkgs.steam.override {
       extraPkgs = fpkgs: [ pkgs.modengine3 ];
-      extraEnv = {
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS = lib.concatStringsSep ":" [
-          "${compatToolsDir}" # for ME3 / modengine3
-          (lib.makeSearchPathOutput "steamcompattool" "" [ pkgs.proton-cachyos ])
-        ];
-      };
     };
   };
 }
 ```
+
+## Using compat tools outside Steam (Heroic, Lutris, ...)
+
+Steam finds compat tools through `programs.steam.extraCompatPackages`, but other launchers only scan `~/.local/share/Steam/compatibilitytools.d/` on disk. Since compat tools exist in Steam's FHSenv, they aren't exposed to other launchers. A helper is provided to make it easier to use compat tools outside of Steam:
+
+The home-manager module links each tool into `compatibilitytools.d` (per-entry symlinks, so manually installed tools are left alone):
+
+```nix
+# import nix-gaming-edge.homeModules.steam-compat-tools, then:
+programs.steam-compat-tools = {
+  enable = true;
+  packages = [
+    nix-gaming-edge.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3
+    pkgs.proton-ge-bin
+  ];
+};
+```
+
+`nix-gaming-edge.lib.mkCompatToolsDir pkgs tools` instead builds a single `compatibilitytools.d`-style directory (linkFarm) from a list of packages, or an attrset when you want explicit entry names. Use it when the home-manager module isn't an option — e.g. on a NixOS system without home-manager, a tmpfiles rule can point the whole directory at the farm:
+
+```nix
+systemd.tmpfiles.rules =
+  let
+    farm = nix-gaming-edge.lib.mkCompatToolsDir pkgs [
+      pkgs.proton-ge-bin
+      nix-gaming-edge.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3
+    ];
+  in
+  [ "L+ /home/alice/.local/share/Steam/compatibilitytools.d - - - - ${farm}" ];
+```
+
+Note the trade-off versus the module: `L+` replaces the directory with a store symlink, so tools installed there manually (e.g. by ProtonUp) won't coexist with it.

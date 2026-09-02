@@ -3,13 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # millennium-steam is currently broken upstream and disabled here.
-    # Re-enable this input (and the related references below) if/when
-    # upstream is fixed.
-    # millennium = {
-    #   url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   nixConfig = {
@@ -23,7 +16,6 @@
     {
       self,
       nixpkgs,
-      # millennium, # disabled: millennium-steam is broken upstream
     }:
     let
       inherit (nixpkgs) lib;
@@ -158,10 +150,6 @@
           inherit hytale-launcher;
           hytale = hytale-launcher;
 
-          # Millennium for theming Steam
-          # Disabled: broken upstream and unable to build. Re-enable if/when fixed.
-          # millennium-steam = millennium.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
           # ModEngine 3
           inherit modengine3;
 
@@ -218,9 +206,6 @@
           "hytale"
         ];
 
-        # Disabled: millennium-steam is broken upstream. Re-enable if/when fixed.
-        # millennium-steam = mkOverlay [ "millennium-steam" ];
-
         discord = mkOverlay [
           "discord"
           "vencord"
@@ -238,6 +223,28 @@
       nixosModules = {
         mesa-git = import ./modules/mesa-git.nix;
         default = self.nixosModules.mesa-git;
+      };
+
+      homeModules = {
+        steam-compat-tools = import ./modules/steam-compat-tools.nix;
+        default = self.homeModules.steam-compat-tools;
+      };
+      lib = {
+        # Accepts an attrset (explicit names) or a list (named by lib.getName) to reveal Steam compat tools outside of Steam.
+        mkCompatToolsDir =
+          pkgs: tools:
+          pkgs.linkFarm "steam-compat-tools" (
+            if lib.isAttrs tools then
+              lib.mapAttrsToList (name: pkg: {
+                inherit name;
+                path = pkg.steamcompattool or pkg;
+              }) tools
+            else
+              map (pkg: {
+                name = lib.getName pkg;
+                path = pkg.steamcompattool or pkg;
+              }) tools
+          );
       };
     };
 }
