@@ -201,20 +201,19 @@ Here is a minimal representation of what your configuration might look like:
 
 Steam finds compat tools through `programs.steam.extraCompatPackages`, but other launchers only scan `~/.local/share/Steam/compatibilitytools.d/` on disk. Since compat tools exist in Steam's FHSenv, they aren't exposed to other launchers. A helper is provided to make it easier to use compat tools outside of Steam:
 
-The home-manager module links each tool into `compatibilitytools.d` (per-entry symlinks, so manually installed tools are left alone). When used with NixOS, `packages` automatically defaults to `programs.steam.extraCompatPackages`:
+The home-manager module links each tool into `compatibilitytools.d` (per-entry symlinks, so manually installed tools are left alone). It is enabled by default upon import, and when used with NixOS, `packages` automatically defaults to `programs.steam.extraCompatPackages`:
 
 ```nix
-# import nix-gaming-edge.homeModules.steam-compat-tools, then:
-programs.steam-compat-tools.enable = true;
+# import nix-gaming-edge.homeModules.steam-compat-tools
+
+# It is enabled by default upon import. To disable it:
+programs.steam-compat-tools.enable = false;
 
 # Or specify packages explicitly (e.g. on standalone Home Manager):
-programs.steam-compat-tools = {
-  enable = true;
-  packages = [
-    nix-gaming-edge.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3
-    pkgs.proton-ge-bin
-  ];
-};
+programs.steam-compat-tools.packages = [
+  nix-gaming-edge.packages.${pkgs.stdenv.hostPlatform.system}.proton-cachyos-x86_64-v3
+  pkgs.proton-ge-bin
+];
 ```
 
 `nix-gaming-edge.lib.mkCompatToolsDir pkgs tools` instead builds a single `compatibilitytools.d`-style directory (linkFarm) from a list of packages, or an attrset when you want explicit entry names. Use it when the home-manager module isn't an option — e.g. on a NixOS system without home-manager, a tmpfiles rule can point the whole directory at the farm:
