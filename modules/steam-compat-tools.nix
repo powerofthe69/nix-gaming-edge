@@ -11,9 +11,11 @@ let
 in
 {
   options.programs.steam-compat-tools = {
-    enable = (lib.mkEnableOption "linking Steam compat tools into compatibilitytools.d") // {
+    enable = lib.mkOption {
+      type = lib.types.bool;
       default = true;
       example = false;
+      description = "Whether to link Steam compat tools into compatibilitytools.d.";
     };
 
     packages = lib.mkOption {
