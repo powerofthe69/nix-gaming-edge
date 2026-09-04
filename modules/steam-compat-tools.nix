@@ -2,6 +2,7 @@
 {
   config,
   lib,
+  osConfig,
   ...
 }:
 
@@ -14,9 +15,10 @@ in
 
     packages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
-      default = [ ];
+      default = lib.optionals (osConfig != null) (osConfig.programs.steam.extraCompatPackages or [ ]);
+      defaultText = lib.literalExpression "osConfig.programs.steam.extraCompatPackages or [ ]";
       example = lib.literalExpression "[ pkgs.proton-cachyos-x86_64-v3 pkgs.proton-ge-bin ]";
-      description = "Compat tool packages to link; a package's steamcompattool output is used when present.";
+      description = "Compat tool packages to link; defaults to NixOS's `programs.steam.extraCompatPackages` when available. A package's steamcompattool output is used when present.";
     };
   };
 

@@ -201,10 +201,13 @@ Here is a minimal representation of what your configuration might look like:
 
 Steam finds compat tools through `programs.steam.extraCompatPackages`, but other launchers only scan `~/.local/share/Steam/compatibilitytools.d/` on disk. Since compat tools exist in Steam's FHSenv, they aren't exposed to other launchers. A helper is provided to make it easier to use compat tools outside of Steam:
 
-The home-manager module links each tool into `compatibilitytools.d` (per-entry symlinks, so manually installed tools are left alone):
+The home-manager module links each tool into `compatibilitytools.d` (per-entry symlinks, so manually installed tools are left alone). When used with NixOS, `packages` automatically defaults to `programs.steam.extraCompatPackages`:
 
 ```nix
 # import nix-gaming-edge.homeModules.steam-compat-tools, then:
+programs.steam-compat-tools.enable = true;
+
+# Or specify packages explicitly (e.g. on standalone Home Manager):
 programs.steam-compat-tools = {
   enable = true;
   packages = [
