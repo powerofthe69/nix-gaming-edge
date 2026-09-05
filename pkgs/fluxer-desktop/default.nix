@@ -1,6 +1,7 @@
 {
   lib,
   stdenv,
+  addDriverRunpath,
   autoPatchelfHook,
   makeWrapper,
   unzip,
@@ -26,6 +27,7 @@
   libpulseaudio,
   libsecret,
   libuuid,
+  libva,
   libX11,
   libXScrnSaver,
   libXcomposite,
@@ -98,6 +100,7 @@ let
       libpulseaudio
       libsecret
       libuuid
+      libva
       libX11
       libXScrnSaver
       libXcomposite
@@ -143,11 +146,15 @@ let
         --prefix LD_LIBRARY_PATH : "${
           lib.makeLibraryPath [
             libglvnd
+            libnotify
+            libsecret
+            libva
             pipewire
             systemd
             wayland
           ]
         }" \
+        --prefix LD_LIBRARY_PATH : "${addDriverRunpath.driverLink}/lib" \
         --add-flags "--ozone-platform-hint=auto" \
         --add-flags "--enable-features=WaylandWindowDecorations"
 
