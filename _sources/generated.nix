@@ -8,26 +8,26 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.904.135113";
+    version = "2026.908.173325";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz";
-      sha256 = "sha256-2uezjuqcQB6P+AfKGpVAkHo6r39HazH7V4WRUy2guDM=";
+      sha256 = "sha256-NyieXG7/Igj5ZRa8MYAwchpp0FXIl6cC/N0TcvIyoLQ=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.904.135113";
+    version = "2026.908.173325";
     src = fetchurl {
       url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip";
-      sha256 = "sha256-OxK4KuRrpWBt/rytas5+p48xdNxjY91jOghE0YL4DHM=";
+      sha256 = "sha256-RCg0wJYGC/fYpslRhur+7y/HV7/DYa8XJgqzbFJptVI=";
     };
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.08.28-3d62362";
+    version = "2026.09.08-e1d69dd";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.08.28-3d62362.zip";
-      sha256 = "sha256-DLFvaRSfwilOkkdOz4rcnmsQTFQZvtIITmFBfhV67hg=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.08-e1d69dd.zip";
+      sha256 = "sha256-IR33bZ3JT+LnGIorDO97C4513FQNbrKD5DOCQBQc8eg=";
     };
   };
   jellium-desktop = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "5da1715de0469934aa952eae4723ce9de2bbb61a";
+    version = "d039f1c9ea7eacd99c19cd9ea5b807b8ff14eba6";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "5da1715de0469934aa952eae4723ce9de2bbb61a";
+      rev = "d039f1c9ea7eacd99c19cd9ea5b807b8ff14eba6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kNuYrCdwrtu8PCo7v7GPQvJRO205t+CTSMPWMlfo/JQ=";
+      sha256 = "sha256-IEqfBuSOXxKV6lQDke6RQSiuZ5WHwP3VwAvEB0X4Kug=";
     };
-    date = "2026-09-08";
+    date = "2026-09-09";
   };
   modengine3 = {
     pname = "modengine3";
@@ -165,16 +165,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "afb614d5fcbd02d261a6ae91920aa91cf3915a8a";
+    version = "5a430a6d52f811720b11234c19690b70106d970b";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "afb614d5fcbd02d261a6ae91920aa91cf3915a8a";
+      rev = "5a430a6d52f811720b11234c19690b70106d970b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-EgUVZoH2V9suDICELRgrjNi7NqCRu9LjxDSE3VNgSz0=";
+      sha256 = "sha256-CArog1ptoc4Smu4NhWsdZqPPbcq0imKACbH3RIkmgdw=";
     };
-    date = "2026-06-23";
+    date = "2026-09-04";
   };
 }
