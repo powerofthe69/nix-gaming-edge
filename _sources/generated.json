@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-NyieXG7/Igj5ZRa8MYAwchpp0FXIl6cC/N0TcvIyoLQ=",
+            "sha256": "sha256-ucyRjmG16CPWW41RWe7hNbIcCOuHboAJNixRu7Li638=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/latest/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.909.202036/tar_gz"
         },
-        "version": "2026.908.173325"
+        "version": "2026.909.202036"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-RCg0wJYGC/fYpslRhur+7y/HV7/DYa8XJgqzbFJptVI=",
+            "sha256": "sha256-YSYUBM1CBhYaikkHr/OFQfKP8zQJDSMjoTU3YE3oZz4=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/latest/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.909.202036/zip"
         },
-        "version": "2026.908.173325"
+        "version": "2026.909.202036"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-09",
+        "date": "2026-09-10",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5163b3377ec8242bc9be2011dfce1b5ae8edec1e",
-            "sha256": "sha256-q11tcB44M6svHOrCWDcKZpdMK+PxOitu3a8VmWoNAXA=",
+            "rev": "0126f4388a5e60e6e733ea937b2f9254980bfa9c",
+            "sha256": "sha256-3OaBrkZ5W0kKQD20VMQI5RQUCPdikkVUMdnqQy2GjME=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "5163b3377ec8242bc9be2011dfce1b5ae8edec1e"
+        "version": "0126f4388a5e60e6e733ea937b2f9254980bfa9c"
     },
     "modengine3": {
         "cargoLock": null,
@@ -211,7 +211,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-08-30",
+        "date": "2026-09-09",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -221,13 +221,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0e40e433d7aa9168f656aba733d01e761b7ca8ca",
-            "sha256": "sha256-IoyxQuFrTlpwTqYgqsbeoLMuw8Hh7IJlvQi7ULdNAR0=",
+            "rev": "0850f37fbb1623aa6330764d8f4b1e0b2617dcdf",
+            "sha256": "sha256-AiZjrbx2A3NMkbyKJBGiCB/zq7fIvWlhpAAcyPrtT7Q=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "0e40e433d7aa9168f656aba733d01e761b7ca8ca"
+        "version": "0850f37fbb1623aa6330764d8f4b1e0b2617dcdf"
     },
     "vintagestory": {
         "cargoLock": null,
