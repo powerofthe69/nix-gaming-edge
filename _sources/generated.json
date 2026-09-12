@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ucyRjmG16CPWW41RWe7hNbIcCOuHboAJNixRu7Li638=",
+            "sha256": "sha256-KIMbSVs61hmHq91jCxhMpwxoHJ8gbYwa3C34dIlR7KY=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.909.202036/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.911.113656/tar_gz"
         },
-        "version": "2026.909.202036"
+        "version": "2026.911.113656"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-YSYUBM1CBhYaikkHr/OFQfKP8zQJDSMjoTU3YE3oZz4=",
+            "sha256": "sha256-PisbnhXLu51r9oBQ0m0em9rX/RwlFwT3OE5f/Q+wjoo=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.909.202036/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.911.113656/zip"
         },
-        "version": "2026.909.202036"
+        "version": "2026.911.113656"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "aed26d2b59e730e1d2e00829f07160b7d06762c3",
-            "sha256": "sha256-pZIJRAj4APP7Y+w8dZQkOjShDyjaxNue2p4j0hDrwYI=",
+            "rev": "7cda7850edd103ace21aac37d416d2fdf7a282e1",
+            "sha256": "sha256-6n2lWh/U8T2ZTxe6ziPXjs8c1JnXjcKUmPzNbzo6osg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "aed26d2b59e730e1d2e00829f07160b7d06762c3"
+        "version": "7cda7850edd103ace21aac37d416d2fdf7a282e1"
     },
     "modengine3": {
         "cargoLock": null,
