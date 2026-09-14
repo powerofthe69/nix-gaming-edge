@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-KIMbSVs61hmHq91jCxhMpwxoHJ8gbYwa3C34dIlR7KY=",
+            "sha256": "sha256-JcZC7D2ADhCLYH5uOjBR5Q5UTcfIwgo44VhyApri+74=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.911.113656/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.913.210037/tar_gz"
         },
-        "version": "2026.911.113656"
+        "version": "2026.913.210037"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-PisbnhXLu51r9oBQ0m0em9rX/RwlFwT3OE5f/Q+wjoo=",
+            "sha256": "sha256-uymy7J0+fYD+Iva7BRw+f5S8w69Vfnlf5WP/Gkk4oQc=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.911.113656/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.913.210037/zip"
         },
-        "version": "2026.911.113656"
+        "version": "2026.913.210037"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-11",
+        "date": "2026-09-14",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7cda7850edd103ace21aac37d416d2fdf7a282e1",
-            "sha256": "sha256-6n2lWh/U8T2ZTxe6ziPXjs8c1JnXjcKUmPzNbzo6osg=",
+            "rev": "718f600181bff1c2cb6af79d13136c9be46c3b34",
+            "sha256": "sha256-sqPX7VxdyscxWZaCwwDWVgZLLIweqJiaGu/C6Ft9+p0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "7cda7850edd103ace21aac37d416d2fdf7a282e1"
+        "version": "718f600181bff1c2cb6af79d13136c9be46c3b34"
     },
     "modengine3": {
         "cargoLock": null,
@@ -143,11 +143,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-eikzjdOYNdJM9FM3O/HuCFDzf97Fm1nhbRedDyKZ1/s=",
+            "sha256": "sha256-e43pKfAurZoCxMHCD0HlY/odZfQS9fZjSxPjPpRJBak=",
             "type": "url",
-            "url": "https://github.com/open-goal/launcher/releases/download/v2.10.4/OpenGOAL-Launcher_2.10.4_amd64.AppImage"
+            "url": "https://github.com/open-goal/launcher/releases/download/v2.11.1/OpenGOAL-Launcher_2.11.1_amd64.AppImage"
         },
-        "version": "2.10.4"
+        "version": "2.11.1"
     },
     "pokemmo": {
         "cargoLock": null,

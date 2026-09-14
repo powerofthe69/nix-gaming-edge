@@ -8,18 +8,18 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.911.113656";
+    version = "2026.913.210037";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.911.113656/tar_gz";
-      sha256 = "sha256-KIMbSVs61hmHq91jCxhMpwxoHJ8gbYwa3C34dIlR7KY=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.913.210037/tar_gz";
+      sha256 = "sha256-JcZC7D2ADhCLYH5uOjBR5Q5UTcfIwgo44VhyApri+74=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.911.113656";
+    version = "2026.913.210037";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.911.113656/zip";
-      sha256 = "sha256-PisbnhXLu51r9oBQ0m0em9rX/RwlFwT3OE5f/Q+wjoo=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.913.210037/zip";
+      sha256 = "sha256-uymy7J0+fYD+Iva7BRw+f5S8w69Vfnlf5WP/Gkk4oQc=";
     };
   };
   hytale-launcher = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "7cda7850edd103ace21aac37d416d2fdf7a282e1";
+    version = "718f600181bff1c2cb6af79d13136c9be46c3b34";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "7cda7850edd103ace21aac37d416d2fdf7a282e1";
+      rev = "718f600181bff1c2cb6af79d13136c9be46c3b34";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6n2lWh/U8T2ZTxe6ziPXjs8c1JnXjcKUmPzNbzo6osg=";
+      sha256 = "sha256-sqPX7VxdyscxWZaCwwDWVgZLLIweqJiaGu/C6Ft9+p0=";
     };
-    date = "2026-09-11";
+    date = "2026-09-14";
   };
   modengine3 = {
     pname = "modengine3";
@@ -90,10 +90,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.10.4";
+    version = "2.11.1";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.10.4/OpenGOAL-Launcher_2.10.4_amd64.AppImage";
-      sha256 = "sha256-eikzjdOYNdJM9FM3O/HuCFDzf97Fm1nhbRedDyKZ1/s=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.11.1/OpenGOAL-Launcher_2.11.1_amd64.AppImage";
+      sha256 = "sha256-e43pKfAurZoCxMHCD0HlY/odZfQS9fZjSxPjPpRJBak=";
     };
   };
   pokemmo = {
