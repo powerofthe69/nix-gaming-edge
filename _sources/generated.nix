@@ -46,29 +46,29 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "773536b1e5dde694dd743815528aff8bb2cf2cc3";
+    version = "06675b4fbede3c8547cf9de09444424672d06066";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "773536b1e5dde694dd743815528aff8bb2cf2cc3";
+      rev = "06675b4fbede3c8547cf9de09444424672d06066";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7XBMU3bNsIKOwDXjdfVqf0fU1Bji18GKrvy7Uho7PeM=";
+      sha256 = "sha256-dRn9E02yi8HVT7aLbYjhJ15lNoLyu4DDbVyLRLP2+KE=";
     };
-    date = "2026-08-13";
+    date = "2026-09-15";
   };
   mesa = {
     pname = "mesa";
-    version = "8ce3af2936c749f55149fe05cea8d8fd3aaeb17e";
+    version = "23a3d631806f4ed8ffab6b45381ea70b6faa74a6";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "8ce3af2936c749f55149fe05cea8d8fd3aaeb17e";
+      rev = "23a3d631806f4ed8ffab6b45381ea70b6faa74a6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1F4BRKMRzVNoqY3EK3BQMArGLqaozNTMcgplDqkTdpg=";
+      sha256 = "sha256-OdoQotKrfB1Ppb/usaieNLvfVZuobQrMCk411CX//gQ=";
     };
     date = "2026-09-16";
   };
