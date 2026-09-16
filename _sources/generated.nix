@@ -24,10 +24,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.09.10-d6a4226";
+    version = "2026.09.15-261d405";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.10-d6a4226.zip";
-      sha256 = "sha256-XZ+dcWaq7u9gWSsMOlf65HMIAC7QzBDVojfV+LBAjrk=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.15-261d405.zip";
+      sha256 = "sha256-bH5iVP0ElNRYOoOdG0K/8q4LtDDINDQqVDYuK66Uxf0=";
     };
   };
   jellium-desktop = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "3accbc33a2c1b7b3e141afd04ceb153ef7f926c7";
+    version = "8ce3af2936c749f55149fe05cea8d8fd3aaeb17e";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "3accbc33a2c1b7b3e141afd04ceb153ef7f926c7";
+      rev = "8ce3af2936c749f55149fe05cea8d8fd3aaeb17e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-k34gqCzUQ2HH/2SJavfPbavbnpCl+7aNMsCdWM4d9cw=";
+      sha256 = "sha256-1F4BRKMRzVNoqY3EK3BQMArGLqaozNTMcgplDqkTdpg=";
     };
-    date = "2026-09-15";
+    date = "2026-09-16";
   };
   modengine3 = {
     pname = "modengine3";
