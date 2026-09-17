@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-16",
+        "date": "2026-09-17",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "23a3d631806f4ed8ffab6b45381ea70b6faa74a6",
-            "sha256": "sha256-OdoQotKrfB1Ppb/usaieNLvfVZuobQrMCk411CX//gQ=",
+            "rev": "d1d8d84f2e6f15872bceac54d0feafa7f9c94a43",
+            "sha256": "sha256-MI3yyOdIw+ZBScoW/n1TrUgAwNeDLyocsC0HQOPjYx8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "23a3d631806f4ed8ffab6b45381ea70b6faa74a6"
+        "version": "d1d8d84f2e6f15872bceac54d0feafa7f9c94a43"
     },
     "modengine3": {
         "cargoLock": null,
@@ -211,7 +211,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-09-14",
+        "date": "2026-09-15",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -221,13 +221,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "339b85ba4055dfec6b349b7fcd2ad420d775793a",
-            "sha256": "sha256-bsTw8F6bBJFZWzOYV84VMtrMMj0fHId9BKCxrFUQYxM=",
+            "rev": "59a54286542651fff5ea53f0ce6cadf2a6aa7521",
+            "sha256": "sha256-j3gCRDBD64o4W+4a71ADCtP0BM8imbfyQV+uvEUtk2A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "339b85ba4055dfec6b349b7fcd2ad420d775793a"
+        "version": "59a54286542651fff5ea53f0ce6cadf2a6aa7521"
     },
     "vintagestory": {
         "cargoLock": null,
