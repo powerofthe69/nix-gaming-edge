@@ -76,13 +76,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3f5ee2c3b189f77e2ca873dcd16786edb4c1f05b",
-            "sha256": "sha256-d0rFukwXDEDX+ylWbdgN6CaQ7xhTsYWHIaxfA/MZN1U=",
+            "rev": "b97cbde15c5c3abfe44d78e8f57139e50f612fec",
+            "sha256": "sha256-6Pz1RSi5CZ5zjxO4c7TPsAYU8kOcbpBkTSIvGKb+H/M=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/drm.git"
         },
-        "version": "3f5ee2c3b189f77e2ca873dcd16786edb4c1f05b"
+        "version": "b97cbde15c5c3abfe44d78e8f57139e50f612fec"
     },
     "mesa": {
         "cargoLock": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "21c9f81fd06f5b24c84aa20677f6f9772d53a624",
-            "sha256": "sha256-2pm/KbqzrVZssHYhlCMwEmZaZWPrd1xwWShsnSOtbsQ=",
+            "rev": "af4ef6b98b8d96bd9accd019963ef0169a8b004f",
+            "sha256": "sha256-PHSeuRYsLjpYbofbI4SoThDXWnAsFvvGuju+bnCOk3U=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "21c9f81fd06f5b24c84aa20677f6f9772d53a624"
+        "version": "af4ef6b98b8d96bd9accd019963ef0169a8b004f"
     },
     "modengine3": {
         "cargoLock": null,
