@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8fACXohZIV8Iw1/OUTqsu3h/byQ2Pmjrtn17Um1ySEA=",
+            "sha256": "sha256-pufKd7AUuvlzpTwsR79h5WASKeoAOATb8/pweU3VN1Q=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.918.152637/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.919.134309/tar_gz"
         },
-        "version": "2026.918.152637"
+        "version": "2026.919.134309"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-SmtIIH+7SXzIqGMp2S/ZLxkSelgs8DHflTYiPTgHLsU=",
+            "sha256": "sha256-Av46N1+LMzVbi+P9cRIU/INVJtVr1f9q7LIlfbavWpk=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.918.152637/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.919.134309/zip"
         },
-        "version": "2026.918.152637"
+        "version": "2026.919.134309"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -46,7 +46,7 @@
     },
     "jellium-desktop": {
         "cargoLock": null,
-        "date": "2026-09-14",
+        "date": "2026-09-19",
         "extract": null,
         "name": "jellium-desktop",
         "passthru": null,
@@ -56,13 +56,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b0a962d277c7bf71176fcf0c9e34a7d33ec1f5f7",
-            "sha256": "sha256-yX9fLXo2FZFk0ifWx0Jy0Fwzc92DPAUz/oOFJSDg9uU=",
+            "rev": "9074c146a30c957241a8fe2a47e6ff97621e7615",
+            "sha256": "sha256-zyxLt5GLVEpZsq0uLBEEvJw5dYijIiacfVOquoVd1+A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/andrewrabert/jellium-desktop.git"
         },
-        "version": "b0a962d277c7bf71176fcf0c9e34a7d33ec1f5f7"
+        "version": "9074c146a30c957241a8fe2a47e6ff97621e7615"
     },
     "libdrm": {
         "cargoLock": null,

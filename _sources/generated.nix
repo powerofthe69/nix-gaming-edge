@@ -8,18 +8,18 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.918.152637";
+    version = "2026.919.134309";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.918.152637/tar_gz";
-      sha256 = "sha256-8fACXohZIV8Iw1/OUTqsu3h/byQ2Pmjrtn17Um1ySEA=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.919.134309/tar_gz";
+      sha256 = "sha256-pufKd7AUuvlzpTwsR79h5WASKeoAOATb8/pweU3VN1Q=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.918.152637";
+    version = "2026.919.134309";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.918.152637/zip";
-      sha256 = "sha256-SmtIIH+7SXzIqGMp2S/ZLxkSelgs8DHflTYiPTgHLsU=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.919.134309/zip";
+      sha256 = "sha256-Av46N1+LMzVbi+P9cRIU/INVJtVr1f9q7LIlfbavWpk=";
     };
   };
   hytale-launcher = {
@@ -32,17 +32,17 @@
   };
   jellium-desktop = {
     pname = "jellium-desktop";
-    version = "b0a962d277c7bf71176fcf0c9e34a7d33ec1f5f7";
+    version = "9074c146a30c957241a8fe2a47e6ff97621e7615";
     src = fetchgit {
       url = "https://github.com/andrewrabert/jellium-desktop.git";
-      rev = "b0a962d277c7bf71176fcf0c9e34a7d33ec1f5f7";
+      rev = "9074c146a30c957241a8fe2a47e6ff97621e7615";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-yX9fLXo2FZFk0ifWx0Jy0Fwzc92DPAUz/oOFJSDg9uU=";
+      sha256 = "sha256-zyxLt5GLVEpZsq0uLBEEvJw5dYijIiacfVOquoVd1+A=";
     };
-    date = "2026-09-14";
+    date = "2026-09-19";
   };
   libdrm = {
     pname = "libdrm";
