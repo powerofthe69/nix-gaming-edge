@@ -8,18 +8,18 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.919.134309";
+    version = "2026.920.41253";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.919.134309/tar_gz";
-      sha256 = "sha256-pufKd7AUuvlzpTwsR79h5WASKeoAOATb8/pweU3VN1Q=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.920.41253/tar_gz";
+      sha256 = "sha256-chXZDNzCxz9PHoVO5RaND/oSVhLVzGtINQyqectPyzk=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.919.134309";
+    version = "2026.920.41253";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.919.134309/zip";
-      sha256 = "sha256-Av46N1+LMzVbi+P9cRIU/INVJtVr1f9q7LIlfbavWpk=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.920.41253/zip";
+      sha256 = "sha256-HNCOyZBvD4RMC60uWb1/WjX1ohXX1bR1CLNHei0BzeY=";
     };
   };
   hytale-launcher = {
@@ -32,15 +32,15 @@
   };
   jellium-desktop = {
     pname = "jellium-desktop";
-    version = "9074c146a30c957241a8fe2a47e6ff97621e7615";
+    version = "14dc0845981cb7c0aef5fa93ff539d927c8f0eb2";
     src = fetchgit {
       url = "https://github.com/andrewrabert/jellium-desktop.git";
-      rev = "9074c146a30c957241a8fe2a47e6ff97621e7615";
+      rev = "14dc0845981cb7c0aef5fa93ff539d927c8f0eb2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-zyxLt5GLVEpZsq0uLBEEvJw5dYijIiacfVOquoVd1+A=";
+      sha256 = "sha256-e4fanrXusIq3FsVTPqPzNRyye7ja6t6UnjX4mcjHPrk=";
     };
     date = "2026-09-19";
   };
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "590bf21d918c86908d96d1f4590ecd25b9657171";
+    version = "e1f3f372c4a661cd0e71a0cdafc4d469d56ecf35";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "590bf21d918c86908d96d1f4590ecd25b9657171";
+      rev = "e1f3f372c4a661cd0e71a0cdafc4d469d56ecf35";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-P2LhWdSVcOLsGWzMxBFycRLy9v8SFRtzgSPODkkAILQ=";
+      sha256 = "sha256-5z4OoxGRmObH5+mau5fvXRgrAN3Q7RXP/PETsLXDcLE=";
     };
-    date = "2026-09-18";
+    date = "2026-09-19";
   };
   modengine3 = {
     pname = "modengine3";
