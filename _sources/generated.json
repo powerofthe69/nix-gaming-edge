@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-chXZDNzCxz9PHoVO5RaND/oSVhLVzGtINQyqectPyzk=",
+            "sha256": "sha256-jRtZJtK46KjJXhSDQ5F0JJ6h1kvLLaIaY+aoaw2NNls=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.920.41253/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.920.144552/tar_gz"
         },
-        "version": "2026.920.41253"
+        "version": "2026.920.144552"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-HNCOyZBvD4RMC60uWb1/WjX1ohXX1bR1CLNHei0BzeY=",
+            "sha256": "sha256-tpN+6DiEaZGg8UtK428dzVqumGnehAJj+tcFH+4o3pM=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.920.41253/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.920.144552/zip"
         },
-        "version": "2026.920.41253"
+        "version": "2026.920.144552"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-19",
+        "date": "2026-09-21",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e1f3f372c4a661cd0e71a0cdafc4d469d56ecf35",
-            "sha256": "sha256-5z4OoxGRmObH5+mau5fvXRgrAN3Q7RXP/PETsLXDcLE=",
+            "rev": "6886e5e3656143fc6ee5b018390d95703e6e10c2",
+            "sha256": "sha256-KOR2hMH3tW8DcPxbfGPNyh/xGMrV6klzrOpx/gCAhEE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "e1f3f372c4a661cd0e71a0cdafc4d469d56ecf35"
+        "version": "6886e5e3656143fc6ee5b018390d95703e6e10c2"
     },
     "modengine3": {
         "cargoLock": null,
