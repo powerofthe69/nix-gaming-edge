@@ -15,6 +15,10 @@ let
     if pkgs.stdenv.hostPlatform.isDarwin then ./sources-darwin.json else ./sources.json
   );
 
+  # Pin pnpm 11 (package.json packageManager)
+  # pnpm 12 breaks fetchPnpmDeps' jq fixup on darwin (nixpkgs PR #565315)
+  vencordPnpm = pkgs.pnpm_11;
+
   vencord-git = pkgs.vencord.overrideAttrs (
     finalAttrs: _prev: {
       pname = "vencord-git";
@@ -30,12 +34,12 @@ let
           patches
           postPatch
           ;
-        pnpm = pkgs.pnpm;
+        pnpm = vencordPnpm;
         fetcherVersion = 4;
         hash = pnpmHash;
       };
 
-      nativeBuildInputs = map (dep: if dep == pkgs.pnpm_10 then pkgs.pnpm else dep) (
+      nativeBuildInputs = map (dep: if lib.getName dep == "pnpm" then vencordPnpm else dep) (
         _prev.nativeBuildInputs or [ ]
       );
 
