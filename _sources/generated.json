@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-jRtZJtK46KjJXhSDQ5F0JJ6h1kvLLaIaY+aoaw2NNls=",
+            "sha256": "sha256-OeWoWohxaW6Y+/CN00l+0NTCNglIjUHBb6h4JRGEMmE=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.920.144552/tar_gz"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.921.180628/tar_gz"
         },
-        "version": "2026.920.144552"
+        "version": "2026.921.180628"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-tpN+6DiEaZGg8UtK428dzVqumGnehAJj+tcFH+4o3pM=",
+            "sha256": "sha256-HKYvbrdqnqsLbqaDcEevTiEkaaAURFstBr9dEC1jSWw=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.920.144552/zip"
+            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.921.180628/zip"
         },
-        "version": "2026.920.144552"
+        "version": "2026.921.180628"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-bH5iVP0ElNRYOoOdG0K/8q4LtDDINDQqVDYuK66Uxf0=",
+            "sha256": "sha256-WZFaVrkzuhNSQdJWF8J50PsaSbj4Vhldx/wcQ2j4tVs=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.15-261d405.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.21-909ac0c.zip"
         },
-        "version": "2026.09.15-261d405"
+        "version": "2026.09.21-909ac0c"
     },
     "jellium-desktop": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-21",
+        "date": "2026-09-22",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e204c3ff39182635c51609f2d654bfd6a9dfd2af",
-            "sha256": "sha256-oK9TQEsSLAE9FGNqbg2rB+Mqajwnd6Jre7R56TzAYgM=",
+            "rev": "d061d3b6fe4e0a84a593050f6c46df9e890c20b6",
+            "sha256": "sha256-ARPYHWI4PcD+oL7S4bdSlKZxKgYFKeU/SGy1qQstWOk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "e204c3ff39182635c51609f2d654bfd6a9dfd2af"
+        "version": "d061d3b6fe4e0a84a593050f6c46df9e890c20b6"
     },
     "modengine3": {
         "cargoLock": null,
