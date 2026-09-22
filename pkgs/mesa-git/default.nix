@@ -9,6 +9,22 @@
 let
   lib = pkgs.lib;
 
+  # Meson package cache for mesa's crates.io wraps, mirroring nixpkgs (mesa/default.nix).
+  rustDeps = lib.importJSON ./wraps.json;
+  packageCache = pkgs.runCommand "mesa-git-rust-package-cache" { } (
+    "mkdir -p $out\n"
+    + lib.concatMapStringsSep "\n" (
+      dep:
+      "ln -s ${
+        pkgs.fetchCrate {
+          inherit (dep) pname version hash;
+          unpack = false;
+        }
+      } $out/${dep.pname}-${dep.version}.tar.gz"
+    ) rustDeps
+    + "\n"
+  );
+
   # Get short commit hash for versioning
   # wayland's rev is a standard release number
   mesaVersion = builtins.substring 0 7 (mesa-src.rev or "unknown");
@@ -134,6 +150,10 @@ let
       pname = "mesa-git";
       version = "${mesaVersion}";
       src = mesa-src;
+
+      env = (old.env or { }) // {
+        MESON_PACKAGE_CACHE_DIR = packageCache;
+      };
 
       # Remove spirv2dxil and opencl 32bit
       outputs =

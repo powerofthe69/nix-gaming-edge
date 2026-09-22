@@ -62,6 +62,16 @@ jobs:
       - name: Refresh Discord source manifest
         run: ./scripts/sync-discord-deps.py
 
+      # mesa bumps its crates.io wraps independently of Mesa releases
+      - name: Refresh mesa-git Rust wraps
+        run: |
+          REV=$(jq -r .mesa.src.rev _sources/generated.json)
+          WORK_DIR=$(mktemp -d)
+          curl -sL "https://gitlab.freedesktop.org/mesa/mesa/-/archive/$REV/mesa-$REV.tar.gz" \
+            | tar xz -C "$WORK_DIR" --strip-components=1 --wildcards "*/subprojects/*.wrap"
+          ./pkgs/mesa-git/update-wraps.py "$WORK_DIR"
+          rm -rf "$WORK_DIR"
+
       # Always bump nixpkgs so a nixpkgs-only advance is a committable change too.
       - name: Update flake.lock
         run: nix flake update
@@ -187,6 +197,7 @@ jobs:
           path: |
             nvfetcher.toml
             _sources/
+            pkgs/mesa-git/wraps.json
             pkgs/jellium-desktop/_dependencies/
             pkgs/jellium-desktop/nvfetcher.toml
             pkgs/jellium-desktop/default.nix
