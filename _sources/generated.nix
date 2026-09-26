@@ -8,18 +8,18 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.924.13243";
+    version = "2026.925.203704";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.924.13243/tar_gz";
-      sha256 = "sha256-vVrTFcifqUgK17rhM/H2fKpa67R2NuC11DOn05QYLRE=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.925.203704/tar_gz";
+      sha256 = "sha256-UaUdQ/5iG1Dxlpsl29GU5uDyV+10SEGAEPW5QaNfsw4=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.924.13243";
+    version = "2026.925.203704";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.924.13243/zip";
-      sha256 = "sha256-qomYE57CSJHr3rwPqP2n4Y3Z8eFBjFs1UNBDpB2YO60=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.925.203704/zip";
+      sha256 = "sha256-e5yo8qoFPg/Cljx3KVgVy+4UtnK1lXS8ZPPQCGr2AMA=";
     };
   };
   hytale-launcher = {
@@ -60,15 +60,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "d0379e79fbd7d86b33404c2e6e992dd01fb9db9c";
+    version = "ce23b4a7f502cacfd1941e67a0725c6301f229f8";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "d0379e79fbd7d86b33404c2e6e992dd01fb9db9c";
+      rev = "ce23b4a7f502cacfd1941e67a0725c6301f229f8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3AfvkJ5KsN0gGwoR1zADrk/N/FOIlu3Nt6rlFDNRZms=";
+      sha256 = "sha256-xVlyqPRr8DHkyaglGAojsejhUTb03hvzesnXYeGFTEQ=";
     };
     date = "2026-09-25";
   };
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "a9d7a2243b3433e25951ad0bca9cc693349ab3c1";
+    version = "90aea0ddbbfbee16ce052b2c7ab610ffe957b4ca";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "a9d7a2243b3433e25951ad0bca9cc693349ab3c1";
+      rev = "90aea0ddbbfbee16ce052b2c7ab610ffe957b4ca";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ioj8Ng5dpO54R298LUZ1EB91PTESIWKlWPn3B/cKNrg=";
+      sha256 = "sha256-mrGVJtszsGEdoiNtA2nn4QzsIK4Il1jwVs/8NU2EQbM=";
     };
-    date = "2026-09-25";
+    date = "2026-09-26";
   };
   vintagestory = {
     pname = "vintagestory";
