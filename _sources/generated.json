@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-25",
+        "date": "2026-09-26",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ce23b4a7f502cacfd1941e67a0725c6301f229f8",
-            "sha256": "sha256-xVlyqPRr8DHkyaglGAojsejhUTb03hvzesnXYeGFTEQ=",
+            "rev": "7ba0762cbe335f182e6f214fc163845d1919ab3e",
+            "sha256": "sha256-xeZYbuDJR3Z0HNqB+BKPiSFKigQCaAHsYAaAAoQxmBw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "ce23b4a7f502cacfd1941e67a0725c6301f229f8"
+        "version": "7ba0762cbe335f182e6f214fc163845d1919ab3e"
     },
     "modengine3": {
         "cargoLock": null,
