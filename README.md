@@ -22,27 +22,39 @@ The largest ones that most will probably want to use are:
 
 - `proton-cachyos` (or its "optimized" variants): to install proton-cachyos into Steam and keep updated automatically
 
-- `mesa-git`: a module to install the latest Mesa drivers compiled straight from the official Gitlab. Optional flags include:
+- `mesa-git`: a module to install the latest Mesa drivers compiled straight from the official Gitlab. Options: `withStableFallback` (boot entry with stable Mesa, default `true`) and `enableCache` (adds the binary cache, default `true`). The old `drivers.mesa-git.cacheCleanup` / `steamOrphanCleanup` paths still work but are deprecated.
 
-  - `cacheCleanup` : for automatically purging previous Mesa shader cache on version updates - defaults to `false`
+- `mesa-cache-cleanup` (`services.mesa-cache-cleanup`): purges Mesa shader caches (including Steam's `shadercache` dirs) whenever the tracked Mesa version changes. Works with any Mesa - `mesa-git`, stock nixpkgs, or your own build.
+
+  - `enable` : defaults to `false`
   
-    - `protonPackage` : for specifying a Proton package to track for cacheCleanup to clear old proton caches on updates - defaults to `null`
+  - `package` : the Mesa package whose version is tracked - defaults to `config.hardware.graphics.package` (i.e. `mesa-git` when that module is enabled)
+  
+  - `cacheDirs` : glob patterns for Mesa shader cache directories ( under `~/.cache` ) to purge on version updates
+  
+    - Default List: `[ "mesa_shader_cache*" "radv_builtin_shaders*" "vulkan" "*GPUCache" ]`
+
+- `steam-cleanup` (`services.steam-cleanup`): Steam-library housekeeping, independent of the graphics driver.
+
+  - `protonCache` : purges DXVK / VKD3D / engine caches when the tracked Proton version changes
+  
+    - `enable` : defaults to `false`
     
-    - `mesaCacheDirs` : for specifying a list of Mesa shader cache directories ( under `~/.cache` ) to purge on version updates
+    - `package` : the Proton package whose version is tracked ( required when enabled, e.g. `pkgs.proton-cachyos` )
     
-      - Default List: `[ "mesa_shader_cache*" "radv_builtin_shaders*" "vulkan" "*GPUCache" ]`
-    
-    - `protonCacheDirs` : for specifying a list of shader cache directories that might be found within Proton's prefixes ( under `steamapps/compatdata` )
+    - `cacheDirs` : glob patterns for shader cache directories that might be found within Proton's prefixes ( under `steamapps/compatdata` )
     
       - Default List: `[ "DerivedDataCache" "D3DSCache" "*ShaderCache" "GLCache" ]`
     
-    - `protonCacheFiles` : for specifying a list of Proton cache files found within the games' installation directories ( under `steamapps/common` )
+    - `cacheFiles` : glob patterns for Proton cache files found within the games' installation directories ( under `steamapps/common` )
     
-      - Default List: `[ "*.dxvk-cache" "*.vkd3d-proton.cache*" "vulkan_pso_cache*" "shader*.cache" ]`
+      - Default List: `[ "*.dxvk-cache" "vkd3d-proton.cache*" "vulkan_pso_cache*" "shader*.cache" ]`
     
-  - `steamOrphanCleanup` : for purging folders that were left behind by Steam when uninstalling games ( checks against `libraryfolders.vdf` ) - defaults to `false`
+  - `orphans` : purges folders that were left behind by Steam when uninstalling games ( checks against `libraryfolders.vdf` )
   
-    - `protectedFolders` : for declaring folders that should not be purged - this has sane defaults, but if you wish to keep specific game folders that may have mods within from being purged, then all should be declared
+    - `enable` : defaults to `false`
+    
+    - `protectedFolders` : folders that should not be purged - this has sane defaults, but if you wish to keep specific game folders that may have mods within from being purged, then all should be declared
     
       - Default List: `[ "Steam Controller Configs" "Proton*" "SteamLinuxRuntime*" "Steamworks Shared" ]`
 
@@ -53,8 +65,6 @@ Other packages that were mostly for me:
 - `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip. Tracks the canary feed — upstream dropped the stable channel 2026-09-02.
 
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates
-
-- `millennium-steam` _(currently disabled)_: this exposes the Millennium plugin/theming framework for Steam. It's just re-exported from the official Millennium flake so I have a single point of installation alongside everything else here. Temporarily disabled because the upstream flake is broken and unable to build — will be re-enabled if/when upstream is fixed.
 
 - `modengine3` or `me3`: this installs me3, a framework for modding and instrumenting FROMSOFTWARE games (Elden Ring, Dark Souls, etc.). Tracks the upstream releases.
 
@@ -76,10 +86,12 @@ Each provided package or package set (if multiple variations) has its own overla
 - nix-gaming-edge.overlays.proton-cachyos
 - etc.
 
-mesa-git can be activated using either the mesa-git module or the default module (they are the same for now). These are declared as either:
+The default module bundles everything; the others can be imported individually:
 
-- nix-gaming-edge.nixosModules.default
-- nix-gaming-edge.nixosModules.mesa-git
+- nix-gaming-edge.nixosModules.default (mesa-git + mesa-cache-cleanup + steam-cleanup)
+- nix-gaming-edge.nixosModules.mesa-git (the driver only)
+- nix-gaming-edge.nixosModules.mesa-cache-cleanup
+- nix-gaming-edge.nixosModules.steam-cleanup
 
 Here is a minimal representation of what your configuration might look like:
 
@@ -115,31 +127,35 @@ Here is a minimal representation of what your configuration might look like:
             # etc.  
           ];
           
-          drivers.mesa-git = {
+          drivers.mesa-git.enable = true;
+
+          services.mesa-cache-cleanup = { # tracks hardware.graphics.package, so this works without mesa-git too
             enable = true;
-            cacheCleanup = { # protonPackage is null by default - thus Proton caches are not cleaned by default. Must define a protonPackage to clear Proton / engine caches
+            cacheDirs = [ # optional - default lists pre-configured
+              "mesa_shader_cache*"
+              "radv_builtin_shaders*"
+              # etc.
+            ];
+          };
+
+          services.steam-cleanup = {
+            protonCache = { # Proton / engine caches are only cleaned when this is enabled with a package to track
               enable = true;
-              protonPackage = pkgs.proton-cachyos; # or variation
-            
-              mesaCacheDirs = [ # optional - default lists pre-configured
-                "mesa_shader_cache*"
-                "radv_builtin_shaders*"
-                # etc.
-              ];
+              package = pkgs.proton-cachyos; # or variation
               
-              protonCacheFiles = [ # optional - default lists pre-configured
+              cacheFiles = [ # optional - default lists pre-configured
                 "vkd3d-proton.cache*"
                 "shader*.cache"
                 # etc.
               ];
             
-              protonCacheDirs = [ # optional - default lists pre-configured
+              cacheDirs = [ # optional - default lists pre-configured
                 "*ShaderCache*"
                 "D3DSCache*"
                 # etc.
               ];
             };
-            steamOrphanCleanup = {
+            orphans = {
               enable = true;
               protectedFolders = [ # folders to not treat as orphans for deletion ( optional, pre-configured with smart defaults )
                 "Proton*"

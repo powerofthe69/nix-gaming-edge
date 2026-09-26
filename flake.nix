@@ -221,8 +221,16 @@
       };
 
       nixosModules = {
-        mesa-git = import ./modules/mesa-git.nix;
-        default = self.nixosModules.mesa-git;
+        mesa-git = ./modules/mesa-git.nix;
+        mesa-cache-cleanup = ./modules/mesa-cache-cleanup.nix;
+        steam-cleanup = ./modules/steam-cleanup.nix;
+        default = {
+          imports = with self.nixosModules; [
+            mesa-git
+            mesa-cache-cleanup
+            steam-cleanup
+          ];
+        };
       };
 
       homeModules = {
