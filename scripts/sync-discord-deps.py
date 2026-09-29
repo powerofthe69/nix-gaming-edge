@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Refresh pkgs/discord/sources{,-darwin}.json from Discord's distributions API.
 
-Each output mirrors the source-attrset shape that nixpkgs' pkgs.discord
-consumes (stable branch only), forcing kind="distro" so the override hits
-the new code path even against older locked nixpkgs. Linux tracks the x64
+Each output mirrors the source-attrset shape of nixpkgs' discord metadata
+(stable branch only), forcing kind="distro". pkgs/discord/default.nix injects
+it in place of nixpkgs' own pin: via the metadata.nix callPackage on current
+nixpkgs, or the `source` argument on older locked ones. Linux tracks the x64
 distro; darwin tracks the universal one (the API returns it for any arch).
 """
 

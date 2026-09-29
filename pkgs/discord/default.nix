@@ -52,14 +52,44 @@ let
     }
   );
 
-  discord-stable = pkgs.discord.override {
-    inherit source;
-    withVencord = true;
-    vencord = vencord-git;
-  };
+  # nixpkgs moved discord to by-name and reads `source` from metadata.nix
+  sourceOverride =
+    if (lib.functionArgs pkgs.discord.override) ? source then
+      { inherit source; }
+    else
+      {
+        callPackage =
+          fn: args:
+          let
+            result = pkgs.callPackage fn args;
+          in
+          if baseNameOf (toString fn) == "metadata.nix" then
+            result
+            // {
+              discord = result.discord // {
+                inherit source;
+              };
+            }
+          else
+            result;
+      };
+
+  discord-stable = pkgs.discord.override (
+    sourceOverride
+    // {
+      withVencord = true;
+      vencord = vencord-git;
+    }
+  );
+
+  # Fail loudly if the injection stops applying (e.g. nixpkgs renames metadata.nix)
+  discord-checked =
+    assert lib.assertMsg (discord-stable.version == source.version)
+      "discord: source override not applied (nixpkgs ${discord-stable.version}, manifest ${source.version})";
+    discord-stable;
 
 in
 {
-  discord = discord-stable;
+  discord = discord-checked;
   vencord = vencord-git;
 }
