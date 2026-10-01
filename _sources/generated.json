@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-MqoHh9LPN0ZMtxAPeixsHgqZbnDj+H1u4Wy4okZvVTk=",
+            "sha256": "sha256-IDRrasOulwwJ7IWo7Yyan+DQ4428v7FYqTmPtOKy0Ug=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.28-87cfbb7.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.30-326a0c2.zip"
         },
-        "version": "2026.09.28-87cfbb7"
+        "version": "2026.09.30-326a0c2"
     },
     "jellium-desktop": {
         "cargoLock": null,
@@ -86,7 +86,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-09-30",
+        "date": "2026-10-01",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "aa35464ee50c1311eb6cebb9882d02738642b692",
-            "sha256": "sha256-+HShF6QbOuhlYddK1F5qUzJ4xFWL8fZr2XJBz5K+qeg=",
+            "rev": "022b8b1871d3049a4bb9032cb3e294095f52a2f3",
+            "sha256": "sha256-Gbd8a2/w7yZ/y06kdzcECRgDcgj6ghYHkr0rYPHfL1I=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "aa35464ee50c1311eb6cebb9882d02738642b692"
+        "version": "022b8b1871d3049a4bb9032cb3e294095f52a2f3"
     },
     "modengine3": {
         "cargoLock": null,
@@ -266,7 +266,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-09-09",
+        "date": "2026-09-16",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -276,12 +276,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "819004adb3ab7e46f3fa3caef05b96e20434b244",
-            "sha256": "sha256-Fal+LAXzxouWmm+u8Dfi+G69eKsbTeMN+yMkv7/C9BQ=",
+            "rev": "aa62366fb800a0689f4e9de83811ff33f6a91f44",
+            "sha256": "sha256-BdjjscC97Q6gyGDAGoqKYQ40D0nZY+fksBAKptLSfIM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "819004adb3ab7e46f3fa3caef05b96e20434b244"
+        "version": "aa62366fb800a0689f4e9de83811ff33f6a91f44"
     }
 }

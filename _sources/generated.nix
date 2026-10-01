@@ -24,10 +24,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.09.28-87cfbb7";
+    version = "2026.09.30-326a0c2";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.28-87cfbb7.zip";
-      sha256 = "sha256-MqoHh9LPN0ZMtxAPeixsHgqZbnDj+H1u4Wy4okZvVTk=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.30-326a0c2.zip";
+      sha256 = "sha256-IDRrasOulwwJ7IWo7Yyan+DQ4428v7FYqTmPtOKy0Ug=";
     };
   };
   jellium-desktop = {
@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "aa35464ee50c1311eb6cebb9882d02738642b692";
+    version = "022b8b1871d3049a4bb9032cb3e294095f52a2f3";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "aa35464ee50c1311eb6cebb9882d02738642b692";
+      rev = "022b8b1871d3049a4bb9032cb3e294095f52a2f3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+HShF6QbOuhlYddK1F5qUzJ4xFWL8fZr2XJBz5K+qeg=";
+      sha256 = "sha256-Gbd8a2/w7yZ/y06kdzcECRgDcgj6ghYHkr0rYPHfL1I=";
     };
-    date = "2026-09-30";
+    date = "2026-10-01";
   };
   modengine3 = {
     pname = "modengine3";
@@ -165,16 +165,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "819004adb3ab7e46f3fa3caef05b96e20434b244";
+    version = "aa62366fb800a0689f4e9de83811ff33f6a91f44";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "819004adb3ab7e46f3fa3caef05b96e20434b244";
+      rev = "aa62366fb800a0689f4e9de83811ff33f6a91f44";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Fal+LAXzxouWmm+u8Dfi+G69eKsbTeMN+yMkv7/C9BQ=";
+      sha256 = "sha256-BdjjscC97Q6gyGDAGoqKYQ40D0nZY+fksBAKptLSfIM=";
     };
-    date = "2026-09-09";
+    date = "2026-09-16";
   };
 }

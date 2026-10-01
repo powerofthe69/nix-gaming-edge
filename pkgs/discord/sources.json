@@ -11,9 +11,9 @@
       "version": 1
     },
     "discord_desktop_core": {
-      "hash": "sha256-8SzyVmESqnFhi4SbS1zZ3rnPvZV/XJPohCZ1SFblKPE=",
-      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.160/discord_desktop_core/1/full.distro",
-      "version": 1
+      "hash": "sha256-efB4/1UUz+LQdrzOTFgPhz5nQC/2PTHU29MruExW38k=",
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/linux/x64/1.0.160/discord_desktop_core/2/full.distro",
+      "version": 2
     },
     "discord_dispatch": {
       "hash": "sha256-XOib0/SrhV8EK/um8oc+4nEPCZ81BPU8r2TfviDDzX8=",
