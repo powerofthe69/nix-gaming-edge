@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "c126acd85a645728bcecaa164d7d7c928438e842";
+    version = "b39d173ca9369c19fda2635be6655d308067e52d";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "c126acd85a645728bcecaa164d7d7c928438e842";
+      rev = "b39d173ca9369c19fda2635be6655d308067e52d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-y5thybwTxqKc+t9fn3A5DJBpSZkLao1gZfOdKcNJxQQ=";
+      sha256 = "sha256-xsPlXVYf2Xqwf1WN5EneMEEgxNY8oGHr7m1Dq9/vxr0=";
     };
-    date = "2026-10-04";
+    date = "2026-10-05";
   };
   modengine3 = {
     pname = "modengine3";
@@ -165,16 +165,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "aa62366fb800a0689f4e9de83811ff33f6a91f44";
+    version = "682ae76bccd67836c19a6a4bee7d3f3340cf46fa";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "aa62366fb800a0689f4e9de83811ff33f6a91f44";
+      rev = "682ae76bccd67836c19a6a4bee7d3f3340cf46fa";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-BdjjscC97Q6gyGDAGoqKYQ40D0nZY+fksBAKptLSfIM=";
+      sha256 = "sha256-6PwfCZUE+0GckUlBwHUa8OUf/kQ0JRQkN7+yg7EGVdU=";
     };
-    date = "2026-09-16";
+    date = "2026-10-02";
   };
 }
