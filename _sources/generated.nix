@@ -60,15 +60,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "b39d173ca9369c19fda2635be6655d308067e52d";
+    version = "70c4c018cbe5b78a1db7e9413bc7e511b366fd95";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "b39d173ca9369c19fda2635be6655d308067e52d";
+      rev = "70c4c018cbe5b78a1db7e9413bc7e511b366fd95";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xsPlXVYf2Xqwf1WN5EneMEEgxNY8oGHr7m1Dq9/vxr0=";
+      sha256 = "sha256-djaOhCEVRbjxwYo9cUWb+a35kzZ5402OesUQ9WNwWg8=";
     };
     date = "2026-10-05";
   };
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "b52ed365cf2ea64a5019b419291a2d9d4d76852d";
+    version = "3374b8a9d8f6b051c64204917360293aad7f5d75";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "b52ed365cf2ea64a5019b419291a2d9d4d76852d";
+      rev = "3374b8a9d8f6b051c64204917360293aad7f5d75";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ArqSeQHl31VRDLOz8KwkCxRSUt37jz0IMf3LZHVHMTw=";
+      sha256 = "sha256-9MJaeFQNBaR0TtQWYRCNOgFohUYENC+mLih73O2j8Lo=";
     };
-    date = "2026-10-03";
+    date = "2026-10-05";
   };
   vintagestory = {
     pname = "vintagestory";
