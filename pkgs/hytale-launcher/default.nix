@@ -16,8 +16,6 @@ let
     src = source.src;
     nativeBuildInputs = [ unzip ];
 
-    # Since 2026.09.30 the ".zip" is a signed HYTALE-UPDATE container; the zip
-    # payload is the trailing N bytes, N being the big-endian u64 at offset 24.
     unpackPhase = ''
       runHook preUnpack
       if [ "$(head -c 13 "$src")" = "HYTALE-UPDATE" ]; then

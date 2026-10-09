@@ -244,7 +244,7 @@ let
           "-Dplatforms=x11,wayland"
           "-Dgallium-drivers=${if is32bit then "radeonsi,zink,llvmpipe,iris" else "all"}"
           "-Dvulkan-drivers=amd,intel,nouveau${if is32bit then "" else ",swrast"}"
-          "-Dvulkan-layers=anti-lag,device-select,overlay"
+          "-Dvulkan-layers=device-select,overlay"
           "-Dteflon=true"
           "-Dgallium-extra-hud=true"
           "-Dvideo-codecs=all"
