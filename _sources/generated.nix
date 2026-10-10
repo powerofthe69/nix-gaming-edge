@@ -60,17 +60,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "ed458ffac6f410e6f03e54d17f47e8aeb55fe3a1";
+    version = "cf0b979229f3dc77eb28dd3b0a232ae37d787b1d";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "ed458ffac6f410e6f03e54d17f47e8aeb55fe3a1";
+      rev = "cf0b979229f3dc77eb28dd3b0a232ae37d787b1d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mIV57y4bda4oxqeIzf2Bk54eY1LT98Qq1k5OwTojt98=";
+      sha256 = "sha256-1eYXeHpjSCmKpdSUIrlZnzAADnBDiWTxQBn5WWS5U/c=";
     };
-    date = "2026-10-09";
+    date = "2026-10-10";
   };
   modengine3 = {
     pname = "modengine3";
@@ -90,10 +90,10 @@
   };
   opengoal-launcher = {
     pname = "opengoal-launcher";
-    version = "2.11.1";
+    version = "2.11.2";
     src = fetchurl {
-      url = "https://github.com/open-goal/launcher/releases/download/v2.11.1/OpenGOAL-Launcher_2.11.1_amd64.AppImage";
-      sha256 = "sha256-e43pKfAurZoCxMHCD0HlY/odZfQS9fZjSxPjPpRJBak=";
+      url = "https://github.com/open-goal/launcher/releases/download/v2.11.2/OpenGOAL-Launcher_2.11.2_amd64.AppImage";
+      sha256 = "sha256-hD1kDkvngfD7YxgnKtAqCm/YCimNZsYApYx8Cn5ZfY8=";
     };
   };
   pokemmo = {
@@ -130,17 +130,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "718c867256a9d181edc7a534afb296b9bb41ab58";
+    version = "16ec4ea838899706019e7f472e45f055070abeb1";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "718c867256a9d181edc7a534afb296b9bb41ab58";
+      rev = "16ec4ea838899706019e7f472e45f055070abeb1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mCnXOz4uPLK47fDtcZuL6Qfw6NRGjDpa+ppineefwSI=";
+      sha256 = "sha256-bUbzsfrrOd7uWf1q51EohRelG9jfAoFY20gqcQ+enoE=";
     };
-    date = "2026-10-07";
+    date = "2026-10-09";
   };
   vintagestory = {
     pname = "vintagestory";
