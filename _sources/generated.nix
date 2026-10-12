@@ -8,26 +8,26 @@
 {
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1009.45608";
+    version = "2026.1012.154032";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1009.45608/tar_gz";
-      sha256 = "sha256-ZAOv9ToSKBl9SwPcBQIFiaWcP+5rQrZSd+elR7hxHHQ=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1012.154032/tar_gz";
+      sha256 = "sha256-GMfoh7vUuln7DBTSSobFpFz0mRcMndlDCXgtT6Yw6tU=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1009.45608";
+    version = "2026.1012.154032";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1009.45608/zip";
-      sha256 = "sha256-o2NcTWjFmbWBx7bpFgoQok6EVk4XIwNPyUzsQlKzJwU=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1012.154032/zip";
+      sha256 = "sha256-whxsG9Eg5RyDj2kb4J7dTOpSFxj5PerXZ104w5mYjEc=";
     };
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.09.30-326a0c2";
+    version = "2026.10.09-4e41671";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.09.30-326a0c2.zip";
-      sha256 = "sha256-IDRrasOulwwJ7IWo7Yyan+DQ4428v7FYqTmPtOKy0Ug=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.09-4e41671.zip";
+      sha256 = "sha256-7VKqz2ymQLvgBLbq5pmVju7cX8E+r5EgtY48Mk5dnf8=";
     };
   };
   jellium-desktop = {
@@ -60,15 +60,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "1b75efe0014c0d71163a01589bafb510460e7049";
+    version = "d14541b8e0feb88f8391d3a52c048a410a537f50";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "1b75efe0014c0d71163a01589bafb510460e7049";
+      rev = "d14541b8e0feb88f8391d3a52c048a410a537f50";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ck/U+177g6mK2SEKe/klmrmDlv5/nSMglvNFa/MrUFc=";
+      sha256 = "sha256-C+Y8VWM6bWY8zCEbqnmkuPnTxXkn0b/+00mFCIEC49Q=";
     };
     date = "2026-10-12";
   };
