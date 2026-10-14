@@ -15,6 +15,13 @@
       ]
     },
     {
+      "name": "epic-games-launcher",
+      "packages": "epic-games-launcher",
+      "runner": [
+        "self-hosted"
+      ]
+    },
+    {
       "name": "fluxer-desktop",
       "packages": "fluxer-desktop",
       "runner": [
