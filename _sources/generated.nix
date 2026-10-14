@@ -16,18 +16,34 @@
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
+    version = "2026.1014.180559";
+    src = fetchurl {
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1014.180559/tar_gz";
+      sha256 = "sha256-cpM4/ptBGdIZ6xzBrxQr/fRFYi/RVLkZ3AB9r2bNWOk=";
+    };
+  };
+  fluxer-desktop-canary = {
+    pname = "fluxer-desktop-canary";
     version = "2026.1014.180548";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1014.180548/tar_gz";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1014.180548/tar_gz";
       sha256 = "sha256-lNbPjr+eCpr4h+ia60skHhyqZdAulegDQHus77+fQng=";
+    };
+  };
+  fluxer-desktop-canary-darwin = {
+    pname = "fluxer-desktop-canary-darwin";
+    version = "2026.1014.180548";
+    src = fetchurl {
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1014.180548/zip";
+      sha256 = "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1014.180548";
+    version = "2026.1014.180559";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1014.180548/zip";
-      sha256 = "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1014.180559/zip";
+      sha256 = "sha256-El/86ZhqjlJrQgmQPtv2HuZVZ7C5Qk1XMkCSN6sX8fk=";
     };
   };
   hytale-launcher = {
@@ -68,15 +84,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "c35d53cf8215901a19ed9f7fc9ae09f538c1152c";
+    version = "0786a951148790937305c9e7dbf0688cd26c89e6";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "c35d53cf8215901a19ed9f7fc9ae09f538c1152c";
+      rev = "0786a951148790937305c9e7dbf0688cd26c89e6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-a+iUgMaVoNZtmsCo8IZd3ET2pa08jLoEQQoexgpC3do=";
+      sha256 = "sha256-Opr+jZA/ntsR3Wtmy81xNKfOuG5YoGrPDV219IyojwI=";
     };
     date = "2026-10-14";
   };

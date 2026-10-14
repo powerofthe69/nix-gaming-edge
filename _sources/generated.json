@@ -23,9 +23,39 @@
         "pinned": false,
         "src": {
             "name": null,
+            "sha256": "sha256-cpM4/ptBGdIZ6xzBrxQr/fRFYi/RVLkZ3AB9r2bNWOk=",
+            "type": "url",
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1014.180559/tar_gz"
+        },
+        "version": "2026.1014.180559"
+    },
+    "fluxer-desktop-canary": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "fluxer-desktop-canary",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
             "sha256": "sha256-lNbPjr+eCpr4h+ia60skHhyqZdAulegDQHus77+fQng=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1014.180548/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1014.180548/tar_gz"
+        },
+        "version": "2026.1014.180548"
+    },
+    "fluxer-desktop-canary-darwin": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "fluxer-desktop-canary-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=",
+            "type": "url",
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1014.180548/zip"
         },
         "version": "2026.1014.180548"
     },
@@ -38,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=",
+            "sha256": "sha256-El/86ZhqjlJrQgmQPtv2HuZVZ7C5Qk1XMkCSN6sX8fk=",
             "type": "url",
-            "url": "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1014.180548/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1014.180559/zip"
         },
-        "version": "2026.1014.180548"
+        "version": "2026.1014.180559"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -111,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c35d53cf8215901a19ed9f7fc9ae09f538c1152c",
-            "sha256": "sha256-a+iUgMaVoNZtmsCo8IZd3ET2pa08jLoEQQoexgpC3do=",
+            "rev": "0786a951148790937305c9e7dbf0688cd26c89e6",
+            "sha256": "sha256-Opr+jZA/ntsR3Wtmy81xNKfOuG5YoGrPDV219IyojwI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "c35d53cf8215901a19ed9f7fc9ae09f538c1152c"
+        "version": "0786a951148790937305c9e7dbf0688cd26c89e6"
     },
     "modengine3": {
         "cargoLock": null,
