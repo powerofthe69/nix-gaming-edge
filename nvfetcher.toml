@@ -68,22 +68,29 @@ fetch.git = "https://github.com/Vendicated/Vencord.git"
 src.github = "garyttierney/me3"
 fetch.url = "https://github.com/garyttierney/me3/releases/download/$ver/me3-linux-amd64.tar.gz"
 
-# Fluxer Desktop - upstream prebuilt Linux tarballs (patchelf'd in default.nix).
+# Fluxer Desktop - upstream prebuilt Linux tarballs / darwin .app zips (patchelf'd on Linux).
 # Versioned download paths: /latest/ is a moving pointer, so a pinned hash goes
-# stale the moment upstream ships a new canary.
-# Canary API: upstream dropped stable 2026-09-02; the stable manifest is frozen at
-# 0.0.8 while its /latest downloads serve canary bytes, so canary is the only
-# usable version oracle. Revisit if the stable manifest starts tracking the feed.
+# stale the moment upstream ships a new build. Stable resumed 2026-10-14.
 [fluxer-desktop]
 src.regex = '"version":\s*"([^"]+)"'
-src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/manifest.json"
-fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/$ver/tar_gz"
+src.webpage = "https://pkgs.fluxer.com/desktop/stable/linux/x64/manifest.json"
+fetch.url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/$ver/tar_gz"
 
-# Fluxer Desktop - aarch64-darwin .app zips
 [fluxer-desktop-darwin]
 src.regex = '"version":\s*"([^"]+)"'
-src.webpage = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/manifest.json"
-fetch.url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/$ver/zip"
+src.webpage = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/manifest.json"
+fetch.url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/$ver/zip"
+
+[fluxer-desktop-canary]
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://pkgs.fluxer.com/desktop/canary/linux/x64/manifest.json"
+fetch.url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/$ver/tar_gz"
+
+[fluxer-desktop-canary-darwin]
+src.regex = '"version":\s*"([^"]+)"'
+src.webpage = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/manifest.json"
+fetch.url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/$ver/zip"
+
 
 # OpenGoal Launcher - GUI for managing and launching OpenGoal games
 [opengoal-launcher]

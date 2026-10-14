@@ -64,7 +64,7 @@ Other packages that were mostly for me:
 
 - `epic-games-launcher`: this installs the official Epic Games Launcher (the new Tauri-based EGLv2 preview) from Epic's native Linux AppImage inside its own FHSenv. Like Steam, the packaged AppImage only seeds a copy in `~/.local/share/epic-games-launcher`, which the launcher then self-updates.
 
-- `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip. Tracks the canary feed — upstream dropped the stable channel 2026-09-02.
+- `fluxer-desktop` (stable) and `fluxer-desktop-canary`: these install the official prebuilt Fluxer desktop clients from upstream. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip. Each tracks its own upstream release feed.
 
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates
 

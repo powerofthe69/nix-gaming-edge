@@ -49,18 +49,31 @@
   pipewire,
   systemd,
   wayland,
+  channel ? "stable",
   source,
 }:
 
 let
-  # Upstream ships only the canary feed (stable dropped 2026-09-02), and the
-  # artifacts are still canary-branded; the tarball/zip + version come from nvfetcher.
-  ch = {
-    exe = "fluxer-canary";
-    displayName = "Fluxer Canary";
-    app = "Fluxer Canary.app";
-    bundleExe = "Fluxer Canary";
-  };
+  # Per-channel artifact names; the tarball/zip + version come from nvfetcher.
+  # appId = Electron desktopName (sans .desktop) = Wayland app_id; GNOME maps windows by it.
+  ch =
+    {
+      stable = {
+        appId = "app.fluxer.FluxerDesktop";
+        exe = "fluxer";
+        displayName = "Fluxer";
+        app = "Fluxer.app";
+        bundleExe = "Fluxer";
+      };
+      canary = {
+        appId = "app.fluxer.FluxerDesktopCanary";
+        exe = "fluxer-canary";
+        displayName = "Fluxer Canary";
+        app = "Fluxer Canary.app";
+        bundleExe = "Fluxer Canary";
+      };
+    }
+    .${channel};
 
   linuxAttrs = {
     # Tarball extracts to a single dir whose name contains spaces + version.
@@ -158,26 +171,30 @@ let
         --add-flags "--ozone-platform-hint=auto" \
         --add-flags "--enable-features=WaylandWindowDecorations"
 
+      # Fail loudly if upstream renames the app_id again (window/icon mapping breaks silently)
+      grep -aq '"desktopName": *"${ch.appId}.desktop"' resources/app.asar
+
       # Icons live under resources/icons/<size>.png (older builds used resources/<size>x<size>.png).
       for size in 16 24 32 48 64 128 256 512; do
         for cand in "resources/icons/''${size}x''${size}.png" "resources/''${size}x''${size}.png"; do
           if [ -f "$cand" ]; then
-            install -Dm644 "$cand" "$out/share/icons/hicolor/''${size}x''${size}/apps/${source.pname}.png"
+            install -Dm644 "$cand" "$out/share/icons/hicolor/''${size}x''${size}/apps/${ch.appId}.png"
             break
           fi
         done
       done
 
       mkdir -p $out/share/applications
-      cat > "$out/share/applications/${source.pname}.desktop" <<EOF
+      cat > "$out/share/applications/${ch.appId}.desktop" <<EOF
       [Desktop Entry]
       Name=${ch.displayName}
       Comment=A chat app that puts you first
       Exec=$out/bin/${ch.exe} %U
-      Icon=${source.pname}
+      Icon=${ch.appId}
       Type=Application
       Categories=Network;Chat;InstantMessaging;
-      StartupWMClass=${ch.exe}
+      MimeType=x-scheme-handler/fluxer;
+      StartupWMClass=${ch.appId}
       EOF
 
       runHook postInstall
