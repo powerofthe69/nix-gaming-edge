@@ -96,3 +96,8 @@ fetch.url = "https://github.com/open-goal/launcher/releases/download/v$ver/OpenG
 src.git = "https://github.com/andrewrabert/jellium-desktop"
 src.branch = "main"
 fetch.git = "https://github.com/andrewrabert/jellium-desktop.git"
+
+# Epic Games Launcher (EGLv2, Tauri) - official Linux AppImage
+[epic-games-launcher]
+src.cmd = "curl -s https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/stable-target.json | jq -r .version"
+fetch.url = "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncher-x86_64.AppImage"

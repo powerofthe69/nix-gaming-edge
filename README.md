@@ -62,6 +62,8 @@ Other packages that were mostly for me:
 
 - `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo. Also built for `aarch64-darwin` from the official macOS distro, so the Mac and Linux pins never drift.
 
+- `epic-games-launcher`: this installs the official Epic Games Launcher (the new Tauri-based EGLv2 preview) from Epic's native Linux AppImage inside its own FHSenv. Like Steam, the packaged AppImage only seeds a copy in `~/.local/share/epic-games-launcher`, which the launcher then self-updates.
+
 - `fluxer-desktop`: this installs the Fluxer desktop client straight from the upstream git repo. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip. Tracks the canary feed — upstream dropped the stable channel 2026-09-02.
 
 - `hytale` or `hytale-launcher`: this installs the official Hytale launcher inside its own FHSenv. As of now, it's a static version of the launcher, because it self-updates

@@ -117,6 +117,10 @@
           hytale-launcher = pkgs.callPackage ./pkgs/hytale-launcher {
             source = nvSources.hytale-launcher;
           };
+
+          epic-games-launcher = pkgs.callPackage ./pkgs/epic-games-launcher {
+            source = nvSources.epic-games-launcher;
+          };
         in
         {
           # Mesa-git
@@ -149,6 +153,9 @@
           # Hytale Launcher
           inherit hytale-launcher;
           hytale = hytale-launcher;
+
+          # Epic Games Launcher
+          inherit epic-games-launcher;
 
           # ModEngine 3
           inherit modengine3;
@@ -212,6 +219,8 @@
         ];
 
         fluxer = mkOverlay [ "fluxer-desktop" ];
+
+        epic-games-launcher = mkOverlay [ "epic-games-launcher" ];
 
         modengine3 = mkOverlay [ "modengine3" ];
 
