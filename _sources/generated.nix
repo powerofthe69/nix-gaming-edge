@@ -6,28 +6,36 @@
   dockerTools,
 }:
 {
+  epic-games-launcher = {
+    pname = "epic-games-launcher";
+    version = "0.95.2+gfa9ad49";
+    src = fetchurl {
+      url = "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-cGYVnsmHr83CcGnwcLRWvbmoBb1fAhFKp62G5VWcv9U=";
+    };
+  };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1013.201015";
+    version = "2026.1014.180548";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1013.201015/tar_gz";
-      sha256 = "sha256-FWTt0z7vlSodeW5Rki3M00a+2BJj5zNPWM4wK5VLOLE=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/linux/x64/2026.1014.180548/tar_gz";
+      sha256 = "sha256-lNbPjr+eCpr4h+ia60skHhyqZdAulegDQHus77+fQng=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1013.201015";
+    version = "2026.1014.180548";
     src = fetchurl {
-      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1013.201015/zip";
-      sha256 = "sha256-rNYF34K7uXbkQL0+6QkduwwUDnK9s87hW5oAyrPxtkQ=";
+      url = "https://api.canary.fluxer.app/dl/desktop/canary/darwin/arm64/2026.1014.180548/zip";
+      sha256 = "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=";
     };
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.10.09-4e41671";
+    version = "2026.10.14-4344467";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.09-4e41671.zip";
-      sha256 = "sha256-7VKqz2ymQLvgBLbq5pmVju7cX8E+r5EgtY48Mk5dnf8=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.14-4344467.zip";
+      sha256 = "sha256-sQhjMCwhJbzQmYEKXVD4bkTqRrK0TROI8HaJYdO5Mvg=";
     };
   };
   jellium-desktop = {
@@ -60,15 +68,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "aac5108bbfa3051f03a71c695b3a6f961ea0fc46";
+    version = "c35d53cf8215901a19ed9f7fc9ae09f538c1152c";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "aac5108bbfa3051f03a71c695b3a6f961ea0fc46";
+      rev = "c35d53cf8215901a19ed9f7fc9ae09f538c1152c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-zPQBBjcbexHc8gQmKq/9sSvoXoI4tjm3WSzPhwjNVF8=";
+      sha256 = "sha256-a+iUgMaVoNZtmsCo8IZd3ET2pa08jLoEQQoexgpC3do=";
     };
     date = "2026-10-14";
   };
@@ -130,17 +138,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "16ec4ea838899706019e7f472e45f055070abeb1";
+    version = "32c90633ce6a95d7e56c95479efbb431bacf1eac";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "16ec4ea838899706019e7f472e45f055070abeb1";
+      rev = "32c90633ce6a95d7e56c95479efbb431bacf1eac";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-bUbzsfrrOd7uWf1q51EohRelG9jfAoFY20gqcQ+enoE=";
+      sha256 = "sha256-HMCXOlMkeBPsqgkwidqBo6mRtVLOFVhSH+7T5lySfxQ=";
     };
-    date = "2026-10-09";
+    date = "2026-10-14";
   };
   vintagestory = {
     pname = "vintagestory";
