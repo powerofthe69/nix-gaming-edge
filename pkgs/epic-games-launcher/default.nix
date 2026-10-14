@@ -27,6 +27,14 @@ buildFHSEnv (
   // {
     inherit pname version;
 
+    targetPkgs =
+      pkgs:
+      appimageTools.defaultFhsEnvArgs.targetPkgs pkgs
+      ++ [
+        pkgs.python3
+        pkgs.sdl3
+      ];
+
     runScript = writeShellScript "epic-games-launcher-run" ''
       set -euo pipefail
 
