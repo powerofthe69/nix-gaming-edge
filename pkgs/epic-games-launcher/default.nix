@@ -1,7 +1,6 @@
 {
   appimageTools,
   buildFHSEnv,
-  fetchurl,
   lib,
   source, # Source from nvfetcher
   writeShellScript,
@@ -9,15 +8,9 @@
 
 let
   pname = "epic-games-launcher";
-  version = source.version;
-
-  # Pin the versioned CDN path ("+" must be %2B or the CDN 403s)
-  src = fetchurl {
-    url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/${
-      lib.replaceStrings [ "+" ] [ "%2B" ] version
-    }/Linux/EpicGamesLauncher-x86_64.AppImage";
-    hash = source.src.outputHash;
-  };
+  # nvfetcher emits the URL-encoded version; decode it for display and the seed stamp
+  version = lib.replaceStrings [ "%2B" ] [ "+" ] source.version;
+  inherit (source) src;
 
   extracted = appimageTools.extractType2 { inherit pname version src; };
 in

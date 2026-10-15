@@ -105,6 +105,7 @@ src.branch = "main"
 fetch.git = "https://github.com/andrewrabert/jellium-desktop.git"
 
 # Epic Games Launcher (EGLv2, Tauri) - official Linux AppImage
+# Version is pre-encoded ("+" -> "%2B", or the CDN 403s) so the hash comes from the exact URL fetched
 [epic-games-launcher]
-src.cmd = "curl -s https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/stable-target.json | jq -r .version"
-fetch.url = "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncher-x86_64.AppImage"
+src.cmd = "curl -s https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/stable-target.json | jq -r '.version | sub(\"[+]\"; \"%2B\")'"
+fetch.url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/$ver/Linux/EpicGamesLauncher-x86_64.AppImage"
