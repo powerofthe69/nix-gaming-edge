@@ -10,9 +10,9 @@
             "name": null,
             "sha256": "sha256-cGYVnsmHr83CcGnwcLRWvbmoBb1fAhFKp62G5VWcv9U=",
             "type": "url",
-            "url": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.95.2%2Bgfa9ad49/Linux/EpicGamesLauncher-x86_64.AppImage"
         },
-        "version": "0.95.2+gfa9ad49"
+        "version": "0.95.2%2Bgfa9ad49"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-cpM4/ptBGdIZ6xzBrxQr/fRFYi/RVLkZ3AB9r2bNWOk=",
+            "sha256": "sha256-esm/0j07zMDQLhvltRlZypZGMiFhcABoLgc3MDa4nXE=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1014.180559/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1015.24528/tar_gz"
         },
-        "version": "2026.1014.180559"
+        "version": "2026.1015.24528"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-lNbPjr+eCpr4h+ia60skHhyqZdAulegDQHus77+fQng=",
+            "sha256": "sha256-E4FcYCz+3+NXvAhPZySzHx6XZPyTXo86VTiWiR8r+qU=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1014.180548/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1015.25006/tar_gz"
         },
-        "version": "2026.1014.180548"
+        "version": "2026.1015.25006"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-2UspdyoLo+BqblG7LAk95/rifHrCUgdCu6I3NR/pSS8=",
+            "sha256": "sha256-lNs7tCBrgXJEPuJ6G6FhcwHh1ysOtmWuloyGfNnICdk=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1014.180548/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1015.25006/zip"
         },
-        "version": "2026.1014.180548"
+        "version": "2026.1015.25006"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-El/86ZhqjlJrQgmQPtv2HuZVZ7C5Qk1XMkCSN6sX8fk=",
+            "sha256": "sha256-mg1MSxFOwdfiJMcCsfJl05htMvf52Qr2400/tdc8nws=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1014.180559/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1015.24528/zip"
         },
-        "version": "2026.1014.180559"
+        "version": "2026.1015.24528"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0786a951148790937305c9e7dbf0688cd26c89e6",
-            "sha256": "sha256-Opr+jZA/ntsR3Wtmy81xNKfOuG5YoGrPDV219IyojwI=",
+            "rev": "95dc26da731b7b381d44b244ccb14098f5f76784",
+            "sha256": "sha256-XrvNBXPQzssxvqcoK4aL9GcGDwW93MfL1dkYzMCsNSE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "0786a951148790937305c9e7dbf0688cd26c89e6"
+        "version": "95dc26da731b7b381d44b244ccb14098f5f76784"
     },
     "modengine3": {
         "cargoLock": null,
