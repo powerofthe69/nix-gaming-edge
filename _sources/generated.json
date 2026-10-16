@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-cGYVnsmHr83CcGnwcLRWvbmoBb1fAhFKp62G5VWcv9U=",
+            "sha256": "sha256-hBVn6T2RKMnSTLuLHk0m4Vw3XKDHPpaFUaLBrzILBr0=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.95.2%2Bgfa9ad49/Linux/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.96.1%2Bge3e236d/Linux/EpicGamesLauncher-x86_64.AppImage"
         },
-        "version": "0.95.2%2Bgfa9ad49"
+        "version": "0.96.1%2Bge3e236d"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-esm/0j07zMDQLhvltRlZypZGMiFhcABoLgc3MDa4nXE=",
+            "sha256": "sha256-88zBAeuGcxVmhQMzHCgg8PulZ1NoELSpeYH+JiiGdoA=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1015.24528/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1015.145325/tar_gz"
         },
-        "version": "2026.1015.24528"
+        "version": "2026.1015.145325"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-E4FcYCz+3+NXvAhPZySzHx6XZPyTXo86VTiWiR8r+qU=",
+            "sha256": "sha256-0L1inUsZx9xoS3l5SHJ0fPp9NiomRpxwNsK+/NkmR0M=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1015.25006/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1015.145307/tar_gz"
         },
-        "version": "2026.1015.25006"
+        "version": "2026.1015.145307"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-lNs7tCBrgXJEPuJ6G6FhcwHh1ysOtmWuloyGfNnICdk=",
+            "sha256": "sha256-dxV/noa44ZDTuAd3VagcVrcBbgqi10+T2ild00rSbGY=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1015.25006/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1015.145307/zip"
         },
-        "version": "2026.1015.25006"
+        "version": "2026.1015.145307"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-mg1MSxFOwdfiJMcCsfJl05htMvf52Qr2400/tdc8nws=",
+            "sha256": "sha256-msLvECPJCyDEf5yrqWlzPr3VngG1xLDHh+vxJ446NNI=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1015.24528/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1015.145325/zip"
         },
-        "version": "2026.1015.24528"
+        "version": "2026.1015.145325"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-10-15",
+        "date": "2026-10-16",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "95dc26da731b7b381d44b244ccb14098f5f76784",
-            "sha256": "sha256-XrvNBXPQzssxvqcoK4aL9GcGDwW93MfL1dkYzMCsNSE=",
+            "rev": "a7155ba13e07a6f05d32cc258d14612af9d7bd78",
+            "sha256": "sha256-TIoEHhWklIF0RdzLqw0vNNu9PIYq1NjfKp+RL4ER7Vw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "95dc26da731b7b381d44b244ccb14098f5f76784"
+        "version": "a7155ba13e07a6f05d32cc258d14612af9d7bd78"
     },
     "modengine3": {
         "cargoLock": null,
