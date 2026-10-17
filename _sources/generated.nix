@@ -16,34 +16,34 @@
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1015.145325";
+    version = "2026.1017.133957";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1015.145325/tar_gz";
-      sha256 = "sha256-88zBAeuGcxVmhQMzHCgg8PulZ1NoELSpeYH+JiiGdoA=";
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1017.133957/tar_gz";
+      sha256 = "sha256-NlVfg11tH3Cn9RGZWhPRqP3O2o9XBMFLrpx+Vqas+DA=";
     };
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.1015.145307";
+    version = "2026.1017.133944";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1015.145307/tar_gz";
-      sha256 = "sha256-0L1inUsZx9xoS3l5SHJ0fPp9NiomRpxwNsK+/NkmR0M=";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1017.133944/tar_gz";
+      sha256 = "sha256-ACqzMrXzk9lLhQ6BenuXzgXDembZr2tsN785kAczXXE=";
     };
   };
   fluxer-desktop-canary-darwin = {
     pname = "fluxer-desktop-canary-darwin";
-    version = "2026.1015.145307";
+    version = "2026.1017.133944";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1015.145307/zip";
-      sha256 = "sha256-dxV/noa44ZDTuAd3VagcVrcBbgqi10+T2ild00rSbGY=";
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1017.133944/zip";
+      sha256 = "sha256-Xsvq0SyCyqS/2luGT9WQ8yuSzKGAtBrVMgHoEEYDZkU=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1015.145325";
+    version = "2026.1017.133957";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1015.145325/zip";
-      sha256 = "sha256-msLvECPJCyDEf5yrqWlzPr3VngG1xLDHh+vxJ446NNI=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1017.133957/zip";
+      sha256 = "sha256-tJzC2fBZ7xC3zOJ6xb1ROMQ5pgTrwuIWZOOhW2zF/Lg=";
     };
   };
   hytale-launcher = {
@@ -130,18 +130,18 @@
   };
   proton-cachyos = {
     pname = "proton-cachyos";
-    version = "cachyos-11.0-20261005-slr";
+    version = "cachyos-11.0-20261014-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64.tar.xz";
-      sha256 = "sha256-CWv+c7UG1lZbBOzEUhQZekCRgY8W7ZH1MktNIILQomM=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261014-slr/proton-cachyos-11.0-20261014-slr-x86_64.tar.xz";
+      sha256 = "sha256-K/tQwQYGWmd2I2811IHTJ1jGUhA4DSq0WVXdgf8oPnU=";
     };
   };
   proton-cachyos-x86_64-v3 = {
     pname = "proton-cachyos-x86_64-v3";
-    version = "cachyos-11.0-20261005-slr";
+    version = "cachyos-11.0-20261014-slr";
     src = fetchurl {
-      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261005-slr/proton-cachyos-11.0-20261005-slr-x86_64_v3.tar.xz";
-      sha256 = "sha256-ulKk8xoGD/yiuOBfwA5RvDnkwVAZKOtakhiw+ge/yMc=";
+      url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-11.0-20261014-slr/proton-cachyos-11.0-20261014-slr-x86_64_v3.tar.xz";
+      sha256 = "sha256-e+3LIeFOx5/p8mxXpS5vcqzCcIbITGTtwDB7PQoURHo=";
     };
   };
   pseudoregalia-rando = {
