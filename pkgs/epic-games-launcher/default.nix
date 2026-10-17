@@ -12,7 +12,7 @@ let
   version = lib.replaceStrings [ "%2B" ] [ "+" ] source.version;
   inherit (source) src;
 
-  extracted = appimageTools.extractType2 { inherit pname version src; };
+  extracted = appimageTools.extract { inherit pname version src; };
 in
 
 buildFHSEnv (
