@@ -8,10 +8,10 @@
 {
   jellium-desktop-cef = {
     pname = "jellium-desktop-cef";
-    version = "151.3.16+gbe1e15d+chromium-151.0.7922.109";
+    version = "152.0.8+g1ce985c+chromium-152.0.7977.134";
     src = fetchurl {
-      url = "https://cef-builds.spotifycdn.com/cef_binary_151.3.16+gbe1e15d+chromium-151.0.7922.109_linux64_minimal.tar.bz2";
-      sha256 = "sha256-6usxPmA53kZIVYk9KHxNXrTscSaXjqg8YWS/SiPcAXo=";
+      url = "https://cef-builds.spotifycdn.com/cef_binary_152.0.8+g1ce985c+chromium-152.0.7977.134_linux64_minimal.tar.bz2";
+      sha256 = "sha256-f0fuscKXCZ/7nhLQ3qag1Oq9JVE10RT/Cs6HgL2z/us=";
     };
   };
   jellium-desktop-libmpv = {

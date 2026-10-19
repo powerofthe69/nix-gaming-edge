@@ -16,34 +16,34 @@
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1017.133957";
+    version = "2026.1018.223338";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1017.133957/tar_gz";
-      sha256 = "sha256-NlVfg11tH3Cn9RGZWhPRqP3O2o9XBMFLrpx+Vqas+DA=";
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1018.223338/tar_gz";
+      sha256 = "sha256-XL8MVpN73wgSIeLMHVKmJ/rulsgmRUGAkCtew7UTCRs=";
     };
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.1017.133944";
+    version = "2026.1018.223341";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1017.133944/tar_gz";
-      sha256 = "sha256-ACqzMrXzk9lLhQ6BenuXzgXDembZr2tsN785kAczXXE=";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1018.223341/tar_gz";
+      sha256 = "sha256-L0vqo+nm5GbMdUc8FOX5JkrLoQnOV1WFGzXlUZkeKyE=";
     };
   };
   fluxer-desktop-canary-darwin = {
     pname = "fluxer-desktop-canary-darwin";
-    version = "2026.1017.133944";
+    version = "2026.1018.223341";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1017.133944/zip";
-      sha256 = "sha256-Xsvq0SyCyqS/2luGT9WQ8yuSzKGAtBrVMgHoEEYDZkU=";
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1018.223341/zip";
+      sha256 = "sha256-6txFlSREUlWxivMJF9CT6vKvHrM3LfzWCR+0Z8ir3G0=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1017.133957";
+    version = "2026.1018.223338";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1017.133957/zip";
-      sha256 = "sha256-tJzC2fBZ7xC3zOJ6xb1ROMQ5pgTrwuIWZOOhW2zF/Lg=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1018.223338/zip";
+      sha256 = "sha256-9GLVMk6RlTaH8lxMki/lbmjF9SUlAxYDW1o0MhSB37A=";
     };
   };
   hytale-launcher = {
@@ -56,17 +56,17 @@
   };
   jellium-desktop = {
     pname = "jellium-desktop";
-    version = "14dc0845981cb7c0aef5fa93ff539d927c8f0eb2";
+    version = "1b73a13b32e427c27815dac48b0bd82de771f454";
     src = fetchgit {
       url = "https://github.com/andrewrabert/jellium-desktop.git";
-      rev = "14dc0845981cb7c0aef5fa93ff539d927c8f0eb2";
+      rev = "1b73a13b32e427c27815dac48b0bd82de771f454";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-e4fanrXusIq3FsVTPqPzNRyye7ja6t6UnjX4mcjHPrk=";
+      sha256 = "sha256-7zEw1lHD6Rk06dGNGbZHbly+7hKg2UqTnPFIzG5oeCI=";
     };
-    date = "2026-09-19";
+    date = "2026-10-18";
   };
   libdrm = {
     pname = "libdrm";
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "9a1e58dabb9c51db8bb84e1a56a3aad694590584";
+    version = "7d6e90888214371e1071f96f4d1c8d5154c74c79";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "9a1e58dabb9c51db8bb84e1a56a3aad694590584";
+      rev = "7d6e90888214371e1071f96f4d1c8d5154c74c79";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1ahKqxDDtW6e2rcV8cDIFeBYM8NXhX0oPRl16o3FgKs=";
+      sha256 = "sha256-iNNPvQrKJYYp+dHHCVRWHC6gdZi68RnZQ6y0OtHkQWo=";
     };
-    date = "2026-10-18";
+    date = "2026-10-19";
   };
   modengine3 = {
     pname = "modengine3";
