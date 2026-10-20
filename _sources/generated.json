@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-XPhge7Co8pqYhySdSRw8Qeo9Do7QaoZpWqjjtgAO2uY=",
+            "sha256": "sha256-NV1DNkNd3gc4ijspaUbttQHx8fWeePwVAAPsyzDsaKo=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.97.0%2Bg4f63cc1/Linux/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.98.1%2Bgd6c4f03/Linux/EpicGamesLauncher-x86_64.AppImage"
         },
-        "version": "0.97.0%2Bg4f63cc1"
+        "version": "0.98.1%2Bgd6c4f03"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7d6e90888214371e1071f96f4d1c8d5154c74c79",
-            "sha256": "sha256-iNNPvQrKJYYp+dHHCVRWHC6gdZi68RnZQ6y0OtHkQWo=",
+            "rev": "4b0f64ceac6a86af38c1e69cd38cf29f84ba611d",
+            "sha256": "sha256-LkTzaDYiaSBH8gW4RzGSagF/LKFvplz89Kxqb1Ogltg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "7d6e90888214371e1071f96f4d1c8d5154c74c79"
+        "version": "4b0f64ceac6a86af38c1e69cd38cf29f84ba611d"
     },
     "modengine3": {
         "cargoLock": null,

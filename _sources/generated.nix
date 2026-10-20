@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.97.0%2Bg4f63cc1";
+    version = "0.98.1%2Bgd6c4f03";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.97.0%2Bg4f63cc1/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-XPhge7Co8pqYhySdSRw8Qeo9Do7QaoZpWqjjtgAO2uY=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.98.1%2Bgd6c4f03/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-NV1DNkNd3gc4ijspaUbttQHx8fWeePwVAAPsyzDsaKo=";
     };
   };
   fluxer-desktop = {
@@ -84,15 +84,15 @@
   };
   mesa = {
     pname = "mesa";
-    version = "7d6e90888214371e1071f96f4d1c8d5154c74c79";
+    version = "4b0f64ceac6a86af38c1e69cd38cf29f84ba611d";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "7d6e90888214371e1071f96f4d1c8d5154c74c79";
+      rev = "4b0f64ceac6a86af38c1e69cd38cf29f84ba611d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-iNNPvQrKJYYp+dHHCVRWHC6gdZi68RnZQ6y0OtHkQWo=";
+      sha256 = "sha256-LkTzaDYiaSBH8gW4RzGSagF/LKFvplz89Kxqb1Ogltg=";
     };
     date = "2026-10-19";
   };
