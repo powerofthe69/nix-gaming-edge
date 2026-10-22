@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.99.0%2Bgbf52ace";
+    version = "0.100.0%2Bg9dfc3c3";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.99.0%2Bgbf52ace/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-rJb8TMypeEJJf4ZnJmJ/30+YuPr/yJuqu7GCO5/iMaw=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.100.0%2Bg9dfc3c3/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-qbfkDj5SILzpcGizl0p5ZTDlvbx32x4b66DXvb7QtE4=";
     };
   };
   fluxer-desktop = {
@@ -48,10 +48,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.10.14-4344467";
+    version = "2026.10.21-3c04223";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.14-4344467.zip";
-      sha256 = "sha256-sQhjMCwhJbzQmYEKXVD4bkTqRrK0TROI8HaJYdO5Mvg=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.21-3c04223.zip";
+      sha256 = "sha256-l7PWttkHUStZROaefBE+k4LhCt2fpm6UE/iBQNYOhvA=";
     };
   };
   jellium-desktop = {
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "e2f05fca6d95b29a8eb783444c1a904b80a0b1de";
+    version = "566ed9cd9dff0a0825c7ea71fc3c31a4af03d5a7";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "e2f05fca6d95b29a8eb783444c1a904b80a0b1de";
+      rev = "566ed9cd9dff0a0825c7ea71fc3c31a4af03d5a7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fMu8eLBSfmWAb2inTSF8bEH7zlxR4a03hjbvG3q8kF8=";
+      sha256 = "sha256-nzX/yq/0TESgkLnW3i2j86vrzGmFBxX0nAzObb2qgLs=";
     };
-    date = "2026-10-21";
+    date = "2026-10-22";
   };
   modengine3 = {
     pname = "modengine3";
@@ -189,16 +189,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "35d9638cf0c3f0bbf0c42996580a284f3d8ce564";
+    version = "b9edf66597586c914b5b1ff3d964d7ed201adab9";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "35d9638cf0c3f0bbf0c42996580a284f3d8ce564";
+      rev = "b9edf66597586c914b5b1ff3d964d7ed201adab9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-tj9N/Cryb/nKQWI3ooBQVfVprwV2QuZVXhmATj2hefQ=";
+      sha256 = "sha256-LZy7wCATTS564gUmdVnSGI98BHFND9IYV5jnPYf3ltY=";
     };
-    date = "2026-10-12";
+    date = "2026-10-14";
   };
 }
