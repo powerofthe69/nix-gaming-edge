@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-9mfABc3sPvynzr4BI5rY7T5xs1rhj/RjXzBGrWEQwMU=",
+            "sha256": "sha256-lGmTvIycnRbocDXJZL1wYnLDW18EhkmOxbcHvg2xpXg=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.101.0%2Bg106ef3d/Linux/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.102.0%2Bg6aa6663/Linux/EpicGamesLauncher-x86_64.AppImage"
         },
-        "version": "0.101.0%2Bg106ef3d"
+        "version": "0.102.0%2Bg6aa6663"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-l7PWttkHUStZROaefBE+k4LhCt2fpm6UE/iBQNYOhvA=",
+            "sha256": "sha256-ffE1GzimrgvPXZpoHBCRH+MFoO5wjt8/EyP7MkJ1XJ4=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.21-3c04223.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.23-53cde5e.zip"
         },
-        "version": "2026.10.21-3c04223"
+        "version": "2026.10.23-53cde5e"
     },
     "jellium-desktop": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-10-23",
+        "date": "2026-10-24",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "29db4909d4e808627c8d43767a36476034321a14",
-            "sha256": "sha256-KFYyMNkDC3Tc42nWd/wGvjGGW9g5faep7+XWCUe2ZvU=",
+            "rev": "0deb51ca86e8c6fc8a0472a3ceb07241f1cf2546",
+            "sha256": "sha256-lQZbwvpl5pAa0sWVoukjykjl0hY/WbEKrBenHq9llfA=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "29db4909d4e808627c8d43767a36476034321a14"
+        "version": "0deb51ca86e8c6fc8a0472a3ceb07241f1cf2546"
     },
     "modengine3": {
         "cargoLock": null,
@@ -256,7 +256,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-10-21",
+        "date": "2026-10-24",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -266,13 +266,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b0e636df2ed5c9006b80ddc6644bc41110404bc3",
-            "sha256": "sha256-7UOyztToPBCHQo0lkt4Mr/OTORNRoXnRsWdTSY616Kk=",
+            "rev": "443688b5366a4d43e9868519f48a4544cd7520d4",
+            "sha256": "sha256-YuzFkZafNJ0brt2S3gg+pm6xYXZEAjBkDH76cb0dmd8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "b0e636df2ed5c9006b80ddc6644bc41110404bc3"
+        "version": "443688b5366a4d43e9868519f48a4544cd7520d4"
     },
     "vintagestory": {
         "cargoLock": null,
