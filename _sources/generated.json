@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-XL8MVpN73wgSIeLMHVKmJ/rulsgmRUGAkCtew7UTCRs=",
+            "sha256": "sha256-nbms8MCZxhrlg859MbsKZxoUix2LFtYcbR6yuvzFExg=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1018.223338/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1025.12517/tar_gz"
         },
-        "version": "2026.1018.223338"
+        "version": "2026.1025.12517"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-L0vqo+nm5GbMdUc8FOX5JkrLoQnOV1WFGzXlUZkeKyE=",
+            "sha256": "sha256-eV2NHOgc6o7oFeoQhV8RlXkSreYqTjVB06VSNMLBtCg=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1018.223341/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1025.12532/tar_gz"
         },
-        "version": "2026.1018.223341"
+        "version": "2026.1025.12532"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-6txFlSREUlWxivMJF9CT6vKvHrM3LfzWCR+0Z8ir3G0=",
+            "sha256": "sha256-GfyFgtfOgLFq4qHUz65gFf1kKTD/9OP8BzC5XzAHONA=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1018.223341/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1025.12532/zip"
         },
-        "version": "2026.1018.223341"
+        "version": "2026.1025.12532"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-9GLVMk6RlTaH8lxMki/lbmjF9SUlAxYDW1o0MhSB37A=",
+            "sha256": "sha256-Ctz72pWSRvAT/WnsVAh2mna8ZmMWzHsIql0WNpgYT0Q=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1018.223338/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1025.12517/zip"
         },
-        "version": "2026.1018.223338"
+        "version": "2026.1025.12517"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-10-24",
+        "date": "2026-10-25",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e2ab6687d5ad700cc2b856af684aa014f9dae943",
-            "sha256": "sha256-Zyp7eW5wNsqId4FT2nPM0lLdx9QJbSHIou88qll14BU=",
+            "rev": "18879c94176c777064cbc5223a7206468c7a00a7",
+            "sha256": "sha256-akT4StG77zd5oAX9kctlj8vlc0VGcfkIxAEXmjJGRoc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "e2ab6687d5ad700cc2b856af684aa014f9dae943"
+        "version": "18879c94176c777064cbc5223a7206468c7a00a7"
     },
     "modengine3": {
         "cargoLock": null,
