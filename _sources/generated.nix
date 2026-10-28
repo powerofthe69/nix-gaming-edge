@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.102.0%2Bg6aa6663";
+    version = "0.104.0%2Bg2229d5c";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.102.0%2Bg6aa6663/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-lGmTvIycnRbocDXJZL1wYnLDW18EhkmOxbcHvg2xpXg=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.104.0%2Bg2229d5c/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-WIgvoOt831GtPL/8rc4uyDawocAlscDyu654VOFInJU=";
     };
   };
   fluxer-desktop = {
@@ -48,10 +48,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.10.23-53cde5e";
+    version = "2026.10.26-7b63bde";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.23-53cde5e.zip";
-      sha256 = "sha256-ffE1GzimrgvPXZpoHBCRH+MFoO5wjt8/EyP7MkJ1XJ4=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.10.26-7b63bde.zip";
+      sha256 = "sha256-SAo4qVszye0PMDq/ScD62DY3ilbxaeRih87tqn5cAbE=";
     };
   };
   jellium-desktop = {
@@ -70,31 +70,31 @@
   };
   libdrm = {
     pname = "libdrm";
-    version = "b97cbde15c5c3abfe44d78e8f57139e50f612fec";
+    version = "33fab8cbca7f7581e955a675597d14412702edc4";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/drm.git";
-      rev = "b97cbde15c5c3abfe44d78e8f57139e50f612fec";
+      rev = "33fab8cbca7f7581e955a675597d14412702edc4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6Pz1RSi5CZ5zjxO4c7TPsAYU8kOcbpBkTSIvGKb+H/M=";
+      sha256 = "sha256-uj5e79ei4i2hOhnrwDRkr8fVGzlYgDLCxYq3lKFr0/E=";
     };
-    date = "2026-09-17";
+    date = "2026-10-27";
   };
   mesa = {
     pname = "mesa";
-    version = "bf50ac42fede08958f02e7e39a9016ca18952d12";
+    version = "5f31557bb1a51004a8bbac397af99fd6a2cbb59a";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "bf50ac42fede08958f02e7e39a9016ca18952d12";
+      rev = "5f31557bb1a51004a8bbac397af99fd6a2cbb59a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-slSkqE29IiedgbjxQ7MgiTHk/m4ojQi+URH8JrIS7xg=";
+      sha256 = "sha256-hYDCad+kbpUGXsEtrS6fR16FcmVW+ude7e1iaTnTbgU=";
     };
-    date = "2026-10-26";
+    date = "2026-10-28";
   };
   modengine3 = {
     pname = "modengine3";
