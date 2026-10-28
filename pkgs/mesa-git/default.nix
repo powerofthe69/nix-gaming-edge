@@ -234,13 +234,16 @@ let
         # Filter out flags we want to override from the original
         (builtins.filter (
           flag:
-          !(lib.hasPrefix "-Dgallium-drivers=" flag)
+          !(lib.hasPrefix "-Damdgpu-virtio=" flag)
+          && !(lib.hasPrefix "-Dgallium-drivers=" flag)
           && !(lib.hasPrefix "-Dvulkan-drivers=" flag)
           && !(lib.hasPrefix "-Dvulkan-layers=" flag)
           && !(lib.hasPrefix "-Dgallium-rusticl=" flag)
           && !(lib.hasPrefix "-Dteflon=" flag)
         ) (old.mesonFlags or [ ]))
         ++ [
+          # amd-options replaced amdgpu-virtio/amd-use-llvm
+          "-Damd-options=use-llvm,virtio"
           "-Dplatforms=x11,wayland"
           "-Dgallium-drivers=${if is32bit then "radeonsi,zink,llvmpipe,iris" else "all"}"
           "-Dvulkan-drivers=amd,intel,nouveau${if is32bit then "" else ",swrast"}"
