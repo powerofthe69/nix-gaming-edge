@@ -74,9 +74,38 @@ let
             result;
       };
 
+  # Discord >= 1.0.167 rejects native modules that resolve outside its modules dir, so
+  # nixpkgs' store symlinks render a blank client. Stage real copies instead, re-copied
+  # only when the store path changes (the modules are ~350 MB).
+  stageLink = ''ln -sn "$store_modules/$m" "$modules_dir/$m"'';
+  stageReset = ''rm -rf "$modules_dir"'';
+  stageStamp = ''"$(dirname "$modules_dir")/nix-store-modules"'';
+  copyModules =
+    text:
+    assert lib.assertMsg (lib.hasInfix stageLink text && lib.hasInfix stageReset text)
+      "discord: nixpkgs stageModules changed shape; update the copy patch in pkgs/discord";
+    lib.replaceStrings
+      [ stageReset stageLink ]
+      [
+        ''
+          [ "$(cat ${stageStamp} 2>/dev/null)" = "$store_modules" ] && [ -d "$modules_dir" ] && exit 0
+          chmod -R u+w "$modules_dir" 2>/dev/null
+          ${stageReset}''
+        ''cp -R "$store_modules/$m" "$modules_dir/$m" && chmod -R u+w "$modules_dir/$m"''
+      ]
+      text
+    + ''
+      echo "$store_modules" > ${stageStamp}
+    '';
+
+  writeShellScript =
+    name: text:
+    pkgs.writeShellScript name (if name == "discord-stage-modules" then copyModules text else text);
+
   discord-stable = pkgs.discord.override (
     sourceOverride
     // {
+      inherit writeShellScript;
       withVencord = true;
       vencord = vencord-git;
     }
