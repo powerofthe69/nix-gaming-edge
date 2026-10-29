@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.104.0%2Bg2229d5c";
+    version = "0.105.0%2Bgc9a97d0";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.104.0%2Bg2229d5c/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-WIgvoOt831GtPL/8rc4uyDawocAlscDyu654VOFInJU=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.105.0%2Bgc9a97d0/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-jk6KcC9MZ28ZDPVyPWKOGTFochIsKs0zjXvDEYdMtt0=";
     };
   };
   fluxer-desktop = {
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "f5ce31e0822809ff23ab3d7b2f81b50c640f71e2";
+    version = "4b0d67e19365c50d1a60e8ada444323c4c82c458";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "f5ce31e0822809ff23ab3d7b2f81b50c640f71e2";
+      rev = "4b0d67e19365c50d1a60e8ada444323c4c82c458";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ZECL8AgtS0yQmYdEs85KcbSRTTW9Zm+3BJtax+KpSz0=";
+      sha256 = "sha256-hbzNmmkAyOYuUn2+uUjqZuNrLvsUVMJuKs8zohoUtw4=";
     };
-    date = "2026-10-28";
+    date = "2026-10-29";
   };
   modengine3 = {
     pname = "modengine3";
@@ -189,16 +189,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "b9edf66597586c914b5b1ff3d964d7ed201adab9";
+    version = "aac4eff6da10f4039b7947c60a9f7f0a625b5435";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "b9edf66597586c914b5b1ff3d964d7ed201adab9";
+      rev = "aac4eff6da10f4039b7947c60a9f7f0a625b5435";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LZy7wCATTS564gUmdVnSGI98BHFND9IYV5jnPYf3ltY=";
+      sha256 = "sha256-7KTBNn6Ad+xAF6LaJtgZ24K80uQminzg83j0AK+XOc4=";
     };
-    date = "2026-10-14";
+    date = "2026-10-27";
   };
 }
