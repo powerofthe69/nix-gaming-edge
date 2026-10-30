@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.105.0%2Bgc9a97d0";
+    version = "0.106.0%2Bg0cb1183";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.105.0%2Bgc9a97d0/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-jk6KcC9MZ28ZDPVyPWKOGTFochIsKs0zjXvDEYdMtt0=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.106.0%2Bg0cb1183/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-QVwiWRVC6+ZOLoji5wXO5XabobLI1TTezuYu75jRwkg=";
     };
   };
   fluxer-desktop = {
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4b0d67e19365c50d1a60e8ada444323c4c82c458";
+    version = "1c3e49ad4118ad03836b2c8e5c1b6ac949b08dc2";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4b0d67e19365c50d1a60e8ada444323c4c82c458";
+      rev = "1c3e49ad4118ad03836b2c8e5c1b6ac949b08dc2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hbzNmmkAyOYuUn2+uUjqZuNrLvsUVMJuKs8zohoUtw4=";
+      sha256 = "sha256-Jae6zn3d73JajrQLzOxMuN0m4sWgNcaskKSPKsxI2zs=";
     };
-    date = "2026-10-29";
+    date = "2026-10-30";
   };
   modengine3 = {
     pname = "modengine3";
@@ -154,17 +154,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "443688b5366a4d43e9868519f48a4544cd7520d4";
+    version = "644434941b515a2626a2161e219653cb36e723e7";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "443688b5366a4d43e9868519f48a4544cd7520d4";
+      rev = "644434941b515a2626a2161e219653cb36e723e7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-YuzFkZafNJ0brt2S3gg+pm6xYXZEAjBkDH76cb0dmd8=";
+      sha256 = "sha256-9tyzJnhLHJ6CHB6G3TcvcsyfxRQzcjELBMF337UnbUU=";
     };
-    date = "2026-10-24";
+    date = "2026-10-29";
   };
   vintagestory = {
     pname = "vintagestory";
@@ -189,16 +189,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "aac4eff6da10f4039b7947c60a9f7f0a625b5435";
+    version = "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "aac4eff6da10f4039b7947c60a9f7f0a625b5435";
+      rev = "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7KTBNn6Ad+xAF6LaJtgZ24K80uQminzg83j0AK+XOc4=";
+      sha256 = "sha256-LukbpVpSbwLQ6L6thqSULBn/z4Z6wf8I45/y8/+LU9E=";
     };
-    date = "2026-10-27";
+    date = "2026-10-29";
   };
 }
