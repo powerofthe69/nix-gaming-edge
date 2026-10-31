@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-q68qWqQdacKGQhmvgm/0wxT7ZNGD82GBfsF+ZkEzcMs=",
+            "sha256": "sha256-AYZ36MZ9DLK/sHWlK4HaBXPj7B8/odCYNhxLJCFIkT0=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1026.24218/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1031.50514/tar_gz"
         },
-        "version": "2026.1026.24218"
+        "version": "2026.1031.50514"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qGm33YCOy/N7CeY2mjh1D64T9aMLLlZmX244fKBrr4Q=",
+            "sha256": "sha256-+a9lIjaxsBgdQZ7VdS08JsSIn0l+WbKacpVBTdv09ZM=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1026.22540/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1031.35431/tar_gz"
         },
-        "version": "2026.1026.22540"
+        "version": "2026.1031.35431"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-TovdNofeuA6ijXcHicSlZMh8Umyi/U5YkFTGHhGaReg=",
+            "sha256": "sha256-6E3mFPTLKG64k3hQ17QuLQv2ixBnnEs7RGoWidx0+vQ=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1026.22540/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1031.35431/zip"
         },
-        "version": "2026.1026.22540"
+        "version": "2026.1031.35431"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-pzp9TDcAvVSL4v83N0ot0cYntTxDY4g3lR6R0MKm8Pc=",
+            "sha256": "sha256-KTb0JCAg+lsEDqsXOsm/mirngD2ixmrt6aBpt45xzPg=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1026.24218/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1031.50514/zip"
         },
-        "version": "2026.1026.24218"
+        "version": "2026.1031.50514"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "367aea118c1b54615151e283ecce969a31954a4a",
-            "sha256": "sha256-rp/wsrhF0f+RwhqrrkzbujVojFU548idkOUV+VsRtgM=",
+            "rev": "fd8ef2befafd01190e33f12dbfd109b924c8ebc3",
+            "sha256": "sha256-B2eq72iytTkAhQ+pEisg4KM8iT/m43b6R66M8+GlMDY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "367aea118c1b54615151e283ecce969a31954a4a"
+        "version": "fd8ef2befafd01190e33f12dbfd109b924c8ebc3"
     },
     "modengine3": {
         "cargoLock": null,
@@ -256,7 +256,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -266,13 +266,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "644434941b515a2626a2161e219653cb36e723e7",
-            "sha256": "sha256-9tyzJnhLHJ6CHB6G3TcvcsyfxRQzcjELBMF337UnbUU=",
+            "rev": "8d64c8be7e68616f8f116a6fff9480051aa2a0c5",
+            "sha256": "sha256-TxMmrSEe59qQH4T+CQqnkdq+WKxdg+0xrFW1nMy39co=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "644434941b515a2626a2161e219653cb36e723e7"
+        "version": "8d64c8be7e68616f8f116a6fff9480051aa2a0c5"
     },
     "vintagestory": {
         "cargoLock": null,
