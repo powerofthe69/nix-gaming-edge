@@ -8,18 +8,18 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.108.0%2Bg75260c2";
+    version = "0.109.0%2Bge564459";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.108.0%2Bg75260c2/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-ehXeGFjGU8U/mc19Vi+j12eQi56Yl9+L4U5oh2yNm+E=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.109.0%2Bge564459/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-ILWhpRzMIJeaBGIdNLHCpPxS826FzFKDOxaMrS2Shew=";
     };
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1101.41644";
+    version = "2026.1101.102918";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1101.41644/tar_gz";
-      sha256 = "sha256-bzpuVReWgA9bF/ZZm6uNS625AMPqh1Aa6o+If08eptI=";
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1101.102918/tar_gz";
+      sha256 = "sha256-bjOVP0Fg3BHZ/CJ/x62qnMavkUCyX1GOXM8emcJMwu8=";
     };
   };
   fluxer-desktop-canary = {
@@ -40,10 +40,10 @@
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1101.41644";
+    version = "2026.1101.102918";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1101.41644/zip";
-      sha256 = "sha256-DjU7kIJus1AQ8iKZ6nBAH5PaU8TcfUr4U43GL3hdUxg=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1101.102918/zip";
+      sha256 = "sha256-OmbWokonvU6fVqSpJ+bhb+MBULXI8NafTijNFZDNA+I=";
     };
   };
   hytale-launcher = {
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "1d4b5ef4a5562b6e2dba2cb5aacd60787979ba86";
+    version = "b5b73e5964bee5d9cdc2b7e813e791d948094e75";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "1d4b5ef4a5562b6e2dba2cb5aacd60787979ba86";
+      rev = "b5b73e5964bee5d9cdc2b7e813e791d948094e75";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-vrDU1AMdUtRMRz6kD/NoBBJOZysViNN1zoAYumpbqxk=";
+      sha256 = "sha256-Lct83AW7MVOWHO0ldVi4e4ReS9/P94NWFUFQiAHFsSM=";
     };
-    date = "2026-11-01";
+    date = "2026-11-02";
   };
   modengine3 = {
     pname = "modengine3";
