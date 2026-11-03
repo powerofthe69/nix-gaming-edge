@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b5b73e5964bee5d9cdc2b7e813e791d948094e75",
-            "sha256": "sha256-Lct83AW7MVOWHO0ldVi4e4ReS9/P94NWFUFQiAHFsSM=",
+            "rev": "ce116a018ec65bcf9762ac61f2560d53bde3376d",
+            "sha256": "sha256-tESJVtKDf6KtUDzAFLcqV6yfelbHkcK9yhaeH5lEclg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "b5b73e5964bee5d9cdc2b7e813e791d948094e75"
+        "version": "ce116a018ec65bcf9762ac61f2560d53bde3376d"
     },
     "modengine3": {
         "cargoLock": null,
@@ -203,11 +203,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qIqCTTTPx+pfYNcsNbTe6eo8Rfs7QM5KSrkAJtTq6t4=",
+            "sha256": "sha256-Ac+9/ub3YbFW0zXuwPKs9+ms/m9xAzf9PmaZkSEJBj0=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
-        "version": "320430347"
+        "version": "320474520"
     },
     "proton-cachyos": {
         "cargoLock": null,
