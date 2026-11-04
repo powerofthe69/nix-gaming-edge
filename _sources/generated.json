@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ILWhpRzMIJeaBGIdNLHCpPxS826FzFKDOxaMrS2Shew=",
+            "sha256": "sha256-U7vRJC4JX2CZYygO8TIVgRVEKrcZukV4XFqT6vqpXEA=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.109.0%2Bge564459/Linux/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.110.0%2Bgf2e5ba5/Linux/EpicGamesLauncher-x86_64.AppImage"
         },
-        "version": "0.109.0%2Bge564459"
+        "version": "0.110.0%2Bgf2e5ba5"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-koj/HtOk/aNlmFNHgAs5dnrTxiW//vjbqnadQhltH5M=",
+            "sha256": "sha256-g6xxdRe29gJ5ugJXuDDriHYCsmzMR5ZAI2Wq8wkpzdA=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1101.102914/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1103.194246/tar_gz"
         },
-        "version": "2026.1101.102914"
+        "version": "2026.1103.194246"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-gNGSFHxgp5dSPdUtBh2JB921O0Y8ByBfzwzUtqRKekc=",
+            "sha256": "sha256-QWXKAf8w01AWy3uhfFJkJrkytkC7qsVkKv+Iw25JjX4=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1101.102914/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1103.194246/zip"
         },
-        "version": "2026.1101.102914"
+        "version": "2026.1103.194246"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-11-03",
+        "date": "2026-11-04",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ce116a018ec65bcf9762ac61f2560d53bde3376d",
-            "sha256": "sha256-tESJVtKDf6KtUDzAFLcqV6yfelbHkcK9yhaeH5lEclg=",
+            "rev": "1b60c2e3bd66612554b27c065ceebb239e8296c0",
+            "sha256": "sha256-8Zg+hp1Z2jIoo8GOb2+B86aqkQfHMOdm13EwoGraf2c=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "ce116a018ec65bcf9762ac61f2560d53bde3376d"
+        "version": "1b60c2e3bd66612554b27c065ceebb239e8296c0"
     },
     "modengine3": {
         "cargoLock": null,

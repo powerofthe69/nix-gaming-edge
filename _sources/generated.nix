@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.109.0%2Bge564459";
+    version = "0.110.0%2Bgf2e5ba5";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.109.0%2Bge564459/Linux/EpicGamesLauncher-x86_64.AppImage";
-      sha256 = "sha256-ILWhpRzMIJeaBGIdNLHCpPxS826FzFKDOxaMrS2Shew=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.110.0%2Bgf2e5ba5/Linux/EpicGamesLauncher-x86_64.AppImage";
+      sha256 = "sha256-U7vRJC4JX2CZYygO8TIVgRVEKrcZukV4XFqT6vqpXEA=";
     };
   };
   fluxer-desktop = {
@@ -24,18 +24,18 @@
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.1101.102914";
+    version = "2026.1103.194246";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1101.102914/tar_gz";
-      sha256 = "sha256-koj/HtOk/aNlmFNHgAs5dnrTxiW//vjbqnadQhltH5M=";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1103.194246/tar_gz";
+      sha256 = "sha256-g6xxdRe29gJ5ugJXuDDriHYCsmzMR5ZAI2Wq8wkpzdA=";
     };
   };
   fluxer-desktop-canary-darwin = {
     pname = "fluxer-desktop-canary-darwin";
-    version = "2026.1101.102914";
+    version = "2026.1103.194246";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1101.102914/zip";
-      sha256 = "sha256-gNGSFHxgp5dSPdUtBh2JB921O0Y8ByBfzwzUtqRKekc=";
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1103.194246/zip";
+      sha256 = "sha256-QWXKAf8w01AWy3uhfFJkJrkytkC7qsVkKv+Iw25JjX4=";
     };
   };
   fluxer-desktop-darwin = {
@@ -84,17 +84,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "ce116a018ec65bcf9762ac61f2560d53bde3376d";
+    version = "1b60c2e3bd66612554b27c065ceebb239e8296c0";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "ce116a018ec65bcf9762ac61f2560d53bde3376d";
+      rev = "1b60c2e3bd66612554b27c065ceebb239e8296c0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-tESJVtKDf6KtUDzAFLcqV6yfelbHkcK9yhaeH5lEclg=";
+      sha256 = "sha256-8Zg+hp1Z2jIoo8GOb2+B86aqkQfHMOdm13EwoGraf2c=";
     };
-    date = "2026-11-03";
+    date = "2026-11-04";
   };
   modengine3 = {
     pname = "modengine3";
