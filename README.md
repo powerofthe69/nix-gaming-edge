@@ -62,7 +62,7 @@ Other packages that were mostly for me:
 
 - `discord` (and `vencord`): this installs stable Discord with a nightly build of Vencord injected. I started maintaining this myself after the 0.121 Discord update broke Vencord and the nixpkgs version lagged behind upstream's fix. Pulled directly from the official Discord tarball and the Vencord git repo. Also built for `aarch64-darwin` from the official macOS distro, so the Mac and Linux pins never drift.
 
-- `epic-games-launcher`: this installs the official Epic Games Launcher (the new Tauri-based EGLv2 preview) from Epic's native Linux AppImage inside its own FHSenv. Like Steam, the packaged AppImage only seeds a copy in `~/.local/share/epic-games-launcher`, which the launcher then self-updates.
+- `epic-games-launcher`: this installs the official Epic Games Launcher (the new Tauri-based EGLv2 preview) from Epic's native Linux `.deb` inside its own FHSenv until Epic reinstates the AppImage launcher.
 
 - `fluxer-desktop` (stable) and `fluxer-desktop-canary`: these install the official prebuilt Fluxer desktop clients from upstream. Fluxer is an alternative chat service to Discord that can be self-hosted. I intend to use it over Discord when the refactor is complete. Also built for `aarch64-darwin` from the upstream `.app` zip. Each tracks its own upstream release feed.
 

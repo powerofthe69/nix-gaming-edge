@@ -1,18 +1,36 @@
 {
   appimageTools,
   buildFHSEnv,
+  dpkg,
   lib,
   source, # Source from nvfetcher
-  writeShellScript,
+  stdenvNoCC,
 }:
 
 let
   pname = "epic-games-launcher";
-  # nvfetcher emits the URL-encoded version; decode it for display and the seed stamp
+  # nvfetcher emits the URL-encoded version; decode it for display
   version = lib.replaceStrings [ "%2B" ] [ "+" ] source.version;
-  inherit (source) src;
 
-  extracted = appimageTools.extract { inherit pname version src; };
+  # Unpacked .deb; FHS maps its bin/ and lib/ to /usr, where Tauri resolves its resource dir
+  unpacked = stdenvNoCC.mkDerivation {
+    pname = "${pname}-unwrapped";
+    inherit version;
+    inherit (source) src;
+
+    nativeBuildInputs = [ dpkg ];
+
+    unpackPhase = "dpkg-deb -x $src .";
+
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out
+      cp -r usr/* $out/
+      runHook postInstall
+    '';
+
+    dontFixup = true;
+  };
 in
 
 buildFHSEnv (
@@ -24,52 +42,28 @@ buildFHSEnv (
       pkgs:
       appimageTools.defaultFhsEnvArgs.targetPkgs pkgs
       ++ [
+        unpacked
+        # .deb Depends: (the old AppImage bundled these)
+        pkgs.glib-networking
+        pkgs.gtk3
+        pkgs.libayatana-appindicator
+        pkgs.libsoup_3
         pkgs.python3
         pkgs.sdl3
+        pkgs.webkitgtk_4_1
       ];
 
-    runScript = writeShellScript "epic-games-launcher-run" ''
-      set -euo pipefail
-
-      DATA_DIR="''${XDG_DATA_HOME:-$HOME/.local/share}/epic-games-launcher"
-      CACHE_DIR="''${XDG_CACHE_HOME:-$HOME/.cache}/epic-games-launcher"
-      APPIMAGE_PATH="$DATA_DIR/EpicGamesLauncher-x86_64.AppImage"
-      SEED_STAMP="$DATA_DIR/.nix-seed-version"
-      mkdir -p "$DATA_DIR" "$CACHE_DIR"
-
-      # Reseed only when the nix-provided version changes, so self-updates survive relaunches
-      if [[ ! -f "$APPIMAGE_PATH" || "$(cat "$SEED_STAMP" 2>/dev/null)" != "${version}" ]]; then
-        install -m755 ${src} "$APPIMAGE_PATH.tmp"
-        mv -f "$APPIMAGE_PATH.tmp" "$APPIMAGE_PATH"
-        echo "${version}" > "$SEED_STAMP"
-      fi
-
-      # No FUSE inside the FHS env: extract once per AppImage revision and run from cache
-      key="$(stat -c '%s-%Y' "$APPIMAGE_PATH")"
-      APPDIR="$CACHE_DIR/$key"
-      if [[ ! -x "$APPDIR/AppRun" ]]; then
-        echo "Extracting Epic Games Launcher..." >&2
-        find "$CACHE_DIR" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
-        tmp="$(mktemp -d "$CACHE_DIR/.extract.XXXXXX")"
-        (cd "$tmp" && "$APPIMAGE_PATH" --appimage-extract >/dev/null)
-        mv "$tmp/squashfs-root" "$APPDIR"
-        rmdir "$tmp"
-      fi
-
-      export APPIMAGE="$APPIMAGE_PATH" APPDIR
-      export APPIMAGE_EXTRACT_AND_RUN=1
-      exec "$APPDIR/AppRun" "$@"
-    '';
+    runScript = "/usr/bin/EpicGamesLauncher";
 
     extraInstallCommands = ''
-      install -Dm644 ${extracted}/epic-games-launcher.desktop $out/share/applications/epic-games-launcher.desktop
+      install -Dm644 ${unpacked}/share/applications/epic-games-launcher.desktop $out/share/applications/epic-games-launcher.desktop
       substituteInPlace $out/share/applications/epic-games-launcher.desktop \
         --replace-fail 'Exec=EpicGamesLauncher' "Exec=$out/bin/epic-games-launcher"
-      cp -r ${extracted}/usr/share/icons $out/share/icons
+      cp -r ${unpacked}/share/icons $out/share/icons
     '';
 
     meta = {
-      description = "Official Epic Games Launcher (EGLv2 preview, native Linux AppImage)";
+      description = "Official Epic Games Launcher (EGLv2 preview, native Linux .deb)";
       homepage = "https://store.epicgames.com";
       license = lib.licenses.unfree;
       sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
