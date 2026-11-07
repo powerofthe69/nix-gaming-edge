@@ -160,6 +160,7 @@ let
           lib.makeLibraryPath [
             libglvnd
             libnotify
+            libpulseaudio
             libsecret
             libva
             pipewire
