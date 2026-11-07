@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-U7vRJC4JX2CZYygO8TIVgRVEKrcZukV4XFqT6vqpXEA=",
+            "sha256": "sha256-iE3vjeJHvCeb6lcb5vXexsVIGslMwGr2K1d2JL5WwgE=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.110.0%2Bgf2e5ba5/Linux/EpicGamesLauncher-x86_64.AppImage"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.113.0%2Bg2164614/Linux/EpicGamesLauncher-x86_64.deb"
         },
-        "version": "0.110.0%2Bgf2e5ba5"
+        "version": "0.113.0%2Bg2164614"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-bjOVP0Fg3BHZ/CJ/x62qnMavkUCyX1GOXM8emcJMwu8=",
+            "sha256": "sha256-QuArl87i0xFESTcy5R4BOr4Ae2yWPOWhUE5zUSZRE18=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1101.102918/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1106.11400/tar_gz"
         },
-        "version": "2026.1101.102918"
+        "version": "2026.1106.11400"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-g6xxdRe29gJ5ugJXuDDriHYCsmzMR5ZAI2Wq8wkpzdA=",
+            "sha256": "sha256-qg6ePFNccv/9Z5td57w/hJ5VAOkesz7AtEwrpcfqDLc=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1103.194246/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1106.11354/tar_gz"
         },
-        "version": "2026.1103.194246"
+        "version": "2026.1106.11354"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QWXKAf8w01AWy3uhfFJkJrkytkC7qsVkKv+Iw25JjX4=",
+            "sha256": "sha256-i8Leirv4RuA6U8CrNGCIMMf4QPOvjTknUhUxIM3yCWw=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1103.194246/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1106.11354/zip"
         },
-        "version": "2026.1103.194246"
+        "version": "2026.1106.11354"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-OmbWokonvU6fVqSpJ+bhb+MBULXI8NafTijNFZDNA+I=",
+            "sha256": "sha256-xil/kczkkVUTy76RiTX6ZkHAV97raQ+Thvt/Y1wkFA0=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1101.102918/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1106.11400/zip"
         },
-        "version": "2026.1101.102918"
+        "version": "2026.1106.11400"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -131,7 +131,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-11-04",
+        "date": "2026-11-07",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -141,13 +141,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "1b60c2e3bd66612554b27c065ceebb239e8296c0",
-            "sha256": "sha256-8Zg+hp1Z2jIoo8GOb2+B86aqkQfHMOdm13EwoGraf2c=",
+            "rev": "b8368b4fb34693b48933d205d688b211bafb4bf6",
+            "sha256": "sha256-ia84qp03uW+yMM7AQWOctaJhXE/57D3Qb2Sf3oR7AeI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "1b60c2e3bd66612554b27c065ceebb239e8296c0"
+        "version": "b8368b4fb34693b48933d205d688b211bafb4bf6"
     },
     "modengine3": {
         "cargoLock": null,
@@ -203,11 +203,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Ac+9/ub3YbFW0zXuwPKs9+ms/m9xAzf9PmaZkSEJBj0=",
+            "sha256": "sha256-ISbhgKromCslgmU7jWTG2xn8fx+7ZFWTK5eTGdss64s=",
             "type": "url",
             "url": "https://pokemmo.com/download_file/1/"
         },
-        "version": "320474520"
+        "version": "322311027"
     },
     "proton-cachyos": {
         "cargoLock": null,
@@ -256,7 +256,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-10-30",
+        "date": "2026-11-04",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -266,13 +266,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8d64c8be7e68616f8f116a6fff9480051aa2a0c5",
-            "sha256": "sha256-TxMmrSEe59qQH4T+CQqnkdq+WKxdg+0xrFW1nMy39co=",
+            "rev": "383409e6a6ec9008ee8a7496500f1e75f17824d1",
+            "sha256": "sha256-aUJubLJpyLAZWiOezqFxPY6oVPgWVPQpajFqrJvrO9U=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "8d64c8be7e68616f8f116a6fff9480051aa2a0c5"
+        "version": "383409e6a6ec9008ee8a7496500f1e75f17824d1"
     },
     "vintagestory": {
         "cargoLock": null,
