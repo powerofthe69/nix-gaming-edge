@@ -43,13 +43,6 @@
       ]
     },
     {
-      "name": "jellium-desktop",
-      "packages": "jellium-desktop",
-      "runner": [
-        "self-hosted"
-      ]
-    },
-    {
       "name": "mesa",
       "packages": "mesa-git mesa32-git",
       "runner": [

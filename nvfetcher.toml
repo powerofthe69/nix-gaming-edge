@@ -91,18 +91,10 @@ src.regex = '"version":\s*"([^"]+)"'
 src.webpage = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/manifest.json"
 fetch.url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/$ver/zip"
 
-
 # OpenGoal Launcher - GUI for managing and launching OpenGoal games
 [opengoal-launcher]
 src.cmd = "curl -s https://api.github.com/repos/open-goal/launcher/releases/latest | jq -r '.tag_name | ltrimstr(\"v\")'"
 fetch.url = "https://github.com/open-goal/launcher/releases/download/v$ver/OpenGOAL-Launcher_$ver_amd64.AppImage"
-
-# Jellium Desktop - nightly (CEF + mpv source build; formerly jellyfin-desktop v3)
-# Vendored CEF tarball + libmpv fork in pkgs/jellium-desktop/nvfetcher.toml
-[jellium-desktop]
-src.git = "https://github.com/andrewrabert/jellium-desktop"
-src.branch = "main"
-fetch.git = "https://github.com/andrewrabert/jellium-desktop.git"
 
 # Epic Games Launcher (EGLv2, Tauri) - official Linux .deb (AppImage pulled 2026-11)
 # Version is pre-encoded ("+" -> "%2B", or the CDN 403s) so the hash comes from the exact URL fetched

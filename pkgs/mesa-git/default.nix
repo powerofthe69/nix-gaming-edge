@@ -33,7 +33,6 @@ let
   waylandProtocolsVersion = builtins.substring 0 7 (wayland-protocols-src.rev or "unknown");
 
   # Build libdrm-git AND libdrm32-git
-  # Use clang for allegedly faster compilation and tighter integration with LLVM
   gitLibdrm =
     {
       is32bit ? false,
@@ -41,7 +40,7 @@ let
     let
       basePkgs = if is32bit then pkgs.pkgsi686Linux else pkgs;
     in
-    (basePkgs.libdrm.override { stdenv = basePkgs.clangStdenv; }).overrideAttrs (old: {
+    basePkgs.libdrm.overrideAttrs (old: {
       pname = "libdrm-git";
       version = "${libdrmVersion}";
       src = libdrm-src;
@@ -101,7 +100,6 @@ let
   # withDocumentation = false: 1.25.0 wires docs through mdbook, which we don't need.
   wayland-latest =
     (pkgs.wayland.override {
-      stdenv = pkgs.clangStdenv;
       withDocumentation = false;
     }).overrideAttrs
       (old: {
@@ -122,9 +120,8 @@ let
   );
 
   # Build wayland-protocols-git
-  # Mostly XML but use clang for uniformity.
   wayland-protocols-git =
-    (latestPkgs.wayland-protocols.override { stdenv = latestPkgs.clangStdenv; }).overrideAttrs
+    latestPkgs.wayland-protocols.overrideAttrs
       (old: {
         pname = "wayland-protocols-git";
         version = "${waylandProtocolsVersion}";
@@ -140,11 +137,9 @@ let
       basePkgs = if is32bit then pkgs.pkgsi686Linux else latestPkgs;
       gitLibdrm = if is32bit then libdrm32-git else libdrm-git;
     in
-    # Use clang for allegedly faster compilation and tighter integration with LLVM.
-    # && pin codegen to python 3.13: python 3.14 uses ~40 MB more RSS per interpreter
+    # Pin codegen to python 3.13: python 3.14 uses ~40 MB more RSS per interpreter
     # which has been causing OOMs on my Actions runners.
     (basePkgs.mesa.override {
-      stdenv = basePkgs.clangStdenv;
       python3Packages = basePkgs.python313Packages;
     }).overrideAttrs (old: {
       pname = "mesa-git";
@@ -200,10 +195,11 @@ let
           base =
             builtins.replaceStrings
               [
+                "mkdir -p $spirv2dxil"
                 "moveToOutput bin/spirv2dxil $spirv2dxil"
                 "moveToOutput \"lib/libspirv_to_dxil*\" $spirv2dxil"
               ]
-              [ "" "" ]
+              [ "" "" "" ]
               (old.postInstall or "");
         in
         if is32bit then
