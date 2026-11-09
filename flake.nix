@@ -114,11 +114,6 @@
             source = nvSources.opengoal-launcher;
           };
 
-          # Jellium Desktop (CEF + mpv source build; formerly jellyfin-desktop v3)
-          jellium-desktop = pkgs.callPackage ./pkgs/jellium-desktop {
-            source = nvSources.jellium-desktop;
-          };
-
           hytale-launcher = pkgs.callPackage ./pkgs/hytale-launcher {
             source = nvSources.hytale-launcher;
           };
@@ -167,9 +162,6 @@
 
           # OpenGoal Launcher
           inherit opengoal-launcher;
-
-          # Jellium Desktop
-          inherit jellium-desktop;
         };
 
       packagesFor =
@@ -233,8 +225,6 @@
         modengine3 = mkOverlay [ "modengine3" ];
 
         opengoal = mkOverlay [ "opengoal-launcher" ];
-
-        jellium-desktop = mkOverlay [ "jellium-desktop" ];
       };
 
       nixosModules = {
