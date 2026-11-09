@@ -89,26 +89,6 @@
         },
         "version": "2026.10.26-7b63bde"
     },
-    "jellium-desktop": {
-        "cargoLock": null,
-        "date": "2026-10-18",
-        "extract": null,
-        "name": "jellium-desktop",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "1b73a13b32e427c27815dac48b0bd82de771f454",
-            "sha256": "sha256-7zEw1lHD6Rk06dGNGbZHbly+7hKg2UqTnPFIzG5oeCI=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://github.com/andrewrabert/jellium-desktop.git"
-        },
-        "version": "1b73a13b32e427c27815dac48b0bd82de771f454"
-    },
     "libdrm": {
         "cargoLock": null,
         "date": "2026-10-27",
@@ -141,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "6384fd6037871b44784d78bf63369bdf05708965",
-            "sha256": "sha256-BPWikj/V+W/GBhEf8ZCY0J6kHoUybRakjD/stV5KZ2s=",
+            "rev": "586fd4de6e1959848bc82415973893fb57fc312a",
+            "sha256": "sha256-It3SKsaDXIomy+TF3uN7/rfdG1Ungh8JAcCZHn5qRXI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "6384fd6037871b44784d78bf63369bdf05708965"
+        "version": "586fd4de6e1959848bc82415973893fb57fc312a"
     },
     "modengine3": {
         "cargoLock": null,
