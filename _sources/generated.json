@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Y3KDvhHq76tkSRer0WtwxIrthSfAVikGLIiC/NMM6kM=",
+            "sha256": "sha256-C9Pj7CdsGvXIZwMlxXtwKSkPtIEd4Hhb/jYqMWE/lsc=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.113.1%2Bg311e678/Linux/EpicGamesLauncher-x86_64.deb"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.114.0%2Bg04485d6/Linux/EpicGamesLauncher-x86_64.deb"
         },
-        "version": "0.113.1%2Bg311e678"
+        "version": "0.114.0%2Bg04485d6"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IYHe5A39lH6EQkzAJ/UrYhz/ZJTAmzu6P15uPJus7IQ=",
+            "sha256": "sha256-x+XzZdZlgUvCwBGF5kwcC20Oq3SJ+RaLgSRgw2HWGYg=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1109.155241/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1111.10840/tar_gz"
         },
-        "version": "2026.1109.155241"
+        "version": "2026.1111.10840"
     },
     "fluxer-desktop-canary-darwin": {
         "cargoLock": null,
@@ -53,11 +53,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-LP4gMNpV1SJMKAwMDsnTkb2QyELfmqFAtvUu5xyFwvI=",
+            "sha256": "sha256-+352jTdTuoiR5iSu8sPkyVZ7BGc/Brw27mqJ0yYHonY=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1109.155241/zip"
+            "url": "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1111.10840/zip"
         },
-        "version": "2026.1109.155241"
+        "version": "2026.1111.10840"
     },
     "fluxer-desktop-darwin": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "bbca109c8e17fda42d535a8b698c8db1bd1044d5",
-            "sha256": "sha256-UgcGe3j9xHS1F+kpF0GefIg0DoZFpx2i5So45jZUy/8=",
+            "rev": "c4a3b5e92c16c5b82c1d9f4747ee9bde26eadb39",
+            "sha256": "sha256-u1u6g2IaUq+Ye6jjTR9wDrAaC034W9QSIubxY+CQ89s=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "bbca109c8e17fda42d535a8b698c8db1bd1044d5"
+        "version": "c4a3b5e92c16c5b82c1d9f4747ee9bde26eadb39"
     },
     "modengine3": {
         "cargoLock": null,
@@ -236,7 +236,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -246,13 +246,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "795ed0ff5b7e6b8db7488d0fcc95512a58edc919",
-            "sha256": "sha256-+dN4wAFNmYVDiEe0QStqrFBRFHBBRkApqbmhuvsLZZM=",
+            "rev": "d07030c0968e31e41caa0c35fda0ef8ae63a079e",
+            "sha256": "sha256-CA+FBccf6gmTDP6ABMQJ92myGyUgtmTS5b+DYxYd/fk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "795ed0ff5b7e6b8db7488d0fcc95512a58edc919"
+        "version": "d07030c0968e31e41caa0c35fda0ef8ae63a079e"
     },
     "vintagestory": {
         "cargoLock": null,
