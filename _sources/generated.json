@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-KbDlkoL40I11jC8fSBiQ0Fia7JKPUFkZO2thzKNETtk=",
+            "sha256": "sha256-sz5mYlIpcbzTd6KjrLqPBJiZs439OFMNmaevggD9mjQ=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1111.222719/tar_gz"
+            "url": "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1112.24929/tar_gz"
         },
-        "version": "2026.1111.222719"
+        "version": "2026.1112.24929"
     },
     "fluxer-desktop-canary": {
         "cargoLock": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-yFeh3mc9XWpnawYXlC9KAZZuTvwdA2y1KEu2PYB5l9s=",
+            "sha256": "sha256-J2zfm0kco9btrQFma/aNZeJIiiwo6fz7rJkeBif5s+A=",
             "type": "url",
-            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1111.222719/zip"
+            "url": "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1112.24929/zip"
         },
-        "version": "2026.1111.222719"
+        "version": "2026.1112.24929"
     },
     "hytale-launcher": {
         "cargoLock": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "34c83ff13b3b1d914280c8902d170b60f1e3b161",
-            "sha256": "sha256-Ab3gomNmzPPGvqg2w/tFoU2sGnm5kMRcWe3/eC/F//E=",
+            "rev": "0f938cad4a8a635615518f71a3f099a20d97a485",
+            "sha256": "sha256-eY9DUxzkDhlkRtfM67YeR+CHl3JFMrbzhZrazKtKE+w=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "34c83ff13b3b1d914280c8902d170b60f1e3b161"
+        "version": "0f938cad4a8a635615518f71a3f099a20d97a485"
     },
     "modengine3": {
         "cargoLock": null,
