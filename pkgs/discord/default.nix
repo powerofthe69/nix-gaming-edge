@@ -74,13 +74,37 @@ let
             result;
       };
 
-  discord-stable = pkgs.discord.override (
-    sourceOverride
-    // {
-      withVencord = true;
-      vencord = vencord-git;
-    }
-  );
+  discordArgs = sourceOverride // {
+    withVencord = true;
+    vencord = vencord-git;
+  };
+
+  discord-base = pkgs.discord.override discordArgs;
+
+  # Workaround the legacy updater for Discord until upstream nixpkgs ships a fix
+  modulesShim = ''
+    const path = require("path");
+    const configBase = process.env.DISCORD_USER_DATA_DIR ?? (process.env.XDG_CONFIG_HOME || path.join(require("os").homedir(), ".config"));
+    require("module").globalPaths.push(path.join(configBase, "discord", "${source.version}", "modules"));
+  '';
+
+  unwrapped-patched = discord-base.passthru.unwrappedDiscord.overrideAttrs (old: {
+    postInstall = (old.postInstall or "") + ''
+      res=$out/opt/Discord/resources
+      [ -f $res/app.asar/index.js ] || { echo "discord: modules shim needs a mod entrypoint (withVencord)"; exit 1; }
+      printf '%s\n' ${lib.escapeShellArg modulesShim} | cat - $res/app.asar/index.js > index.js.new
+      mv index.js.new $res/app.asar/index.js
+      # Keep the native updater from starting against the read-only store install
+      ${lib.getExe pkgs.jq} '.disableUpdater = true' $res/build_info.json > build_info.json.new
+      mv build_info.json.new $res/build_info.json
+    '';
+  });
+
+  discord-stable =
+    if pkgs.stdenv.hostPlatform.isLinux then
+      pkgs.discord.override (discordArgs // { unwrappedDiscord = unwrapped-patched; })
+    else
+      discord-base;
 
   # Fail loudly if the injection stops applying (e.g. nixpkgs renames metadata.nix)
   discord-checked =
