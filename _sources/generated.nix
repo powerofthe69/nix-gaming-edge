@@ -16,34 +16,34 @@
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1113.52631";
+    version = "2026.1114.60222";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1113.52631/tar_gz";
-      sha256 = "sha256-6DQoM9lMH4dMZ9Z0fnTCj7GGVlr8qd2cYoLjQhTb73A=";
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1114.60222/tar_gz";
+      sha256 = "sha256-7e+3TqJ0/3s30lxeZLgiHzp9P34UWPNLHTODMWNTj7Q=";
     };
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.1113.44516";
+    version = "2026.1114.60146";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1113.44516/tar_gz";
-      sha256 = "sha256-XxewZyoonVvmlcqiIduu1O27lAMhCpkMoP4ABI7pyg0=";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1114.60146/tar_gz";
+      sha256 = "sha256-GL1UBvR+eupSuJMKVkLEabadBQStM5DRCDDVgnvRaYo=";
     };
   };
   fluxer-desktop-canary-darwin = {
     pname = "fluxer-desktop-canary-darwin";
-    version = "2026.1113.44516";
+    version = "2026.1114.60146";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1113.44516/zip";
-      sha256 = "sha256-oYt1WR/cTAozanjLZnn14ztTU26FE6fPysFNkjfkltM=";
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1114.60146/zip";
+      sha256 = "sha256-jbfULIIpkELMKDDfLS9gBephq0M662k2Ucmjy1M7wtg=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1113.52631";
+    version = "2026.1114.60222";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1113.52631/zip";
-      sha256 = "sha256-CVFa7NAJbmKIZRWmrRE6MMbl6v381UUclqpoM0eSOuI=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1114.60222/zip";
+      sha256 = "sha256-GD5/ACySV3EJSKQyaBcfUwhRRDVDQCW8ncXTNpYDtMc=";
     };
   };
   hytale-launcher = {
@@ -70,17 +70,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "582bd880ff140bc38563eb78db6766ef3a02b7b6";
+    version = "767fbf7c6492f64549c90e9a080ab5417895a9ec";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "582bd880ff140bc38563eb78db6766ef3a02b7b6";
+      rev = "767fbf7c6492f64549c90e9a080ab5417895a9ec";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HYT2oaMYSw0kQN/xT89SCZIq9/FuIcY1tJ5KPyM87yQ=";
+      sha256 = "sha256-lZwze4K1tceHVxmgweJROWbw/53aZCKt75uFCJBAsv0=";
     };
-    date = "2026-11-13";
+    date = "2026-11-14";
   };
   modengine3 = {
     pname = "modengine3";
@@ -108,10 +108,10 @@
   };
   pokemmo = {
     pname = "pokemmo";
-    version = "322311027";
+    version = "322372549";
     src = fetchurl {
       url = "https://pokemmo.com/download_file/1/";
-      sha256 = "sha256-ISbhgKromCslgmU7jWTG2xn8fx+7ZFWTK5eTGdss64s=";
+      sha256 = "sha256-3cN0331gMjOAYyYbRH9rzRDYaer8LZnF8Z227p1uPTI=";
     };
   };
   proton-cachyos = {
