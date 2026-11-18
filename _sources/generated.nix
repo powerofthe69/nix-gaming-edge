@@ -8,42 +8,42 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.116.2%2Bgb27d165";
+    version = "0.117.0%2Bg19cc56b";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.116.2%2Bgb27d165/Linux/EpicGamesLauncher-x86_64.deb";
-      sha256 = "sha256-t/Dg7U9Rb9b170OlTF3a+6CCw6PVsY7cQN6IY8povDQ=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.117.0%2Bg19cc56b/Linux/EpicGamesLauncher-x86_64.deb";
+      sha256 = "sha256-7dp4w1AdSXkYYF5SqwMDVn5JF/uIawj+dzSHHOiB6gg=";
     };
   };
   fluxer-desktop = {
     pname = "fluxer-desktop";
-    version = "2026.1117.40548";
+    version = "2026.1117.144711";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1117.40548/tar_gz";
-      sha256 = "sha256-gg8YIfB3Pl2Y7HACTmYndAgobNtTDUY+GMV8efgxCho=";
+      url = "https://pkgs.fluxer.com/desktop/stable/linux/x64/2026.1117.144711/tar_gz";
+      sha256 = "sha256-QTi4zCRd+z3cFKDaDWxgfIVYxXWaP7PxY4tFPLC9HgY=";
     };
   };
   fluxer-desktop-canary = {
     pname = "fluxer-desktop-canary";
-    version = "2026.1117.32700";
+    version = "2026.1117.140332";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1117.32700/tar_gz";
-      sha256 = "sha256-nmxUZTk2gsYJFjKjJlczfBYpYcMI99BdKEkQAPczZxc=";
+      url = "https://pkgs.fluxer.com/desktop/canary/linux/x64/2026.1117.140332/tar_gz";
+      sha256 = "sha256-tiULGQoFuJ4xE52D/yUVm9Juoj2C92OZsd8dBazzVqM=";
     };
   };
   fluxer-desktop-canary-darwin = {
     pname = "fluxer-desktop-canary-darwin";
-    version = "2026.1117.32700";
+    version = "2026.1117.140332";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1117.32700/zip";
-      sha256 = "sha256-fKzN08c7OugSEYW0cHM58aRv2ihFu4MUvsoR4tcvTXU=";
+      url = "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/2026.1117.140332/zip";
+      sha256 = "sha256-bZgqS/Tr2BuYSgDujr0HwkfczbO85MPxu9JWanXiiBA=";
     };
   };
   fluxer-desktop-darwin = {
     pname = "fluxer-desktop-darwin";
-    version = "2026.1117.40548";
+    version = "2026.1117.144711";
     src = fetchurl {
-      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1117.40548/zip";
-      sha256 = "sha256-8YqukROHDz+NxXrM3wnwSsw4pUN9aDCVGdlCT/dmkoQ=";
+      url = "https://pkgs.fluxer.com/desktop/stable/darwin/arm64/2026.1117.144711/zip";
+      sha256 = "sha256-MpU5iiL1PqDg/XcJElyYBzMooDM24o1LbH287gtxJ4Q=";
     };
   };
   hytale-launcher = {
@@ -70,17 +70,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "4912245c6fa768e4a9c90686e724195605d24b2f";
+    version = "0e9e1086bb86721e21693763c6bf35415d93fff5";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "4912245c6fa768e4a9c90686e724195605d24b2f";
+      rev = "0e9e1086bb86721e21693763c6bf35415d93fff5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-T9sDYOj9l+V7w0yD/CvVmcdrbasC+2znJhwrcQaw1us=";
+      sha256 = "sha256-EIoaGaTV5Bqkx1TcWyIbmv58WfuXkI7gqlLgmE15juc=";
     };
-    date = "2026-11-17";
+    date = "2026-11-18";
   };
   modengine3 = {
     pname = "modengine3";
