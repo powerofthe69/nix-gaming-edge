@@ -82,29 +82,73 @@ let
   discord-base = pkgs.discord.override discordArgs;
 
   # Workaround the legacy updater for Discord until upstream nixpkgs ships a fix
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
+
+  # Mirrors the config dir nixpkgs' stageModules links the modules into
+  configBase =
+    if isDarwin then
+      ''path.join(require("os").homedir(), "Library", "Application Support")''
+    else
+      ''(process.env.XDG_CONFIG_HOME || path.join(require("os").homedir(), ".config"))'';
+
+  # Core requires these by absolute path from module_data when the native updater is off
+  moduleDataModules = lib.filter (m: source.modules ? ${m}) [
+    "discord_clips"
+    "discord_desktop_overlay"
+    "discord_intents"
+    "discord_notifications"
+    "discord_webauthn"
+  ];
+
   modulesShim = ''
     const path = require("path");
-    const configBase = process.env.DISCORD_USER_DATA_DIR ?? (process.env.XDG_CONFIG_HOME || path.join(require("os").homedir(), ".config"));
-    require("module").globalPaths.push(path.join(configBase, "discord", "${source.version}", "modules"));
+    const configBase = process.env.DISCORD_USER_DATA_DIR ?? ${configBase};
+    const modules = path.join(configBase, "discord", "${source.version}", "modules");
+    require("module").globalPaths.push(modules);
+  ''
+  + lib.optionalString (moduleDataModules != [ ]) ''
+    {
+      const fs = require("fs");
+      const moduleData = path.join(configBase, "discord", "module_data");
+      for (const name of ${builtins.toJSON moduleDataModules}) {
+        const link = path.join(moduleData, name);
+        try {
+          fs.mkdirSync(moduleData, { recursive: true });
+          if (fs.lstatSync(link, { throwIfNoEntry: false })?.isSymbolicLink()) fs.unlinkSync(link);
+          fs.symlinkSync(path.join(modules, name), link);
+        } catch {}
+      }
+    }
   '';
 
-  unwrapped-patched = discord-base.passthru.unwrappedDiscord.overrideAttrs (old: {
+  resources =
+    if isDarwin then
+      "$out/Applications/Discord.app/Contents/Resources"
+    else
+      "$out/opt/Discord/resources";
+
+  patchModules = old: {
     postInstall = (old.postInstall or "") + ''
-      res=$out/opt/Discord/resources
-      [ -f $res/app.asar/index.js ] || { echo "discord: modules shim needs a mod entrypoint (withVencord)"; exit 1; }
-      printf '%s\n' ${lib.escapeShellArg modulesShim} | cat - $res/app.asar/index.js > index.js.new
-      mv index.js.new $res/app.asar/index.js
+      res="${resources}"
+      [ -f "$res/app.asar/index.js" ] || { echo "discord: modules shim needs a mod entrypoint (withVencord)"; exit 1; }
+      printf '%s\n' ${lib.escapeShellArg modulesShim} | cat - "$res/app.asar/index.js" > index.js.new
+      mv index.js.new "$res/app.asar/index.js"
       # Keep the native updater from starting against the read-only store install
-      ${lib.getExe pkgs.jq} '.disableUpdater = true' $res/build_info.json > build_info.json.new
-      mv build_info.json.new $res/build_info.json
+      ${lib.getExe pkgs.jq} '.disableUpdater = true' "$res/build_info.json" > build_info.json.new
+      mv build_info.json.new "$res/build_info.json"
     '';
-  });
+  };
 
   discord-stable =
-    if pkgs.stdenv.hostPlatform.isLinux then
-      pkgs.discord.override (discordArgs // { unwrappedDiscord = unwrapped-patched; })
+    if isDarwin then
+      discord-base.overrideAttrs patchModules
     else
-      discord-base;
+      pkgs.discord.override (
+        discordArgs
+        // {
+          unwrappedDiscord = discord-base.passthru.unwrappedDiscord.overrideAttrs patchModules;
+        }
+      );
 
   # Fail loudly if the injection stops applying (e.g. nixpkgs renames metadata.nix)
   discord-checked =
