@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-3qWM3eoBiEL47qbJVJ/qnJt3i89Fh13gBfaN7Bdekok=",
+            "sha256": "sha256-H3hjlMr4wvaU54H3H/NLF7x+n53njlEDYstTagBsgwc=",
             "type": "url",
-            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.121.0%2Bg81137b1/Linux/EpicGamesLauncher-x86_64.deb"
+            "url": "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.123.0%2Bgee1223b/Linux/EpicGamesLauncher-x86_64.deb"
         },
-        "version": "0.121.0%2Bg81137b1"
+        "version": "0.123.0%2Bgee1223b"
     },
     "fluxer-desktop": {
         "cargoLock": null,
@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JDQeUKnj7jf/z2iUO7kk3I0K8YBx+j/eVdJ1WprdVP4=",
+            "sha256": "sha256-O3zvbjx31iYSusNPElsoishnzoUkxjeGvljRHrFNtM8=",
             "type": "url",
-            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.11.16-1726018.zip"
+            "url": "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.11.23-8717529.zip"
         },
-        "version": "2026.11.16-1726018"
+        "version": "2026.11.23-8717529"
     },
     "libdrm": {
         "cargoLock": null,
@@ -111,7 +111,7 @@
     },
     "mesa": {
         "cargoLock": null,
-        "date": "2026-11-24",
+        "date": "2026-11-26",
         "extract": null,
         "name": "mesa",
         "passthru": null,
@@ -121,13 +121,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "13ebbc00adb3d7c8bfd9502c1d87d82c8407bad7",
-            "sha256": "sha256-RPUWkbERrVo1MC4oX2LZgMxNPaB657BN5kbbqsDQkxg=",
+            "rev": "c5749e376b5caff3e6fcdc30825e630859257479",
+            "sha256": "sha256-wcnhHzMPF/5kFSQh+JwWuqEtCvrBUBjUAi/GTLYrI2A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/mesa/mesa.git"
         },
-        "version": "13ebbc00adb3d7c8bfd9502c1d87d82c8407bad7"
+        "version": "c5749e376b5caff3e6fcdc30825e630859257479"
     },
     "modengine3": {
         "cargoLock": null,
@@ -236,7 +236,7 @@
     },
     "vencord": {
         "cargoLock": null,
-        "date": "2026-11-21",
+        "date": "2026-11-24",
         "extract": null,
         "name": "vencord",
         "passthru": null,
@@ -246,13 +246,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ce9355e9a93e369c7295fa162ad563f7f97b1ff7",
-            "sha256": "sha256-L+E/SPVbl/+K6bwC11tkWUYdkKZ8b3K+Dtp6TidLBuw=",
+            "rev": "d086992fb674299a2fa05ac6432edc3a777389f3",
+            "sha256": "sha256-rQhEICRWSRe72EQFq1WZ95/0Nim3dG2wSkVIeR28bSY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Vendicated/Vencord.git"
         },
-        "version": "ce9355e9a93e369c7295fa162ad563f7f97b1ff7"
+        "version": "d086992fb674299a2fa05ac6432edc3a777389f3"
     },
     "vintagestory": {
         "cargoLock": null,
@@ -291,7 +291,7 @@
     },
     "wayland-protocols": {
         "cargoLock": null,
-        "date": "2026-10-29",
+        "date": "2026-11-23",
         "extract": null,
         "name": "wayland-protocols",
         "passthru": null,
@@ -301,12 +301,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8",
-            "sha256": "sha256-LukbpVpSbwLQ6L6thqSULBn/z4Z6wf8I45/y8/+LU9E=",
+            "rev": "309f384d8811c424cee01fd91612c0c1b176ae36",
+            "sha256": "sha256-pNjVuIfM4z+LBYulXmwEs7bttWyg1FLniqmLocbWaMw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://gitlab.freedesktop.org/wayland/wayland-protocols.git"
         },
-        "version": "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8"
+        "version": "309f384d8811c424cee01fd91612c0c1b176ae36"
     }
 }

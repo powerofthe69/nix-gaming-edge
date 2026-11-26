@@ -8,10 +8,10 @@
 {
   epic-games-launcher = {
     pname = "epic-games-launcher";
-    version = "0.121.0%2Bg81137b1";
+    version = "0.123.0%2Bgee1223b";
     src = fetchurl {
-      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.121.0%2Bg81137b1/Linux/EpicGamesLauncher-x86_64.deb";
-      sha256 = "sha256-3qWM3eoBiEL47qbJVJ/qnJt3i89Fh13gBfaN7Bdekok=";
+      url = "https://content-download-egs.distro.on.epicgames.com/Builds/EGLv2/0.123.0%2Bgee1223b/Linux/EpicGamesLauncher-x86_64.deb";
+      sha256 = "sha256-H3hjlMr4wvaU54H3H/NLF7x+n53njlEDYstTagBsgwc=";
     };
   };
   fluxer-desktop = {
@@ -48,10 +48,10 @@
   };
   hytale-launcher = {
     pname = "hytale-launcher";
-    version = "2026.11.16-1726018";
+    version = "2026.11.23-8717529";
     src = fetchurl {
-      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.11.16-1726018.zip";
-      sha256 = "sha256-JDQeUKnj7jf/z2iUO7kk3I0K8YBx+j/eVdJ1WprdVP4=";
+      url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-2026.11.23-8717529.zip";
+      sha256 = "sha256-O3zvbjx31iYSusNPElsoishnzoUkxjeGvljRHrFNtM8=";
     };
   };
   libdrm = {
@@ -70,17 +70,17 @@
   };
   mesa = {
     pname = "mesa";
-    version = "13ebbc00adb3d7c8bfd9502c1d87d82c8407bad7";
+    version = "c5749e376b5caff3e6fcdc30825e630859257479";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/mesa/mesa.git";
-      rev = "13ebbc00adb3d7c8bfd9502c1d87d82c8407bad7";
+      rev = "c5749e376b5caff3e6fcdc30825e630859257479";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-RPUWkbERrVo1MC4oX2LZgMxNPaB657BN5kbbqsDQkxg=";
+      sha256 = "sha256-wcnhHzMPF/5kFSQh+JwWuqEtCvrBUBjUAi/GTLYrI2A=";
     };
-    date = "2026-11-24";
+    date = "2026-11-26";
   };
   modengine3 = {
     pname = "modengine3";
@@ -140,17 +140,17 @@
   };
   vencord = {
     pname = "vencord";
-    version = "ce9355e9a93e369c7295fa162ad563f7f97b1ff7";
+    version = "d086992fb674299a2fa05ac6432edc3a777389f3";
     src = fetchgit {
       url = "https://github.com/Vendicated/Vencord.git";
-      rev = "ce9355e9a93e369c7295fa162ad563f7f97b1ff7";
+      rev = "d086992fb674299a2fa05ac6432edc3a777389f3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-L+E/SPVbl/+K6bwC11tkWUYdkKZ8b3K+Dtp6TidLBuw=";
+      sha256 = "sha256-rQhEICRWSRe72EQFq1WZ95/0Nim3dG2wSkVIeR28bSY=";
     };
-    date = "2026-11-21";
+    date = "2026-11-24";
   };
   vintagestory = {
     pname = "vintagestory";
@@ -175,16 +175,16 @@
   };
   wayland-protocols = {
     pname = "wayland-protocols";
-    version = "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8";
+    version = "309f384d8811c424cee01fd91612c0c1b176ae36";
     src = fetchgit {
       url = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git";
-      rev = "3eab2dccf4bfdd85c16d312a6c8c8fbc2a6e73a8";
+      rev = "309f384d8811c424cee01fd91612c0c1b176ae36";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LukbpVpSbwLQ6L6thqSULBn/z4Z6wf8I45/y8/+LU9E=";
+      sha256 = "sha256-pNjVuIfM4z+LBYulXmwEs7bttWyg1FLniqmLocbWaMw=";
     };
-    date = "2026-10-29";
+    date = "2026-11-23";
   };
 }
